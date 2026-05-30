@@ -1,34 +1,20 @@
 # -*- mode: python ; coding: utf-8 -*-
-import os
-from pathlib import Path
 
 block_cipher = None
-
-def collect_tree(root):
-    """Return datas tuples with forward-slash dest paths (safe on all platforms)."""
-    entries = []
-    root = Path(root)
-    for f in root.rglob("*"):
-        if f.is_file():
-            src  = str(f)
-            dest = str(f.parent).replace("\\", "/")
-            entries.append((src, dest))
-    return entries
 
 a = Analysis(
     ["app.py"],
     pathex=["."],
     binaries=[],
-    datas=(
-        collect_tree("static") +
-        collect_tree("data") +
-        [
-            ("Evolution Table.c", "."),
-            ("species.h",         "."),
-            ("items.h",           "."),
-            ("moves.h",           "."),
-        ]
-    ),
+    datas=[
+        # Tree() preserves full directory structure inside _MEIPASS
+        ("static",          "static"),
+        ("data",            "data"),
+        ("Evolution Table.c", "."),
+        ("species.h",       "."),
+        ("items.h",         "."),
+        ("moves.h",         "."),
+    ],
     hiddenimports=[
         "flask",
         "werkzeug",
