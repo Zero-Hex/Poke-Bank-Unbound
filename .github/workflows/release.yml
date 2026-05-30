@@ -1,0 +1,92 @@
+name: Build Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout UnboundBank
+        uses: actions/checkout@v4
+        with:
+          path: unboundbank
+
+      - name: Checkout PUSE (for data/ folder)
+        uses: actions/checkout@v4
+        with:
+          repository: Zannael/PUSE
+          path: puse
+
+      - name: Checkout Dynamic-Pokemon-Expansion Unbound branch (for source files)
+        uses: actions/checkout@v4
+        with:
+          repository: Skeli789/Dynamic-Pokemon-Expansion
+          ref: Unbound
+          path: dpe
+          sparse-checkout: |
+            src/Evolution Table.c
+            include/species.h
+            include/items.h
+            include/moves.h
+          sparse-checkout-cone-mode: false
+
+      - name: Copy data and source files into app folder
+        shell: pwsh
+        run: |
+          # PUSE data/ folder (MIT license — attribution in README)
+          Copy-Item -Recurse puse/backend/data unboundbank/data
+
+          # Game source files (WTFPL license — freely redistributable)
+          Copy-Item "dpe/src/Evolution Table.c" unboundbank/
+          Copy-Item dpe/include/species.h unboundbank/
+          Copy-Item dpe/include/items.h   unboundbank/
+          Copy-Item dpe/include/moves.h   unboundbank/
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        working-directory: unboundbank
+        run: |
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: Build exe
+        working-directory: unboundbank
+        run: pyinstaller unboundbank.spec
+
+      - name: Package release zip
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory release
+          Copy-Item unboundbank/dist/UnboundBank.exe release/
+          Copy-Item unboundbank/README.md release/
+          Compress-Archive -Path release/* -DestinationPath "UnboundBank-${{ github.ref_name }}-windows.zip"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "UnboundBank ${{ github.ref_name }}"
+          body: |
+            ## UnboundBank ${{ github.ref_name }}
+
+            ### Quick start
+            1. Download `UnboundBank-${{ github.ref_name }}-windows.zip` below
+            2. Extract it anywhere
+            3. Double-click `UnboundBank.exe`
+            4. Open **http://localhost:5000** in your browser and drag in your `.sav` file
+
+            Everything is bundled — no Python, no installs, nothing else needed.
+
+            ---
+            *Game data sourced from [PUSE](https://github.com/Zannael/PUSE) (MIT) and
+            [Dynamic-Pokemon-Expansion](https://github.com/Skeli789/Dynamic-Pokemon-Expansion) (WTFPL).*
+          files: UnboundBank-${{ github.ref_name }}-windows.zip
+          draft: false
+          prerelease: false

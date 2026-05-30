@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unbound Bank</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@400;600;700;900&display=swap');
+
+  :root {
+    --bg:       #0a0c10;
+    --surface:  #111318;
+    --card:     #181c24;
+    --border:   #252a35;
+    --accent:   #00e5ff;
+    --accent2:  #ff4081;
+    --gold:     #ffd600;
+    --text:     #dde3f0;
+    --muted:    #5a6278;
+    --shiny:    #ffd600;
+    --empty:    #0f1218;
+    --split:    #1a0f0f;
+    --hover:    #1e2530;
+    --drag-over:#002a30;
+    --party-bg: #0e1420;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── Upload screen ── */
+  #upload-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 32px;
+    padding: 32px;
+  }
+
+  .logo {
+    font-size: 52px;
+    font-weight: 900;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-shadow: 0 0 30px rgba(0,229,255,0.4);
+  }
+
+  .logo span { color: var(--accent2); }
+
+  .drop-zone {
+    border: 2px dashed var(--border);
+    border-radius: 12px;
+    padding: 64px 80px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .2s;
+    background: var(--surface);
+    max-width: 480px;
+    width: 100%;
+  }
+  .drop-zone:hover, .drop-zone.drag-active {
+    border-color: var(--accent);
+    background: var(--drag-over);
+  }
+  .drop-zone-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    opacity: .6;
+  }
+  .drop-zone h2 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .drop-zone p { color: var(--muted); font-size: 13px; }
+
+  #file-input { display: none; }
+
+  .error-msg {
+    color: var(--accent2);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px;
+    background: rgba(255,64,129,.1);
+    border: 1px solid rgba(255,64,129,.3);
+    padding: 12px 20px;
+    border-radius: 6px;
+    display: none;
+  }
+
+  /* ── Main app ── */
+  #app { display: none; flex-direction: column; min-height: 100vh; }
+
+  /* Header */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 20px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-logo {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: var(--accent);
+  }
+  .header-logo span { color: var(--accent2); }
+
+  .trainer-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex: 1;
+  }
+  .trainer-stat {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+  .trainer-stat label {
+    font-size: 10px;
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .trainer-stat value {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .header-actions { display: flex; gap: 10px; margin-left: auto; }
+
+  .btn {
+    padding: 8px 18px;
+    border-radius: 6px;
+    border: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .15s;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #000;
+  }
+  .btn-primary:hover { background: #33ecff; }
+  .btn-primary:disabled { background: var(--muted); cursor: default; opacity: .5; }
+  .btn-secondary {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--border);
+  }
+  .btn-secondary:hover { color: var(--text); border-color: var(--accent); }
+
+  .unsaved-badge {
+    background: var(--gold);
+    color: #000;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    display: none;
+  }
+
+  /* ── Layout ── */
+  .main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* Sidebar — party */
+  .sidebar {
+    width: 200px;
+    min-width: 200px;
+    background: var(--party-bg);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .sidebar-title {
+    padding: 12px 14px 8px;
+    font-size: 11px;
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid var(--border);
+  }
+  .party-slots {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+  }
+  .party-slot {
+    height: 52px;
+    border-radius: 8px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 10px;
+    cursor: grab;
+    transition: all .15s;
+    position: relative;
+  }
+  .party-slot:hover { border-color: var(--accent); background: var(--hover); }
+  .party-slot.empty { cursor: default; opacity: .4; }
+  .party-slot.drag-over { border-color: var(--accent); background: var(--drag-over); }
+  .party-slot.dragging { opacity: .3; }
+
+  .party-slot .mon-sprite { width: 36px; height: 36px; object-fit: contain; }
+  .party-slot .mon-info { flex: 1; overflow: hidden; }
+  .party-slot .mon-name {
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .party-slot .mon-meta {
+    font-size: 11px;
+    color: var(--muted);
+    font-family: 'Share Tech Mono', monospace;
+  }
+  .shiny-star { color: var(--shiny); font-size: 10px; }
+
+  /* ── Box area ── */
+  .box-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .box-tab-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 0 0 12px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 10;
+    padding-top: 4px;
+  }
+  .box-tab {
+    padding: 5px 12px;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all .15s;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+  }
+  .box-tab:hover { color: var(--text); border-color: var(--accent); }
+  .box-tab.active {
+    background: var(--accent);
+    color: #000;
+    border-color: var(--accent);
+  }
+  .box-tab.named { color: var(--accent2); border-color: rgba(255,64,129,.4); }
+  .box-tab.named.active { background: var(--accent2); color: #fff; }
+
+  .box-panel { display: none; }
+  .box-panel.active { display: block; }
+
+  .box-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .box-name {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+  .box-count {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .box-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+  }
+
+  /* PC Slot */
+  .pc-slot {
+    aspect-ratio: 1;
+    border-radius: 8px;
+    background: var(--empty);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .15s;
+    position: relative;
+    overflow: hidden;
+  }
+  .pc-slot.has-mon { cursor: grab; background: var(--card); }
+  .pc-slot.has-mon:hover { border-color: var(--accent); background: var(--hover); z-index: 1; }
+  .pc-slot.drag-over { border-color: var(--accent) !important; background: var(--drag-over) !important; }
+  .pc-slot.dragging { opacity: .25; }
+  .pc-slot.split {
+    background: var(--split);
+    border-color: #2a1515;
+    cursor: not-allowed;
+    opacity: .35;
+  }
+  .pc-slot.split::after {
+    content: '⚠';
+    font-size: 14px;
+    color: #5a2020;
+  }
+
+  .pc-slot img.sprite {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    image-rendering: pixelated;
+  }
+  .pc-slot .slot-level {
+    font-size: 9px;
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--muted);
+    line-height: 1;
+  }
+  .pc-slot .slot-shiny {
+    position: absolute;
+    top: 3px;
+    right: 4px;
+    font-size: 9px;
+    color: var(--shiny);
+  }
+  .pc-slot .slot-name {
+    font-size: 9px;
+    font-weight: 600;
+    color: var(--muted);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 90%;
+    line-height: 1.1;
+  }
+
+  /* ── Mon detail panel ── */
+  .detail-panel {
+    width: 260px;
+    min-width: 260px;
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .detail-empty {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 13px;
+    font-family: 'Share Tech Mono', monospace;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.8;
+  }
+  .detail-content { padding: 16px; display: none; }
+  .detail-content.visible { display: block; }
+
+  .detail-header { text-align: center; margin-bottom: 16px; }
+  .detail-sprite { width: 96px; height: 96px; object-fit: contain; image-rendering: pixelated; }
+  .detail-name {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .detail-nick {
+    font-size: 13px;
+    color: var(--muted);
+    font-family: 'Share Tech Mono', monospace;
+  }
+  .detail-badges {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 4px;
+    font-size: 13px;
+  }
+
+  .detail-section { margin-bottom: 14px; }
+  .detail-section-title {
+    font-size: 10px;
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+  }
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 2px 0;
+  }
+  .detail-row label { color: var(--muted); }
+  .detail-row value { font-weight: 600; }
+
+  .iv-bar-row {
+    display: grid;
+    grid-template-columns: 32px 1fr 24px;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+    font-size: 11px;
+  }
+  .iv-bar-row label { color: var(--muted); font-family: 'Share Tech Mono', monospace; text-transform: uppercase; }
+  .iv-bar {
+    height: 5px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .iv-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: var(--accent);
+    transition: width .3s;
+  }
+  .iv-bar-fill.perfect { background: var(--gold); }
+  .iv-val { text-align: right; font-family: 'Share Tech Mono', monospace; color: var(--text); }
+
+  .moves-list { display: flex; flex-direction: column; gap: 4px; }
+  .move-chip {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .move-chip.empty { color: var(--muted); font-style: italic; }
+
+  /* Drag ghost */
+  .drag-ghost {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: .85;
+    background: var(--card);
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 13px;
+    font-weight: 700;
+    display: none;
+    white-space: nowrap;
+    box-shadow: 0 8px 24px rgba(0,0,0,.6);
+  }
+
+  /* Scrollbars */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+  /* Loading overlay */
+  .loading {
+    position: fixed; inset: 0;
+    background: rgba(10,12,16,.85);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 200;
+    font-size: 18px;
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--accent);
+    letter-spacing: 3px;
+    display: none;
+  }
+  .loading.visible { display: flex; }
+</style>
+</head>
+<body>
+
+<!-- Upload screen -->
+<div id="upload-screen">
+  <div class="logo">UNBOUND<span>BANK</span></div>
+  <div class="drop-zone" id="drop-zone">
+    <div class="drop-zone-icon">💾</div>
+    <h2>Drop Save File</h2>
+    <p>Drag & drop your .sav file here<br>or click to browse</p>
+    <input type="file" id="file-input" accept=".sav">
+  </div>
+  <div class="error-msg" id="error-msg"></div>
+</div>
+
+<!-- Main app -->
+<div id="app">
+  <div class="header">
+    <div class="header-logo">UNBOUND<span>BANK</span></div>
+    <div class="trainer-info" id="trainer-info"></div>
+    <div class="unsaved-badge" id="unsaved-badge">UNSAVED</div>
+    <div class="header-actions">
+      <button class="btn btn-secondary" id="btn-load-new">Load New</button>
+      <button class="btn btn-primary" id="btn-download" disabled>Download Save</button>
+    </div>
+  </div>
+
+  <div class="main">
+    <!-- Party sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-title">Party</div>
+      <div class="party-slots" id="party-slots"></div>
+    </div>
+
+    <!-- Box area -->
+    <div class="box-area">
+      <div class="box-tab-bar" id="box-tabs"></div>
+      <div id="box-panels"></div>
+    </div>
+
+    <!-- Detail panel -->
+    <div class="detail-panel">
+      <div class="detail-empty" id="detail-empty">Click a Pokémon<br>to see details</div>
+      <div class="detail-content" id="detail-content"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Drag ghost -->
+<div class="drag-ghost" id="drag-ghost"></div>
+
+<!-- Loading -->
+<div class="loading" id="loading">LOADING...</div>
+
+<script>
+// ---------------------------------------------------------------------------
+// State
+// ---------------------------------------------------------------------------
+let saveData = null;
+let hasChanges = false;
+let selectedMon = null;
+let dragState = null;  // { box, slot, mon }
+
+// ---------------------------------------------------------------------------
+// Sprite helper — uses PUSE's Dynamic-Pokemon-Expansion manifest
+// Covers all 1260 Unbound species including custom mons
+// ---------------------------------------------------------------------------
+const DPE_BASE = 'https://cdn.jsdelivr.net/gh/Shiny-Miner/Dynamic-Pokemon-Expansion-Gen-9@5906aa4d4904e41393fd9184a16951c961e96263/graphics/frontspr';
+let spriteManifest = null;
+
+async function loadSpriteManifest() {
+  try {
+    const resp = await fetch('/pokemon-icon-manifest.json');
+    spriteManifest = await resp.json();
+  } catch(e) {
+    console.warn('Could not load sprite manifest', e);
+    spriteManifest = {};
+  }
+}
+loadSpriteManifest();
+
+function spriteUrl(speciesId) {
+  if (!spriteManifest) return null;
+  const filename = spriteManifest[String(speciesId)];
+  if (!filename) return null;
+  return `${DPE_BASE}/${filename}`;
+}
+
+function spriteImg(speciesId, cls='sprite') {
+  const url = spriteUrl(speciesId);
+  const fallback = `this.src='/pokemon-icon-manifest.json';this.style.opacity=0`;
+  if (!url) return `<div class="${cls}" style="opacity:0.2;display:flex;align-items:center;justify-content:center;font-size:20px">?</div>`;
+  return `<img src="${url}" class="${cls}" alt="" onerror="${fallback}">`;
+}
+
+// ---------------------------------------------------------------------------
+// Utilities
+// ---------------------------------------------------------------------------
+function setLoading(v) {
+  document.getElementById('loading').classList.toggle('visible', v);
+}
+
+function showError(msg) {
+  const el = document.getElementById('error-msg');
+  el.textContent = msg;
+  el.style.display = msg ? 'block' : 'none';
+}
+
+function markChanged() {
+  hasChanges = true;
+  document.getElementById('unsaved-badge').style.display = 'inline-block';
+  document.getElementById('btn-download').disabled = false;
+}
+
+// ---------------------------------------------------------------------------
+// Render trainer info
+// ---------------------------------------------------------------------------
+function renderTrainer(t) {
+  document.getElementById('trainer-info').innerHTML = `
+    <div class="trainer-stat"><label>Trainer</label><value>${t.name} ${t.gender}</value></div>
+    <div class="trainer-stat"><label>ID</label><value>${String(t.tid).padStart(5,'0')}</value></div>
+    <div class="trainer-stat"><label>Time</label><value>${t.playtime}</value></div>
+    <div class="trainer-stat"><label>Money</label><value>${t.money}</value></div>
+    <div class="trainer-stat"><label>Badges</label><value>${t.badges}</value></div>
+  `;
+}
+
+// ---------------------------------------------------------------------------
+// Render detail panel
+// ---------------------------------------------------------------------------
+function renderDetail(mon) {
+  selectedMon = mon;
+  const empty = document.getElementById('detail-empty');
+  const content = document.getElementById('detail-content');
+  if (!mon) {
+    empty.style.display = 'flex';
+    content.classList.remove('visible');
+    return;
+  }
+  empty.style.display = 'none';
+  content.classList.add('visible');
+
+  const statNames = ['hp','atk','def','spe','spa','spd'];
+  const statLabels = ['HP','Atk','Def','Spe','SpA','SpD'];
+
+  const ivBars = statNames.map((s, i) => {
+    const v = mon.ivs[s];
+    const pct = Math.round(v / 31 * 100);
+    return `
+      <div class="iv-bar-row">
+        <label>${statLabels[i]}</label>
+        <div class="iv-bar"><div class="iv-bar-fill ${v===31?'perfect':''}" style="width:${pct}%"></div></div>
+        <span class="iv-val">${v}</span>
+      </div>`;
+  }).join('');
+
+  const moves = mon.moves.map(m =>
+    `<div class="move-chip ${m?'':'empty'}">${m || '—'}</div>`
+  ).join('');
+
+  content.innerHTML = `
+    <div class="detail-header">
+      ${spriteImg(mon.species, 'detail-sprite')}
+      <div class="detail-name">${mon.shiny ? '★ ' : ''}${mon.name}</div>
+      ${mon.nick !== mon.name ? `<div class="detail-nick">"${mon.nick}"</div>` : ''}
+      <div class="detail-badges">
+        <span style="color:var(--muted);font-size:12px">${mon.gender} · Lv.${mon.level}</span>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">Info</div>
+      <div class="detail-row"><label>Nature</label><value>${mon.nature}</value></div>
+      <div class="detail-row"><label>Ability</label><value>${mon.ability}</value></div>
+      ${mon.item ? `<div class="detail-row"><label>Item</label><value>${mon.item}</value></div>` : ''}
+      <div class="detail-row"><label>Location</label><value style="font-size:11px;color:var(--muted)">${mon.box === 'party' ? 'Party' : `Box ${mon.box}`} · Slot ${mon.slot}</value></div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">IVs</div>
+      ${ivBars}
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-section-title">Moves</div>
+      <div class="moves-list">${moves}</div>
+    </div>
+  `;
+}
+
+// ---------------------------------------------------------------------------
+// Render party
+// ---------------------------------------------------------------------------
+function renderParty(party) {
+  const container = document.getElementById('party-slots');
+  container.innerHTML = '';
+  for (let i = 0; i < 6; i++) {
+    const mon = party[i];
+    const div = document.createElement('div');
+    div.className = 'party-slot' + (mon ? ' has-mon' : ' empty');
+    div.dataset.box = '0';
+    div.dataset.slot = String(i + 1);
+
+    if (mon) {
+      div.innerHTML = `
+        ${spriteImg(mon.species, 'mon-sprite')}
+        <div class="mon-info">
+          <div class="mon-name">${mon.shiny ? '★ ' : ''}${mon.nick || mon.name}</div>
+          <div class="mon-meta">Lv.${mon.level} · ${mon.nature}</div>
+        </div>
+      `;
+      div.draggable = true;
+      setupDrag(div, { box: 0, slot: i+1, mon });
+    } else {
+      div.innerHTML = `<div style="color:var(--muted);font-size:11px;font-family:'Share Tech Mono',monospace">EMPTY</div>`;
+    }
+
+    setupDrop(div);
+    div.addEventListener('click', () => { if (mon) renderDetail(mon); });
+    container.appendChild(div);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Render boxes
+// ---------------------------------------------------------------------------
+function renderBoxes(boxes) {
+  const tabs   = document.getElementById('box-tabs');
+  const panels = document.getElementById('box-panels');
+  tabs.innerHTML = '';
+  panels.innerHTML = '';
+
+  boxes.forEach((box, idx) => {
+    const monCount = box.slots.filter(s => s.mon).length;
+    const isNamed = box.name && !box.name.match(/^Box \d+$/i) && box.name !== 'Preset';
+    const label = box.name || `Box ${box.box}`;
+
+    // Tab
+    const tab = document.createElement('button');
+    tab.className = 'box-tab' + (isNamed ? ' named' : '') + (idx === 0 ? ' active' : '');
+    tab.textContent = label;
+    tab.dataset.idx = idx;
+    tab.addEventListener('click', () => switchBox(idx));
+    tabs.appendChild(tab);
+
+    // Panel
+    const panel = document.createElement('div');
+    panel.className = 'box-panel' + (idx === 0 ? ' active' : '');
+    panel.dataset.idx = idx;
+
+    const cols = box.box === 20 ? 7 : 6; // box 20 has 21 slots, 7 cols fits nicer
+    panel.innerHTML = `
+      <div class="box-header">
+        <div class="box-name">${label}</div>
+        <div class="box-count">${monCount} / ${box.slots.length} Pokémon</div>
+      </div>
+      <div class="box-grid" style="grid-template-columns:repeat(${cols},1fr)" data-box="${box.box}"></div>
+    `;
+
+    const grid = panel.querySelector('.box-grid');
+    box.slots.forEach((s, slotIdx) => {
+      const slot = document.createElement('div');
+      const slotNum = slotIdx + 1;
+
+      if (s.split) {
+        slot.className = 'pc-slot split';
+        slot.title = 'Sector boundary — cannot be moved';
+      } else if (s.mon) {
+        slot.className = 'pc-slot has-mon';
+        slot.innerHTML = `
+          ${s.mon.shiny ? '<span class="slot-shiny">★</span>' : ''}
+          ${spriteImg(s.mon.species, 'sprite')}
+          <span class="slot-name">${s.mon.nick || s.mon.name}</span>
+          <span class="slot-level">Lv.${s.mon.level}</span>
+        `;
+        slot.draggable = true;
+        setupDrag(slot, { box: box.box, slot: slotNum, mon: s.mon });
+        slot.addEventListener('click', (e) => {
+          if (!dragState) renderDetail(s.mon);
+        });
+      } else {
+        slot.className = 'pc-slot';
+      }
+
+      slot.dataset.box  = box.box;
+      slot.dataset.slot = slotNum;
+      if (!s.split) setupDrop(slot);
+      grid.appendChild(slot);
+    });
+
+    panels.appendChild(panel);
+  });
+}
+
+function switchBox(idx) {
+  document.querySelectorAll('.box-tab').forEach(t => t.classList.toggle('active', +t.dataset.idx === idx));
+  document.querySelectorAll('.box-panel').forEach(p => p.classList.toggle('active', +p.dataset.idx === idx));
+}
+
+// ---------------------------------------------------------------------------
+// Drag and drop
+// ---------------------------------------------------------------------------
+const ghost = document.getElementById('drag-ghost');
+
+function setupDrag(el, info) {
+  el.addEventListener('dragstart', (e) => {
+    dragState = info;
+    el.classList.add('dragging');
+    ghost.textContent = info.mon.nick || info.mon.name;
+    ghost.style.display = 'block';
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setDragImage(new Image(), 0, 0);
+  });
+  el.addEventListener('dragend', () => {
+    el.classList.remove('dragging');
+    ghost.style.display = 'none';
+    dragState = null;
+    document.querySelectorAll('.drag-over').forEach(e => e.classList.remove('drag-over'));
+  });
+}
+
+function setupDrop(el) {
+  el.addEventListener('dragover', (e) => {
+    if (!dragState) return;
+    const targetBox  = +el.dataset.box;
+    const targetSlot = +el.dataset.slot;
+    // Don't allow dropping to fallback boxes (20-24) — not writable yet
+    if (targetBox >= 20 && targetBox <= 24) return;
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    document.querySelectorAll('.drag-over').forEach(e => e.classList.remove('drag-over'));
+    el.classList.add('drag-over');
+  });
+  el.addEventListener('dragleave', () => el.classList.remove('drag-over'));
+  el.addEventListener('drop', (e) => {
+    e.preventDefault();
+    el.classList.remove('drag-over');
+    if (!dragState) return;
+    const targetBox  = +el.dataset.box;
+    const targetSlot = +el.dataset.slot;
+    if (targetBox >= 20 && targetBox <= 24) return;
+    if (dragState.box === targetBox && dragState.slot === targetSlot) return;
+    doMove(dragState.box, dragState.slot, targetBox, targetSlot);
+  });
+}
+
+document.addEventListener('dragover', (e) => {
+  ghost.style.left = (e.clientX + 14) + 'px';
+  ghost.style.top  = (e.clientY + 14) + 'px';
+});
+
+// ---------------------------------------------------------------------------
+// Execute move via API
+// ---------------------------------------------------------------------------
+async function doMove(fromBox, fromSlot, toBox, toSlot) {
+  setLoading(true);
+  try {
+    const resp = await fetch('/api/move', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ moves: [{ from: {box: fromBox, slot: fromSlot}, to: {box: toBox, slot: toSlot} }] })
+    });
+    const data = await resp.json();
+    if (!resp.ok || data.error) {
+      alert('Move failed: ' + (data.error || 'Unknown error'));
+      return;
+    }
+    saveData = data.save;
+    markChanged();
+    renderAll(saveData);
+  } catch(err) {
+    alert('Error: ' + err.message);
+  } finally {
+    setLoading(false);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Render everything
+// ---------------------------------------------------------------------------
+function renderAll(data) {
+  renderTrainer(data.trainer);
+  renderParty(data.party);
+  renderBoxes(data.boxes);
+  if (selectedMon) {
+    // Re-find the selected mon by PID and refresh detail
+    const allMons = [
+      ...data.party.filter(Boolean),
+      ...data.boxes.flatMap(b => b.slots.map(s => s.mon).filter(Boolean))
+    ];
+    const updated = allMons.find(m => m.pid === selectedMon.pid);
+    renderDetail(updated || null);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// File loading
+// ---------------------------------------------------------------------------
+async function loadSave(file) {
+  setLoading(true);
+  showError('');
+  const form = new FormData();
+  form.append('save', file);
+  try {
+    const resp = await fetch('/api/load', { method: 'POST', body: form });
+    const data = await resp.json();
+    if (!resp.ok || data.error) {
+      showError(data.error || 'Failed to load save');
+      return;
+    }
+    saveData = data.save;
+    hasChanges = false;
+    document.getElementById('unsaved-badge').style.display = 'none';
+    document.getElementById('btn-download').disabled = true;
+    document.getElementById('upload-screen').style.display = 'none';
+    document.getElementById('app').style.display = 'flex';
+    renderAll(saveData);
+  } catch(err) {
+    showError('Error: ' + err.message);
+  } finally {
+    setLoading(false);
+  }
+}
+
+// Drop zone
+const dropZone = document.getElementById('drop-zone');
+dropZone.addEventListener('click', () => document.getElementById('file-input').click());
+dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('drag-active'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-active'));
+dropZone.addEventListener('drop', (e) => {
+  e.preventDefault();
+  dropZone.classList.remove('drag-active');
+  const file = e.dataTransfer.files[0];
+  if (file) loadSave(file);
+});
+document.getElementById('file-input').addEventListener('change', (e) => {
+  if (e.target.files[0]) loadSave(e.target.files[0]);
+});
+
+// Download
+document.getElementById('btn-download').addEventListener('click', async () => {
+  const resp = await fetch('/api/download');
+  if (!resp.ok) { alert('Download failed'); return; }
+  const blob = await resp.blob();
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'save_modified.sav';
+  a.click();
+  hasChanges = false;
+  document.getElementById('unsaved-badge').style.display = 'none';
+});
+
+// Load new
+document.getElementById('btn-load-new').addEventListener('click', () => {
+  if (hasChanges && !confirm('You have unsaved changes. Load a new save anyway?')) return;
+  document.getElementById('upload-screen').style.display = 'flex';
+  document.getElementById('app').style.display = 'none';
+  saveData = null;
+  hasChanges = false;
+});
+</script>
+</body>
+</html>
