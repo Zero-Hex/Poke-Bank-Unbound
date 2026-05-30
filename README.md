@@ -1,3 +1,6 @@
+<img width="368" height="561" alt="Snag_3b64e9c3" src="https://github.com/user-attachments/assets/141cc3b3-3f9a-4290-b84b-79c44c4b0c91" />
+<img width="1918" height="918" alt="Snag_3b64dfe0" src="https://github.com/user-attachments/assets/c00436cf-c04a-4f07-a4b4-18621a65ecd7" />
+<img width="1917" height="911" alt="Snag_3b64cf07" src="https://github.com/user-attachments/assets/833c8802-421c-49bd-a7e2-dd047cf34b24" />
 # UnboundBank — Pokémon Unbound Save Manager
 
 A local web app for managing your Pokémon Unbound save file. View and rearrange your PC boxes, inspect party and box Pokémon in detail, track your Pokédex progress across both the National and Borrius dexes, and export spreadsheets of your collection or pending evolutions.
