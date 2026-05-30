@@ -10,6 +10,8 @@ from flask import Flask, request, jsonify, send_from_directory
 
 if getattr(sys, "frozen", False):
     BASE_DIR = Path(sys._MEIPASS)
+    print(f"[UnboundBank] Running as exe, BASE_DIR={BASE_DIR}")
+    print(f"[UnboundBank] static/dist/index.html exists: {(BASE_DIR / 'static' / 'dist' / 'index.html').exists()}")
 else:
     BASE_DIR = Path(__file__).parent
 
@@ -1231,7 +1233,10 @@ def run_sort_single_box(data, box_num, sort_mode):
 # ---------------------------------------------------------------------------
 @app.route("/")
 def index():
-    return send_from_directory(str(BASE_DIR / "static" / "dist"), "index.html")
+    index_path = BASE_DIR / "static" / "dist" / "index.html"
+    print(f"[UnboundBank] Serving index from: {index_path} (exists={index_path.exists()})")
+    from flask import Response
+    return Response(index_path.read_bytes(), mimetype="text/html")
 
 @app.route("/species_types.json")
 def species_types():
