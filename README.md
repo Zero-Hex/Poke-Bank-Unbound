@@ -2,6 +2,13 @@
 
 A local web app for managing your Pokémon Unbound save file. View and rearrange your PC boxes, inspect party and box Pokémon in detail, track your Pokédex progress across both the National and Borrius dexes, and export spreadsheets of your collection or pending evolutions.
 
+
+This was specifically created to work with Unbounds offsets so it will not work with any other Rom Files (Sorry!)
+
+Reasoning:
+
+I got tired of trying to manage some organization within my PC for 250+ mons at any given time so I worked to develop this locally hosted app so that I could very easily with 1 click organize my mons and it grew from there. It now includes not only the sort functionality, evolution finder, an accurate PokeDex including a list of missing mons, as well as evolutions you are missing. There are some Excel type files that can be exported that contain data similiar to the website in-case you want them locally for some reason, one of them is an evolution helper so you can see all the evolutions you have in your boxes that you need to work on. This never touches your save, but its always recommended to back up before using. 
+
 ---
 
 ## Usage
@@ -35,7 +42,7 @@ Your save file is exported from your emulator — in mGBA use *File → Export S
 ### Bank Tab
 - View all 24 PC boxes and your party
 - Click any Pokémon to see full details: stats, EVs, IVs, moves, ability, nature, item
-- Drag Pokémon between slots to rearrange (move mode)
+- Enable Move Mode to Select and Swap Pokémon between slots to rearrange
 - Search across all boxes by name
 - Pokémon that can still evolve show a purple **evo** badge
   - Only shown when the evolution result isn't already in your Pokédex
@@ -62,5 +69,4 @@ Your save file is exported from your emulator — in mGBA use *File → Export S
 
 - The app runs entirely locally — no data leaves your machine
 - The original `.sav` file is never modified; use **Download Save** to get your changes
-- Boxes 20–24 are read-only (they use a fallback sector layout that doesn't support moves yet)
 - Slots marked ⚠ are sector boundary slots and cannot be moved
