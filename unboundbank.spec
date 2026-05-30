@@ -1,37 +1,34 @@
 # -*- mode: python ; coding: utf-8 -*-
-#
-# PyInstaller spec for UnboundBank
-# Build with:  pyinstaller unboundbank.spec
-
+import os
 from pathlib import Path
 
 block_cipher = None
 
-# Collect all static files (frontend dist, JSON data, icons)
-static_datas = []
-for f in Path("static").rglob("*"):
-    if f.is_file():
-        static_datas.append((str(f), str(f.parent)))
-
-# data/ folder from PUSE (MIT licensed)
-data_datas = []
-for f in Path("data").rglob("*"):
-    if f.is_file():
-        data_datas.append((str(f), str(f.parent)))
-
-# Game source files (WTFPL licensed)
-game_source_files = [
-    ("Evolution Table.c", "."),
-    ("species.h",         "."),
-    ("items.h",           "."),
-    ("moves.h",           "."),
-]
+def collect_tree(root):
+    """Return datas tuples with forward-slash dest paths (safe on all platforms)."""
+    entries = []
+    root = Path(root)
+    for f in root.rglob("*"):
+        if f.is_file():
+            src  = str(f)
+            dest = str(f.parent).replace("\\", "/")
+            entries.append((src, dest))
+    return entries
 
 a = Analysis(
     ["app.py"],
     pathex=["."],
     binaries=[],
-    datas=static_datas + data_datas + game_source_files,
+    datas=(
+        collect_tree("static") +
+        collect_tree("data") +
+        [
+            ("Evolution Table.c", "."),
+            ("species.h",         "."),
+            ("items.h",           "."),
+            ("moves.h",           "."),
+        ]
+    ),
     hiddenimports=[
         "flask",
         "werkzeug",

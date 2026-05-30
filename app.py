@@ -12,6 +12,11 @@ if getattr(sys, "frozen", False):
     BASE_DIR = Path(sys._MEIPASS)
     print(f"[UnboundBank] Running as exe, BASE_DIR={BASE_DIR}")
     print(f"[UnboundBank] static/dist/index.html exists: {(BASE_DIR / 'static' / 'dist' / 'index.html').exists()}")
+    # List top-level and static/ contents to aid debugging
+    print("[UnboundBank] _MEIPASS contents:", [p.name for p in BASE_DIR.iterdir()])
+    static_dir = BASE_DIR / "static"
+    if static_dir.exists():
+        print("[UnboundBank] static/ contents:", [p.name for p in static_dir.iterdir()])
 else:
     BASE_DIR = Path(__file__).parent
 
