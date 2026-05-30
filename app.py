@@ -8,15 +8,12 @@ import struct, json, base64, math, re, sys
 from pathlib import Path
 from flask import Flask, request, jsonify, send_from_directory
 
-def _base_path():
-    """Return the base directory whether running as script or PyInstaller exe."""
-    if getattr(sys, "frozen", False):
-        return Path(sys._MEIPASS)
-    return BASE_DIR
+if getattr(sys, "frozen", False):
+    BASE_DIR = Path(sys._MEIPASS)
+else:
+    BASE_DIR = Path(__file__).parent
 
-BASE_DIR = _base_path()
-
-app = Flask(__name__, static_folder=str(BASE_DIR / "static"))
+app = Flask(__name__, static_folder=str(BASE_DIR / "static"), static_url_path="/static")
 
 # ---------------------------------------------------------------------------
 # Constants (mirrors save_core.py)

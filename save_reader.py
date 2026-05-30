@@ -19,9 +19,12 @@ import math
 from pathlib import Path
 import sys
 
-def _base_path():
-    if getattr(sys, 'frozen', False): return Path(sys._MEIPASS)
-    return _base_path()
+if getattr(sys, 'frozen', False):
+    _BASE_DIR = Path(sys._MEIPASS)
+else:
+    _BASE_DIR = Path(__file__).parent
+
+def _base_path(): return _BASE_DIR
 
 
 try:
