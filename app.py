@@ -1326,6 +1326,60 @@ def api_move():
     result = parse_save(data, db)
     return jsonify({"ok": True, "save": result})
 
+@app.route("/api/move_to_box", methods=["POST"])
+def api_move_to_box():
+    """Move multiple selected mons into the first available empty slots of a target box."""
+    if session.get("data") is None:
+        return jsonify({"error": "No save loaded"}), 400
+    body = request.get_json()
+    items = body.get("items", [])   # [{box, slot}, ...]
+    target_box = body.get("target_box")
+    if not items or target_box is None:
+        return jsonify({"error": "Missing items or target_box"}), 400
+
+    data = bytearray(session["data"])
+    db   = session["db"]
+
+    # Parse current save to find empty slots in target box
+    current = parse_save(data, db)
+    target_box_data = next((b for b in current["boxes"] if b["box"] == target_box), None)
+    if target_box_data is None:
+        return jsonify({"error": f"Box {target_box} not found"}), 400
+
+    # Collect empty slots in order (slot numbers are 1-indexed in parse_save)
+    empty_slots = [
+        i + 1
+        for i, sl in enumerate(target_box_data["slots"])
+        if not sl.get("mon")
+    ]
+
+    if not empty_slots:
+        return jsonify({"error": f"Box {target_box} is full"}), 400
+
+    # Build move list: each selected mon → next empty slot in target box
+    moves = []
+    for item, dest_slot in zip(items, empty_slots):
+        # Skip if source is already in target box (would be a no-op)
+        if item["box"] == target_box and item["slot"] == dest_slot:
+            continue
+        moves.append({
+            "from": {"box": item["box"], "slot": item["slot"]},
+            "to":   {"box": target_box,  "slot": dest_slot}
+        })
+
+    if not moves:
+        return jsonify({"error": "Nothing to move"}), 400
+
+    try:
+        data = apply_moves(data, moves)
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 400
+
+    session["data"] = data
+    result = parse_save(data, db)
+    return jsonify({"ok": True, "save": result, "moved": len(moves)})
+
+
 @app.route("/api/download")
 def api_download():
     if session.get("data") is None:
@@ -1571,16 +1625,22 @@ def api_vault_deposit():
     mon["vault_from_trainer"] = trainer["name"]
     mon["vault_from_tid"]     = trainer["tid"]
 
-    # If to_vault_slot == 0, find first empty slot in the target cloud box
+    # If to_vault_slot == 0, find first empty slot starting from to_vault_box
+    # and falling through to subsequent boxes if needed
     if to_cs == 0:
         vault_current = cb.load_cloud(_get_data_dir(), *_get_trainer_key())
-        box_data = next((x for x in vault_current if x["box"] == to_cb), None)
-        if box_data is None:
-            return jsonify({"error": f"Cloud box {to_cb} not found"}), 400
-        empty_slot = next((i+1 for i,s in enumerate(box_data["slots"]) if s["mon"] is None), None)
-        if empty_slot is None:
-            return jsonify({"error": f"Cloud box {to_cb} is full"}), 400
-        to_cs = empty_slot
+        found = False
+        for bx in vault_current:
+            if bx["box"] < to_cb:
+                continue
+            empty_slot = next((i+1 for i,s in enumerate(bx["slots"]) if s["mon"] is None), None)
+            if empty_slot is not None:
+                to_cb = bx["box"]
+                to_cs = empty_slot
+                found = True
+                break
+        if not found:
+            return jsonify({"error": "Vault is full — no empty slots available"}), 400
 
     # Write to cloud FIRST (atomic: cloud before clearing save)
     cloud = cb.deposit(_get_data_dir(), to_cb, to_cs, mon, list(raw[:MON_SIZE]), *_get_trainer_key())
@@ -1997,6 +2057,22 @@ def api_vault_move():
     set_slot(from_box, from_slot, dst if dst else {"mon": None})
 
     cb.save_cloud(data_dir, cloud, tid, tname)
+    return jsonify({"ok": True, "cloud": cloud})
+
+
+@app.route("/api/vault/sort", methods=["POST"])
+def api_vault_sort():
+    """Sort vault boxes by national dex, name, or level."""
+    body = request.get_json() or {}
+    mode  = body.get("mode", "national")   # national | name | level
+    scope = body.get("scope", "all")       # all | box
+    box   = body.get("box")               # required when scope=box
+    if mode not in ("national", "name", "level"):
+        return jsonify({"error": "Invalid sort mode"}), 400
+    try:
+        cloud = cb.sort_vault(_get_data_dir(), mode, scope, box, *_get_trainer_key())
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 400
     return jsonify({"ok": True, "cloud": cloud})
 
 
