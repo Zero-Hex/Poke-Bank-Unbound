@@ -1,19 +1,1 @@
-# Python
-__pycache__/
-*.pyc
-*.pyo
-
-# PyInstaller build artifacts (root-level only, NOT static/dist/)
-/build/
-/dist/
-*.spec.bak
-
-# User data - never commit saves or the data folder
-data/
-*.sav
-*.sav.bak
-
-# OS
-.DS_Store
-Thumbs.db
 /Test

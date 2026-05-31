@@ -7,6 +7,8 @@ Then open http://localhost:5000
 import struct, json, base64, math, re, sys
 from pathlib import Path
 from flask import Flask, request, jsonify, send_from_directory
+import vault_boxes as cb
+import trade_session as ts
 
 if getattr(sys, "frozen", False):
     BASE_DIR = Path(sys._MEIPASS)
@@ -90,6 +92,8 @@ def decode_name(raw):
         if b == 0xFF: break
         s += CHARMAP.get(b, "?")
     return s.strip()
+
+
 
 # ---------------------------------------------------------------------------
 # Checksum
@@ -415,7 +419,7 @@ def parse_pc_mon(raw, box, slot, db):
     level = calc_level(rate, exp)
 
     # IVs (bitpacked at 0x36, 5 bits each)
-    iv_raw = ru32(raw, 0x36)
+    iv_raw = ru32(raw, 0x36) if len(raw) >= 0x3A else 0
     ivs = {
         'hp':  iv_raw & 0x1F,
         'atk': (iv_raw >> 5) & 0x1F,
@@ -427,23 +431,20 @@ def parse_pc_mon(raw, box, slot, db):
 
     # EVs at 0x2C, 1 byte each
     evs = {
-        'hp':  raw[0x2C],
-        'atk': raw[0x2D],
-        'def': raw[0x2E],
-        'spe': raw[0x2F],
-        'spa': raw[0x30],
-        'spd': raw[0x31],
+        'hp':  raw[0x2C] if len(raw) > 0x2C else 0,
+        'atk': raw[0x2D] if len(raw) > 0x2D else 0,
+        'def': raw[0x2E] if len(raw) > 0x2E else 0,
+        'spe': raw[0x2F] if len(raw) > 0x2F else 0,
+        'spa': raw[0x30] if len(raw) > 0x30 else 0,
+        'spd': raw[0x31] if len(raw) > 0x31 else 0,
     }
 
-    # Moves (bitpacked at 0x27, 10 bits each)
-    m0 = ru32(raw, 0x27)
-    m1 = (ru32(raw, 0x27 + 2) >> 4)
-    moves_raw = [
-        m0 & 0x3FF,
-        (m0 >> 10) & 0x3FF,
-        (m0 >> 20) & 0x3FF,
-        (m0 >> 30) | ((ru16(raw, 0x2B) & 0x3F) << 2),
-    ]
+    # Moves: 4 x 10-bit values bitpacked at 0x27 (5 bytes = 40 bits)
+    if len(raw) >= 0x2C:
+        bits40 = int.from_bytes(raw[0x27:0x2C], 'little')
+        moves_raw = [(bits40 >> (10*i)) & 0x3FF for i in range(4)]
+    else:
+        moves_raw = [0, 0, 0, 0]
     moves = [db['moves'].get(m, f"Move#{m}") if m else "" for m in moves_raw]
 
     # Nature
@@ -459,7 +460,7 @@ def parse_pc_mon(raw, box, slot, db):
             ability_name = db['abilities'].get(ab_ids[ability_idx], "—")
 
     # Item
-    item_id = ru16(raw, 0x1E)
+    item_id = ru16(raw, 0x1E) if len(raw) >= 0x20 else 0
     item_name = db['items'].get(item_id, "") if item_id else ""
 
     # Shiny
@@ -510,14 +511,18 @@ def parse_party_mon(raw, slot, db):
         mid = ru16(raw, 0x2C + i*2)
         moves.append(db['moves'].get(mid, f"Move#{mid}") if mid else "")
 
-    # EVs at 0x30
+    # EVs at 0x38 (confirmed from CFRU party mon format: hp,atk,def,spe,spa,spd)
     evs = {
-        'hp':  raw[0x30], 'atk': raw[0x31], 'def': raw[0x32],
-        'spe': raw[0x33], 'spa': raw[0x34], 'spd': raw[0x35],
+        'hp':  raw[0x38] if len(raw) > 0x38 else 0,
+        'atk': raw[0x39] if len(raw) > 0x39 else 0,
+        'def': raw[0x3A] if len(raw) > 0x3A else 0,
+        'spe': raw[0x3B] if len(raw) > 0x3B else 0,
+        'spa': raw[0x3C] if len(raw) > 0x3C else 0,
+        'spd': raw[0x3D] if len(raw) > 0x3D else 0,
     }
 
-    # IVs at 0x3A (bitpacked)
-    iv_raw = ru32(raw, 0x3A)
+    # IVs at 0x48 (confirmed from CFRU party mon format)
+    iv_raw = ru32(raw, 0x48) if len(raw) >= 0x4C else 0
     ivs = {
         'hp':  iv_raw & 0x1F,
         'atk': (iv_raw >> 5) & 0x1F,
@@ -573,6 +578,7 @@ def read_trainer_info(data, sections):
     name      = decode_name(data[sec0 + 0x00 : sec0 + 0x07]) or "???"
     gender    = "♀" if data[sec0 + 0x08] else "♂"
     tid       = ru16(data, sec0 + 0x0A)
+    sid       = ru16(data, sec0 + 0x0C)
 
     # In-game playtime from section 0 (only advances during normal-speed play)
     playtime_h = ru16(data, sec0 + 0x0E)
@@ -588,9 +594,13 @@ def read_trainer_info(data, sections):
     # National dex unlocked if sec0+0x1A == 0xDA
     national_dex = data[sec0 + 0x1A] == 0xDA
 
+    sid = ru16(data, sec0 + 0x0C)
+
     return {
         "name":         name,
         "tid":          tid,
+        "sid":          sid,
+        "sid":          sid,
         "gender":       gender,
         "playtime":     f"{playtime_h}h {playtime_m}m",
         "money":        f"${money:,}",
@@ -892,13 +902,27 @@ def load_evo_table():
         "EVO_TYPE_IN_PARTY": "Level with {param_name}-type in party",
         "EVO_OTHER_PARTY_MON": "Level with {param_name} in party",
         "EVO_BEAUTY": "High beauty",
+        "EVO_ITEM_LOCATION": "Use {item} (specific location)",
+        "EVO_DAMAGE_LOCATION": "Level up (specific location)",
+        "EVO_MAP": "Level up on specific map",
+        "EVO_LEVEL_SPECIFIC_TIME_RANGE": "Level {param} (specific time)",
+        "EVO_LEVEL_CASCOON": "Level {param}",
+        "EVO_LEVEL_SILCOON": "Level {param}",
+        "EVO_LEVEL_NINJASK": "Level {param}",
+        "EVO_LEVEL_SHEDINJA": "Level {param} (shed)",
+        "EVO_MOVE_MALE": "Know move: {param_name} (male)",
+        "EVO_MOVE_FEMALE": "Know move: {param_name} (female)",
+        "EVO_NATURE_HIGH": "Level {param} (nature↑)",
+        "EVO_NATURE_LOW": "Level {param} (nature↓)",
+        "EVO_RAINY_FOGGY_OW": "Level up in rain/fog",
+        "EVO_CRITICAL_HIT": "Land a critical hit",
     }
 
     evo_c_text = evo_c.read_text(encoding="utf-8", errors="ignore")
     evo_table = {}  # species_id -> list of {method, param, target_id, target_name, description}
 
     section_re  = re.compile(r'(?=\[\w+\]\s*=\s*\{)')
-    evo_tuple_re = re.compile(r'\{(EVO_\w+),\s*([^,]+),\s*(SPECIES_\w+),\s*[^}]+\}')
+    evo_tuple_re = re.compile(r'\{(EVO_\w+),\s*([^,]+),\s*(SPECIES_\w+),\s*([^}]*)\}')
 
     db = session.get("db") or {}
     species_names = db.get('species', {})
@@ -925,10 +949,16 @@ def load_evo_table():
                 param = species_defs.get(param_raw) or item_defs.get(param_raw) or 0
 
             # Build description
-            tmpl = EVO_METHOD_TEMPLATES.get(method, method)
-            item_name_str = item_names.get(
-                item_defs.get(param_raw, param), param_raw.replace('ITEM_','').replace('_',' ').title()
-            )
+            tmpl = EVO_METHOD_TEMPLATES.get(method, method.replace("EVO_","").replace("_"," ").title())
+            # The 4th field (e.group(4)) is the item for HOLD_ITEM methods
+            item_raw = e.group(4).strip() if e.lastindex >= 4 else ''
+            if item_raw and item_raw != '0' and 'ITEM_' in item_raw:
+                item_id = item_defs.get(item_raw, 0)
+                item_name_str = item_names.get(item_id, item_raw.replace('ITEM_','').replace('_',' ').title())
+            else:
+                item_name_str = item_names.get(
+                    item_defs.get(param_raw, param), param_raw.replace('ITEM_','').replace('_',' ').title()
+                )
             # param_name depends on method: moves for EVO_MOVE*, types for TYPE, species otherwise
             if 'MOVE' in method:
                 move_id = move_defs.get(param_raw, param)
@@ -949,8 +979,8 @@ def load_evo_table():
                 'method':      method,
                 'param':       param,
                 'target_id':   target,
-                'target_name': species_names.get(target, f'#{target}'),
-                'description': desc,
+                'target':      species_names.get(target, f'#{target}'),
+                'desc':        desc,
             })
 
         if evos:
@@ -1321,7 +1351,7 @@ def api_evo_table():
         # Return as {species_id: [{target_name, description}, ...]}
         result = {}
         for sid, evos in table.items():
-            result[str(sid)] = [{"target": e["target_name"], "target_id": e["target_id"], "desc": e["description"]} for e in evos]
+            result[str(sid)] = [{"target": e["target"], "target_id": e["target_id"], "desc": e["desc"]} for e in evos]
         return jsonify({"ok": True, "evo_table": result})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -1386,6 +1416,10 @@ def api_export_evolutions():
         headers={"Content-Disposition": "attachment; filename=pending_evolutions.xlsx"}
     )
 
+@app.route("/borrius_locations.json")
+def borrius_locations_route():
+    return send_from_directory(str(BASE_DIR / "static"), "borrius_locations.json")
+
 @app.route("/dex_species.json")
 def dex_species_route():
     return send_from_directory(str(BASE_DIR / "static"), "dex_species.json")
@@ -1437,6 +1471,658 @@ def api_species_list():
     db = session.get("db") or load_databases()
     species = db.get("species", {})
     return jsonify({str(k): v for k, v in species.items()})
+
+
+# ===========================================================================
+# CLOUD BOXES
+# ===========================================================================
+
+def _get_trainer_key():
+    """Return (tid, trainer_name) for the currently loaded save, used to scope cloud files."""
+    data = session.get("data")
+    if data is None:
+        return 0, "default"
+    try:
+        sections = session.get("sections") or find_active_sections(bytearray(data))
+        t = read_trainer_info(bytearray(data), sections)
+        return t["tid"], t["name"]
+    except Exception:
+        return 0, "default"
+
+
+def _get_data_dir() -> Path:
+    dd = find_data_dir()
+    if dd:
+        return dd
+    # Fallback: create data/ next to app.py
+    p = BASE_DIR / "data"
+    p.mkdir(exist_ok=True)
+    return p
+
+
+
+@app.route("/api/current_save")
+def api_current_save():
+    """Return the current parsed save state (for Trade view to display primary boxes)."""
+    if session.get("data") is None:
+        return jsonify({"ok": False, "error": "No save loaded"}), 400
+    db = session.get("db") or load_databases()
+    data = bytearray(session["data"])
+    result = parse_save(data, db)
+    sections = find_active_sections(data)
+    trainer = read_trainer_info(data, sections)
+    return jsonify({"ok": True, "save": result, "trainer": trainer})
+
+@app.route("/api/vault/boxes")
+def api_vault_boxes():
+    """Return all cloud boxes."""
+    cloud = cb.load_cloud(_get_data_dir(), *_get_trainer_key())
+    return jsonify({"ok": True, "cloud": cloud})
+
+
+@app.route("/api/vault/deposit", methods=["POST"])
+def api_vault_deposit():
+    """
+    Move a mon FROM the primary save INTO a cloud box slot.
+    Body: {from_box, from_slot, to_vault_box, to_vault_slot}
+    from_box 0 = party
+    """
+    if session.get("data") is None:
+        return jsonify({"error": "No save loaded"}), 400
+    body = request.get_json()
+    from_box   = body["from_box"]
+    from_slot  = body["from_slot"]
+    to_cb      = body["to_vault_box"]
+    to_cs      = body["to_vault_slot"]
+
+    data     = bytearray(session["data"])
+    sections = find_active_sections(data)
+    db       = session.get("db") or load_databases()
+
+    # Read the mon raw bytes from the save
+    if from_box == 0:
+        # Party slot
+        sec1_off = sections[1]["offset"]
+        raw = bytearray(data[sec1_off + 0x38 + (from_slot-1)*100 :
+                             sec1_off + 0x38 + (from_slot-1)*100 + 100])
+        mon = parse_party_mon(raw, from_slot, db)
+    elif from_box <= STREAM_BOXES:
+        stream = bytearray(build_stream_buffer(data, sections))
+        raw = read_stream_slot(stream, from_box, from_slot)
+        mon = parse_pc_mon(raw, from_box, from_slot, db)
+    else:
+        fb_secs = get_fallback_section_offsets(data)
+        raw = read_fallback_slot(data, fb_secs, from_box, from_slot)
+        mon = parse_pc_mon(raw, from_box, from_slot, db)
+
+    if raw is None or is_empty(raw) or mon is None:
+        return jsonify({"error": "No Pokémon in that slot"}), 400
+
+    # Duplicate check: reject if this mon's PID already exists in the cloud
+    mon_pid = mon.get("pid")
+    if mon_pid:
+        vault_check = cb.load_cloud(_get_data_dir(), *_get_trainer_key())
+        all_vault_pids = [s["mon"]["pid"] for box in vault_check for s in box["slots"] if s.get("mon") and s["mon"].get("pid")]
+        if mon_pid in all_vault_pids:
+            return jsonify({"error": "This Pokémon is already in the cloud. Reload your save to sync."}), 400
+
+    # Add provenance from current trainer
+    trainer = read_trainer_info(data, sections)
+    mon["vault_from_trainer"] = trainer["name"]
+    mon["vault_from_tid"]     = trainer["tid"]
+
+    # If to_vault_slot == 0, find first empty slot in the target cloud box
+    if to_cs == 0:
+        vault_current = cb.load_cloud(_get_data_dir(), *_get_trainer_key())
+        box_data = next((x for x in vault_current if x["box"] == to_cb), None)
+        if box_data is None:
+            return jsonify({"error": f"Cloud box {to_cb} not found"}), 400
+        empty_slot = next((i+1 for i,s in enumerate(box_data["slots"]) if s["mon"] is None), None)
+        if empty_slot is None:
+            return jsonify({"error": f"Cloud box {to_cb} is full"}), 400
+        to_cs = empty_slot
+
+    # Write to cloud FIRST (atomic: cloud before clearing save)
+    cloud = cb.deposit(_get_data_dir(), to_cb, to_cs, mon, list(raw[:MON_SIZE]), *_get_trainer_key())
+
+    # Now clear the slot in the save
+    empty = bytearray(MON_SIZE)
+    if from_box == 0:
+        sec1_off = sections[1]["offset"]
+        data[sec1_off + 0x38 + (from_slot-1)*100 :
+             sec1_off + 0x38 + (from_slot-1)*100 + MON_SIZE] = empty
+    elif from_box <= STREAM_BOXES:
+        stream = bytearray(build_stream_buffer(data, sections))
+        write_stream_slot(stream, from_box, from_slot, empty)
+        write_stream_buffer(data, sections, stream)
+    else:
+        fb_secs = get_fallback_section_offsets(data)
+        write_fallback_slot(data, fb_secs, from_box, from_slot, empty)
+
+    session["data"] = data
+    session["sections"] = find_active_sections(data)
+
+    # Re-parse save to return updated state
+    result = parse_save(data, db)
+    return jsonify({"ok": True, "save": result, "cloud": cloud})
+
+
+@app.route("/api/vault/withdraw", methods=["POST"])
+def api_vault_withdraw():
+    """
+    Move a mon FROM cloud INTO the primary save (game box slot).
+    Body: {from_vault_box, from_vault_slot, to_box, to_slot}
+    """
+    if session.get("data") is None:
+        return jsonify({"error": "No save loaded"}), 400
+    body     = request.get_json()
+    from_cb  = body["from_vault_box"]
+    from_cs  = body["from_vault_slot"]
+    to_box   = body["to_box"]
+    to_slot  = body["to_slot"]
+
+    mon, raw, cloud = cb.withdraw(_get_data_dir(), from_cb, from_cs, *_get_trainer_key())
+    if mon is None:
+        return jsonify({"error": "Cloud slot is empty"}), 400
+
+    data     = bytearray(session["data"])
+    sections = find_active_sections(data)
+
+    raw_bytes = bytearray(raw[:MON_SIZE])
+    if len(raw_bytes) < MON_SIZE:
+        raw_bytes += bytes(MON_SIZE - len(raw_bytes))
+
+    # Auto-find first empty slot if to_slot == 0
+    if to_slot == 0:
+        found = False
+        for try_box in range(1, 19):
+            if try_box <= STREAM_BOXES:
+                stream = bytearray(build_stream_buffer(data, sections))
+                for try_slot in range(1, 31):
+                    existing = read_stream_slot(stream, try_box, try_slot)
+                    if not existing or is_empty(existing):
+                        to_box, to_slot = try_box, try_slot
+                        found = True
+                        break
+            else:
+                fb_secs = get_fallback_section_offsets(data)
+                for try_slot in range(1, 31):
+                    existing = read_fallback_slot(data, fb_secs, try_box, try_slot)
+                    if not existing or is_empty(existing):
+                        to_box, to_slot = try_box, try_slot
+                        found = True
+                        break
+            if found:
+                break
+        if not found:
+            cb.deposit(_get_data_dir(), from_cb, from_cs, mon, raw, *_get_trainer_key())
+            return jsonify({"error": "No empty slots in PC"}), 400
+
+    if to_box <= STREAM_BOXES:
+        # Check destination is empty
+        stream = bytearray(build_stream_buffer(data, sections))
+        existing = read_stream_slot(stream, to_box, to_slot)
+        if existing and not is_empty(existing):
+            # Roll back cloud withdrawal
+            cb.deposit(_get_data_dir(), from_cb, from_cs, mon, raw, *_get_trainer_key())
+            return jsonify({"error": "Destination slot is occupied"}), 400
+        write_stream_slot(stream, to_box, to_slot, raw_bytes)
+        write_stream_buffer(data, sections, stream)
+    else:
+        fb_secs  = get_fallback_section_offsets(data)
+        existing = read_fallback_slot(data, fb_secs, to_box, to_slot)
+        if existing and not is_empty(existing):
+            cb.deposit(_get_data_dir(), from_cb, from_cs, mon, raw, *_get_trainer_key())
+            return jsonify({"error": "Destination slot is occupied"}), 400
+        write_fallback_slot(data, fb_secs, to_box, to_slot, raw_bytes)
+
+    session["data"] = data
+    session["sections"] = find_active_sections(data)
+
+    db     = session.get("db") or load_databases()
+    result = parse_save(data, db)
+    return jsonify({"ok": True, "save": result, "cloud": cloud})
+
+
+@app.route("/api/vault/rename", methods=["POST"])
+def api_vault_rename():
+    body  = request.get_json()
+    cloud = cb.rename_box(_get_data_dir(), body["box"], body["name"], *_get_trainer_key())
+    return jsonify({"ok": True, "cloud": cloud})
+
+
+# ===========================================================================
+# TRADE (two saves side-by-side)
+# ===========================================================================
+
+# Simple per-process secondary store (single-user desktop app)
+_secondary_save = {"data": None, "path": None, "trainer": None, "sections": None}
+
+
+@app.route("/api/trade/load_secondary", methods=["POST"])
+def api_trade_load_secondary():
+    """Load a second save file for trading."""
+    if 'save' not in request.files:
+        return jsonify({"error": "No file uploaded"}), 400
+    f   = request.files['save']
+    raw = f.read()
+    if len(raw) not in (131072, 131088):
+        return jsonify({"error": f"Unexpected size {len(raw)}"}), 400
+
+    db = session.get("db") or load_databases()
+    if not db:
+        return jsonify({"error": "data/ not found"}), 500
+
+    data     = bytearray(raw)
+    sections = find_active_sections(data)
+    trainer  = read_trainer_info(data, sections)
+    result   = parse_save(data, db)
+
+    _secondary_save["data"]     = data
+    _secondary_save["path"]     = f.filename
+    _secondary_save["trainer"]  = trainer
+    _secondary_save["sections"] = sections
+
+    return jsonify({"ok": True, "save": result, "trainer": trainer,
+                    "filename": f.filename})
+
+
+@app.route("/api/trade/secondary_status")
+def api_trade_secondary_status():
+    loaded = _secondary_save["data"] is not None
+    if not loaded:
+        return jsonify({"loaded": False, "trainer": None, "save": None})
+    db = session.get("db") or load_databases()
+    parsed = parse_save(_secondary_save["data"], db)
+    return jsonify({"loaded": True,
+                    "trainer": _secondary_save.get("trainer"),
+                    "filename": _secondary_save.get("filename", "secondary.sav"),
+                    "save": parsed})
+
+
+@app.route("/api/trade/unload_secondary", methods=["POST"])
+def api_trade_unload_secondary():
+    _secondary_save["data"]     = None
+    _secondary_save["path"]     = None
+    _secondary_save["trainer"]  = None
+    _secondary_save["sections"] = None
+    return jsonify({"ok": True})
+
+
+@app.route("/api/trade/transfer", methods=["POST"])
+def api_trade_transfer():
+    """
+    Transfer a mon between primary <-> secondary save.
+    Body: {
+      direction: "primary_to_secondary" | "secondary_to_primary",
+      from_box, from_slot,   -- source location (1-indexed, box 0 = party)
+      to_box,   to_slot      -- destination (must be empty)
+    }
+    The mon keeps its original OT / TID (authentic traded-mon behaviour).
+    Both saves are backed up before any write.
+    """
+    if session.get("data") is None:
+        return jsonify({"error": "No primary save loaded"}), 400
+    if _secondary_save["data"] is None:
+        return jsonify({"error": "No secondary save loaded"}), 400
+
+    body      = request.get_json()
+    direction = body["direction"]
+    from_box  = body["from_box"]
+    from_slot = body["from_slot"]
+    to_box    = body["to_box"]
+    to_slot   = body["to_slot"]
+
+    db = session.get("db") or load_databases()
+
+    if direction == "primary_to_secondary":
+        src_data  = bytearray(session["data"])
+        dst_data  = _secondary_save["data"]
+    else:
+        src_data  = _secondary_save["data"]
+        dst_data  = bytearray(session["data"])
+
+    src_secs = find_active_sections(src_data)
+    dst_secs = find_active_sections(dst_data)
+
+    # ── Read mon from source ─────────────────────────────────────────────────
+    if from_box <= STREAM_BOXES:
+        src_stream = bytearray(build_stream_buffer(src_data, src_secs))
+        raw = read_stream_slot(src_stream, from_box, from_slot)
+    else:
+        fb_secs = get_fallback_section_offsets(src_data)
+        raw = read_fallback_slot(src_data, fb_secs, from_box, from_slot)
+
+    if raw is None or is_empty(raw):
+        return jsonify({"error": "Source slot is empty"}), 400
+
+    # ── Auto-find first empty slot if to_slot==0 ────────────────────────────
+    if to_slot == 0:
+        found = False
+        for try_box in range(1, 19):
+            if try_box <= STREAM_BOXES:
+                try_stream = bytearray(build_stream_buffer(dst_data, dst_secs))
+                for try_slot in range(1, 31):
+                    ex = read_stream_slot(try_stream, try_box, try_slot)
+                    if not ex or is_empty(ex):
+                        to_box, to_slot = try_box, try_slot
+                        found = True; break
+            else:
+                fb_secs_dst = get_fallback_section_offsets(dst_data)
+                for try_slot in range(1, 31):
+                    ex = read_fallback_slot(dst_data, fb_secs_dst, try_box, try_slot)
+                    if not ex or is_empty(ex):
+                        to_box, to_slot = try_box, try_slot
+                        found = True; break
+            if found: break
+        if not found:
+            return jsonify({"error": "No empty slots in destination save"}), 400
+
+    # ── Verify destination is empty ──────────────────────────────────────────
+    if to_box <= STREAM_BOXES:
+        dst_stream = bytearray(build_stream_buffer(dst_data, dst_secs))
+        existing   = read_stream_slot(dst_stream, to_box, to_slot)
+    else:
+        fb_secs_dst = get_fallback_section_offsets(dst_data)
+        existing    = read_fallback_slot(dst_data, fb_secs_dst, to_box, to_slot)
+
+    if existing and not is_empty(existing):
+        return jsonify({"error": "Destination slot is occupied"}), 400
+
+    # ── Write to destination FIRST ───────────────────────────────────────────
+    # OT data is preserved as-is. If destination trainer's OTID matches the mon's
+    # original OTID, the game will recognize it as theirs and it will obey.
+    if to_box <= STREAM_BOXES:
+        write_stream_slot(dst_stream, to_box, to_slot, raw)
+        write_stream_buffer(dst_data, dst_secs, dst_stream)
+    else:
+        write_fallback_slot(dst_data, fb_secs_dst, to_box, to_slot, raw)
+
+    # ── Clear source ─────────────────────────────────────────────────────────
+    empty = bytearray(MON_SIZE)
+    if from_box <= STREAM_BOXES:
+        write_stream_slot(src_stream, from_box, from_slot, empty)
+        write_stream_buffer(src_data, src_secs, src_stream)
+    else:
+        write_fallback_slot(src_data, fb_secs, from_box, from_slot, empty)
+
+    # ── Commit ───────────────────────────────────────────────────────────────
+    if direction == "primary_to_secondary":
+        session["data"]              = src_data
+        session["sections"]          = find_active_sections(src_data)
+        _secondary_save["data"]      = dst_data
+        _secondary_save["sections"]  = find_active_sections(dst_data)
+    else:
+        _secondary_save["data"]      = src_data
+        _secondary_save["sections"]  = find_active_sections(src_data)
+        session["data"]              = dst_data
+        session["sections"]          = find_active_sections(dst_data)
+
+    primary_result   = parse_save(bytearray(session["data"]), db)
+    secondary_result = parse_save(_secondary_save["data"], db)
+
+    return jsonify({"ok": True,
+                    "primary":   primary_result,
+                    "secondary": secondary_result})
+
+
+@app.route("/api/trade/save_secondary", methods=["POST"])
+def api_trade_save_secondary():
+    """Write secondary save to a new file (user chooses name via download)."""
+    if _secondary_save["data"] is None:
+        return jsonify({"error": "No secondary save loaded"}), 400
+    from flask import Response
+    data = bytes(_secondary_save["data"])
+    fname = _secondary_save.get("path") or "secondary.sav"
+    # Return just the filename stem for the UI to show
+    return Response(
+        data,
+        mimetype="application/octet-stream",
+        headers={"Content-Disposition": f'attachment; filename="{Path(fname).name}"'}
+    )
+
+
+@app.route("/api/trade/save_primary", methods=["POST"])
+def api_trade_save_primary():
+    """Download current primary save after trade operations."""
+    if session.get("data") is None:
+        return jsonify({"error": "No primary save loaded"}), 400
+    from flask import Response
+    return Response(
+        bytes(session["data"]),
+        mimetype="application/octet-stream",
+        headers={"Content-Disposition": 'attachment; filename="primary.sav"'}
+    )
+
+
+@app.route("/api/trade/swap", methods=["POST"])
+def api_trade_swap():
+    """
+    Atomic 1-for-1 swap between primary and secondary save.
+    Body: {pri_box, pri_slot, sec_box, sec_slot}
+    """
+    if session.get("data") is None:
+        return jsonify({"error": "No primary save loaded"}), 400
+    if _secondary_save["data"] is None:
+        return jsonify({"error": "No secondary save loaded"}), 400
+
+    body     = request.get_json()
+    pri_box  = body["pri_box"]
+    pri_slot = body["pri_slot"]
+    sec_box  = body["sec_box"]
+    sec_slot = body["sec_slot"]
+
+    db = session.get("db") or load_databases()
+
+    pri_data = bytearray(session["data"])
+    sec_data = bytearray(_secondary_save["data"])
+    pri_secs = find_active_sections(pri_data)
+    sec_secs = find_active_sections(sec_data)
+
+    # Read both mons
+    if pri_box <= STREAM_BOXES:
+        pri_stream = bytearray(build_stream_buffer(pri_data, pri_secs))
+        pri_raw = read_stream_slot(pri_stream, pri_box, pri_slot)
+    else:
+        pri_fb = get_fallback_section_offsets(pri_data)
+        pri_raw = read_fallback_slot(pri_data, pri_fb, pri_box, pri_slot)
+
+    if sec_box <= STREAM_BOXES:
+        sec_stream = bytearray(build_stream_buffer(sec_data, sec_secs))
+        sec_raw = read_stream_slot(sec_stream, sec_box, sec_slot)
+    else:
+        sec_fb = get_fallback_section_offsets(sec_data)
+        sec_raw = read_fallback_slot(sec_data, sec_fb, sec_box, sec_slot)
+
+    if pri_raw is None or is_empty(pri_raw):
+        return jsonify({"error": "Primary source slot is empty"}), 400
+    if sec_raw is None or is_empty(sec_raw):
+        return jsonify({"error": "Secondary source slot is empty"}), 400
+
+    # Write pri_raw -> secondary, sec_raw -> primary
+    # OT data is preserved. The game will check OTID on each side naturally.
+    pri_raw_out = pri_raw
+    sec_raw_out = sec_raw
+    if sec_box <= STREAM_BOXES:
+        write_stream_slot(sec_stream, sec_box, sec_slot, pri_raw_out)
+        write_stream_buffer(sec_data, sec_secs, sec_stream)
+    else:
+        write_fallback_slot(sec_data, sec_fb, sec_box, sec_slot, pri_raw_out)
+
+    if pri_box <= STREAM_BOXES:
+        write_stream_slot(pri_stream, pri_box, pri_slot, sec_raw_out)
+        write_stream_buffer(pri_data, pri_secs, pri_stream)
+    else:
+        write_fallback_slot(pri_data, pri_fb, pri_box, pri_slot, sec_raw_out)
+
+    session["data"]             = pri_data
+    session["sections"]         = find_active_sections(pri_data)
+    _secondary_save["data"]     = sec_data
+    _secondary_save["sections"] = find_active_sections(sec_data)
+
+    primary_result   = parse_save(pri_data, db)
+    secondary_result = parse_save(sec_data, db)
+    return jsonify({"ok": True, "primary": primary_result, "secondary": secondary_result})
+
+
+@app.route("/api/vault/move", methods=["POST"])
+def api_vault_move():
+    """Move a mon from one vault slot to another (within the vault)."""
+    body = request.get_json()
+    from_box  = body["from_box"]
+    from_slot = body["from_slot"]
+    to_box    = body["to_box"]
+    to_slot   = body["to_slot"]
+
+    tid, tname = _get_trainer_key()
+    data_dir = _get_data_dir()
+    cloud = cb.load_cloud(data_dir, tid, tname)
+
+    def get_slot(bx, sl):
+        b = next((x for x in cloud if x["box"] == bx), None)
+        return b["slots"][sl-1] if b else None
+
+    def set_slot(bx, sl, val):
+        b = next((x for x in cloud if x["box"] == bx), None)
+        if b: b["slots"][sl-1] = val
+
+    src = get_slot(from_box, from_slot)
+    dst = get_slot(to_box, to_slot)
+
+    if src is None or src.get("mon") is None:
+        return jsonify({"error": "Source slot is empty"}), 400
+
+    # Swap src and dst (dst may be empty)
+    set_slot(to_box, to_slot, src)
+    set_slot(from_box, from_slot, dst if dst else {"mon": None})
+
+    cb.save_cloud(data_dir, cloud, tid, tname)
+    return jsonify({"ok": True, "cloud": cloud})
+
+
+@app.route("/api/debug/party_raw", methods=["GET"])
+def api_debug_party_raw():
+    """Dump raw bytes for party mons to find correct IV offsets."""
+    if session.get("data") is None:
+        return jsonify({"error": "No save loaded"}), 400
+    try:
+        data = bytearray(session["data"])
+        sections = find_active_sections(data)
+        sec1_off = sections[1]["offset"]
+        party_count = min(ru32(data, sec1_off + 0x34), 6)
+        result = []
+        for i in range(6):
+            raw = bytearray(data[sec1_off + 0x38 + i*100 : sec1_off + 0x38 + i*100 + 100])
+            if is_empty(raw): continue
+            pid  = ru32(raw, 0x00)
+            otid = ru32(raw, 0x04)
+            nick = decode_name(raw[0x08:0x12])
+            # Scan every possible u32 offset for the 31/31/31/31/31/31 pattern
+            # 31 in all 6 IVs = 0x7FFF_FFFF in the standard bitpacked format
+            # but could also be split differently
+            iv_candidates = {}
+            for off in range(0x20, min(len(raw)-3, 0x70)):
+                val = ru32(raw, off)
+                # Extract 5-bit fields
+                fields = [(val >> (5*j)) & 0x1F for j in range(6)]
+                if any(f == 31 for f in fields):
+                    iv_candidates[f"0x{off:02X}"] = {
+                        "raw_hex": f"0x{val:08X}",
+                        "fields_5bit": fields
+                    }
+            result.append({
+                "slot": i+1,
+                "nick": nick,
+                "len":  len(raw),
+                "pid_otid": f"pid=0x{pid:08X} otid=0x{otid:08X}",
+                "iv_candidates": iv_candidates,
+                "full_hex": raw.hex()
+            })
+        # Also check first few PC box mons
+        stream = bytearray(build_stream_buffer(data, sections))
+        pc_result = []
+        for slot_idx in range(6):  # first 6 slots of box 1
+            pc_raw = read_stream_slot(stream, 1, slot_idx+1)
+            if pc_raw is None or is_empty(pc_raw): continue
+            pc_pid = ru32(pc_raw, 0x00)
+            pc_nick = decode_name(pc_raw[0x08:0x12])
+            sp = ru16(pc_raw, 0x1C)
+            moves_24 = [ru16(pc_raw, 0x24+i*2) if len(pc_raw)>=0x24+i*2+2 else 0 for i in range(4)]
+            moves_2c = [ru16(pc_raw, 0x2C+i*2) if len(pc_raw)>=0x2C+i*2+2 else 0 for i in range(4)]
+            iv_36 = struct.unpack_from("<I", pc_raw, 0x36)[0] if len(pc_raw)>=0x3A else 0
+            iv_32 = struct.unpack_from("<I", pc_raw, 0x32)[0] if len(pc_raw)>=0x36 else 0
+            pc_result.append({
+                "slot": slot_idx+1, "nick": pc_nick, "species": sp,
+                "len": len(pc_raw), "hex": pc_raw.hex(),
+                "moves@0x24": moves_24, "moves@0x2C": moves_2c,
+                "ivs@0x36": [(iv_36>>(5*j))&0x1F for j in range(6)],
+                "ivs@0x32": [(iv_32>>(5*j))&0x1F for j in range(6)],
+            })
+        return jsonify({"party": result, "pc_box1": pc_result})
+    except Exception as e:
+        return jsonify({"error": str(e), "trace": __import__("traceback").format_exc()})
+
+
+# ---------------------------------------------------------------------------
+# Recent saves tracking
+# ---------------------------------------------------------------------------
+RECENT_SAVES_FILE = BASE_DIR / "data" / "recent_saves.json"
+MAX_RECENT = 5
+
+def load_recent_saves():
+    try:
+        if RECENT_SAVES_FILE.exists():
+            return json.loads(RECENT_SAVES_FILE.read_text(encoding="utf-8"))
+    except Exception:
+        pass
+    return []
+
+def save_recent_saves(entries):
+    try:
+        RECENT_SAVES_FILE.parent.mkdir(parents=True, exist_ok=True)
+        RECENT_SAVES_FILE.write_text(json.dumps(entries, ensure_ascii=False, indent=2), encoding="utf-8")
+    except Exception:
+        pass
+
+def record_recent_save(filepath, filename, trainer_name, trainer_tid):
+    entries = load_recent_saves()
+    # Remove duplicate path
+    entries = [e for e in entries if e.get("path") != filepath]
+    entries.insert(0, {
+        "path":    filepath,
+        "name":    filename,
+        "trainer": trainer_name,
+        "tid":     trainer_tid,
+    })
+    save_recent_saves(entries[:MAX_RECENT])
+
+@app.route("/api/recent_saves", methods=["GET"])
+def api_recent_saves():
+    entries = load_recent_saves()
+    # Filter to only entries where the file still exists
+    valid = [e for e in entries if Path(e.get("path","")).exists()]
+    if len(valid) != len(entries):
+        save_recent_saves(valid)
+    return jsonify({"ok": True, "saves": valid})
+
+@app.route("/api/load_recent", methods=["POST"])
+def api_load_recent():
+    body = request.get_json()
+    filepath = body.get("path", "").strip()
+    p = Path(filepath)
+    if not p.exists():
+        return jsonify({"error": f"File not found: {filepath}"}), 404
+    raw = p.read_bytes()
+    if len(raw) not in (131072, 131088):
+        return jsonify({"error": f"Unexpected file size {len(raw)}"}), 400
+    db = session.get("db") or load_databases()
+    session["db"] = db
+    session["data"] = list(raw)
+    parsed = parse_save(bytearray(raw), db)
+    session["sections"] = None
+    trainer = parsed.get("trainer", {})
+    record_recent_save(str(p.resolve()), p.name, trainer.get("name",""), trainer.get("tid", 0))
+    return jsonify({"ok": True, "save": parsed, "filename": p.name})
 
 
 if __name__ == "__main__":
