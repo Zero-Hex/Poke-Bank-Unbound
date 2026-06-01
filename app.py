@@ -12,15 +12,17 @@ import trade_session as ts
 
 if getattr(sys, "frozen", False):
     BASE_DIR = Path(sys._MEIPASS)
+    USER_DATA_DIR = Path(sys.executable).parent
     print(f"[UnboundBank] Running as exe, BASE_DIR={BASE_DIR}")
+    print(f"[UnboundBank] USER_DATA_DIR={USER_DATA_DIR}")
     print(f"[UnboundBank] static/dist/index.html exists: {(BASE_DIR / 'static' / 'dist' / 'index.html').exists()}")
-    # List top-level and static/ contents to aid debugging
     print("[UnboundBank] _MEIPASS contents:", [p.name for p in BASE_DIR.iterdir()])
     static_dir = BASE_DIR / "static"
     if static_dir.exists():
         print("[UnboundBank] static/ contents:", [p.name for p in static_dir.iterdir()])
 else:
     BASE_DIR = Path(__file__).parent
+    USER_DATA_DIR = BASE_DIR
 
 app = Flask(__name__, static_folder=str(BASE_DIR / "static"), static_url_path="/static")
 
@@ -1657,14 +1659,9 @@ def _get_trainer_key():
 
 
 def _get_data_dir() -> Path:
-    dd = find_data_dir()
-    if dd:
-        return dd
-    # Fallback: create data/ next to app.py
-    p = BASE_DIR / "data"
+    p = USER_DATA_DIR / "vault"
     p.mkdir(exist_ok=True)
     return p
-
 
 
 @app.route("/api/current_save")
@@ -2353,7 +2350,7 @@ def api_debug_party_raw():
 # ---------------------------------------------------------------------------
 # Recent saves tracking
 # ---------------------------------------------------------------------------
-RECENT_SAVES_FILE = BASE_DIR / "data" / "recent_saves.json"
+RECENT_SAVES_FILE = USER_DATA_DIR / "recent_saves.json"
 MAX_RECENT = 5
 
 def load_recent_saves():
