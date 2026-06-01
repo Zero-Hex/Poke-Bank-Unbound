@@ -361,6 +361,14 @@ def load_databases():
                 if t is not None:
                     db['gender'][int(sid)] = int(t) & 0xFF
 
+    # Base stats (hp, atk, def, spe, spa, spd)
+    db['base_stats'] = {}
+    if (data_dir / "species_base_stats.json").exists():
+        raw = json.loads((data_dir / "species_base_stats.json").read_text())
+        for sid, stats in raw.items():
+            if str(sid).isdigit() and isinstance(stats, dict):
+                db['base_stats'][int(sid)] = stats
+
     return db
 
 # ---------------------------------------------------------------------------
@@ -611,12 +619,14 @@ def read_trainer_info(data, sections):
 # ---------------------------------------------------------------------------
 # Full save parse
 # ---------------------------------------------------------------------------
-# Cache for growth rates so pc_to_party can use it without db access
+# Cache for growth rates and base stats so pc_to_party can use them without db access
 _db_growth_cache = {}
+_db_base_stats_cache = {}
 
 def parse_save(data, db):
-    global _db_growth_cache
-    _db_growth_cache = db.get('growth', {})
+    global _db_growth_cache, _db_base_stats_cache
+    _db_growth_cache    = db.get('growth', {})
+    _db_base_stats_cache = db.get('base_stats', {})
     sections  = find_active_sections(data)
     stream    = bytearray(build_stream_buffer(data, sections))
     fb_secs   = get_fallback_section_offsets(data)
@@ -684,75 +694,159 @@ def parse_save(data, db):
 # Apply moves and write save
 # ---------------------------------------------------------------------------
 def party_to_pc(party_raw):
-    """Convert 100-byte party mon to 58-byte PC format."""
+    """Convert 100-byte party mon to 58-byte PC format.
+    Offsets verified from CFRU empirical format map.
+    Party: 0x20=Species, 0x22=Item, 0x24=EXP, 0x28=PP_ups(3)
+           0x2C=Moves 4xu16, 0x38=EVs(6), 0x44=IVs/misc(8)
+    PC:    0x1C=Species, 0x1E=Item, 0x20=EXP, 0x24=PP_ups(3)
+           0x27=Moves bitpacked(5), 0x2C=EVs(6), 0x32=IVs(4)
+    """
     if is_empty(party_raw[:6]):
         return bytes(MON_SIZE)
     pc = bytearray(MON_SIZE)
-    # PID, OTID, Nickname (same offsets in both)
     pc[0x00:0x04] = party_raw[0x00:0x04]  # PID
     pc[0x04:0x08] = party_raw[0x04:0x08]  # OTID
     pc[0x08:0x12] = party_raw[0x08:0x12]  # Nickname
-    pc[0x12:0x1B] = party_raw[0x12:0x1B]  # Language/misc/OT name/mark
-    # Party-specific offsets → PC offsets
-    pc[0x1C:0x1E] = party_raw[0x20:0x22]  # Species
-    pc[0x1E:0x20] = party_raw[0x20:0x22]  # (also keep at 0x1C)
+    pc[0x12:0x1B] = party_raw[0x12:0x1B]  # Language/misc/OT/mark
     struct.pack_into("<H", pc, 0x1C, ru16(party_raw, 0x20))  # Species
+    struct.pack_into("<H", pc, 0x1E, ru16(party_raw, 0x22))  # Item
     struct.pack_into("<I", pc, 0x20, ru32(party_raw, 0x24))  # EXP
-    struct.pack_into("<H", pc, 0x1E, ru16(party_raw, 0x22))  # Item (party@0x22 → pc@0x1E)
-    # Moves: party has plain u16s at 0x2C, PC has bitpacked at 0x27
+    pc[0x24:0x27] = party_raw[0x28:0x2B]                    # PP_ups
+    # Moves: party plain u16s at 0x2C → PC bitpacked 4x10-bit at 0x27
     moves = [ru16(party_raw, 0x2C + i*2) for i in range(4)]
-    m = ((moves[0] & 0x3FF) | ((moves[1] & 0x3FF) << 10) |
-         ((moves[2] & 0x3FF) << 20) | ((moves[3] & 0x3) << 30)) & 0xFFFFFFFF
-    struct.pack_into("<I", pc, 0x27, m)
+    bits  = ((moves[0] & 0x3FF) | ((moves[1] & 0x3FF) << 10) |
+             ((moves[2] & 0x3FF) << 20) | ((moves[3] & 0x3) << 30)) & 0xFFFFFFFF
+    struct.pack_into("<I", pc, 0x27, bits)
     pc[0x2B] = (moves[3] >> 2) & 0xFF
-    # EVs: party 0x30 → PC 0x2C (same order: hp,atk,def,spe,spa,spd)
-    pc[0x2C:0x32] = party_raw[0x30:0x36]
-    # IVs: party 0x3A → PC 0x36 (same bitpacked format)
-    pc[0x36:0x3A] = party_raw[0x3A:0x3E]
+    pc[0x2C:0x32] = party_raw[0x38:0x3E]  # EVs  party@0x38 → pc@0x2C
+    pc[0x36:0x3A] = party_raw[0x48:0x4C]  # IVs  party@0x48 → pc@0x36  (confirmed working offsets)
     return bytes(pc)
 
 
+def _calc_stat(base, ev, iv, level, nature_mult):
+    """Standard Gen III stat formula."""
+    val = int((2 * base + iv + ev // 4) * level / 100) + 5
+    return max(1, int(val * nature_mult))
+
+def _calc_hp(base, ev, iv, level):
+    """Standard Gen III HP formula."""
+    return int((2 * base + iv + ev // 4) * level / 100) + level + 10
+
+# Nature stat multipliers: [atk, def, spe, spa, spd] index by nature
+_NATURE_MODS = [
+    (1.0,1.0,1.0,1.0,1.0),  # Hardy
+    (1.1,0.9,1.0,1.0,1.0),  # Lonely
+    (1.1,1.0,0.9,1.0,1.0),  # Brave
+    (1.1,1.0,1.0,0.9,1.0),  # Adamant
+    (1.1,1.0,1.0,1.0,0.9),  # Naughty
+    (0.9,1.1,1.0,1.0,1.0),  # Bold
+    (1.0,1.0,1.0,1.0,1.0),  # Docile
+    (1.0,1.1,0.9,1.0,1.0),  # Relaxed
+    (1.0,1.1,1.0,0.9,1.0),  # Impish
+    (1.0,1.1,1.0,1.0,0.9),  # Lax
+    (0.9,1.0,1.1,1.0,1.0),  # Timid
+    (1.0,0.9,1.1,1.0,1.0),  # Hasty
+    (1.0,1.0,1.0,1.0,1.0),  # Serious
+    (1.0,1.0,1.1,0.9,1.0),  # Jolly
+    (1.0,1.0,1.1,1.0,0.9),  # Naive
+    (0.9,1.0,1.0,1.1,1.0),  # Modest
+    (1.0,0.9,1.0,1.1,1.0),  # Mild
+    (1.0,1.0,0.9,1.1,1.0),  # Quiet
+    (1.0,1.0,1.0,1.0,1.0),  # Bashful
+    (1.0,1.0,1.0,1.1,0.9),  # Rash
+    (0.9,1.0,1.0,1.0,1.1),  # Calm
+    (1.0,0.9,1.0,1.0,1.1),  # Gentle
+    (1.0,1.0,0.9,1.0,1.1),  # Sassy
+    (1.0,1.0,1.0,0.9,1.1),  # Careful
+    (1.0,1.0,1.0,1.0,1.0),  # Quirky
+]
+
 def pc_to_party(pc_raw, existing_party_raw=None):
-    """Convert 58-byte PC mon to 100-byte party format."""
+    """Convert 58-byte PC mon to 100-byte party format with full stat calculation."""
     if is_empty(pc_raw):
         return bytes(100)
     party = bytearray(100)
-    # If there's an existing party mon there, preserve the battle stats
-    # (current HP, level, etc.) from it as a base
+    # If there's an existing party mon there, start from it to preserve
+    # any fields we don't explicitly set (status, etc.)
     if existing_party_raw and not is_empty(existing_party_raw[:6]):
         party[:] = existing_party_raw[:100]
-    # Overwrite the core data fields
+    # Core identity fields
     party[0x00:0x04] = pc_raw[0x00:0x04]  # PID
     party[0x04:0x08] = pc_raw[0x04:0x08]  # OTID
     party[0x08:0x12] = pc_raw[0x08:0x12]  # Nickname
     party[0x12:0x1B] = pc_raw[0x12:0x1B]  # Language/misc/OT/mark
-    struct.pack_into("<H", party, 0x20, ru16(pc_raw, 0x1C))  # Species
-    struct.pack_into("<I", party, 0x24, ru32(pc_raw, 0x20))  # EXP
-    struct.pack_into("<H", party, 0x22, ru16(pc_raw, 0x1E))  # Item (pc@0x1E → party@0x22)
+    sp  = ru16(pc_raw, 0x1C)
+    exp = ru32(pc_raw, 0x20)
+    struct.pack_into("<H", party, 0x20, sp)   # Species
+    struct.pack_into("<I", party, 0x24, exp)  # EXP
+    struct.pack_into("<H", party, 0x22, ru16(pc_raw, 0x1E))  # Held item
     # Moves: PC bitpacked at 0x27 → party plain u16s at 0x2C
-    m0 = ru32(pc_raw, 0x27)
+    m0    = ru32(pc_raw, 0x27)
     m3_hi = pc_raw[0x2B]
     moves = [m0 & 0x3FF, (m0>>10) & 0x3FF, (m0>>20) & 0x3FF, ((m0>>30) | (m3_hi<<2)) & 0x3FF]
     for i, mv in enumerate(moves):
         struct.pack_into("<H", party, 0x2C + i*2, mv)
-    # EVs: PC 0x2C → party 0x30
-    party[0x30:0x36] = pc_raw[0x2C:0x32]
-    # IVs: PC 0x36 → party 0x3A (same bitpacked format)
-    party[0x3A:0x3E] = pc_raw[0x36:0x3A]
-    # Set level from EXP — needed or the game shows level 0
-    sp    = ru16(pc_raw, 0x1C)
-    exp   = ru32(pc_raw, 0x20)
-    # Look up growth rate from the global DB if available
+    # PP_ups: PC 0x24 (3 bytes) → party 0x28 (3 bytes)
+    party[0x28:0x2B] = pc_raw[0x24:0x27]
+    # EVs: PC 0x2C → party 0x38 (hp,atk,def,spe,spa,spd)
+    party[0x38:0x3E] = pc_raw[0x2C:0x32]
+    # IVs: PC 0x36 (4 bytes) → party 0x48 (matching parse_party_mon confirmed offset)
+    party[0x48:0x4C] = pc_raw[0x36:0x3A]
+    # PP values at party 0x34 (4 bytes) — set to max PP (base PP, ignoring PP_ups for safety)
+    # We just zero them here; the game will restore on next use
+    # (leaving existing if swapping same slot)
+
+    # --- Level and stats ---
     rate  = _db_growth_cache.get(sp, 0) if _db_growth_cache else 0
     level = calc_level(rate, exp)
     party[0x54] = level & 0xFF
 
-    # Set current HP = max HP estimate (level * 2 as safe fallback if no base stats)
-    # The game will recalculate on next battle; this just prevents 0/0 HP display
-    if not existing_party_raw or is_empty(existing_party_raw[:6]):
-        hp_estimate = max(1, level * 2)
-        struct.pack_into("<H", party, 0x56, hp_estimate)   # current HP
-        struct.pack_into("<H", party, 0x58, hp_estimate)   # max HP
+    # IVs unpacked for stat calc (PC IVs at 0x36, matching parse_pc_mon)
+    iv_raw = ru32(pc_raw, 0x36)
+    iv = {
+        'hp':  iv_raw & 0x1F,
+        'atk': (iv_raw >> 5)  & 0x1F,
+        'def': (iv_raw >> 10) & 0x1F,
+        'spe': (iv_raw >> 15) & 0x1F,
+        'spa': (iv_raw >> 20) & 0x1F,
+        'spd': (iv_raw >> 25) & 0x1F,
+    }
+    # EVs
+    ev = {
+        'hp':  pc_raw[0x2C] if len(pc_raw) > 0x2C else 0,
+        'atk': pc_raw[0x2D] if len(pc_raw) > 0x2D else 0,
+        'def': pc_raw[0x2E] if len(pc_raw) > 0x2E else 0,
+        'spe': pc_raw[0x2F] if len(pc_raw) > 0x2F else 0,
+        'spa': pc_raw[0x30] if len(pc_raw) > 0x30 else 0,
+        'spd': pc_raw[0x31] if len(pc_raw) > 0x31 else 0,
+    }
+    # Nature multipliers
+    pid    = ru32(pc_raw, 0x00)
+    nature = pid % 25
+    nm     = _NATURE_MODS[nature]  # (atk, def, spe, spa, spd)
+
+    bs = (_db_base_stats_cache.get(sp) or {}) if _db_base_stats_cache else {}
+    if bs:
+        max_hp  = _calc_hp(bs.get('hp',45),  ev['hp'],  iv['hp'],  level)
+        max_atk = _calc_stat(bs.get('atk',45), ev['atk'], iv['atk'], level, nm[0])
+        max_def = _calc_stat(bs.get('def',45), ev['def'], iv['def'], level, nm[1])
+        max_spe = _calc_stat(bs.get('spe',45), ev['spe'], iv['spe'], level, nm[2])
+        max_spa = _calc_stat(bs.get('spa',45), ev['spa'], iv['spa'], level, nm[3])
+        max_spd = _calc_stat(bs.get('spd',45), ev['spd'], iv['spd'], level, nm[4])
+    else:
+        # Fallback if base stats not available
+        max_hp  = max(1, level * 2)
+        max_atk = max_def = max_spe = max_spa = max_spd = max(1, level)
+
+    # Write stats to party offsets
+    # Current HP = max HP (full health on withdraw)
+    struct.pack_into("<H", party, 0x56, max_hp)   # current HP
+    struct.pack_into("<H", party, 0x58, max_hp)   # max HP
+    struct.pack_into("<H", party, 0x5A, max_atk)
+    struct.pack_into("<H", party, 0x5C, max_def)
+    struct.pack_into("<H", party, 0x5E, max_spe)
+    struct.pack_into("<H", party, 0x60, max_spa)
+    struct.pack_into("<H", party, 0x62, max_spd)
 
     return bytes(party)
 
@@ -760,10 +854,19 @@ def pc_to_party(pc_raw, existing_party_raw=None):
 def apply_moves(data, moves):
     """
     moves: list of {from: {box, slot}, to: {box, slot}}
-    box=0 = party, box=26 = preset
+    box=0 or "party" = party, box=26 = preset
     Only stream boxes (1-19) supported for writing.
     Returns modified data bytes or raises ValueError.
     """
+    def _norm_box(b):
+        if b == "party": return 0
+        return int(b)
+
+    moves = [
+        {"from": {"box": _norm_box(m["from"]["box"]), "slot": m["from"]["slot"]},
+         "to":   {"box": _norm_box(m["to"]["box"]),   "slot": m["to"]["slot"]}}
+        for m in moves
+    ]
     sections = find_active_sections(data)
     stream   = bytearray(build_stream_buffer(data, sections))
     sec1_off = sections[1]['offset']
@@ -824,12 +927,21 @@ def apply_moves(data, moves):
     # Write stream back
     write_stream_buffer(data, sections, stream)
 
-    # Update party count
-    party_count = sum(
-        1 for i in range(6)
-        if not is_empty(data[sec1_off + 0x38 + i*100 : sec1_off + 0x38 + i*100 + 6])
-    )
+    # Compact party — GBA reads party sequentially and stops at the first empty slot,
+    # so any gap makes mons after it invisible. Shift filled slots to the front.
+    party_slots = [bytearray(data[sec1_off + 0x38 + i*100 : sec1_off + 0x38 + i*100 + 100]) for i in range(6)]
+    filled   = [s for s in party_slots if not is_empty(s[:6])]
+    compacted = filled + [bytearray(100)] * (6 - len(filled))
+    for i, slot_raw in enumerate(compacted):
+        data[sec1_off + 0x38 + i*100 : sec1_off + 0x38 + i*100 + 100] = slot_raw
+
+    party_count = len(filled)
     struct.pack_into("<I", data, sec1_off + 0x34, party_count)
+
+    # Recalculate checksum for section 1 (party + SaveBlock1 data lives here)
+    # Without this the game flags the save as corrupted and reverts to backup.
+    for abs_off in find_all_section_offsets(data, 1):
+        recalculate_checksum(data, abs_off)
 
     return data
 
@@ -1759,6 +1871,20 @@ def api_vault_rename():
 _secondary_save = {"data": None, "path": None, "trainer": None, "sections": None}
 
 
+
+@app.route("/api/trade/vault")
+def api_trade_vault():
+    """Return vault boxes for both primary and secondary trainers."""
+    data_dir = _get_data_dir()
+    pri_cloud = cb.load_cloud(data_dir, *_get_trainer_key())
+    sec_cloud = None
+    if _secondary_save["data"] is not None:
+        t = _secondary_save.get("trainer") or {}
+        sec_tid  = t.get("tid", 0)
+        sec_name = t.get("name", "default")
+        sec_cloud = cb.load_cloud(data_dir, sec_tid, sec_name)
+    return jsonify({"ok": True, "primary": pri_cloud, "secondary": sec_cloud})
+
 @app.route("/api/trade/load_secondary", methods=["POST"])
 def api_trade_load_secondary():
     """Load a second save file for trading."""
@@ -1835,7 +1961,13 @@ def api_trade_transfer():
 
     db = session.get("db") or load_databases()
 
-    if direction == "primary_to_secondary":
+    # direction variants: 
+    #   primary_to_secondary / primary_to_secondary_vault  
+    #   secondary_to_primary / secondary_to_primary_vault
+    to_vault = direction.endswith("_vault")
+    base_dir = direction.replace("_vault", "")
+
+    if base_dir == "primary_to_secondary":
         src_data  = bytearray(session["data"])
         dst_data  = _secondary_save["data"]
     else:
@@ -1845,8 +1977,30 @@ def api_trade_transfer():
     src_secs = find_active_sections(src_data)
     dst_secs = find_active_sections(dst_data)
 
+    from_vault = body.get("from_vault", False)
+
     # ── Read mon from source ─────────────────────────────────────────────────
-    if from_box <= STREAM_BOXES:
+    vault_raw = None
+    if from_vault:
+        if direction == "primary_to_secondary":
+            src_tid, src_name = _get_trainer_key()
+        else:
+            t = _secondary_save.get("trainer") or {}
+            src_tid, src_name = t.get("tid", 0), t.get("name", "default")
+        src_vault = cb.load_cloud(_get_data_dir(), src_tid, src_name)
+        src_vbox  = next((b for b in src_vault if b["box"] == from_box), None)
+        if src_vbox is None:
+            return jsonify({"error": f"Vault box {from_box} not found"}), 400
+        entry = src_vbox["slots"][from_slot - 1]
+        mon_dict = entry.get("mon")
+        if not mon_dict:
+            return jsonify({"error": "Source vault slot is empty"}), 400
+        raw_list = mon_dict.get("raw")
+        if not raw_list:
+            return jsonify({"error": "Vault entry has no raw data"}), 400
+        raw = bytes(raw_list[:MON_SIZE])
+        vault_raw = (src_vault, src_vbox, from_slot, src_tid, src_name)
+    elif from_box <= STREAM_BOXES:
         src_stream = bytearray(build_stream_buffer(src_data, src_secs))
         raw = read_stream_slot(src_stream, from_box, from_slot)
     else:
@@ -1856,58 +2010,85 @@ def api_trade_transfer():
     if raw is None or is_empty(raw):
         return jsonify({"error": "Source slot is empty"}), 400
 
-    # ── Auto-find first empty slot if to_slot==0 ────────────────────────────
-    if to_slot == 0:
+    # ── Resolve destination trainer key ─────────────────────────────────────
+    if base_dir == "primary_to_secondary":
+        dst_t    = _secondary_save.get("trainer") or {}
+        dst_tid, dst_name = dst_t.get("tid", 0), dst_t.get("name", "default")
+    else:
+        dst_tid, dst_name = _get_trainer_key()
+
+    # ── Write to destination ─────────────────────────────────────────────────
+    if to_vault:
+        dst_vault = cb.load_cloud(_get_data_dir(), dst_tid, dst_name)
+        # Find first empty slot across vault boxes
         found = False
-        for try_box in range(1, 19):
-            if try_box <= STREAM_BOXES:
-                try_stream = bytearray(build_stream_buffer(dst_data, dst_secs))
-                for try_slot in range(1, 31):
-                    ex = read_stream_slot(try_stream, try_box, try_slot)
-                    if not ex or is_empty(ex):
-                        to_box, to_slot = try_box, try_slot
-                        found = True; break
-            else:
-                fb_secs_dst = get_fallback_section_offsets(dst_data)
-                for try_slot in range(1, 31):
-                    ex = read_fallback_slot(dst_data, fb_secs_dst, try_box, try_slot)
-                    if not ex or is_empty(ex):
-                        to_box, to_slot = try_box, try_slot
-                        found = True; break
+        for bx in dst_vault:
+            for i, sl in enumerate(bx["slots"]):
+                if not sl.get("mon"):
+                    mon_dict = parse_pc_mon(raw, bx["box"], i+1, db) or {}
+                    bx["slots"][i] = {"mon": {**mon_dict, "raw": list(raw)}}
+                    found = True
+                    break
             if found: break
         if not found:
-            return jsonify({"error": "No empty slots in destination save"}), 400
-
-    # ── Verify destination is empty ──────────────────────────────────────────
-    if to_box <= STREAM_BOXES:
-        dst_stream = bytearray(build_stream_buffer(dst_data, dst_secs))
-        existing   = read_stream_slot(dst_stream, to_box, to_slot)
+            return jsonify({"error": "Destination vault is full"}), 400
+        cb.save_cloud(_get_data_dir(), dst_vault, dst_tid, dst_name)
     else:
-        fb_secs_dst = get_fallback_section_offsets(dst_data)
-        existing    = read_fallback_slot(dst_data, fb_secs_dst, to_box, to_slot)
+        # ── Auto-find first empty PC slot if to_slot==0 ──────────────────────
+        if to_slot == 0:
+            found = False
+            for try_box in range(1, 19):
+                if try_box <= STREAM_BOXES:
+                    try_stream = bytearray(build_stream_buffer(dst_data, dst_secs))
+                    for try_slot in range(1, 31):
+                        ex = read_stream_slot(try_stream, try_box, try_slot)
+                        if not ex or is_empty(ex):
+                            to_box, to_slot = try_box, try_slot
+                            found = True; break
+                else:
+                    fb_secs_dst = get_fallback_section_offsets(dst_data)
+                    for try_slot in range(1, 31):
+                        ex = read_fallback_slot(dst_data, fb_secs_dst, try_box, try_slot)
+                        if not ex or is_empty(ex):
+                            to_box, to_slot = try_box, try_slot
+                            found = True; break
+                if found: break
+            if not found:
+                return jsonify({"error": "No empty slots in destination save"}), 400
 
-    if existing and not is_empty(existing):
-        return jsonify({"error": "Destination slot is occupied"}), 400
+        if to_box <= STREAM_BOXES:
+            dst_stream = bytearray(build_stream_buffer(dst_data, dst_secs))
+            existing   = read_stream_slot(dst_stream, to_box, to_slot)
+        else:
+            fb_secs_dst = get_fallback_section_offsets(dst_data)
+            existing    = read_fallback_slot(dst_data, fb_secs_dst, to_box, to_slot)
 
-    # ── Write to destination FIRST ───────────────────────────────────────────
-    # OT data is preserved as-is. If destination trainer's OTID matches the mon's
-    # original OTID, the game will recognize it as theirs and it will obey.
-    if to_box <= STREAM_BOXES:
-        write_stream_slot(dst_stream, to_box, to_slot, raw)
-        write_stream_buffer(dst_data, dst_secs, dst_stream)
-    else:
-        write_fallback_slot(dst_data, fb_secs_dst, to_box, to_slot, raw)
+        if existing and not is_empty(existing):
+            return jsonify({"error": "Destination slot is occupied"}), 400
+
+        if to_box <= STREAM_BOXES:
+            write_stream_slot(dst_stream, to_box, to_slot, raw)
+            write_stream_buffer(dst_data, dst_secs, dst_stream)
+        else:
+            write_fallback_slot(dst_data, fb_secs_dst, to_box, to_slot, raw)
 
     # ── Clear source ─────────────────────────────────────────────────────────
-    empty = bytearray(MON_SIZE)
-    if from_box <= STREAM_BOXES:
-        write_stream_slot(src_stream, from_box, from_slot, empty)
-        write_stream_buffer(src_data, src_secs, src_stream)
+    if vault_raw:
+        src_vault_obj, _, vs, v_tid, v_name = vault_raw
+        src_vbox2 = next((b for b in src_vault_obj if b["box"] == from_box), None)
+        if src_vbox2:
+            src_vbox2["slots"][vs - 1] = {"mon": None}
+        cb.save_cloud(_get_data_dir(), src_vault_obj, v_tid, v_name)
     else:
-        write_fallback_slot(src_data, fb_secs, from_box, from_slot, empty)
+        empty = bytearray(MON_SIZE)
+        if from_box <= STREAM_BOXES:
+            write_stream_slot(src_stream, from_box, from_slot, empty)
+            write_stream_buffer(src_data, src_secs, src_stream)
+        else:
+            write_fallback_slot(src_data, fb_secs, from_box, from_slot, empty)
 
     # ── Commit ───────────────────────────────────────────────────────────────
-    if direction == "primary_to_secondary":
+    if base_dir == "primary_to_secondary":
         session["data"]              = src_data
         session["sections"]          = find_active_sections(src_data)
         _secondary_save["data"]      = dst_data
@@ -1966,32 +2147,58 @@ def api_trade_swap():
     if _secondary_save["data"] is None:
         return jsonify({"error": "No secondary save loaded"}), 400
 
-    body     = request.get_json()
-    pri_box  = body["pri_box"]
-    pri_slot = body["pri_slot"]
-    sec_box  = body["sec_box"]
-    sec_slot = body["sec_slot"]
+    body      = request.get_json()
+    pri_box   = body["pri_box"]
+    pri_slot  = body["pri_slot"]
+    sec_box   = body["sec_box"]
+    sec_slot  = body["sec_slot"]
+    pri_vault = body.get("pri_vault", False)
+    sec_vault = body.get("sec_vault", False)
 
     db = session.get("db") or load_databases()
+    data_dir  = _get_data_dir()
 
     pri_data = bytearray(session["data"])
     sec_data = bytearray(_secondary_save["data"])
     pri_secs = find_active_sections(pri_data)
     sec_secs = find_active_sections(sec_data)
 
-    # Read both mons
-    if pri_box <= STREAM_BOXES:
+    pri_tid, pri_name = _get_trainer_key()
+    sec_t    = _secondary_save.get("trainer") or {}
+    sec_tid, sec_name = sec_t.get("tid", 0), sec_t.get("name", "default")
+
+    # Read primary mon
+    if pri_vault:
+        pv_cloud = cb.load_cloud(data_dir, pri_tid, pri_name)
+        pv_box   = next((b for b in pv_cloud if b["box"] == pri_box), None)
+        if not pv_box:
+            return jsonify({"error": f"Primary vault box {pri_box} not found"}), 400
+        pv_entry = pv_box["slots"][pri_slot - 1].get("mon")
+        if not pv_entry:
+            return jsonify({"error": "Primary vault slot is empty"}), 400
+        pri_raw = bytes(pv_entry["raw"][:MON_SIZE])
+    elif pri_box <= STREAM_BOXES:
         pri_stream = bytearray(build_stream_buffer(pri_data, pri_secs))
         pri_raw = read_stream_slot(pri_stream, pri_box, pri_slot)
     else:
-        pri_fb = get_fallback_section_offsets(pri_data)
+        pri_fb  = get_fallback_section_offsets(pri_data)
         pri_raw = read_fallback_slot(pri_data, pri_fb, pri_box, pri_slot)
 
-    if sec_box <= STREAM_BOXES:
+    # Read secondary mon
+    if sec_vault:
+        sv_cloud = cb.load_cloud(data_dir, sec_tid, sec_name)
+        sv_box   = next((b for b in sv_cloud if b["box"] == sec_box), None)
+        if not sv_box:
+            return jsonify({"error": f"Secondary vault box {sec_box} not found"}), 400
+        sv_entry = sv_box["slots"][sec_slot - 1].get("mon")
+        if not sv_entry:
+            return jsonify({"error": "Secondary vault slot is empty"}), 400
+        sec_raw = bytes(sv_entry["raw"][:MON_SIZE])
+    elif sec_box <= STREAM_BOXES:
         sec_stream = bytearray(build_stream_buffer(sec_data, sec_secs))
         sec_raw = read_stream_slot(sec_stream, sec_box, sec_slot)
     else:
-        sec_fb = get_fallback_section_offsets(sec_data)
+        sec_fb  = get_fallback_section_offsets(sec_data)
         sec_raw = read_fallback_slot(sec_data, sec_fb, sec_box, sec_slot)
 
     if pri_raw is None or is_empty(pri_raw):
@@ -1999,21 +2206,25 @@ def api_trade_swap():
     if sec_raw is None or is_empty(sec_raw):
         return jsonify({"error": "Secondary source slot is empty"}), 400
 
-    # Write pri_raw -> secondary, sec_raw -> primary
-    # OT data is preserved. The game will check OTID on each side naturally.
-    pri_raw_out = pri_raw
-    sec_raw_out = sec_raw
-    if sec_box <= STREAM_BOXES:
-        write_stream_slot(sec_stream, sec_box, sec_slot, pri_raw_out)
+    # Write pri_raw -> secondary destination
+    if sec_vault:
+        sv_box["slots"][sec_slot - 1] = {"mon": {**parse_pc_mon(pri_raw, sec_box, sec_slot, db), "raw": list(pri_raw)}}
+        cb.save_cloud(data_dir, sv_cloud, sec_tid, sec_name)
+    elif sec_box <= STREAM_BOXES:
+        write_stream_slot(sec_stream, sec_box, sec_slot, pri_raw)
         write_stream_buffer(sec_data, sec_secs, sec_stream)
     else:
-        write_fallback_slot(sec_data, sec_fb, sec_box, sec_slot, pri_raw_out)
+        write_fallback_slot(sec_data, sec_fb, sec_box, sec_slot, pri_raw)
 
-    if pri_box <= STREAM_BOXES:
-        write_stream_slot(pri_stream, pri_box, pri_slot, sec_raw_out)
+    # Write sec_raw -> primary destination
+    if pri_vault:
+        pv_box["slots"][pri_slot - 1] = {"mon": {**parse_pc_mon(sec_raw, pri_box, pri_slot, db), "raw": list(sec_raw)}}
+        cb.save_cloud(data_dir, pv_cloud, pri_tid, pri_name)
+    elif pri_box <= STREAM_BOXES:
+        write_stream_slot(pri_stream, pri_box, pri_slot, sec_raw)
         write_stream_buffer(pri_data, pri_secs, pri_stream)
     else:
-        write_fallback_slot(pri_data, pri_fb, pri_box, pri_slot, sec_raw_out)
+        write_fallback_slot(pri_data, pri_fb, pri_box, pri_slot, sec_raw)
 
     session["data"]             = pri_data
     session["sections"]         = find_active_sections(pri_data)
