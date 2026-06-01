@@ -50,4 +50,4 @@ jobs:
             [Dynamic-Pokemon-Expansion](https://github.com/Skeli789/Dynamic-Pokemon-Expansion) (WTFPL).*
           files: UnboundBank-${{ github.ref_name }}-windows.zip
           draft: false
-          prerelease: false
+          prerelease: ${{ startsWith(github.ref_name, 'pr') }}
