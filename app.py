@@ -4,30 +4,19 @@ Run with: python app.py
 Then open http://localhost:5000
 """
 
-import struct, json, base64, math, re, sys
+import struct, json, base64, math, re
 from pathlib import Path
 from flask import Flask, request, jsonify, send_from_directory
 
-if getattr(sys, "frozen", False):
-    BASE_DIR = Path(sys._MEIPASS)
-    print(f"[UnboundBank] Running as exe, BASE_DIR={BASE_DIR}")
-    print(f"[UnboundBank] static/dist/index.html exists: {(BASE_DIR / 'static' / 'dist' / 'index.html').exists()}")
-    # List top-level and static/ contents to aid debugging
-    print("[UnboundBank] _MEIPASS contents:", [p.name for p in BASE_DIR.iterdir()])
-    static_dir = BASE_DIR / "static"
-    if static_dir.exists():
-        print("[UnboundBank] static/ contents:", [p.name for p in static_dir.iterdir()])
-else:
-    BASE_DIR = Path(__file__).parent
-
-app = Flask(__name__, static_folder=str(BASE_DIR / "static"), static_url_path="/static")
+app = Flask(__name__, static_folder="static")
 
 # ---------------------------------------------------------------------------
 # Constants (mirrors save_core.py)
 # ---------------------------------------------------------------------------
 SECTION_SIZE          = 0x1000
-SECTION_PAYLOAD_MAX   = 0xFF4
+SECTION_PAYLOAD_MAX   = 0xFF0   # Must match SECTOR_PAYLOAD — checksum covers payload only
 SECTION_13_VALID_LEN  = 0x450
+SECTION_4_VALID_LEN   = 0xD94   # SaveBlock1 tail uses shorter valid length
 PRESET_SECTOR_ID      = 0
 PRESET_VALID_LEN      = 0xADC
 OPAQUE_SECTION_IDS    = {4}
@@ -114,6 +103,8 @@ def recalculate_checksum(data, section_offset):
         return
     if sec_id == PRESET_SECTOR_ID:
         valid_len = PRESET_VALID_LEN
+    elif sec_id == 4:
+        valid_len = SECTION_4_VALID_LEN
     elif sec_id == 13:
         valid_len = SECTION_13_VALID_LEN
     else:
@@ -178,7 +169,7 @@ def write_stream_buffer(data, sections, stream):
         pos += SECTOR_PAYLOAD
         for abs_off in find_all_section_offsets(data, sec_id):
             data[abs_off + SECTOR_HEADER : abs_off + SECTOR_HEADER + SECTOR_PAYLOAD] = payload
-            chk = gba_checksum(data, abs_off, 0xFF4)
+            chk = gba_checksum(data, abs_off, SECTOR_PAYLOAD)
             wu16(data, abs_off + OFF_CHECKSUM, chk)
 
 def read_stream_slot(stream, box, slot):
@@ -282,8 +273,8 @@ def read_box_names(data, sections):
 # Database loading
 # ---------------------------------------------------------------------------
 def find_data_dir():
-    for p in [BASE_DIR / "data",
-              BASE_DIR.parent / "data"]:
+    for p in [Path(__file__).parent / "data",
+              Path(__file__).parent.parent / "data"]:
         if (p / "pokemon.txt").exists():
             return p
     return None
@@ -833,7 +824,7 @@ def load_evo_table():
     if _evo_table_cache is not None:
         return _evo_table_cache
 
-    base = BASE_DIR
+    base = Path(__file__).parent
     evo_c     = base / "Evolution Table.c"
     species_h = base / "species.h"
 
@@ -1086,92 +1077,6 @@ def run_excel_export(data):
         except: pass
 
 
-def run_evo_export(data):
-    """Generate evolution checker xlsx and return as bytes."""
-    import sys, io, tempfile, os
-    # Temporarily add app dir to path so evo checker can find its siblings
-    app_dir = str(BASE_DIR)
-    if app_dir not in sys.path:
-        sys.path.insert(0, app_dir)
-    import unbound_evo_checker as ec
-
-    db = session.get("db") or load_databases()
-    db_species = db.get('species', {})
-    db_items   = db.get('items', {})
-    db_moves   = db.get('moves', {})
-    db_growth  = db.get('growth', {})
-    db_gender  = db.get('gender', {})
-
-    base = BASE_DIR
-    evo_c     = base / "Evolution Table.c"
-    species_h = base / "species.h"
-    items_h   = base / "items.h"
-    moves_h   = base / "moves.h"
-
-    evo_table, item_by_id, species_defs = ec.load_evolution_table(
-        str(evo_c), str(species_h), str(items_h), str(moves_h)
-    )
-
-    party = ec.read_party(data, db_species, db_growth, db_gender)
-    pc    = ec.read_pc(data, db_species, db_growth, db_gender)
-    rows  = ec.build_evo_rows(party + pc, evo_table, db_species, db_moves)
-
-    # Filter to only evolutions we don't already have caught in the dex
-    try:
-        dex_species = json.load(open(BASE_DIR / "static" / "dex_species.json"))
-        sid_to_national = {int(k): v["national"] for k, v in dex_species.items()}
-
-        sections = find_active_sections(data)
-        sec1 = sections[1]["offset"]
-        DEX_CAUGHT_OFF, DEX_FLAG_SIZE = 0x38D, 0x7D
-        caught_bytes = data[sec1 + DEX_CAUGHT_OFF : sec1 + DEX_CAUGHT_OFF + DEX_FLAG_SIZE]
-        caught_nationals = set()
-        for bi, byte in enumerate(caught_bytes):
-            if byte == 0: continue
-            for bit in range(8):
-                if byte & (1 << bit):
-                    caught_nationals.add(bi * 8 + bit + 1)
-
-        def any_target_uncaught(row_species_id):
-            for evo in evo_table.get(row_species_id, []):
-                nat = sid_to_national.get(evo["target_id"])
-                if nat and nat not in caught_nationals:
-                    return True
-            return False
-
-        # Rebuild rows keeping only entries whose evolution target isn't caught
-        filtered = []
-        for row in rows:
-            # Find species_id from the mon's species name
-            sid = next((s for s, evos in evo_table.items()
-                        if db_species.get(s) == row["species"]), None)
-            if sid is None:
-                filtered.append(row)
-                continue
-            # Find target_id for this specific evo row
-            target_nat = None
-            for evo in evo_table.get(sid, []):
-                if db_species.get(evo["target_id"]) == row["evolves_to"]:
-                    target_nat = sid_to_national.get(evo["target_id"])
-                    break
-            if target_nat is None or target_nat not in caught_nationals:
-                filtered.append(row)
-        rows = filtered
-    except Exception as e:
-        import traceback; traceback.print_exc()
-        # If filtering fails, fall back to all rows
-
-    with tempfile.NamedTemporaryFile(suffix='.xlsx', delete=False) as f:
-        tmp_path = f.name
-    try:
-        ec.write_xlsx(rows, tmp_path, 'save_export')
-        with open(tmp_path, 'rb') as f:
-            return f.read()
-    finally:
-        try: os.unlink(tmp_path)
-        except: pass
-
-
 def run_sort_single_box(data, box_num, sort_mode):
     """Sort a single box in-place."""
     sections = find_active_sections(data)
@@ -1238,18 +1143,15 @@ def run_sort_single_box(data, box_num, sort_mode):
 # ---------------------------------------------------------------------------
 @app.route("/")
 def index():
-    index_path = BASE_DIR / "static" / "dist" / "index.html"
-    print(f"[UnboundBank] Serving index from: {index_path} (exists={index_path.exists()})")
-    from flask import Response
-    return Response(index_path.read_bytes(), mimetype="text/html")
+    return send_from_directory("static/dist", "index.html")
 
 @app.route("/species_types.json")
 def species_types():
-    return send_from_directory(str(BASE_DIR / "static"), "species_types.json")
+    return send_from_directory("static", "species_types.json")
 
 @app.route("/assets/<path:filename>")
 def assets(filename):
-    return send_from_directory(str(BASE_DIR / "static" / "dist" / "assets"), filename)
+    return send_from_directory("static/dist/assets", filename)
 
 @app.route("/api/load", methods=["POST"])
 def api_load():
@@ -1321,7 +1223,7 @@ def api_evo_table():
         # Return as {species_id: [{target_name, description}, ...]}
         result = {}
         for sid, evos in table.items():
-            result[str(sid)] = [{"target": e["target_name"], "target_id": e["target_id"], "desc": e["description"]} for e in evos]
+            result[str(sid)] = [{"target": e["target_name"], "desc": e["description"]} for e in evos]
         return jsonify({"ok": True, "evo_table": result})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -1370,29 +1272,13 @@ def api_export_excel():
         headers={"Content-Disposition": "attachment; filename=pokemon_save.xlsx"}
     )
 
-@app.route("/api/export_evolutions")
-def api_export_evolutions():
-    if session.get("data") is None:
-        return jsonify({"error": "No save loaded"}), 400
-    try:
-        xlsx_bytes = run_evo_export(bytearray(session["data"]))
-    except Exception as e:
-        import traceback; traceback.print_exc()
-        return jsonify({"error": str(e)}), 500
-    from flask import Response
-    return Response(
-        xlsx_bytes,
-        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        headers={"Content-Disposition": "attachment; filename=pending_evolutions.xlsx"}
-    )
-
 @app.route("/dex_species.json")
 def dex_species_route():
-    return send_from_directory(str(BASE_DIR / "static"), "dex_species.json")
+    return send_from_directory("static", "dex_species.json")
 
 @app.route("/species_to_national.json")
 def species_to_national_route():
-    return send_from_directory(str(BASE_DIR / "static"), "species_to_national.json")
+    return send_from_directory("static", "species_to_national.json")
 
 
 @app.route("/api/dex_flags")
