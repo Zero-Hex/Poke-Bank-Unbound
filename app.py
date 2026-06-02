@@ -12,27 +12,35 @@ import trade_session as ts
 
 if getattr(sys, "frozen", False):
     BASE_DIR = Path(sys._MEIPASS)
-    USER_DATA_DIR = Path(sys.executable).parent
+    print(f"[UnboundBank] Running as exe, BASE_DIR={BASE_DIR}")
+    print(f"[UnboundBank] static/dist/index.html exists: {(BASE_DIR / 'static' / 'dist' / 'index.html').exists()}")
+    # List top-level and static/ contents to aid debugging
+    print("[UnboundBank] _MEIPASS contents:", [p.name for p in BASE_DIR.iterdir()])
+    static_dir = BASE_DIR / "static"
+    if static_dir.exists():
+        print("[UnboundBank] static/ contents:", [p.name for p in static_dir.iterdir()])
 else:
     BASE_DIR = Path(__file__).parent
-    USER_DATA_DIR = BASE_DIR
+
 app = Flask(__name__, static_folder=str(BASE_DIR / "static"), static_url_path="/static")
 
 # ---------------------------------------------------------------------------
 # Constants (mirrors save_core.py)
 # ---------------------------------------------------------------------------
 SECTION_SIZE          = 0x1000
-SECTION_PAYLOAD_MAX   = 0xFF4
+SECTION_PAYLOAD_MAX   = 0xFF0   # = SECTOR_PAYLOAD; checksum covers payload only, not footer
 SECTION_13_VALID_LEN  = 0x450
 PRESET_SECTOR_ID      = 0
 PRESET_VALID_LEN      = 0xADC
+SECTION_4_VALID_LEN   = 0xD94   # SaveBlock1 tail — valid payload is shorter than max
 OPAQUE_SECTION_IDS    = {4}
 POKEMON_STREAM_SECTORS = [5,6,7,8,9,10,11,12]
 SECTOR_PAYLOAD        = 0xFF0
 SECTOR_HEADER         = 4
 MON_SIZE              = 58
 SLOTS_PER_BOX         = 30
-STREAM_BOXES          = 19
+STREAM_BOXES          = 19   # Total PC boxes (some are fallback)
+STREAM_BOXES_WRITABLE = 18   # Boxes that fit in stream sectors 5-12
 OFF_CHECKSUM          = 0xFF6
 OFF_VALID_LEN         = 0xFF0
 OFF_SECTION_ID        = 0xFF4
@@ -112,6 +120,8 @@ def recalculate_checksum(data, section_offset):
         return
     if sec_id == PRESET_SECTOR_ID:
         valid_len = PRESET_VALID_LEN
+    elif sec_id == 4:
+        valid_len = SECTION_4_VALID_LEN
     elif sec_id == 13:
         valid_len = SECTION_13_VALID_LEN
     else:
@@ -176,7 +186,7 @@ def write_stream_buffer(data, sections, stream):
         pos += SECTOR_PAYLOAD
         for abs_off in find_all_section_offsets(data, sec_id):
             data[abs_off + SECTOR_HEADER : abs_off + SECTOR_HEADER + SECTOR_PAYLOAD] = payload
-            chk = gba_checksum(data, abs_off, 0xFF4)
+            chk = gba_checksum(data, abs_off, SECTOR_PAYLOAD)
             wu16(data, abs_off + OFF_CHECKSUM, chk)
 
 def read_stream_slot(stream, box, slot):
@@ -617,23 +627,50 @@ def read_trainer_info(data, sections):
 _db_growth_cache = {}
 _db_base_stats_cache = {}
 
-PORTA_PC_ITEM_ID=368
-BAG_ITEM_SECTOR_ID=13
-KEY_POCKET_REL_OFFSET=0xAD8
+PORTA_PC_ITEM_ID = 368
 
-def has_porta_pc(data):
-    best_off=None;best_idx=-1
-    for i in range(0,len(data),SECTION_SIZE):
-        if i+SECTION_SIZE>len(data):break
-        sid=ru16(data,i+OFF_SECTION_ID);six=ru32(data,i+OFF_SAVE_IDX)
-        if sid==BAG_ITEM_SECTOR_ID and six>best_idx:best_idx=six;best_off=i
-    if best_off is None:return False
-    off=best_off+KEY_POCKET_REL_OFFSET;end=best_off+0xFF0
-    while off+3<end:
-        iid=ru16(data,off);qty=ru16(data,off+2)
-        if iid==0:break
-        if iid==PORTA_PC_ITEM_ID and qty>0:return True
-        off+=4
+def has_porta_pc(data: bytearray) -> bool:
+    """
+    Return True if the Porta-PC (item 368) is in the save's key items pocket.
+    Uses dynamic scanning to find the key items pocket — CFRU stores it in the
+    extra save data area rather than at a fixed section/offset like vanilla FireRed.
+    """
+    # Load key item IDs to identify the pocket by its contents
+    try:
+        import json
+        from pathlib import Path
+        dd = find_data_dir()
+        km = json.loads((dd / "item_pocket_map.json").read_text())
+        key_ids = set(km["pockets"]["key"]["ids"])
+    except Exception:
+        # Fallback: just scan the whole save for item 368 with qty>0
+        i = 0
+        while i < len(data) - 3:
+            if ru16(data, i) == PORTA_PC_ITEM_ID and ru16(data, i+2) > 0:
+                return True
+            i += 4
+        return False
+
+    # Scan save for a contiguous run of key item IDs (pocket) that contains item 368
+    i = 0
+    while i < len(data) - 3:
+        iid = ru16(data, i)
+        if iid in key_ids:
+            # Possible pocket start — walk forward while items are all key items
+            start = i; count = 0; found = False
+            j = i
+            while j < len(data) - 3:
+                iid2 = ru16(data, j)
+                if iid2 == 0: break
+                if iid2 not in key_ids: break
+                if iid2 == PORTA_PC_ITEM_ID and ru16(data, j+2) > 0:
+                    found = True
+                count += 1; j += 4
+            if count >= 5 and found:
+                return True
+            i = j + 4
+        else:
+            i += 4
     return False
 
 
@@ -1149,7 +1186,7 @@ def run_sort(data, sort_mode, reserve_boxes):
     def slot_idx(box, slot): return (box-1)*SLOTS_PER_BOX + (slot-1)
 
     mons = []
-    for box in range(1, STREAM_BOXES+1):
+    for box in range(1, STREAM_BOXES_WRITABLE+1):
         if box in named_boxes: continue
         for slot in range(1, SLOTS_PER_BOX+1):
             idx = slot_idx(box, slot)
@@ -1175,7 +1212,7 @@ def run_sort(data, sort_mode, reserve_boxes):
         mons.sort(key=lambda m: (m['root'], m['species'], m['level']))
 
     # Clear all unnamed, non-split slots
-    for box in range(1, STREAM_BOXES+1):
+    for box in range(1, STREAM_BOXES_WRITABLE+1):
         if box in named_boxes: continue
         for slot in range(1, SLOTS_PER_BOX+1):
             idx = slot_idx(box, slot)
@@ -1185,7 +1222,7 @@ def run_sort(data, sort_mode, reserve_boxes):
     # Build destination slots (skip reserved boxes at start)
     dest_slots = []
     unnamed_count = 0
-    for box in range(1, STREAM_BOXES+1):
+    for box in range(1, STREAM_BOXES_WRITABLE+1):
         if box in named_boxes: continue
         unnamed_count += 1
         if unnamed_count <= reserve_boxes: continue
@@ -1711,7 +1748,11 @@ def _get_trainer_key():
 
 
 def _get_data_dir() -> Path:
-    p = USER_DATA_DIR / "vault"
+    dd = find_data_dir()
+    if dd:
+        return dd
+    # Fallback: create data/ next to app.py
+    p = BASE_DIR / "data"
     p.mkdir(exist_ok=True)
     return p
 
@@ -2403,7 +2444,7 @@ def api_debug_party_raw():
 # ---------------------------------------------------------------------------
 # Recent saves tracking
 # ---------------------------------------------------------------------------
-RECENT_SAVES_FILE = USER_DATA_DIR / "recent_saves.json"
+RECENT_SAVES_FILE = BASE_DIR / "data" / "recent_saves.json"
 MAX_RECENT = 5
 
 def load_recent_saves():
