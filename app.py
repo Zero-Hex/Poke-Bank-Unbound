@@ -13,17 +13,9 @@ import trade_session as ts
 if getattr(sys, "frozen", False):
     BASE_DIR = Path(sys._MEIPASS)
     USER_DATA_DIR = Path(sys.executable).parent
-    print(f"[UnboundBank] Running as exe, BASE_DIR={BASE_DIR}")
-    print(f"[UnboundBank] USER_DATA_DIR={USER_DATA_DIR}")
-    print(f"[UnboundBank] static/dist/index.html exists: {(BASE_DIR / 'static' / 'dist' / 'index.html').exists()}")
-    print("[UnboundBank] _MEIPASS contents:", [p.name for p in BASE_DIR.iterdir()])
-    static_dir = BASE_DIR / "static"
-    if static_dir.exists():
-        print("[UnboundBank] static/ contents:", [p.name for p in static_dir.iterdir()])
 else:
     BASE_DIR = Path(__file__).parent
     USER_DATA_DIR = BASE_DIR
-
 app = Flask(__name__, static_folder=str(BASE_DIR / "static"), static_url_path="/static")
 
 # ---------------------------------------------------------------------------
@@ -624,6 +616,26 @@ def read_trainer_info(data, sections):
 # Cache for growth rates and base stats so pc_to_party can use them without db access
 _db_growth_cache = {}
 _db_base_stats_cache = {}
+
+PORTA_PC_ITEM_ID=368
+BAG_ITEM_SECTOR_ID=13
+KEY_POCKET_REL_OFFSET=0xAD8
+
+def has_porta_pc(data):
+    best_off=None;best_idx=-1
+    for i in range(0,len(data),SECTION_SIZE):
+        if i+SECTION_SIZE>len(data):break
+        sid=ru16(data,i+OFF_SECTION_ID);six=ru32(data,i+OFF_SAVE_IDX)
+        if sid==BAG_ITEM_SECTOR_ID and six>best_idx:best_idx=six;best_off=i
+    if best_off is None:return False
+    off=best_off+KEY_POCKET_REL_OFFSET;end=best_off+0xFF0
+    while off+3<end:
+        iid=ru16(data,off);qty=ru16(data,off+2)
+        if iid==0:break
+        if iid==PORTA_PC_ITEM_ID and qty>0:return True
+        off+=4
+    return False
+
 
 def parse_save(data, db):
     global _db_growth_cache, _db_base_stats_cache
@@ -1440,6 +1452,13 @@ def api_move():
     result = parse_save(data, db)
     return jsonify({"ok": True, "save": result})
 
+@app.route("/api/has_porta_pc")
+def api_has_porta_pc():
+    data=session.get("data")
+    if data is None:return jsonify({"ok":False,"has_porta_pc":False})
+    return jsonify({"ok":True,"has_porta_pc":has_porta_pc(bytearray(data))})
+
+
 @app.route("/api/move_to_box", methods=["POST"])
 def api_move_to_box():
     """Move multiple selected mons into the first available empty slots of a target box."""
@@ -1492,6 +1511,39 @@ def api_move_to_box():
     session["data"] = data
     result = parse_save(data, db)
     return jsonify({"ok": True, "save": result, "moved": len(moves)})
+
+
+@app.route("/api/release", methods=["POST"])
+def api_release():
+    if session.get("data") is None:return jsonify({"error":"No save loaded"}),400
+    body=request.get_json();items=body.get("items",[])
+    if not items:return jsonify({"error":"Nothing to release"}),400
+    data=bytearray(session["data"]);db=session["db"]
+    tid,tname=_get_trainer_key();data_dir=_get_data_dir()
+    pc_items=[i for i in items if not i.get("vault")]
+    vault_items=[i for i in items if i.get("vault")]
+    if pc_items:
+        try:
+            empty=bytes(MON_SIZE);sections=find_active_sections(data)
+            stream=bytearray(build_stream_buffer(data,sections))
+            fb_secs=get_fallback_section_offsets(data)
+            for item in pc_items:
+                b=item["box"];s=item["slot"]
+                if str(b)=="party":continue
+                b=int(b)
+                if 1<=b<=STREAM_BOXES:write_stream_slot(stream,b,s,empty)
+                elif b in FALLBACK_BOX_LAYOUTS:write_fallback_slot(data,fb_secs,b,s,empty)
+            write_stream_buffer(data,sections,stream)
+            for abs_off in find_all_section_offsets(data,5):recalculate_checksum(data,abs_off)
+        except Exception as e:return jsonify({"error":str(e)}),400
+    if vault_items:
+        cloud=cb.load_cloud(data_dir,tid,tname)
+        for item in vault_items:
+            bx=next((b for b in cloud if b["box"]==item["box"]),None)
+            if bx:bx["slots"][item["slot"]-1]={"mon":None}
+        cb.save_cloud(data_dir,cloud,tid,tname)
+    session["data"]=data;result=parse_save(data,db)
+    return jsonify({"ok":True,"save":result})
 
 
 @app.route("/api/download")
@@ -1662,6 +1714,7 @@ def _get_data_dir() -> Path:
     p = USER_DATA_DIR / "vault"
     p.mkdir(exist_ok=True)
     return p
+
 
 
 @app.route("/api/current_save")
