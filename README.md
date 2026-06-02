@@ -71,11 +71,17 @@ Supported save file formats: `.sav`, `.sa1`, `.sa2`, `.sa3`, `.sa4`, `.srm`, `.S
 ##### Versioning
 - A version has been added to the save load screen as well as the app to easily compare where you are regarding to releases. This will be updated as new features are added.
 
+#### Releasing Pokemon
+- You can now release a single, or multiple selected Pokemon at once to clear up and better organize your PC or Vault boxes. 
+
 #### Bug Fixes
 - Fixed Type issues that were not displaying right in the Pokédex
 - Fixed Issues with the Wrong item displaying on the evolution helper.
 - Cleaned up Evolution list to remove the pokémon that listed both a trade and link stone leaving only the linkstone in place.
+- Fixed some UI issues and better placement of buttons
 
+#### Shinies
+- Shiny pokemon now have a gold border in addition to a start to show they are special. 
 ---
 
 ### 1.0 Features
