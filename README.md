@@ -45,7 +45,7 @@ Supported save file formats: `.sav`, `.sa1`, `.sa2`, `.sa3`, `.sa4`, `.srm`, `.S
 
 ### 2.0 Features
 #### Party Pokémon and Multiselect
-- Swap your Party Pokémon with your PC Pokémon right from the app. There is a warning that you must click through to accept that it may cause unintended consequences in the story if done so at a point where you aren't supposed to have access to a PC. I would advise only using it when you are out in the wild, or in a city. Not while doing story missions
+- Swap your Party Pokémon with your PC Pokémon right from the app. Assuming you have unlocked the Porta-PC. If not it will notify you that you don't have it yet and need to unlock that first. 
 - Multiselect has arrived, allowing you to select multiple Pokémon from your party or PC and move them all at once to another box or to the Vault. 
 
 #### Vault Tab
