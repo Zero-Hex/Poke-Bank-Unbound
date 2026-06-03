@@ -14,9 +14,10 @@ app = Flask(__name__, static_folder="static")
 # Constants (mirrors save_core.py)
 # ---------------------------------------------------------------------------
 SECTION_SIZE          = 0x1000
-SECTION_PAYLOAD_MAX   = 0xFF0   # Must match SECTOR_PAYLOAD — checksum covers payload only
+SECTION_PAYLOAD_MAX   = 0xFF0   # Must match SECTOR_PAYLOAD
+SECTION_3_VALID_LEN   = 0xFEC   # Fallback box storage section 3
+SECTION_4_VALID_LEN   = 0xD94   # SaveBlock1 tail
 SECTION_13_VALID_LEN  = 0x450
-SECTION_4_VALID_LEN   = 0xD94   # SaveBlock1 tail uses shorter valid length
 PRESET_SECTOR_ID      = 0
 PRESET_VALID_LEN      = 0xADC
 OPAQUE_SECTION_IDS    = {4}
@@ -35,12 +36,13 @@ BOX_NAMES_15_25_OFF   = 0x0361
 BOX_NAME_SIZE         = 9
 
 FALLBACK_BOX_LAYOUTS = {
-    20: [('absolute', 1, 21, 0x1EB0C)],
-    21: [('absolute', 1, 30, 0x1F1E8)],
-    22: [('absolute', 1, 30, 0x1F8B4)],
-    23: [('section',  2, 1,  4,  0x0F18),
-         ('section',  3, 5,  30, 0x0010)],
-    24: [('section',  3, 1,  30, 0x05F4)],
+    20: [('absolute', 1,  21, 0x1EB0C),
+         ('absolute', 22, 30, 0x1EB0C + 16 + 21*58)],
+    21: [('absolute', 1,  30, 0x1F1E8)],
+    22: [('absolute', 1,  30, 0x1F8B4)],
+    23: [('section',  2,  1,   4,  0x0F18),
+         ('section',  3,  5,  30,  0x0010)],
+    24: [('section',  3,  1,  30,  0x05F4)],
 }
 
 CHARMAP = {
@@ -103,6 +105,8 @@ def recalculate_checksum(data, section_offset):
         return
     if sec_id == PRESET_SECTOR_ID:
         valid_len = PRESET_VALID_LEN
+    elif sec_id == 3:
+        valid_len = SECTION_3_VALID_LEN
     elif sec_id == 4:
         valid_len = SECTION_4_VALID_LEN
     elif sec_id == 13:
@@ -169,7 +173,8 @@ def write_stream_buffer(data, sections, stream):
         pos += SECTOR_PAYLOAD
         for abs_off in find_all_section_offsets(data, sec_id):
             data[abs_off + SECTOR_HEADER : abs_off + SECTOR_HEADER + SECTOR_PAYLOAD] = payload
-            chk = gba_checksum(data, abs_off, SECTOR_PAYLOAD)
+            chk_len = SECTION_13_VALID_LEN if sec_id == 13 else SECTOR_PAYLOAD
+            chk = gba_checksum(data, abs_off, chk_len)
             wu16(data, abs_off + OFF_CHECKSUM, chk)
 
 def read_stream_slot(stream, box, slot):
@@ -243,7 +248,14 @@ def write_fallback_slot(data, fb_secs, box, slot, mon_bytes):
                     raise ValueError(f"Section {sec_id} not found in save")
                 off = sec_off + rel + (slot - s) * MON_SIZE
                 if off + MON_SIZE <= len(data):
-                    data[off:off+MON_SIZE] = mon
+                    footer_start = sec_off + 0xFF4
+                    write_end    = off + MON_SIZE
+                    if write_end > footer_start:
+                        footer = bytearray(data[footer_start:sec_off + 0x1000])
+                        data[off:off+MON_SIZE] = mon
+                        data[footer_start:sec_off + 0x1000] = footer
+                    else:
+                        data[off:off+MON_SIZE] = mon
                     dirty_sections.add(sec_id)
                 return dirty_sections
 
