@@ -39,7 +39,23 @@ python app.py
 Your save file is exported from your emulator — in mGBA use *File → Export Save*.
 
 ---
-
+## 2.0.0 Updates
+### So many new features to announce
+#### - Brand new re-write of the entire system to better support moving forward and further updates
+#### - Integrated Offline Vault for Storing Your Pokemon. 30 Additional Boxes of space
+#### - Completed National and Borrius Pokedex to see what you have, what you've seen and what you are missing.
+#### - Offline Trading Between Saves, Supports both PC and Vault Boxes
+#### - Trade your PC Pokemon with your Party Pokemon (Once you've unlocked the Porta-PC)
+#### - In the PokeDex, swap all the sprites with their shiny variants to see which ones you want to collect.
+#### - A type indicator based on the pokemon you have in your party to show what you're strong against.
+#### - Base, IV, and EV stats calculated for Party and PC and Vault Pokemon, so you always know what you've got.
+#### - List View, an easier way to sort and search through your PC or Vault.
+#### - Compact View - Shows all your boxes at once so you can easily drag from one to another
+#### - Multi Move - Select More than 1 Pokemon at a time, or an entire box at a time to move to another location.
+#### - Release and Multi-Release - Release a Pokemon directly from the Unbound Bank. Got an entire bank of eggs you don't want or hatched pokemon? Quickly clear them out for new space.
+#### - The app now launches a launcher with a button to click to start the bank. It also adds an icon into your background programs that stays running until you choose to exit it. No more hidden cmd boxes running to support the app backend.
+#### - All the pokemon sprites have been downloaded and are no longer being streamed from the CDN.
+#### - Probably more I'm forgetting its been a week. 
 ## Features
 
 ### Bank Tab
