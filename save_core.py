@@ -38,8 +38,7 @@ SECTOR_PAYLOAD        = 0xFF0
 SECTOR_HEADER         = 4
 MON_SIZE              = 58
 SLOTS_PER_BOX         = 30
-STREAM_BOXES          = 18
-STREAM_BOXES_WRITABLE = 18
+STREAM_BOXES          = 19
 OFF_CHECKSUM          = 0xFF6
 OFF_VALID_LEN         = 0xFF0
 OFF_SECTION_ID        = 0xFF4
@@ -330,7 +329,7 @@ def organize(data, sections, named_boxes, species_to_root, db_species, db_growth
 
     # Build set of stream slot indices that are locked (named box or split slot)
     locked_indices = set(SPLIT_SLOT_INDICES)
-    for box in range(1, STREAM_BOXES_WRITABLE + 1):
+    for box in range(1, STREAM_BOXES + 1):
         if box in named_boxes:
             for slot in range(1, SLOTS_PER_BOX + 1):
                 locked_indices.add(slot_index(box, slot))
@@ -351,7 +350,7 @@ def organize(data, sections, named_boxes, species_to_root, db_species, db_growth
     # (split slots are still locked for WRITING — they'll just be left empty)
     mons_to_sort = []
     collect_from = set()
-    for box in range(1, STREAM_BOXES_WRITABLE + 1):
+    for box in range(1, STREAM_BOXES + 1):
         if box in named_boxes: continue
         for slot in range(1, SLOTS_PER_BOX + 1):
             collect_from.add(slot_index(box, slot))
@@ -412,7 +411,7 @@ def organize(data, sections, named_boxes, species_to_root, db_species, db_growth
 
     # Clear all unnamed slots including split slots
     # (split slots are locked for writing so they'll stay empty after sort)
-    for box in range(1, STREAM_BOXES_WRITABLE + 1):
+    for box in range(1, STREAM_BOXES + 1):
         if box in named_boxes: continue
         for slot in range(1, SLOTS_PER_BOX + 1):
             clear_slot_in_stream(stream_buf, box, slot)
@@ -421,7 +420,7 @@ def organize(data, sections, named_boxes, species_to_root, db_species, db_growth
     # Skip the first N unnamed boxes if the user wants them kept empty
     unnamed_box_count = 0
     dest_slots = []
-    for box in range(1, STREAM_BOXES_WRITABLE + 1):
+    for box in range(1, STREAM_BOXES + 1):
         if box in named_boxes: continue
         unnamed_box_count += 1
         if unnamed_box_count <= reserve_boxes: continue

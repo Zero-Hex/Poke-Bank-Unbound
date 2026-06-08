@@ -17,15 +17,6 @@ import os
 import json
 import math
 from pathlib import Path
-import sys
-
-if getattr(sys, 'frozen', False):
-    _BASE_DIR = Path(sys._MEIPASS)
-else:
-    _BASE_DIR = Path(__file__).parent
-
-def _base_path(): return _BASE_DIR
-
 
 try:
     import openpyxl
@@ -202,9 +193,9 @@ CHARMAP_PARTY = {
 def find_data_dir():
     """Look for the data directory relative to this script."""
     candidates = [
-        _base_path() / "data",
+        Path(__file__).parent / "data",
         Path.cwd() / "data",
-        _base_path() / "backend" / "data",
+        Path(__file__).parent / "backend" / "data",
         Path.cwd() / "backend" / "data",
     ]
     for p in candidates:
