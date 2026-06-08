@@ -1,1 +1,4426 @@
-{"1":["Grass","Poison"],"2":["Grass","Poison"],"3":["Grass","Poison"],"4":["Fire"],"5":["Fire"],"6":["Fire","Flying"],"7":["Water"],"8":["Water"],"9":["Water"],"10":["Bug"],"11":["Bug"],"12":["Bug","Flying"],"13":["Bug","Poison"],"14":["Bug","Poison"],"15":["Bug","Poison"],"16":["Normal","Flying"],"17":["Normal","Flying"],"18":["Normal","Flying"],"19":["Normal"],"20":["Normal"],"21":["Normal","Flying"],"22":["Normal","Flying"],"23":["Poison"],"24":["Poison"],"25":["Electric"],"26":["Electric"],"27":["Ground"],"28":["Ground"],"30":["Poison"],"31":["Poison","Ground"],"33":["Poison"],"34":["Poison","Ground"],"35":["Fairy"],"36":["Fairy"],"37":["Fire"],"38":["Fire"],"39":["Normal","Fairy"],"40":["Normal","Fairy"],"41":["Poison","Flying"],"42":["Poison","Flying"],"43":["Grass","Poison"],"44":["Grass","Poison"],"45":["Grass","Poison"],"46":["Bug","Grass"],"47":["Bug","Grass"],"48":["Bug","Poison"],"49":["Bug","Poison"],"50":["Ground"],"51":["Ground"],"52":["Normal"],"53":["Normal"],"54":["Water"],"55":["Water"],"56":["Fighting"],"57":["Fighting"],"58":["Fire"],"59":["Fire"],"60":["Water"],"61":["Water"],"62":["Water","Fighting"],"63":["Psychic"],"64":["Psychic"],"65":["Psychic"],"66":["Fighting"],"67":["Fighting"],"68":["Fighting"],"69":["Grass","Poison"],"70":["Grass","Poison"],"71":["Grass","Poison"],"72":["Water","Poison"],"73":["Water","Poison"],"74":["Rock","Ground"],"75":["Rock","Ground"],"76":["Rock","Ground"],"77":["Fire"],"78":["Fire"],"79":["Water","Psychic"],"80":["Water","Psychic"],"81":["Electric","Steel"],"82":["Electric","Steel"],"83":["Normal","Flying"],"84":["Normal","Flying"],"85":["Normal","Flying"],"86":["Water"],"87":["Water","Ice"],"88":["Poison"],"89":["Poison"],"90":["Water"],"91":["Water","Ice"],"92":["Ghost","Poison"],"93":["Ghost","Poison"],"94":["Ghost","Poison"],"95":["Rock","Ground"],"96":["Psychic"],"97":["Psychic"],"98":["Water"],"99":["Water"],"100":["Electric"],"101":["Electric"],"102":["Grass","Psychic"],"103":["Grass","Psychic"],"104":["Ground"],"105":["Ground"],"106":["Fighting"],"107":["Fighting"],"108":["Normal"],"109":["Poison"],"110":["Poison"],"111":["Ground","Rock"],"112":["Ground","Rock"],"113":["Normal"],"114":["Grass"],"115":["Normal"],"116":["Water"],"117":["Water"],"118":["Water"],"119":["Water"],"120":["Water"],"121":["Water","Psychic"],"122":["Psychic","Fairy"],"123":["Bug","Flying"],"124":["Ice","Psychic"],"125":["Electric"],"126":["Fire"],"127":["Bug"],"128":["Normal"],"129":["Water"],"130":["Water","Flying"],"131":["Water","Ice"],"132":["Normal"],"133":["Normal"],"134":["Water"],"135":["Electric"],"136":["Fire"],"137":["Normal"],"138":["Rock","Water"],"139":["Rock","Water"],"140":["Rock","Water"],"141":["Rock","Water"],"142":["Rock","Flying"],"143":["Normal"],"144":["Ice","Flying"],"145":["Electric","Flying"],"146":["Fire","Flying"],"147":["Dragon"],"148":["Dragon"],"149":["Dragon","Flying"],"150":["Psychic"],"151":["Psychic"],"152":["Grass"],"153":["Grass"],"154":["Grass"],"155":["Fire"],"156":["Fire"],"157":["Fire"],"158":["Water"],"159":["Water"],"160":["Water"],"161":["Normal"],"162":["Normal"],"163":["Normal","Flying"],"164":["Normal","Flying"],"165":["Bug","Flying"],"166":["Bug","Flying"],"167":["Bug","Poison"],"168":["Bug","Poison"],"169":["Poison","Flying"],"170":["Water","Electric"],"171":["Water","Electric"],"172":["Electric"],"173":["Fairy"],"174":["Normal","Fairy"],"175":["Fairy"],"176":["Fairy","Flying"],"177":["Psychic","Flying"],"178":["Psychic","Flying"],"179":["Electric"],"180":["Electric"],"181":["Electric"],"182":["Grass"],"183":["Water","Fairy"],"184":["Water","Fairy"],"185":["Rock"],"186":["Water"],"187":["Grass","Flying"],"188":["Grass","Flying"],"189":["Grass","Flying"],"190":["Normal"],"191":["Grass"],"192":["Grass"],"193":["Bug","Flying"],"194":["Water","Ground"],"195":["Water","Ground"],"196":["Psychic"],"197":["Dark"],"198":["Dark","Flying"],"199":["Water","Psychic"],"200":["Ghost"],"201":["Psychic"],"202":["Psychic"],"203":["Normal","Psychic"],"204":["Bug"],"205":["Bug","Steel"],"206":["Normal"],"207":["Ground","Flying"],"208":["Steel","Ground"],"209":["Fairy"],"210":["Fairy"],"211":["Water","Poison"],"212":["Bug","Steel"],"213":["Bug","Rock"],"214":["Bug","Fighting"],"215":["Dark","Ice"],"216":["Normal"],"217":["Normal"],"218":["Fire"],"219":["Fire","Rock"],"220":["Ice","Ground"],"221":["Ice","Ground"],"222":["Water","Rock"],"223":["Water"],"224":["Water"],"225":["Ice","Flying"],"226":["Water","Flying"],"227":["Steel","Flying"],"228":["Dark","Fire"],"229":["Dark","Fire"],"230":["Water","Dragon"],"231":["Ground"],"232":["Ground"],"233":["Normal"],"234":["Normal"],"235":["Normal"],"236":["Fighting"],"237":["Fighting"],"238":["Ice","Psychic"],"239":["Electric"],"240":["Fire"],"241":["Normal"],"242":["Normal"],"243":["Electric"],"244":["Fire"],"245":["Water"],"246":["Rock","Ground"],"247":["Rock","Ground"],"248":["Rock","Dark"],"249":["Psychic","Flying"],"250":["Fire","Flying"],"251":["Psychic","Grass"],"277":["Grass"],"278":["Grass"],"279":["Grass"],"280":["Fire"],"281":["Fire","Fighting"],"282":["Fire","Fighting"],"283":["Water"],"284":["Water","Ground"],"285":["Water","Ground"],"286":["Dark"],"287":["Dark"],"288":["Normal"],"289":["Normal"],"290":["Bug"],"291":["Bug"],"292":["Bug","Flying"],"293":["Bug"],"294":["Bug","Poison"],"295":["Water","Grass"],"296":["Water","Grass"],"297":["Water","Grass"],"298":["Grass"],"299":["Grass","Dark"],"300":["Grass","Dark"],"301":["Bug","Ground"],"302":["Bug","Flying"],"303":["Bug","Ghost"],"304":["Normal","Flying"],"305":["Normal","Flying"],"306":["Grass"],"307":["Grass","Fighting"],"308":["Normal"],"309":["Water","Flying"],"310":["Water","Flying"],"311":["Bug","Water"],"312":["Bug","Flying"],"313":["Water"],"314":["Water"],"315":["Normal"],"316":["Normal"],"317":["Normal"],"318":["Ground","Psychic"],"319":["Ground","Psychic"],"320":["Rock"],"321":["Fire"],"322":["Dark","Ghost"],"323":["Water","Ground"],"324":["Water","Ground"],"325":["Water"],"326":["Water"],"327":["Water","Dark"],"328":["Water"],"329":["Water"],"330":["Water","Dark"],"331":["Water","Dark"],"332":["Ground"],"333":["Ground","Dragon"],"334":["Ground","Dragon"],"335":["Fighting"],"336":["Fighting"],"337":["Electric"],"338":["Electric"],"339":["Fire","Ground"],"340":["Fire","Ground"],"341":["Ice","Water"],"342":["Ice","Water"],"343":["Ice","Water"],"344":["Grass"],"345":["Grass","Dark"],"346":["Ice"],"347":["Ice"],"348":["Rock","Psychic"],"349":["Rock","Psychic"],"350":["Normal","Fairy"],"351":["Psychic"],"352":["Psychic"],"353":["Electric"],"354":["Electric"],"355":["Steel","Fairy"],"356":["Fighting","Psychic"],"357":["Fighting","Psychic"],"358":["Normal","Flying"],"359":["Dragon","Flying"],"360":["Psychic"],"361":["Ghost"],"362":["Ghost"],"363":["Grass","Poison"],"364":["Normal"],"365":["Normal"],"366":["Normal"],"367":["Poison"],"368":["Poison"],"369":["Grass","Flying"],"370":["Normal"],"371":["Normal"],"372":["Normal"],"373":["Water"],"374":["Water"],"375":["Water"],"376":["Dark"],"377":["Ghost"],"378":["Ghost"],"379":["Poison"],"380":["Normal"],"381":["Water","Rock"],"382":["Steel","Rock"],"383":["Steel","Rock"],"384":["Steel","Rock"],"385":["Normal"],"386":["Bug"],"387":["Bug"],"388":["Rock","Grass"],"389":["Rock","Grass"],"390":["Rock","Bug"],"391":["Rock","Bug"],"392":["Psychic","Fairy"],"393":["Psychic","Fairy"],"394":["Psychic","Fairy"],"395":["Dragon"],"396":["Dragon"],"397":["Dragon","Flying"],"398":["Steel","Psychic"],"399":["Steel","Psychic"],"400":["Steel","Psychic"],"401":["Rock"],"402":["Ice"],"403":["Steel"],"404":["Water"],"405":["Ground"],"406":["Dragon","Flying"],"407":["Dragon","Psychic"],"408":["Dragon","Psychic"],"409":["Steel","Psychic"],"410":["Psychic"],"411":["Psychic"],"438":["Psychic"],"439":["Psychic"],"440":["Grass"],"441":["Grass"],"442":["Grass","Ground"],"443":["Fire"],"444":["Fire","Fighting"],"445":["Fire","Fighting"],"446":["Water"],"447":["Water"],"448":["Water","Steel"],"449":["Normal","Flying"],"450":["Normal","Flying"],"451":["Normal","Flying"],"452":["Normal"],"453":["Normal","Water"],"454":["Bug"],"455":["Bug"],"456":["Electric"],"457":["Electric"],"458":["Electric"],"459":["Grass","Poison"],"460":["Grass","Poison"],"461":["Rock"],"462":["Rock"],"463":["Rock","Steel"],"464":["Rock","Steel"],"465":["Bug"],"466":["Bug","Grass"],"467":["Bug","Flying"],"468":["Bug","Flying"],"469":["Bug","Flying"],"470":["Electric"],"471":["Water"],"472":["Water"],"473":["Grass"],"474":["Grass"],"475":["Water"],"476":["Water","Ground"],"477":["Normal"],"478":["Ghost","Flying"],"479":["Ghost","Flying"],"480":["Normal"],"481":["Normal"],"482":["Ghost"],"483":["Dark","Flying"],"484":["Normal"],"485":["Normal"],"486":["Psychic"],"487":["Poison","Dark"],"488":["Poison","Dark"],"489":["Steel","Psychic"],"490":["Steel","Psychic"],"491":["Rock"],"492":["Psychic","Fairy"],"493":["Normal"],"494":["Normal","Flying"],"495":["Ghost","Dark"],"496":["Dragon","Ground"],"497":["Dragon","Ground"],"498":["Dragon","Ground"],"499":["Normal"],"500":["Fighting"],"501":["Fighting","Steel"],"502":["Ground"],"503":["Ground"],"504":["Poison","Bug"],"505":["Poison","Dark"],"506":["Poison","Fighting"],"507":["Poison","Fighting"],"508":["Grass"],"509":["Water"],"510":["Water"],"511":["Water","Flying"],"512":["Grass","Ice"],"513":["Grass","Ice"],"514":["Dark","Ice"],"515":["Electric","Steel"],"516":["Normal"],"517":["Ground","Rock"],"518":["Grass"],"519":["Electric"],"520":["Fire"],"521":["Fairy","Flying"],"522":["Bug","Flying"],"523":["Grass"],"524":["Ice"],"525":["Ground","Flying"],"526":["Ice","Ground"],"527":["Normal"],"528":["Psychic","Fighting"],"529":["Rock","Steel"],"530":["Ghost"],"531":["Ice","Ghost"],"532":["Electric","Ghost"],"533":["Psychic"],"534":["Psychic"],"535":["Psychic"],"536":["Steel","Dragon"],"537":["Water","Dragon"],"538":["Fire","Steel"],"539":["Normal"],"540":["Ghost","Dragon"],"541":["Psychic"],"542":["Water"],"543":["Water"],"544":["Dark"],"545":["Grass"],"546":["Normal"],"547":["Psychic","Fire"],"548":["Grass"],"549":["Grass"],"550":["Grass"],"551":["Fire"],"552":["Fire","Fighting"],"553":["Fire","Fighting"],"554":["Water"],"555":["Water"],"556":["Water"],"557":["Normal"],"558":["Normal"],"559":["Normal"],"560":["Normal"],"561":["Normal"],"562":["Dark"],"563":["Dark"],"564":["Grass"],"565":["Grass"],"566":["Fire"],"567":["Fire"],"568":["Water"],"569":["Water"],"570":["Psychic"],"571":["Psychic"],"572":["Normal","Flying"],"573":["Normal","Flying"],"574":["Normal","Flying"],"575":["Electric"],"576":["Electric"],"577":["Rock"],"578":["Rock"],"579":["Rock"],"580":["Psychic","Flying"],"581":["Psychic","Flying"],"582":["Ground"],"583":["Ground","Steel"],"584":["Normal"],"585":["Fighting"],"586":["Fighting"],"587":["Fighting"],"588":["Water"],"589":["Water","Ground"],"590":["Water","Ground"],"591":["Fighting"],"592":["Fighting"],"593":["Bug","Grass"],"594":["Bug","Grass"],"595":["Bug","Grass"],"596":["Bug","Poison"],"597":["Bug","Poison"],"598":["Bug","Poison"],"599":["Grass","Fairy"],"600":["Grass","Fairy"],"601":["Grass"],"602":["Grass"],"603":["Water"],"604":["Ground","Dark"],"605":["Ground","Dark"],"606":["Ground","Dark"],"607":["Fire"],"608":["Fire"],"609":["Grass"],"610":["Bug","Rock"],"611":["Bug","Rock"],"612":["Dark","Fighting"],"613":["Dark","Fighting"],"614":["Psychic","Flying"],"615":["Ghost"],"616":["Ghost"],"617":["Water","Rock"],"618":["Water","Rock"],"619":["Rock","Flying"],"620":["Rock","Flying"],"621":["Poison"],"622":["Poison"],"623":["Dark"],"624":["Dark"],"625":["Normal"],"626":["Normal"],"627":["Psychic"],"628":["Psychic"],"629":["Psychic"],"630":["Psychic"],"631":["Psychic"],"632":["Psychic"],"633":["Water","Flying"],"634":["Water","Flying"],"635":["Ice"],"636":["Ice"],"637":["Ice"],"638":["Normal","Grass"],"639":["Normal","Grass"],"640":["Electric","Flying"],"641":["Bug"],"642":["Bug","Steel"],"643":["Grass","Poison"],"644":["Grass","Poison"],"645":["Water","Ghost"],"646":["Water","Ghost"],"647":["Water"],"648":["Bug","Electric"],"649":["Bug","Electric"],"650":["Grass","Steel"],"651":["Grass","Steel"],"652":["Steel"],"653":["Steel"],"654":["Steel"],"655":["Electric"],"656":["Electric"],"657":["Electric"],"658":["Psychic"],"659":["Psychic"],"660":["Ghost","Fire"],"661":["Ghost","Fire"],"662":["Ghost","Fire"],"663":["Dragon"],"664":["Dragon"],"665":["Dragon"],"666":["Ice"],"667":["Ice"],"668":["Ice"],"669":["Bug"],"670":["Bug"],"671":["Ground","Electric"],"672":["Fighting"],"673":["Fighting"],"674":["Dragon"],"675":["Ground","Ghost"],"676":["Ground","Ghost"],"677":["Dark","Steel"],"678":["Dark","Steel"],"679":["Normal"],"680":["Normal","Flying"],"681":["Normal","Flying"],"682":["Dark","Flying"],"683":["Dark","Flying"],"684":["Fire"],"685":["Bug","Steel"],"686":["Dark","Dragon"],"687":["Dark","Dragon"],"688":["Dark","Dragon"],"689":["Bug","Fire"],"690":["Bug","Fire"],"691":["Steel","Fighting"],"692":["Rock","Fighting"],"693":["Grass","Fighting"],"694":["Flying"],"695":["Electric","Flying"],"696":["Dragon","Fire"],"697":["Dragon","Electric"],"698":["Ground","Flying"],"699":["Dragon","Ice"],"700":["Water","Fighting"],"701":["Normal","Psychic"],"702":["Bug","Steel"],"703":["Normal","Flying"],"704":["Water","Ghost"],"705":["Water","Ghost"],"707":["Bug"],"708":["Bug"],"709":["Bug","Grass"],"710":["Bug","Grass"],"711":["Water"],"712":["Water","Ground"],"713":["Electric","Ghost"],"714":["Electric","Ghost"],"715":["Electric","Ghost"],"716":["Electric","Ghost"],"717":["Electric","Ghost"],"718":["Ghost","Dragon"],"719":["Grass"],"720":["Normal"],"721":["Normal"],"722":["Normal"],"723":["Normal"],"724":["Normal"],"725":["Normal"],"726":["Normal"],"727":["Normal"],"728":["Normal"],"729":["Normal"],"730":["Normal"],"731":["Normal"],"732":["Normal"],"733":["Normal"],"734":["Normal"],"735":["Normal"],"736":["Water"],"737":["Fire"],"738":["Normal","Grass"],"739":["Normal","Grass"],"740":["Normal","Grass"],"741":["Normal","Grass"],"742":["Normal","Grass"],"743":["Normal","Grass"],"744":["Ground"],"745":["Ground"],"746":["Normal","Psychic"],"747":["Bug","Steel"],"748":["Bug","Steel"],"749":["Bug","Steel"],"750":["Bug","Steel"],"751":["Grass"],"752":["Dragon","Ice"],"753":["Dragon","Ice"],"754":["Flying"],"755":["Electric","Flying"],"756":["Ground","Flying"],"757":["Water","Fighting"],"758":["Grass"],"759":["Grass"],"760":["Grass","Fighting"],"761":["Fire"],"762":["Fire"],"763":["Fire","Psychic"],"764":["Water"],"765":["Water"],"766":["Water","Dark"],"767":["Normal"],"768":["Normal","Ground"],"769":["Normal","Flying"],"771":["Fire","Flying"],"772":["Bug"],"773":["Bug"],"774":["Bug","Flying"],"775":["Fire","Normal"],"776":["Fire","Normal"],"778":["Fairy"],"779":["Fairy"],"780":["Grass"],"781":["Grass"],"782":["Fighting"],"783":["Fighting","Dark"],"784":["Normal"],"785":["Psychic"],"786":["Psychic"],"787":["Steel","Ghost"],"788":["Steel","Ghost"],"789":["Steel","Ghost"],"790":["Fairy"],"791":["Fairy"],"792":["Fairy"],"793":["Fairy"],"794":["Dark","Psychic"],"795":["Dark","Psychic"],"796":["Rock","Water"],"797":["Rock","Water"],"798":["Poison","Water"],"799":["Poison","Dragon"],"800":["Water"],"801":["Water"],"802":["Electric","Normal"],"803":["Electric","Normal"],"804":["Rock","Dragon"],"805":["Rock","Dragon"],"806":["Rock","Ice"],"807":["Rock","Ice"],"808":["Fairy"],"809":["Fighting","Flying"],"810":["Electric","Fairy"],"811":["Rock","Fairy"],"812":["Dragon"],"813":["Dragon"],"814":["Dragon"],"815":["Steel","Fairy"],"816":["Ghost","Grass"],"817":["Ghost","Grass"],"818":["Ghost","Grass"],"819":["Ghost","Grass"],"820":["Ice"],"821":["Ice"],"822":["Flying","Dragon"],"823":["Flying","Dragon"],"824":["Fairy"],"825":["Dark","Flying"],"826":["Dragon","Ground"],"827":["Rock","Fairy"],"828":["Psychic","Ghost"],"829":["Psychic","Ghost"],"830":["Fire","Water"],"831":["Fire","Normal"],"832":["Psychic"],"833":["Steel","Ghost"],"834":["Normal"],"835":["Dragon","Ground"],"836":["Dragon","Ground"],"837":["Dragon","Ground"],"838":["Dragon","Ground"],"839":["Water","Dark"],"844":["Fairy"],"845":["Fairy"],"846":["Fairy"],"847":["Fairy"],"848":["Fairy"],"849":["Fairy"],"850":["Fairy"],"851":["Fairy"],"852":["Fairy"],"853":["Ghost","Grass"],"854":["Ghost","Grass"],"855":["Ghost","Grass"],"856":["Ghost","Grass"],"857":["Ghost","Grass"],"858":["Ghost","Grass"],"859":["Normal"],"860":["Normal"],"861":["Normal"],"862":["Normal"],"863":["Normal"],"864":["Normal"],"865":["Normal"],"866":["Normal"],"867":["Normal"],"868":["Bug","Flying"],"869":["Grass","Poison"],"870":["Fire","Flying"],"871":["Fire","Flying"],"872":["Water"],"873":["Bug","Poison"],"874":["Normal","Flying"],"875":["Psychic"],"876":["Water","Psychic"],"877":["Ghost","Poison"],"878":["Normal"],"879":["Bug"],"880":["Water","Flying"],"881":["Rock","Flying"],"882":["Psychic"],"883":["Psychic"],"884":["Electric"],"885":["Steel","Ground"],"886":["Bug","Steel"],"887":["Bug","Fighting"],"888":["Dark","Fire"],"889":["Rock","Dark"],"890":["Grass"],"891":["Fire","Fighting"],"892":["Water","Ground"],"893":["Psychic","Fairy"],"894":["Dark","Ghost"],"895":["Steel","Fairy"],"896":["Steel","Rock"],"897":["Fighting","Psychic"],"898":["Electric"],"899":["Water","Dark"],"900":["Fire","Ground"],"901":["Dragon","Flying"],"902":["Ghost"],"903":["Dark"],"904":["Ice"],"905":["Dragon","Flying"],"906":["Steel","Psychic"],"907":["Dragon","Psychic"],"908":["Dragon","Psychic"],"909":["Ground"],"910":["Water"],"911":["Dragon","Flying"],"912":["Normal"],"913":["Dragon","Ground"],"914":["Fighting","Steel"],"915":["Grass","Ice"],"916":["Psychic","Fighting"],"917":["Normal"],"918":["Rock","Fairy"],"919":["Steel","Dragon"],"920":["Water","Dragon"],"921":["Bug","Flying"],"922":["Bug","Flying"],"923":["Bug","Flying"],"924":["Bug","Flying"],"925":["Bug","Flying"],"926":["Bug","Flying"],"927":["Bug","Flying"],"928":["Bug","Flying"],"929":["Bug","Flying"],"930":["Bug","Flying"],"931":["Bug","Flying"],"932":["Bug","Flying"],"933":["Bug","Flying"],"934":["Bug","Flying"],"935":["Bug","Flying"],"936":["Bug","Flying"],"937":["Bug","Flying"],"938":["Bug","Flying"],"939":["Grass","Flying"],"940":["Grass","Flying"],"941":["Grass","Ghost"],"942":["Fire"],"943":["Fire"],"944":["Fire","Dark"],"945":["Water"],"946":["Water"],"947":["Water","Fairy"],"948":["Normal","Flying"],"949":["Normal","Flying"],"950":["Normal","Flying"],"951":["Normal"],"952":["Normal"],"953":["Bug"],"954":["Bug","Electric"],"955":["Bug","Electric"],"956":["Fighting"],"958":["Fire","Flying"],"959":["Bug","Fairy"],"960":["Bug","Fairy"],"961":["Rock"],"962":["Rock"],"963":["Water"],"964":["Poison","Water"],"965":["Poison","Water"],"966":["Ground"],"967":["Ground"],"968":["Water","Bug"],"969":["Water","Bug"],"970":["Grass"],"971":["Grass"],"972":["Grass","Fairy"],"973":["Grass","Fairy"],"974":["Poison","Fire"],"975":["Poison","Fire"],"976":["Normal","Fighting"],"977":["Normal","Fighting"],"978":["Grass"],"979":["Grass"],"980":["Grass"],"981":["Fairy"],"982":["Normal","Psychic"],"983":["Fighting"],"984":["Bug","Water"],"985":["Bug","Water"],"986":["Ghost","Ground"],"987":["Ghost","Ground"],"988":["Water"],"989":["Normal"],"990":["Normal"],"991":["Rock","Flying"],"992":["Normal"],"993":["Fire","Dragon"],"994":["Electric","Steel"],"995":["Ghost","Fairy"],"996":["Water","Psychic"],"997":["Normal","Dragon"],"998":["Ghost","Grass"],"999":["Dragon"],"1000":["Dragon","Fighting"],"1001":["Dragon","Fighting"],"1002":["Electric","Fairy"],"1003":["Psychic","Fairy"],"1004":["Grass","Fairy"],"1005":["Water","Fairy"],"1006":["Psychic"],"1007":["Psychic"],"1008":["Psychic","Steel"],"1009":["Psychic","Ghost"],"1010":["Rock","Poison"],"1011":["Bug","Fighting"],"1012":["Bug","Fighting"],"1013":["Electric"],"1014":["Steel","Flying"],"1015":["Grass","Steel"],"1016":["Dark","Dragon"],"1017":["Psychic"],"1018":["Steel","Fairy"],"1019":["Fighting","Ghost"],"1020":["Normal"],"1021":["Normal"],"1022":["Electric"],"1023":["Ground"],"1024":["Ground"],"1025":["Fire"],"1026":["Fire"],"1027":["Ground"],"1028":["Ground"],"1029":["Normal"],"1030":["Normal"],"1031":["Rock","Ground"],"1032":["Rock","Ground"],"1033":["Rock","Ground"],"1034":["Poison"],"1035":["Poison"],"1036":["Grass","Psychic"],"1037":["Grass","Psychic"],"1038":["Ground"],"1039":["Ground"],"1040":["Psychic"],"1041":["Psychic"],"1042":["Psychic"],"1043":["Fire","Flying"],"1044":["Fire","Flying"],"1045":["Fire","Flying"],"1046":["Rock"],"1047":["Water"],"1048":["Normal"],"1049":["Normal"],"1050":["Normal"],"1051":["Normal"],"1052":["Normal"],"1053":["Normal"],"1054":["Normal"],"1055":["Normal"],"1056":["Normal"],"1057":["Normal"],"1058":["Normal"],"1059":["Normal"],"1060":["Normal"],"1061":["Normal"],"1062":["Normal"],"1063":["Normal"],"1064":["Normal"],"1065":["Rock","Flying"],"1066":["Rock","Flying"],"1067":["Rock","Flying"],"1068":["Rock","Flying"],"1069":["Rock","Flying"],"1070":["Rock","Flying"],"1071":["Rock","Flying"],"1072":["Ghost","Fairy"],"1073":["Steel","Fairy"],"1074":["Poison"],"1075":["Poison","Dragon"],"1076":["Rock","Steel"],"1078":["Electric"],"1079":["Psychic"],"1080":["Psychic"],"1081":["Psychic"],"1082":["Rock"],"1083":["Steel"],"1084":["Steel"],"1085":["Electric"],"1086":["Electric"],"1087":["Electric"],"1088":["Electric"],"1089":["Electric"],"1090":["Electric"],"1091":["Electric"],"1092":["Electric"],"1093":["Electric"],"1094":["Electric"],"1095":["Electric"],"1096":["Electric"],"1097":["Electric"],"1098":["Electric"],"1099":["Electric"],"1100":["Electric"],"1101":["Fairy"],"1102":["Grass"],"1103":["Grass"],"1104":["Grass"],"1105":["Fire"],"1106":["Fire"],"1107":["Fire"],"1108":["Water"],"1109":["Water"],"1110":["Water"],"1111":["Normal"],"1112":["Normal"],"1113":["Flying"],"1116":["Bug"],"1117":["Bug","Psychic"],"1118":["Bug","Psychic"],"1119":["Dark"],"1120":["Dark"],"1121":["Grass"],"1122":["Grass"],"1123":["Normal"],"1124":["Normal"],"1125":["Water"],"1126":["Water","Rock"],"1127":["Electric"],"1128":["Electric"],"1129":["Rock"],"1130":["Rock","Fire"],"1131":["Rock","Fire"],"1132":["Grass","Dragon"],"1133":["Grass","Dragon"],"1134":["Grass","Dragon"],"1135":["Ground"],"1136":["Ground"],"1137":["Flying","Water"],"1138":["Water"],"1140":["Electric","Poison"],"1141":["Electric","Poison"],"1142":["Fire","Bug"],"1144":["Fighting"],"1145":["Fighting"],"1146":["Ghost"],"1148":["Psychic"],"1149":["Psychic"],"1150":["Psychic","Fairy"],"1151":["Dark","Fairy"],"1152":["Dark","Fairy"],"1153":["Dark","Fairy"],"1154":["Dark","Normal"],"1155":["Steel"],"1156":["Ghost"],"1157":["Fighting"],"1158":["Ice","Psychic"],"1159":["Ground","Ghost"],"1160":["Fairy"],"1161":["Fairy"],"1162":["Fighting"],"1163":["Electric"],"1164":["Ice","Bug"],"1165":["Ice","Bug"],"1167":["Ice"],"1168":["Psychic","Normal"],"1169":["Electric","Dark"],"1170":["Steel"],"1171":["Steel"],"1172":["Electric","Dragon"],"1173":["Electric","Ice"],"1174":["Water","Dragon"],"1175":["Water","Ice"],"1176":["Steel","Dragon"],"1177":["Dragon","Ghost"],"1178":["Dragon","Ghost"],"1179":["Dragon","Ghost"],"1180":["Fairy"],"1181":["Fighting"],"1182":["Poison","Dragon"],"1183":["Fighting"],"1184":["Fighting","Dark"],"1185":["Dark","Grass"],"1186":["Electric"],"1187":["Dragon"],"1188":["Ice"],"1189":["Ghost"],"1190":["Psychic","Grass"],"1191":["Flying","Water"],"1192":["Flying","Water"],"1193":["Electric","Poison"],"1194":["Ghost"],"1196":["Fairy"],"1197":["Fairy"],"1198":["Fairy"],"1199":["Fairy"],"1200":["Fairy"],"1201":["Fairy"],"1202":["Ice"],"1203":["Psychic","Normal"],"1204":["Electric","Dark"],"1205":["Fairy"],"1206":["Fighting"],"1207":["Poison","Dragon"],"1208":["Fighting","Dark"],"1209":["Dark","Grass"],"1210":["Psychic","Grass"],"1211":["Psychic","Grass"],"1212":["Normal"],"1213":["Fire"],"1214":["Fire"],"1215":["Water","Psychic"],"1216":["Water","Psychic"],"1217":["Normal","Flying"],"1218":["Poison"],"1219":["Poison"],"1220":["Psychic","Fairy"],"1221":["Ice","Flying"],"1222":["Electric","Flying"],"1223":["Fire","Flying"],"1224":["Water","Psychic"],"1225":["Water","Rock"],"1226":["Normal"],"1227":["Normal"],"1228":["Psychic","Fairy"],"1229":["Fire"],"1230":["Fire"],"1231":["Fire"],"1232":["Ghost"],"1233":["Ground","Electric"],"1234":["Fire"],"1235":["Fire"],"1236":["Electric"],"1237":["Electric"],"1238":["Fire"],"1239":["Water","Poison"],"1240":["Dark","Ice"],"1241":["Water"],"1242":["Grass"],"1243":["Water"],"1244":["Dark"],"1245":["Dark"],"1246":["Normal","Flying"],"1247":["Dragon"],"1248":["Dragon"],"1249":["Ice"],"1250":["Grass","Ghost"],"1260":["Grass","Poison"],"1261":["Fire","Flying"],"1262":["Water"],"1263":["Bug","Flying"],"1264":["Electric"],"1265":["Normal"],"1266":["Fighting"],"1267":["Ghost","Poison"],"29":["Poison"],"32":["Poison"],"252":["Grass"],"253":["Grass"],"254":["Grass"],"255":["Fire"],"256":["Fire","Fighting"],"257":["Fire","Fighting"],"258":["Water"],"259":["Water","Ground"],"260":["Water","Ground"],"261":["Dark"],"262":["Dark"],"263":["Normal"],"264":["Normal"],"265":["Bug"],"266":["Bug"],"267":["Bug","Flying"],"268":["Bug"],"269":["Bug","Poison"],"270":["Water","Grass"],"271":["Water","Grass"],"272":["Water","Grass"],"273":["Grass"],"274":["Grass","Dark"],"275":["Grass","Dark"],"276":["Normal","Flying"],"412":["Bug"],"413":["Bug","Grass"],"414":["Bug","Flying"],"415":["Bug","Flying"],"416":["Bug","Flying"],"417":["Electric"],"418":["Water"],"419":["Water"],"420":["Grass"],"421":["Grass"],"422":["Water"],"423":["Water","Ground"],"424":["Normal"],"425":["Ghost","Flying"],"426":["Ghost","Flying"],"427":["Normal"],"428":["Normal"],"429":["Ghost"],"430":["Dark","Flying"],"431":["Normal"],"432":["Normal"],"433":["Psychic"],"434":["Poison","Dark"],"435":["Poison","Dark"],"436":["Steel","Psychic"],"437":["Steel","Psychic"],"706":["Dragon"],"770":["Ghost","Ground"],"777":["Electric","Steel"],"840":["Grass","Dragon"],"841":["Grass","Dragon"],"842":["Grass","Dragon"],"843":["Ground"]}
+{
+  "1": [
+    "Grass",
+    "Poison"
+  ],
+  "2": [
+    "Grass",
+    "Poison"
+  ],
+  "3": [
+    "Grass",
+    "Poison"
+  ],
+  "4": [
+    "Fire"
+  ],
+  "5": [
+    "Fire"
+  ],
+  "6": [
+    "Fire",
+    "Flying"
+  ],
+  "7": [
+    "Water"
+  ],
+  "8": [
+    "Water"
+  ],
+  "9": [
+    "Water"
+  ],
+  "10": [
+    "Bug"
+  ],
+  "11": [
+    "Bug"
+  ],
+  "12": [
+    "Bug",
+    "Flying"
+  ],
+  "13": [
+    "Bug",
+    "Poison"
+  ],
+  "14": [
+    "Bug",
+    "Poison"
+  ],
+  "15": [
+    "Bug",
+    "Poison"
+  ],
+  "16": [
+    "Normal",
+    "Flying"
+  ],
+  "17": [
+    "Normal",
+    "Flying"
+  ],
+  "18": [
+    "Normal",
+    "Flying"
+  ],
+  "19": [
+    "Normal"
+  ],
+  "20": [
+    "Normal"
+  ],
+  "21": [
+    "Normal",
+    "Flying"
+  ],
+  "22": [
+    "Normal",
+    "Flying"
+  ],
+  "23": [
+    "Poison"
+  ],
+  "24": [
+    "Poison"
+  ],
+  "25": [
+    "Electric"
+  ],
+  "26": [
+    "Electric"
+  ],
+  "27": [
+    "Ground"
+  ],
+  "28": [
+    "Ground"
+  ],
+  "29": [
+    "Poison"
+  ],
+  "30": [
+    "Poison"
+  ],
+  "31": [
+    "Poison",
+    "Ground"
+  ],
+  "32": [
+    "Poison"
+  ],
+  "33": [
+    "Poison"
+  ],
+  "34": [
+    "Poison",
+    "Ground"
+  ],
+  "35": [
+    "Fairy"
+  ],
+  "36": [
+    "Fairy"
+  ],
+  "37": [
+    "Fire"
+  ],
+  "38": [
+    "Fire"
+  ],
+  "39": [
+    "Normal",
+    "Fairy"
+  ],
+  "40": [
+    "Normal",
+    "Fairy"
+  ],
+  "41": [
+    "Poison",
+    "Flying"
+  ],
+  "42": [
+    "Poison",
+    "Flying"
+  ],
+  "43": [
+    "Grass",
+    "Poison"
+  ],
+  "44": [
+    "Grass",
+    "Poison"
+  ],
+  "45": [
+    "Grass",
+    "Poison"
+  ],
+  "46": [
+    "Bug",
+    "Grass"
+  ],
+  "47": [
+    "Bug",
+    "Grass"
+  ],
+  "48": [
+    "Bug",
+    "Poison"
+  ],
+  "49": [
+    "Bug",
+    "Poison"
+  ],
+  "50": [
+    "Ground"
+  ],
+  "51": [
+    "Ground"
+  ],
+  "52": [
+    "Normal"
+  ],
+  "53": [
+    "Normal"
+  ],
+  "54": [
+    "Water"
+  ],
+  "55": [
+    "Water"
+  ],
+  "56": [
+    "Fighting"
+  ],
+  "57": [
+    "Fighting"
+  ],
+  "58": [
+    "Fire"
+  ],
+  "59": [
+    "Fire"
+  ],
+  "60": [
+    "Water"
+  ],
+  "61": [
+    "Water"
+  ],
+  "62": [
+    "Water",
+    "Fighting"
+  ],
+  "63": [
+    "Psychic"
+  ],
+  "64": [
+    "Psychic"
+  ],
+  "65": [
+    "Psychic"
+  ],
+  "66": [
+    "Fighting"
+  ],
+  "67": [
+    "Fighting"
+  ],
+  "68": [
+    "Fighting"
+  ],
+  "69": [
+    "Grass",
+    "Poison"
+  ],
+  "70": [
+    "Grass",
+    "Poison"
+  ],
+  "71": [
+    "Grass",
+    "Poison"
+  ],
+  "72": [
+    "Water",
+    "Poison"
+  ],
+  "73": [
+    "Water",
+    "Poison"
+  ],
+  "74": [
+    "Rock",
+    "Ground"
+  ],
+  "75": [
+    "Rock",
+    "Ground"
+  ],
+  "76": [
+    "Rock",
+    "Ground"
+  ],
+  "77": [
+    "Fire"
+  ],
+  "78": [
+    "Fire"
+  ],
+  "79": [
+    "Water",
+    "Psychic"
+  ],
+  "80": [
+    "Water",
+    "Psychic"
+  ],
+  "81": [
+    "Electric",
+    "Steel"
+  ],
+  "82": [
+    "Electric",
+    "Steel"
+  ],
+  "83": [
+    "Normal",
+    "Flying"
+  ],
+  "84": [
+    "Normal",
+    "Flying"
+  ],
+  "85": [
+    "Normal",
+    "Flying"
+  ],
+  "86": [
+    "Water"
+  ],
+  "87": [
+    "Water",
+    "Ice"
+  ],
+  "88": [
+    "Poison"
+  ],
+  "89": [
+    "Poison"
+  ],
+  "90": [
+    "Water"
+  ],
+  "91": [
+    "Water",
+    "Ice"
+  ],
+  "92": [
+    "Ghost",
+    "Poison"
+  ],
+  "93": [
+    "Ghost",
+    "Poison"
+  ],
+  "94": [
+    "Ghost",
+    "Poison"
+  ],
+  "95": [
+    "Rock",
+    "Ground"
+  ],
+  "96": [
+    "Psychic"
+  ],
+  "97": [
+    "Psychic"
+  ],
+  "98": [
+    "Water"
+  ],
+  "99": [
+    "Water"
+  ],
+  "100": [
+    "Electric"
+  ],
+  "101": [
+    "Electric"
+  ],
+  "102": [
+    "Grass",
+    "Psychic"
+  ],
+  "103": [
+    "Grass",
+    "Psychic"
+  ],
+  "104": [
+    "Ground"
+  ],
+  "105": [
+    "Ground"
+  ],
+  "106": [
+    "Fighting"
+  ],
+  "107": [
+    "Fighting"
+  ],
+  "108": [
+    "Normal"
+  ],
+  "109": [
+    "Poison"
+  ],
+  "110": [
+    "Poison"
+  ],
+  "111": [
+    "Ground",
+    "Rock"
+  ],
+  "112": [
+    "Ground",
+    "Rock"
+  ],
+  "113": [
+    "Normal"
+  ],
+  "114": [
+    "Grass"
+  ],
+  "115": [
+    "Normal"
+  ],
+  "116": [
+    "Water"
+  ],
+  "117": [
+    "Water"
+  ],
+  "118": [
+    "Water"
+  ],
+  "119": [
+    "Water"
+  ],
+  "120": [
+    "Water"
+  ],
+  "121": [
+    "Water",
+    "Psychic"
+  ],
+  "122": [
+    "Psychic",
+    "Fairy"
+  ],
+  "123": [
+    "Bug",
+    "Flying"
+  ],
+  "124": [
+    "Ice",
+    "Psychic"
+  ],
+  "125": [
+    "Electric"
+  ],
+  "126": [
+    "Fire"
+  ],
+  "127": [
+    "Bug"
+  ],
+  "128": [
+    "Normal"
+  ],
+  "129": [
+    "Water"
+  ],
+  "130": [
+    "Water",
+    "Flying"
+  ],
+  "131": [
+    "Water",
+    "Ice"
+  ],
+  "132": [
+    "Normal"
+  ],
+  "133": [
+    "Normal"
+  ],
+  "134": [
+    "Water"
+  ],
+  "135": [
+    "Electric"
+  ],
+  "136": [
+    "Fire"
+  ],
+  "137": [
+    "Normal"
+  ],
+  "138": [
+    "Rock",
+    "Water"
+  ],
+  "139": [
+    "Rock",
+    "Water"
+  ],
+  "140": [
+    "Rock",
+    "Water"
+  ],
+  "141": [
+    "Rock",
+    "Water"
+  ],
+  "142": [
+    "Rock",
+    "Flying"
+  ],
+  "143": [
+    "Normal"
+  ],
+  "144": [
+    "Ice",
+    "Flying"
+  ],
+  "145": [
+    "Electric",
+    "Flying"
+  ],
+  "146": [
+    "Fire",
+    "Flying"
+  ],
+  "147": [
+    "Dragon"
+  ],
+  "148": [
+    "Dragon"
+  ],
+  "149": [
+    "Dragon",
+    "Flying"
+  ],
+  "150": [
+    "Psychic"
+  ],
+  "151": [
+    "Psychic"
+  ],
+  "152": [
+    "Grass"
+  ],
+  "153": [
+    "Grass"
+  ],
+  "154": [
+    "Grass"
+  ],
+  "155": [
+    "Fire"
+  ],
+  "156": [
+    "Fire"
+  ],
+  "157": [
+    "Fire"
+  ],
+  "158": [
+    "Water"
+  ],
+  "159": [
+    "Water"
+  ],
+  "160": [
+    "Water"
+  ],
+  "161": [
+    "Normal"
+  ],
+  "162": [
+    "Normal"
+  ],
+  "163": [
+    "Normal",
+    "Flying"
+  ],
+  "164": [
+    "Normal",
+    "Flying"
+  ],
+  "165": [
+    "Bug",
+    "Flying"
+  ],
+  "166": [
+    "Bug",
+    "Flying"
+  ],
+  "167": [
+    "Bug",
+    "Poison"
+  ],
+  "168": [
+    "Bug",
+    "Poison"
+  ],
+  "169": [
+    "Poison",
+    "Flying"
+  ],
+  "170": [
+    "Water",
+    "Electric"
+  ],
+  "171": [
+    "Water",
+    "Electric"
+  ],
+  "172": [
+    "Electric"
+  ],
+  "173": [
+    "Fairy"
+  ],
+  "174": [
+    "Normal",
+    "Fairy"
+  ],
+  "175": [
+    "Fairy"
+  ],
+  "176": [
+    "Fairy",
+    "Flying"
+  ],
+  "177": [
+    "Psychic",
+    "Flying"
+  ],
+  "178": [
+    "Psychic",
+    "Flying"
+  ],
+  "179": [
+    "Electric"
+  ],
+  "180": [
+    "Electric"
+  ],
+  "181": [
+    "Electric"
+  ],
+  "182": [
+    "Grass"
+  ],
+  "183": [
+    "Water",
+    "Fairy"
+  ],
+  "184": [
+    "Water",
+    "Fairy"
+  ],
+  "185": [
+    "Rock"
+  ],
+  "186": [
+    "Water"
+  ],
+  "187": [
+    "Grass",
+    "Flying"
+  ],
+  "188": [
+    "Grass",
+    "Flying"
+  ],
+  "189": [
+    "Grass",
+    "Flying"
+  ],
+  "190": [
+    "Normal"
+  ],
+  "191": [
+    "Grass"
+  ],
+  "192": [
+    "Grass"
+  ],
+  "193": [
+    "Bug",
+    "Flying"
+  ],
+  "194": [
+    "Water",
+    "Ground"
+  ],
+  "195": [
+    "Water",
+    "Ground"
+  ],
+  "196": [
+    "Psychic"
+  ],
+  "197": [
+    "Dark"
+  ],
+  "198": [
+    "Dark",
+    "Flying"
+  ],
+  "199": [
+    "Water",
+    "Psychic"
+  ],
+  "200": [
+    "Ghost"
+  ],
+  "201": [
+    "Psychic"
+  ],
+  "202": [
+    "Psychic"
+  ],
+  "203": [
+    "Normal",
+    "Psychic"
+  ],
+  "204": [
+    "Bug"
+  ],
+  "205": [
+    "Bug",
+    "Steel"
+  ],
+  "206": [
+    "Normal"
+  ],
+  "207": [
+    "Ground",
+    "Flying"
+  ],
+  "208": [
+    "Steel",
+    "Ground"
+  ],
+  "209": [
+    "Fairy"
+  ],
+  "210": [
+    "Fairy"
+  ],
+  "211": [
+    "Water",
+    "Poison"
+  ],
+  "212": [
+    "Bug",
+    "Steel"
+  ],
+  "213": [
+    "Bug",
+    "Rock"
+  ],
+  "214": [
+    "Bug",
+    "Fighting"
+  ],
+  "215": [
+    "Dark",
+    "Ice"
+  ],
+  "216": [
+    "Normal"
+  ],
+  "217": [
+    "Normal"
+  ],
+  "218": [
+    "Fire"
+  ],
+  "219": [
+    "Fire",
+    "Rock"
+  ],
+  "220": [
+    "Ice",
+    "Ground"
+  ],
+  "221": [
+    "Ice",
+    "Ground"
+  ],
+  "222": [
+    "Water",
+    "Rock"
+  ],
+  "223": [
+    "Water"
+  ],
+  "224": [
+    "Water"
+  ],
+  "225": [
+    "Ice",
+    "Flying"
+  ],
+  "226": [
+    "Water",
+    "Flying"
+  ],
+  "227": [
+    "Steel",
+    "Flying"
+  ],
+  "228": [
+    "Dark",
+    "Fire"
+  ],
+  "229": [
+    "Dark",
+    "Fire"
+  ],
+  "230": [
+    "Water",
+    "Dragon"
+  ],
+  "231": [
+    "Ground"
+  ],
+  "232": [
+    "Ground"
+  ],
+  "233": [
+    "Normal"
+  ],
+  "234": [
+    "Normal"
+  ],
+  "235": [
+    "Normal"
+  ],
+  "236": [
+    "Fighting"
+  ],
+  "237": [
+    "Fighting"
+  ],
+  "238": [
+    "Ice",
+    "Psychic"
+  ],
+  "239": [
+    "Electric"
+  ],
+  "240": [
+    "Fire"
+  ],
+  "241": [
+    "Normal"
+  ],
+  "242": [
+    "Normal"
+  ],
+  "243": [
+    "Electric"
+  ],
+  "244": [
+    "Fire"
+  ],
+  "245": [
+    "Water"
+  ],
+  "246": [
+    "Rock",
+    "Ground"
+  ],
+  "247": [
+    "Rock",
+    "Ground"
+  ],
+  "248": [
+    "Rock",
+    "Dark"
+  ],
+  "249": [
+    "Psychic",
+    "Flying"
+  ],
+  "250": [
+    "Fire",
+    "Flying"
+  ],
+  "251": [
+    "Psychic",
+    "Grass"
+  ],
+  "252": [
+    "Grass"
+  ],
+  "253": [
+    "Grass"
+  ],
+  "254": [
+    "Grass"
+  ],
+  "255": [
+    "Fire"
+  ],
+  "256": [
+    "Fire",
+    "Fighting"
+  ],
+  "257": [
+    "Fire",
+    "Fighting"
+  ],
+  "258": [
+    "Water"
+  ],
+  "259": [
+    "Water",
+    "Ground"
+  ],
+  "260": [
+    "Water",
+    "Ground"
+  ],
+  "261": [
+    "Dark"
+  ],
+  "262": [
+    "Dark"
+  ],
+  "263": [
+    "Normal"
+  ],
+  "264": [
+    "Normal"
+  ],
+  "265": [
+    "Bug"
+  ],
+  "266": [
+    "Bug"
+  ],
+  "267": [
+    "Bug",
+    "Flying"
+  ],
+  "268": [
+    "Bug"
+  ],
+  "269": [
+    "Bug",
+    "Poison"
+  ],
+  "270": [
+    "Water",
+    "Grass"
+  ],
+  "271": [
+    "Water",
+    "Grass"
+  ],
+  "272": [
+    "Water",
+    "Grass"
+  ],
+  "273": [
+    "Grass"
+  ],
+  "274": [
+    "Grass",
+    "Dark"
+  ],
+  "275": [
+    "Grass",
+    "Dark"
+  ],
+  "276": [
+    "Normal",
+    "Flying"
+  ],
+  "277": [
+    "Grass"
+  ],
+  "278": [
+    "Grass"
+  ],
+  "279": [
+    "Grass"
+  ],
+  "280": [
+    "Fire"
+  ],
+  "281": [
+    "Fire",
+    "Fighting"
+  ],
+  "282": [
+    "Fire",
+    "Fighting"
+  ],
+  "283": [
+    "Water"
+  ],
+  "284": [
+    "Water",
+    "Ground"
+  ],
+  "285": [
+    "Water",
+    "Ground"
+  ],
+  "286": [
+    "Dark"
+  ],
+  "287": [
+    "Dark"
+  ],
+  "288": [
+    "Normal"
+  ],
+  "289": [
+    "Normal"
+  ],
+  "290": [
+    "Bug"
+  ],
+  "291": [
+    "Bug"
+  ],
+  "292": [
+    "Bug",
+    "Flying"
+  ],
+  "293": [
+    "Bug"
+  ],
+  "294": [
+    "Bug",
+    "Poison"
+  ],
+  "295": [
+    "Water",
+    "Grass"
+  ],
+  "296": [
+    "Water",
+    "Grass"
+  ],
+  "297": [
+    "Water",
+    "Grass"
+  ],
+  "298": [
+    "Grass"
+  ],
+  "299": [
+    "Grass",
+    "Dark"
+  ],
+  "300": [
+    "Grass",
+    "Dark"
+  ],
+  "301": [
+    "Bug",
+    "Ground"
+  ],
+  "302": [
+    "Bug",
+    "Flying"
+  ],
+  "303": [
+    "Bug",
+    "Ghost"
+  ],
+  "304": [
+    "Normal",
+    "Flying"
+  ],
+  "305": [
+    "Normal",
+    "Flying"
+  ],
+  "306": [
+    "Grass"
+  ],
+  "307": [
+    "Grass",
+    "Fighting"
+  ],
+  "308": [
+    "Normal"
+  ],
+  "309": [
+    "Water",
+    "Flying"
+  ],
+  "310": [
+    "Water",
+    "Flying"
+  ],
+  "311": [
+    "Bug",
+    "Water"
+  ],
+  "312": [
+    "Bug",
+    "Flying"
+  ],
+  "313": [
+    "Water"
+  ],
+  "314": [
+    "Water"
+  ],
+  "315": [
+    "Normal"
+  ],
+  "316": [
+    "Normal"
+  ],
+  "317": [
+    "Normal"
+  ],
+  "318": [
+    "Ground",
+    "Psychic"
+  ],
+  "319": [
+    "Ground",
+    "Psychic"
+  ],
+  "320": [
+    "Rock"
+  ],
+  "321": [
+    "Fire"
+  ],
+  "322": [
+    "Dark",
+    "Ghost"
+  ],
+  "323": [
+    "Water",
+    "Ground"
+  ],
+  "324": [
+    "Water",
+    "Ground"
+  ],
+  "325": [
+    "Water"
+  ],
+  "326": [
+    "Water"
+  ],
+  "327": [
+    "Water",
+    "Dark"
+  ],
+  "328": [
+    "Water"
+  ],
+  "329": [
+    "Water"
+  ],
+  "330": [
+    "Water",
+    "Dark"
+  ],
+  "331": [
+    "Water",
+    "Dark"
+  ],
+  "332": [
+    "Ground"
+  ],
+  "333": [
+    "Ground",
+    "Dragon"
+  ],
+  "334": [
+    "Ground",
+    "Dragon"
+  ],
+  "335": [
+    "Fighting"
+  ],
+  "336": [
+    "Fighting"
+  ],
+  "337": [
+    "Electric"
+  ],
+  "338": [
+    "Electric"
+  ],
+  "339": [
+    "Fire",
+    "Ground"
+  ],
+  "340": [
+    "Fire",
+    "Ground"
+  ],
+  "341": [
+    "Ice",
+    "Water"
+  ],
+  "342": [
+    "Ice",
+    "Water"
+  ],
+  "343": [
+    "Ice",
+    "Water"
+  ],
+  "344": [
+    "Grass"
+  ],
+  "345": [
+    "Grass",
+    "Dark"
+  ],
+  "346": [
+    "Ice"
+  ],
+  "347": [
+    "Ice"
+  ],
+  "348": [
+    "Rock",
+    "Psychic"
+  ],
+  "349": [
+    "Rock",
+    "Psychic"
+  ],
+  "350": [
+    "Normal",
+    "Fairy"
+  ],
+  "351": [
+    "Psychic"
+  ],
+  "352": [
+    "Psychic"
+  ],
+  "353": [
+    "Electric"
+  ],
+  "354": [
+    "Electric"
+  ],
+  "355": [
+    "Steel",
+    "Fairy"
+  ],
+  "356": [
+    "Fighting",
+    "Psychic"
+  ],
+  "357": [
+    "Fighting",
+    "Psychic"
+  ],
+  "358": [
+    "Normal",
+    "Flying"
+  ],
+  "359": [
+    "Dragon",
+    "Flying"
+  ],
+  "360": [
+    "Psychic"
+  ],
+  "361": [
+    "Ghost"
+  ],
+  "362": [
+    "Ghost"
+  ],
+  "363": [
+    "Grass",
+    "Poison"
+  ],
+  "364": [
+    "Normal"
+  ],
+  "365": [
+    "Normal"
+  ],
+  "366": [
+    "Normal"
+  ],
+  "367": [
+    "Poison"
+  ],
+  "368": [
+    "Poison"
+  ],
+  "369": [
+    "Grass",
+    "Flying"
+  ],
+  "370": [
+    "Normal"
+  ],
+  "371": [
+    "Normal"
+  ],
+  "372": [
+    "Normal"
+  ],
+  "373": [
+    "Water"
+  ],
+  "374": [
+    "Water"
+  ],
+  "375": [
+    "Water"
+  ],
+  "376": [
+    "Dark"
+  ],
+  "377": [
+    "Ghost"
+  ],
+  "378": [
+    "Ghost"
+  ],
+  "379": [
+    "Poison"
+  ],
+  "380": [
+    "Normal"
+  ],
+  "381": [
+    "Water",
+    "Rock"
+  ],
+  "382": [
+    "Steel",
+    "Rock"
+  ],
+  "383": [
+    "Steel",
+    "Rock"
+  ],
+  "384": [
+    "Steel",
+    "Rock"
+  ],
+  "385": [
+    "Normal"
+  ],
+  "386": [
+    "Bug"
+  ],
+  "387": [
+    "Bug"
+  ],
+  "388": [
+    "Rock",
+    "Grass"
+  ],
+  "389": [
+    "Rock",
+    "Grass"
+  ],
+  "390": [
+    "Rock",
+    "Bug"
+  ],
+  "391": [
+    "Rock",
+    "Bug"
+  ],
+  "392": [
+    "Psychic",
+    "Fairy"
+  ],
+  "393": [
+    "Psychic",
+    "Fairy"
+  ],
+  "394": [
+    "Psychic",
+    "Fairy"
+  ],
+  "395": [
+    "Dragon"
+  ],
+  "396": [
+    "Dragon"
+  ],
+  "397": [
+    "Dragon",
+    "Flying"
+  ],
+  "398": [
+    "Steel",
+    "Psychic"
+  ],
+  "399": [
+    "Steel",
+    "Psychic"
+  ],
+  "400": [
+    "Steel",
+    "Psychic"
+  ],
+  "401": [
+    "Rock"
+  ],
+  "402": [
+    "Ice"
+  ],
+  "403": [
+    "Steel"
+  ],
+  "404": [
+    "Water"
+  ],
+  "405": [
+    "Ground"
+  ],
+  "406": [
+    "Dragon",
+    "Flying"
+  ],
+  "407": [
+    "Dragon",
+    "Psychic"
+  ],
+  "408": [
+    "Dragon",
+    "Psychic"
+  ],
+  "409": [
+    "Steel",
+    "Psychic"
+  ],
+  "410": [
+    "Psychic"
+  ],
+  "411": [
+    "Psychic"
+  ],
+  "412": [
+    "Bug"
+  ],
+  "413": [
+    "Bug",
+    "Grass"
+  ],
+  "414": [
+    "Bug",
+    "Flying"
+  ],
+  "415": [
+    "Bug",
+    "Flying"
+  ],
+  "416": [
+    "Bug",
+    "Flying"
+  ],
+  "417": [
+    "Electric"
+  ],
+  "418": [
+    "Water"
+  ],
+  "419": [
+    "Water"
+  ],
+  "420": [
+    "Grass"
+  ],
+  "421": [
+    "Grass"
+  ],
+  "422": [
+    "Water"
+  ],
+  "423": [
+    "Water",
+    "Ground"
+  ],
+  "424": [
+    "Normal"
+  ],
+  "425": [
+    "Ghost",
+    "Flying"
+  ],
+  "426": [
+    "Ghost",
+    "Flying"
+  ],
+  "427": [
+    "Normal"
+  ],
+  "428": [
+    "Normal"
+  ],
+  "429": [
+    "Ghost"
+  ],
+  "430": [
+    "Dark",
+    "Flying"
+  ],
+  "431": [
+    "Normal"
+  ],
+  "432": [
+    "Normal"
+  ],
+  "433": [
+    "Psychic"
+  ],
+  "434": [
+    "Poison",
+    "Dark"
+  ],
+  "435": [
+    "Poison",
+    "Dark"
+  ],
+  "436": [
+    "Steel",
+    "Psychic"
+  ],
+  "437": [
+    "Steel",
+    "Psychic"
+  ],
+  "438": [
+    "Psychic"
+  ],
+  "439": [
+    "Psychic"
+  ],
+  "440": [
+    "Grass"
+  ],
+  "441": [
+    "Grass"
+  ],
+  "442": [
+    "Grass",
+    "Ground"
+  ],
+  "443": [
+    "Fire"
+  ],
+  "444": [
+    "Fire",
+    "Fighting"
+  ],
+  "445": [
+    "Fire",
+    "Fighting"
+  ],
+  "446": [
+    "Water"
+  ],
+  "447": [
+    "Water"
+  ],
+  "448": [
+    "Water",
+    "Steel"
+  ],
+  "449": [
+    "Normal",
+    "Flying"
+  ],
+  "450": [
+    "Normal",
+    "Flying"
+  ],
+  "451": [
+    "Normal",
+    "Flying"
+  ],
+  "452": [
+    "Normal"
+  ],
+  "453": [
+    "Normal",
+    "Water"
+  ],
+  "454": [
+    "Bug"
+  ],
+  "455": [
+    "Bug"
+  ],
+  "456": [
+    "Electric"
+  ],
+  "457": [
+    "Electric"
+  ],
+  "458": [
+    "Electric"
+  ],
+  "459": [
+    "Grass",
+    "Poison"
+  ],
+  "460": [
+    "Grass",
+    "Poison"
+  ],
+  "461": [
+    "Rock"
+  ],
+  "462": [
+    "Rock"
+  ],
+  "463": [
+    "Rock",
+    "Steel"
+  ],
+  "464": [
+    "Rock",
+    "Steel"
+  ],
+  "465": [
+    "Bug"
+  ],
+  "466": [
+    "Bug",
+    "Grass"
+  ],
+  "467": [
+    "Bug",
+    "Flying"
+  ],
+  "468": [
+    "Bug",
+    "Flying"
+  ],
+  "469": [
+    "Bug",
+    "Flying"
+  ],
+  "470": [
+    "Electric"
+  ],
+  "471": [
+    "Water"
+  ],
+  "472": [
+    "Water"
+  ],
+  "473": [
+    "Grass"
+  ],
+  "474": [
+    "Grass"
+  ],
+  "475": [
+    "Water"
+  ],
+  "476": [
+    "Water",
+    "Ground"
+  ],
+  "477": [
+    "Normal"
+  ],
+  "478": [
+    "Ghost",
+    "Flying"
+  ],
+  "479": [
+    "Ghost",
+    "Flying"
+  ],
+  "480": [
+    "Normal"
+  ],
+  "481": [
+    "Normal"
+  ],
+  "482": [
+    "Ghost"
+  ],
+  "483": [
+    "Dark",
+    "Flying"
+  ],
+  "484": [
+    "Normal"
+  ],
+  "485": [
+    "Normal"
+  ],
+  "486": [
+    "Psychic"
+  ],
+  "487": [
+    "Poison",
+    "Dark"
+  ],
+  "488": [
+    "Poison",
+    "Dark"
+  ],
+  "489": [
+    "Steel",
+    "Psychic"
+  ],
+  "490": [
+    "Steel",
+    "Psychic"
+  ],
+  "491": [
+    "Rock"
+  ],
+  "492": [
+    "Psychic",
+    "Fairy"
+  ],
+  "493": [
+    "Normal"
+  ],
+  "494": [
+    "Normal",
+    "Flying"
+  ],
+  "495": [
+    "Ghost",
+    "Dark"
+  ],
+  "496": [
+    "Dragon",
+    "Ground"
+  ],
+  "497": [
+    "Dragon",
+    "Ground"
+  ],
+  "498": [
+    "Dragon",
+    "Ground"
+  ],
+  "499": [
+    "Normal"
+  ],
+  "500": [
+    "Fighting"
+  ],
+  "501": [
+    "Fighting",
+    "Steel"
+  ],
+  "502": [
+    "Ground"
+  ],
+  "503": [
+    "Ground"
+  ],
+  "504": [
+    "Poison",
+    "Bug"
+  ],
+  "505": [
+    "Poison",
+    "Dark"
+  ],
+  "506": [
+    "Poison",
+    "Fighting"
+  ],
+  "507": [
+    "Poison",
+    "Fighting"
+  ],
+  "508": [
+    "Grass"
+  ],
+  "509": [
+    "Water"
+  ],
+  "510": [
+    "Water"
+  ],
+  "511": [
+    "Water",
+    "Flying"
+  ],
+  "512": [
+    "Grass",
+    "Ice"
+  ],
+  "513": [
+    "Grass",
+    "Ice"
+  ],
+  "514": [
+    "Dark",
+    "Ice"
+  ],
+  "515": [
+    "Electric",
+    "Steel"
+  ],
+  "516": [
+    "Normal"
+  ],
+  "517": [
+    "Ground",
+    "Rock"
+  ],
+  "518": [
+    "Grass"
+  ],
+  "519": [
+    "Electric"
+  ],
+  "520": [
+    "Fire"
+  ],
+  "521": [
+    "Fairy",
+    "Flying"
+  ],
+  "522": [
+    "Bug",
+    "Flying"
+  ],
+  "523": [
+    "Grass"
+  ],
+  "524": [
+    "Ice"
+  ],
+  "525": [
+    "Ground",
+    "Flying"
+  ],
+  "526": [
+    "Ice",
+    "Ground"
+  ],
+  "527": [
+    "Normal"
+  ],
+  "528": [
+    "Psychic",
+    "Fighting"
+  ],
+  "529": [
+    "Rock",
+    "Steel"
+  ],
+  "530": [
+    "Ghost"
+  ],
+  "531": [
+    "Ice",
+    "Ghost"
+  ],
+  "532": [
+    "Electric",
+    "Ghost"
+  ],
+  "533": [
+    "Psychic"
+  ],
+  "534": [
+    "Psychic"
+  ],
+  "535": [
+    "Psychic"
+  ],
+  "536": [
+    "Steel",
+    "Dragon"
+  ],
+  "537": [
+    "Water",
+    "Dragon"
+  ],
+  "538": [
+    "Fire",
+    "Steel"
+  ],
+  "539": [
+    "Normal"
+  ],
+  "540": [
+    "Ghost",
+    "Dragon"
+  ],
+  "541": [
+    "Psychic"
+  ],
+  "542": [
+    "Water"
+  ],
+  "543": [
+    "Water"
+  ],
+  "544": [
+    "Dark"
+  ],
+  "545": [
+    "Grass"
+  ],
+  "546": [
+    "Normal"
+  ],
+  "547": [
+    "Psychic",
+    "Fire"
+  ],
+  "548": [
+    "Grass"
+  ],
+  "549": [
+    "Grass"
+  ],
+  "550": [
+    "Grass"
+  ],
+  "551": [
+    "Fire"
+  ],
+  "552": [
+    "Fire",
+    "Fighting"
+  ],
+  "553": [
+    "Fire",
+    "Fighting"
+  ],
+  "554": [
+    "Water"
+  ],
+  "555": [
+    "Water"
+  ],
+  "556": [
+    "Water"
+  ],
+  "557": [
+    "Normal"
+  ],
+  "558": [
+    "Normal"
+  ],
+  "559": [
+    "Normal"
+  ],
+  "560": [
+    "Normal"
+  ],
+  "561": [
+    "Normal"
+  ],
+  "562": [
+    "Dark"
+  ],
+  "563": [
+    "Dark"
+  ],
+  "564": [
+    "Grass"
+  ],
+  "565": [
+    "Grass"
+  ],
+  "566": [
+    "Fire"
+  ],
+  "567": [
+    "Fire"
+  ],
+  "568": [
+    "Water"
+  ],
+  "569": [
+    "Water"
+  ],
+  "570": [
+    "Psychic"
+  ],
+  "571": [
+    "Psychic"
+  ],
+  "572": [
+    "Normal",
+    "Flying"
+  ],
+  "573": [
+    "Normal",
+    "Flying"
+  ],
+  "574": [
+    "Normal",
+    "Flying"
+  ],
+  "575": [
+    "Electric"
+  ],
+  "576": [
+    "Electric"
+  ],
+  "577": [
+    "Rock"
+  ],
+  "578": [
+    "Rock"
+  ],
+  "579": [
+    "Rock"
+  ],
+  "580": [
+    "Psychic",
+    "Flying"
+  ],
+  "581": [
+    "Psychic",
+    "Flying"
+  ],
+  "582": [
+    "Ground"
+  ],
+  "583": [
+    "Ground",
+    "Steel"
+  ],
+  "584": [
+    "Normal"
+  ],
+  "585": [
+    "Fighting"
+  ],
+  "586": [
+    "Fighting"
+  ],
+  "587": [
+    "Fighting"
+  ],
+  "588": [
+    "Water"
+  ],
+  "589": [
+    "Water",
+    "Ground"
+  ],
+  "590": [
+    "Water",
+    "Ground"
+  ],
+  "591": [
+    "Fighting"
+  ],
+  "592": [
+    "Fighting"
+  ],
+  "593": [
+    "Bug",
+    "Grass"
+  ],
+  "594": [
+    "Bug",
+    "Grass"
+  ],
+  "595": [
+    "Bug",
+    "Grass"
+  ],
+  "596": [
+    "Bug",
+    "Poison"
+  ],
+  "597": [
+    "Bug",
+    "Poison"
+  ],
+  "598": [
+    "Bug",
+    "Poison"
+  ],
+  "599": [
+    "Grass",
+    "Fairy"
+  ],
+  "600": [
+    "Grass",
+    "Fairy"
+  ],
+  "601": [
+    "Grass"
+  ],
+  "602": [
+    "Grass"
+  ],
+  "603": [
+    "Water"
+  ],
+  "604": [
+    "Ground",
+    "Dark"
+  ],
+  "605": [
+    "Ground",
+    "Dark"
+  ],
+  "606": [
+    "Ground",
+    "Dark"
+  ],
+  "607": [
+    "Fire"
+  ],
+  "608": [
+    "Fire"
+  ],
+  "609": [
+    "Grass"
+  ],
+  "610": [
+    "Bug",
+    "Rock"
+  ],
+  "611": [
+    "Bug",
+    "Rock"
+  ],
+  "612": [
+    "Dark",
+    "Fighting"
+  ],
+  "613": [
+    "Dark",
+    "Fighting"
+  ],
+  "614": [
+    "Psychic",
+    "Flying"
+  ],
+  "615": [
+    "Ghost"
+  ],
+  "616": [
+    "Ghost"
+  ],
+  "617": [
+    "Water",
+    "Rock"
+  ],
+  "618": [
+    "Water",
+    "Rock"
+  ],
+  "619": [
+    "Rock",
+    "Flying"
+  ],
+  "620": [
+    "Rock",
+    "Flying"
+  ],
+  "621": [
+    "Poison"
+  ],
+  "622": [
+    "Poison"
+  ],
+  "623": [
+    "Dark"
+  ],
+  "624": [
+    "Dark"
+  ],
+  "625": [
+    "Normal"
+  ],
+  "626": [
+    "Normal"
+  ],
+  "627": [
+    "Psychic"
+  ],
+  "628": [
+    "Psychic"
+  ],
+  "629": [
+    "Psychic"
+  ],
+  "630": [
+    "Psychic"
+  ],
+  "631": [
+    "Psychic"
+  ],
+  "632": [
+    "Psychic"
+  ],
+  "633": [
+    "Water",
+    "Flying"
+  ],
+  "634": [
+    "Water",
+    "Flying"
+  ],
+  "635": [
+    "Ice"
+  ],
+  "636": [
+    "Ice"
+  ],
+  "637": [
+    "Ice"
+  ],
+  "638": [
+    "Normal",
+    "Grass"
+  ],
+  "639": [
+    "Normal",
+    "Grass"
+  ],
+  "640": [
+    "Electric",
+    "Flying"
+  ],
+  "641": [
+    "Bug"
+  ],
+  "642": [
+    "Bug",
+    "Steel"
+  ],
+  "643": [
+    "Grass",
+    "Poison"
+  ],
+  "644": [
+    "Grass",
+    "Poison"
+  ],
+  "645": [
+    "Water",
+    "Ghost"
+  ],
+  "646": [
+    "Water",
+    "Ghost"
+  ],
+  "647": [
+    "Water"
+  ],
+  "648": [
+    "Bug",
+    "Electric"
+  ],
+  "649": [
+    "Bug",
+    "Electric"
+  ],
+  "650": [
+    "Grass",
+    "Steel"
+  ],
+  "651": [
+    "Grass",
+    "Steel"
+  ],
+  "652": [
+    "Steel"
+  ],
+  "653": [
+    "Steel"
+  ],
+  "654": [
+    "Steel"
+  ],
+  "655": [
+    "Electric"
+  ],
+  "656": [
+    "Electric"
+  ],
+  "657": [
+    "Electric"
+  ],
+  "658": [
+    "Psychic"
+  ],
+  "659": [
+    "Psychic"
+  ],
+  "660": [
+    "Ghost",
+    "Fire"
+  ],
+  "661": [
+    "Ghost",
+    "Fire"
+  ],
+  "662": [
+    "Ghost",
+    "Fire"
+  ],
+  "663": [
+    "Dragon"
+  ],
+  "664": [
+    "Dragon"
+  ],
+  "665": [
+    "Dragon"
+  ],
+  "666": [
+    "Ice"
+  ],
+  "667": [
+    "Ice"
+  ],
+  "668": [
+    "Ice"
+  ],
+  "669": [
+    "Bug"
+  ],
+  "670": [
+    "Bug"
+  ],
+  "671": [
+    "Ground",
+    "Electric"
+  ],
+  "672": [
+    "Fighting"
+  ],
+  "673": [
+    "Fighting"
+  ],
+  "674": [
+    "Dragon"
+  ],
+  "675": [
+    "Ground",
+    "Ghost"
+  ],
+  "676": [
+    "Ground",
+    "Ghost"
+  ],
+  "677": [
+    "Dark",
+    "Steel"
+  ],
+  "678": [
+    "Dark",
+    "Steel"
+  ],
+  "679": [
+    "Normal"
+  ],
+  "680": [
+    "Normal",
+    "Flying"
+  ],
+  "681": [
+    "Normal",
+    "Flying"
+  ],
+  "682": [
+    "Dark",
+    "Flying"
+  ],
+  "683": [
+    "Dark",
+    "Flying"
+  ],
+  "684": [
+    "Fire"
+  ],
+  "685": [
+    "Bug",
+    "Steel"
+  ],
+  "686": [
+    "Dark",
+    "Dragon"
+  ],
+  "687": [
+    "Dark",
+    "Dragon"
+  ],
+  "688": [
+    "Dark",
+    "Dragon"
+  ],
+  "689": [
+    "Bug",
+    "Fire"
+  ],
+  "690": [
+    "Bug",
+    "Fire"
+  ],
+  "691": [
+    "Steel",
+    "Fighting"
+  ],
+  "692": [
+    "Rock",
+    "Fighting"
+  ],
+  "693": [
+    "Grass",
+    "Fighting"
+  ],
+  "694": [
+    "Flying"
+  ],
+  "695": [
+    "Electric",
+    "Flying"
+  ],
+  "696": [
+    "Dragon",
+    "Fire"
+  ],
+  "697": [
+    "Dragon",
+    "Electric"
+  ],
+  "698": [
+    "Ground",
+    "Flying"
+  ],
+  "699": [
+    "Dragon",
+    "Ice"
+  ],
+  "700": [
+    "Water",
+    "Fighting"
+  ],
+  "701": [
+    "Normal",
+    "Psychic"
+  ],
+  "702": [
+    "Bug",
+    "Steel"
+  ],
+  "703": [
+    "Normal",
+    "Flying"
+  ],
+  "704": [
+    "Water",
+    "Ghost"
+  ],
+  "705": [
+    "Water",
+    "Ghost"
+  ],
+  "706": [
+    "Dragon"
+  ],
+  "707": [
+    "Bug"
+  ],
+  "708": [
+    "Bug"
+  ],
+  "709": [
+    "Bug",
+    "Grass"
+  ],
+  "710": [
+    "Bug",
+    "Grass"
+  ],
+  "711": [
+    "Water"
+  ],
+  "712": [
+    "Water",
+    "Ground"
+  ],
+  "713": [
+    "Electric",
+    "Ghost"
+  ],
+  "714": [
+    "Electric",
+    "Ghost"
+  ],
+  "715": [
+    "Electric",
+    "Ghost"
+  ],
+  "716": [
+    "Electric",
+    "Ghost"
+  ],
+  "717": [
+    "Electric",
+    "Ghost"
+  ],
+  "718": [
+    "Ghost",
+    "Dragon"
+  ],
+  "719": [
+    "Grass"
+  ],
+  "720": [
+    "Normal"
+  ],
+  "721": [
+    "Normal"
+  ],
+  "722": [
+    "Normal"
+  ],
+  "723": [
+    "Normal"
+  ],
+  "724": [
+    "Normal"
+  ],
+  "725": [
+    "Normal"
+  ],
+  "726": [
+    "Normal"
+  ],
+  "727": [
+    "Normal"
+  ],
+  "728": [
+    "Normal"
+  ],
+  "729": [
+    "Normal"
+  ],
+  "730": [
+    "Normal"
+  ],
+  "731": [
+    "Normal"
+  ],
+  "732": [
+    "Normal"
+  ],
+  "733": [
+    "Normal"
+  ],
+  "734": [
+    "Normal"
+  ],
+  "735": [
+    "Normal"
+  ],
+  "736": [
+    "Water"
+  ],
+  "737": [
+    "Fire"
+  ],
+  "738": [
+    "Normal",
+    "Grass"
+  ],
+  "739": [
+    "Normal",
+    "Grass"
+  ],
+  "740": [
+    "Normal",
+    "Grass"
+  ],
+  "741": [
+    "Normal",
+    "Grass"
+  ],
+  "742": [
+    "Normal",
+    "Grass"
+  ],
+  "743": [
+    "Normal",
+    "Grass"
+  ],
+  "744": [
+    "Ground"
+  ],
+  "745": [
+    "Ground"
+  ],
+  "746": [
+    "Normal",
+    "Psychic"
+  ],
+  "747": [
+    "Bug",
+    "Steel"
+  ],
+  "748": [
+    "Bug",
+    "Steel"
+  ],
+  "749": [
+    "Bug",
+    "Steel"
+  ],
+  "750": [
+    "Bug",
+    "Steel"
+  ],
+  "751": [
+    "Grass"
+  ],
+  "752": [
+    "Dragon",
+    "Ice"
+  ],
+  "753": [
+    "Dragon",
+    "Ice"
+  ],
+  "754": [
+    "Flying"
+  ],
+  "755": [
+    "Electric",
+    "Flying"
+  ],
+  "756": [
+    "Ground",
+    "Flying"
+  ],
+  "757": [
+    "Water",
+    "Fighting"
+  ],
+  "758": [
+    "Grass"
+  ],
+  "759": [
+    "Grass"
+  ],
+  "760": [
+    "Grass",
+    "Fighting"
+  ],
+  "761": [
+    "Fire"
+  ],
+  "762": [
+    "Fire"
+  ],
+  "763": [
+    "Fire",
+    "Psychic"
+  ],
+  "764": [
+    "Water"
+  ],
+  "765": [
+    "Water"
+  ],
+  "766": [
+    "Water",
+    "Dark"
+  ],
+  "767": [
+    "Normal"
+  ],
+  "768": [
+    "Normal",
+    "Ground"
+  ],
+  "769": [
+    "Normal",
+    "Flying"
+  ],
+  "770": [
+    "Ghost",
+    "Ground"
+  ],
+  "771": [
+    "Fire",
+    "Flying"
+  ],
+  "772": [
+    "Bug"
+  ],
+  "773": [
+    "Bug"
+  ],
+  "774": [
+    "Bug",
+    "Flying"
+  ],
+  "775": [
+    "Fire",
+    "Normal"
+  ],
+  "776": [
+    "Fire",
+    "Normal"
+  ],
+  "777": [
+    "Electric",
+    "Steel"
+  ],
+  "778": [
+    "Fairy"
+  ],
+  "779": [
+    "Fairy"
+  ],
+  "780": [
+    "Grass"
+  ],
+  "781": [
+    "Grass"
+  ],
+  "782": [
+    "Fighting"
+  ],
+  "783": [
+    "Fighting",
+    "Dark"
+  ],
+  "784": [
+    "Normal"
+  ],
+  "785": [
+    "Psychic"
+  ],
+  "786": [
+    "Psychic"
+  ],
+  "787": [
+    "Steel",
+    "Ghost"
+  ],
+  "788": [
+    "Steel",
+    "Ghost"
+  ],
+  "789": [
+    "Steel",
+    "Ghost"
+  ],
+  "790": [
+    "Fairy"
+  ],
+  "791": [
+    "Fairy"
+  ],
+  "792": [
+    "Fairy"
+  ],
+  "793": [
+    "Fairy"
+  ],
+  "794": [
+    "Dark",
+    "Psychic"
+  ],
+  "795": [
+    "Dark",
+    "Psychic"
+  ],
+  "796": [
+    "Rock",
+    "Water"
+  ],
+  "797": [
+    "Rock",
+    "Water"
+  ],
+  "798": [
+    "Poison",
+    "Water"
+  ],
+  "799": [
+    "Poison",
+    "Dragon"
+  ],
+  "800": [
+    "Water"
+  ],
+  "801": [
+    "Water"
+  ],
+  "802": [
+    "Electric",
+    "Normal"
+  ],
+  "803": [
+    "Electric",
+    "Normal"
+  ],
+  "804": [
+    "Rock",
+    "Dragon"
+  ],
+  "805": [
+    "Rock",
+    "Dragon"
+  ],
+  "806": [
+    "Rock",
+    "Ice"
+  ],
+  "807": [
+    "Rock",
+    "Ice"
+  ],
+  "808": [
+    "Fairy"
+  ],
+  "809": [
+    "Fighting",
+    "Flying"
+  ],
+  "810": [
+    "Electric",
+    "Fairy"
+  ],
+  "811": [
+    "Rock",
+    "Fairy"
+  ],
+  "812": [
+    "Dragon"
+  ],
+  "813": [
+    "Dragon"
+  ],
+  "814": [
+    "Dragon"
+  ],
+  "815": [
+    "Steel",
+    "Fairy"
+  ],
+  "816": [
+    "Ghost",
+    "Grass"
+  ],
+  "817": [
+    "Ghost",
+    "Grass"
+  ],
+  "818": [
+    "Ghost",
+    "Grass"
+  ],
+  "819": [
+    "Ghost",
+    "Grass"
+  ],
+  "820": [
+    "Ice"
+  ],
+  "821": [
+    "Ice"
+  ],
+  "822": [
+    "Flying",
+    "Dragon"
+  ],
+  "823": [
+    "Flying",
+    "Dragon"
+  ],
+  "824": [
+    "Fairy"
+  ],
+  "825": [
+    "Dark",
+    "Flying"
+  ],
+  "826": [
+    "Dragon",
+    "Ground"
+  ],
+  "827": [
+    "Rock",
+    "Fairy"
+  ],
+  "828": [
+    "Psychic",
+    "Ghost"
+  ],
+  "829": [
+    "Psychic",
+    "Ghost"
+  ],
+  "830": [
+    "Fire",
+    "Water"
+  ],
+  "831": [
+    "Fire",
+    "Normal"
+  ],
+  "832": [
+    "Psychic"
+  ],
+  "833": [
+    "Steel",
+    "Ghost"
+  ],
+  "834": [
+    "Normal"
+  ],
+  "835": [
+    "Dragon",
+    "Ground"
+  ],
+  "836": [
+    "Dragon",
+    "Ground"
+  ],
+  "837": [
+    "Dragon",
+    "Ground"
+  ],
+  "838": [
+    "Dragon",
+    "Ground"
+  ],
+  "839": [
+    "Water",
+    "Dark"
+  ],
+  "840": [
+    "Grass",
+    "Dragon"
+  ],
+  "841": [
+    "Grass",
+    "Dragon"
+  ],
+  "842": [
+    "Grass",
+    "Dragon"
+  ],
+  "843": [
+    "Ground"
+  ],
+  "844": [
+    "Fairy"
+  ],
+  "845": [
+    "Fairy"
+  ],
+  "846": [
+    "Fairy"
+  ],
+  "847": [
+    "Fairy"
+  ],
+  "848": [
+    "Fairy"
+  ],
+  "849": [
+    "Fairy"
+  ],
+  "850": [
+    "Fairy"
+  ],
+  "851": [
+    "Fairy"
+  ],
+  "852": [
+    "Fairy"
+  ],
+  "853": [
+    "Ghost",
+    "Grass"
+  ],
+  "854": [
+    "Ghost",
+    "Grass"
+  ],
+  "855": [
+    "Ghost",
+    "Grass"
+  ],
+  "856": [
+    "Ghost",
+    "Grass"
+  ],
+  "857": [
+    "Ghost",
+    "Grass"
+  ],
+  "858": [
+    "Ghost",
+    "Grass"
+  ],
+  "859": [
+    "Normal"
+  ],
+  "860": [
+    "Normal"
+  ],
+  "861": [
+    "Normal"
+  ],
+  "862": [
+    "Normal"
+  ],
+  "863": [
+    "Normal"
+  ],
+  "864": [
+    "Normal"
+  ],
+  "865": [
+    "Normal"
+  ],
+  "866": [
+    "Normal"
+  ],
+  "867": [
+    "Normal"
+  ],
+  "868": [
+    "Bug",
+    "Flying"
+  ],
+  "869": [
+    "Grass",
+    "Poison"
+  ],
+  "870": [
+    "Fire",
+    "Flying"
+  ],
+  "871": [
+    "Fire",
+    "Flying"
+  ],
+  "872": [
+    "Water"
+  ],
+  "873": [
+    "Bug",
+    "Poison"
+  ],
+  "874": [
+    "Normal",
+    "Flying"
+  ],
+  "875": [
+    "Psychic"
+  ],
+  "876": [
+    "Water",
+    "Psychic"
+  ],
+  "877": [
+    "Ghost",
+    "Poison"
+  ],
+  "878": [
+    "Normal"
+  ],
+  "879": [
+    "Bug"
+  ],
+  "880": [
+    "Water",
+    "Flying"
+  ],
+  "881": [
+    "Rock",
+    "Flying"
+  ],
+  "882": [
+    "Psychic"
+  ],
+  "883": [
+    "Psychic"
+  ],
+  "884": [
+    "Electric"
+  ],
+  "885": [
+    "Steel",
+    "Ground"
+  ],
+  "886": [
+    "Bug",
+    "Steel"
+  ],
+  "887": [
+    "Bug",
+    "Fighting"
+  ],
+  "888": [
+    "Dark",
+    "Fire"
+  ],
+  "889": [
+    "Rock",
+    "Dark"
+  ],
+  "890": [
+    "Grass"
+  ],
+  "891": [
+    "Fire",
+    "Fighting"
+  ],
+  "892": [
+    "Water",
+    "Ground"
+  ],
+  "893": [
+    "Psychic",
+    "Fairy"
+  ],
+  "894": [
+    "Dark",
+    "Ghost"
+  ],
+  "895": [
+    "Steel",
+    "Fairy"
+  ],
+  "896": [
+    "Steel",
+    "Rock"
+  ],
+  "897": [
+    "Fighting",
+    "Psychic"
+  ],
+  "898": [
+    "Electric"
+  ],
+  "899": [
+    "Water",
+    "Dark"
+  ],
+  "900": [
+    "Fire",
+    "Ground"
+  ],
+  "901": [
+    "Dragon",
+    "Flying"
+  ],
+  "902": [
+    "Ghost"
+  ],
+  "903": [
+    "Dark"
+  ],
+  "904": [
+    "Ice"
+  ],
+  "905": [
+    "Dragon",
+    "Flying"
+  ],
+  "906": [
+    "Steel",
+    "Psychic"
+  ],
+  "907": [
+    "Dragon",
+    "Psychic"
+  ],
+  "908": [
+    "Dragon",
+    "Psychic"
+  ],
+  "909": [
+    "Ground"
+  ],
+  "910": [
+    "Water"
+  ],
+  "911": [
+    "Dragon",
+    "Flying"
+  ],
+  "912": [
+    "Normal"
+  ],
+  "913": [
+    "Dragon",
+    "Ground"
+  ],
+  "914": [
+    "Fighting",
+    "Steel"
+  ],
+  "915": [
+    "Grass",
+    "Ice"
+  ],
+  "916": [
+    "Psychic",
+    "Fighting"
+  ],
+  "917": [
+    "Normal"
+  ],
+  "918": [
+    "Rock",
+    "Fairy"
+  ],
+  "919": [
+    "Steel",
+    "Dragon"
+  ],
+  "920": [
+    "Water",
+    "Dragon"
+  ],
+  "921": [
+    "Bug",
+    "Flying"
+  ],
+  "922": [
+    "Bug",
+    "Flying"
+  ],
+  "923": [
+    "Bug",
+    "Flying"
+  ],
+  "924": [
+    "Bug",
+    "Flying"
+  ],
+  "925": [
+    "Bug",
+    "Flying"
+  ],
+  "926": [
+    "Bug",
+    "Flying"
+  ],
+  "927": [
+    "Bug",
+    "Flying"
+  ],
+  "928": [
+    "Bug",
+    "Flying"
+  ],
+  "929": [
+    "Bug",
+    "Flying"
+  ],
+  "930": [
+    "Bug",
+    "Flying"
+  ],
+  "931": [
+    "Bug",
+    "Flying"
+  ],
+  "932": [
+    "Bug",
+    "Flying"
+  ],
+  "933": [
+    "Bug",
+    "Flying"
+  ],
+  "934": [
+    "Bug",
+    "Flying"
+  ],
+  "935": [
+    "Bug",
+    "Flying"
+  ],
+  "936": [
+    "Bug",
+    "Flying"
+  ],
+  "937": [
+    "Bug",
+    "Flying"
+  ],
+  "938": [
+    "Bug",
+    "Flying"
+  ],
+  "939": [
+    "Grass",
+    "Flying"
+  ],
+  "940": [
+    "Grass",
+    "Flying"
+  ],
+  "941": [
+    "Grass",
+    "Ghost"
+  ],
+  "942": [
+    "Fire"
+  ],
+  "943": [
+    "Fire"
+  ],
+  "944": [
+    "Fire",
+    "Dark"
+  ],
+  "945": [
+    "Water"
+  ],
+  "946": [
+    "Water"
+  ],
+  "947": [
+    "Water",
+    "Fairy"
+  ],
+  "948": [
+    "Normal",
+    "Flying"
+  ],
+  "949": [
+    "Normal",
+    "Flying"
+  ],
+  "950": [
+    "Normal",
+    "Flying"
+  ],
+  "951": [
+    "Normal"
+  ],
+  "952": [
+    "Normal"
+  ],
+  "953": [
+    "Bug"
+  ],
+  "954": [
+    "Bug",
+    "Electric"
+  ],
+  "955": [
+    "Bug",
+    "Electric"
+  ],
+  "956": [
+    "Fighting"
+  ],
+  "957": [
+    "Fighting",
+    "Ice"
+  ],
+  "958": [
+    "Fire",
+    "Flying"
+  ],
+  "959": [
+    "Bug",
+    "Fairy"
+  ],
+  "960": [
+    "Bug",
+    "Fairy"
+  ],
+  "961": [
+    "Rock"
+  ],
+  "962": [
+    "Rock"
+  ],
+  "963": [
+    "Water"
+  ],
+  "964": [
+    "Poison",
+    "Water"
+  ],
+  "965": [
+    "Poison",
+    "Water"
+  ],
+  "966": [
+    "Ground"
+  ],
+  "967": [
+    "Ground"
+  ],
+  "968": [
+    "Water",
+    "Bug"
+  ],
+  "969": [
+    "Water",
+    "Bug"
+  ],
+  "970": [
+    "Grass"
+  ],
+  "971": [
+    "Grass"
+  ],
+  "972": [
+    "Grass",
+    "Fairy"
+  ],
+  "973": [
+    "Grass",
+    "Fairy"
+  ],
+  "974": [
+    "Poison",
+    "Fire"
+  ],
+  "975": [
+    "Poison",
+    "Fire"
+  ],
+  "976": [
+    "Normal",
+    "Fighting"
+  ],
+  "977": [
+    "Normal",
+    "Fighting"
+  ],
+  "978": [
+    "Grass"
+  ],
+  "979": [
+    "Grass"
+  ],
+  "980": [
+    "Grass"
+  ],
+  "981": [
+    "Fairy"
+  ],
+  "982": [
+    "Normal",
+    "Psychic"
+  ],
+  "983": [
+    "Fighting"
+  ],
+  "984": [
+    "Bug",
+    "Water"
+  ],
+  "985": [
+    "Bug",
+    "Water"
+  ],
+  "986": [
+    "Ghost",
+    "Ground"
+  ],
+  "987": [
+    "Ghost",
+    "Ground"
+  ],
+  "988": [
+    "Water"
+  ],
+  "989": [
+    "Normal"
+  ],
+  "990": [
+    "Normal"
+  ],
+  "991": [
+    "Rock",
+    "Flying"
+  ],
+  "992": [
+    "Normal"
+  ],
+  "993": [
+    "Fire",
+    "Dragon"
+  ],
+  "994": [
+    "Electric",
+    "Steel"
+  ],
+  "995": [
+    "Ghost",
+    "Fairy"
+  ],
+  "996": [
+    "Water",
+    "Psychic"
+  ],
+  "997": [
+    "Normal",
+    "Dragon"
+  ],
+  "998": [
+    "Ghost",
+    "Grass"
+  ],
+  "999": [
+    "Dragon"
+  ],
+  "1000": [
+    "Dragon",
+    "Fighting"
+  ],
+  "1001": [
+    "Dragon",
+    "Fighting"
+  ],
+  "1002": [
+    "Electric",
+    "Fairy"
+  ],
+  "1003": [
+    "Psychic",
+    "Fairy"
+  ],
+  "1004": [
+    "Grass",
+    "Fairy"
+  ],
+  "1005": [
+    "Water",
+    "Fairy"
+  ],
+  "1006": [
+    "Psychic"
+  ],
+  "1007": [
+    "Psychic"
+  ],
+  "1008": [
+    "Psychic",
+    "Steel"
+  ],
+  "1009": [
+    "Psychic",
+    "Ghost"
+  ],
+  "1010": [
+    "Rock",
+    "Poison"
+  ],
+  "1011": [
+    "Bug",
+    "Fighting"
+  ],
+  "1012": [
+    "Bug",
+    "Fighting"
+  ],
+  "1013": [
+    "Electric"
+  ],
+  "1014": [
+    "Steel",
+    "Flying"
+  ],
+  "1015": [
+    "Grass",
+    "Steel"
+  ],
+  "1016": [
+    "Dark",
+    "Dragon"
+  ],
+  "1017": [
+    "Psychic"
+  ],
+  "1018": [
+    "Steel",
+    "Fairy"
+  ],
+  "1019": [
+    "Fighting",
+    "Ghost"
+  ],
+  "1020": [
+    "Normal"
+  ],
+  "1021": [
+    "Normal"
+  ],
+  "1022": [
+    "Electric"
+  ],
+  "1023": [
+    "Ground"
+  ],
+  "1024": [
+    "Ground"
+  ],
+  "1025": [
+    "Fire"
+  ],
+  "1026": [
+    "Fire"
+  ],
+  "1027": [
+    "Ground"
+  ],
+  "1028": [
+    "Ground"
+  ],
+  "1029": [
+    "Normal"
+  ],
+  "1030": [
+    "Normal"
+  ],
+  "1031": [
+    "Rock",
+    "Ground"
+  ],
+  "1032": [
+    "Rock",
+    "Ground"
+  ],
+  "1033": [
+    "Rock",
+    "Ground"
+  ],
+  "1034": [
+    "Poison"
+  ],
+  "1035": [
+    "Poison"
+  ],
+  "1036": [
+    "Grass",
+    "Psychic"
+  ],
+  "1037": [
+    "Grass",
+    "Psychic"
+  ],
+  "1038": [
+    "Ground"
+  ],
+  "1039": [
+    "Ground"
+  ],
+  "1040": [
+    "Psychic"
+  ],
+  "1041": [
+    "Psychic"
+  ],
+  "1042": [
+    "Psychic"
+  ],
+  "1043": [
+    "Fire",
+    "Flying"
+  ],
+  "1044": [
+    "Fire",
+    "Flying"
+  ],
+  "1045": [
+    "Fire",
+    "Flying"
+  ],
+  "1046": [
+    "Rock"
+  ],
+  "1047": [
+    "Water"
+  ],
+  "1048": [
+    "Normal"
+  ],
+  "1049": [
+    "Normal"
+  ],
+  "1050": [
+    "Normal"
+  ],
+  "1051": [
+    "Normal"
+  ],
+  "1052": [
+    "Normal"
+  ],
+  "1053": [
+    "Normal"
+  ],
+  "1054": [
+    "Normal"
+  ],
+  "1055": [
+    "Normal"
+  ],
+  "1056": [
+    "Normal"
+  ],
+  "1057": [
+    "Normal"
+  ],
+  "1058": [
+    "Normal"
+  ],
+  "1059": [
+    "Normal"
+  ],
+  "1060": [
+    "Normal"
+  ],
+  "1061": [
+    "Normal"
+  ],
+  "1062": [
+    "Normal"
+  ],
+  "1063": [
+    "Normal"
+  ],
+  "1064": [
+    "Normal"
+  ],
+  "1065": [
+    "Rock",
+    "Flying"
+  ],
+  "1066": [
+    "Rock",
+    "Flying"
+  ],
+  "1067": [
+    "Rock",
+    "Flying"
+  ],
+  "1068": [
+    "Rock",
+    "Flying"
+  ],
+  "1069": [
+    "Rock",
+    "Flying"
+  ],
+  "1070": [
+    "Rock",
+    "Flying"
+  ],
+  "1071": [
+    "Rock",
+    "Flying"
+  ],
+  "1072": [
+    "Ghost",
+    "Fairy"
+  ],
+  "1073": [
+    "Steel",
+    "Fairy"
+  ],
+  "1074": [
+    "Poison"
+  ],
+  "1075": [
+    "Poison",
+    "Dragon"
+  ],
+  "1076": [
+    "Rock",
+    "Steel"
+  ],
+  "1077": [
+    "Fire",
+    "Ghost"
+  ],
+  "1078": [
+    "Electric"
+  ],
+  "1079": [
+    "Psychic"
+  ],
+  "1080": [
+    "Psychic"
+  ],
+  "1081": [
+    "Psychic"
+  ],
+  "1082": [
+    "Rock"
+  ],
+  "1083": [
+    "Steel"
+  ],
+  "1084": [
+    "Steel"
+  ],
+  "1085": [
+    "Electric"
+  ],
+  "1086": [
+    "Electric"
+  ],
+  "1087": [
+    "Electric"
+  ],
+  "1088": [
+    "Electric"
+  ],
+  "1089": [
+    "Electric"
+  ],
+  "1090": [
+    "Electric"
+  ],
+  "1091": [
+    "Electric"
+  ],
+  "1092": [
+    "Electric"
+  ],
+  "1093": [
+    "Electric"
+  ],
+  "1094": [
+    "Electric"
+  ],
+  "1095": [
+    "Electric"
+  ],
+  "1096": [
+    "Electric"
+  ],
+  "1097": [
+    "Electric"
+  ],
+  "1098": [
+    "Electric"
+  ],
+  "1099": [
+    "Electric"
+  ],
+  "1100": [
+    "Electric"
+  ],
+  "1101": [
+    "Fairy"
+  ],
+  "1102": [
+    "Grass"
+  ],
+  "1103": [
+    "Grass"
+  ],
+  "1104": [
+    "Grass"
+  ],
+  "1105": [
+    "Fire"
+  ],
+  "1106": [
+    "Fire"
+  ],
+  "1107": [
+    "Fire"
+  ],
+  "1108": [
+    "Water"
+  ],
+  "1109": [
+    "Water"
+  ],
+  "1110": [
+    "Water"
+  ],
+  "1111": [
+    "Normal"
+  ],
+  "1112": [
+    "Normal"
+  ],
+  "1113": [
+    "Flying"
+  ],
+  "1114": [
+    "Flying"
+  ],
+  "1115": [
+    "Flying",
+    "Steel"
+  ],
+  "1116": [
+    "Bug"
+  ],
+  "1117": [
+    "Bug",
+    "Psychic"
+  ],
+  "1118": [
+    "Bug",
+    "Psychic"
+  ],
+  "1119": [
+    "Dark"
+  ],
+  "1120": [
+    "Dark"
+  ],
+  "1121": [
+    "Grass"
+  ],
+  "1122": [
+    "Grass"
+  ],
+  "1123": [
+    "Normal"
+  ],
+  "1124": [
+    "Normal"
+  ],
+  "1125": [
+    "Water"
+  ],
+  "1126": [
+    "Water",
+    "Rock"
+  ],
+  "1127": [
+    "Electric"
+  ],
+  "1128": [
+    "Electric"
+  ],
+  "1129": [
+    "Rock"
+  ],
+  "1130": [
+    "Rock",
+    "Fire"
+  ],
+  "1131": [
+    "Rock",
+    "Fire"
+  ],
+  "1132": [
+    "Grass",
+    "Dragon"
+  ],
+  "1133": [
+    "Grass",
+    "Dragon"
+  ],
+  "1134": [
+    "Grass",
+    "Dragon"
+  ],
+  "1135": [
+    "Ground"
+  ],
+  "1136": [
+    "Ground"
+  ],
+  "1137": [
+    "Flying",
+    "Water"
+  ],
+  "1138": [
+    "Water"
+  ],
+  "1139": [
+    "Water"
+  ],
+  "1140": [
+    "Electric",
+    "Poison"
+  ],
+  "1141": [
+    "Electric",
+    "Poison"
+  ],
+  "1142": [
+    "Fire",
+    "Bug"
+  ],
+  "1143": [
+    "Fire",
+    "Bug"
+  ],
+  "1144": [
+    "Fighting"
+  ],
+  "1145": [
+    "Fighting"
+  ],
+  "1146": [
+    "Ghost"
+  ],
+  "1147": [
+    "Ghost"
+  ],
+  "1148": [
+    "Psychic"
+  ],
+  "1149": [
+    "Psychic"
+  ],
+  "1150": [
+    "Psychic",
+    "Fairy"
+  ],
+  "1151": [
+    "Dark",
+    "Fairy"
+  ],
+  "1152": [
+    "Dark",
+    "Fairy"
+  ],
+  "1153": [
+    "Dark",
+    "Fairy"
+  ],
+  "1154": [
+    "Dark",
+    "Normal"
+  ],
+  "1155": [
+    "Steel"
+  ],
+  "1156": [
+    "Ghost"
+  ],
+  "1157": [
+    "Fighting"
+  ],
+  "1158": [
+    "Ice",
+    "Psychic"
+  ],
+  "1159": [
+    "Ground",
+    "Ghost"
+  ],
+  "1160": [
+    "Fairy"
+  ],
+  "1161": [
+    "Fairy"
+  ],
+  "1162": [
+    "Fighting"
+  ],
+  "1163": [
+    "Electric"
+  ],
+  "1164": [
+    "Ice",
+    "Bug"
+  ],
+  "1165": [
+    "Ice",
+    "Bug"
+  ],
+  "1166": [
+    "Rock",
+    "Steel"
+  ],
+  "1167": [
+    "Ice"
+  ],
+  "1168": [
+    "Psychic",
+    "Normal"
+  ],
+  "1169": [
+    "Electric",
+    "Dark"
+  ],
+  "1170": [
+    "Steel"
+  ],
+  "1171": [
+    "Steel"
+  ],
+  "1172": [
+    "Electric",
+    "Dragon"
+  ],
+  "1173": [
+    "Electric",
+    "Ice"
+  ],
+  "1174": [
+    "Water",
+    "Dragon"
+  ],
+  "1175": [
+    "Water",
+    "Ice"
+  ],
+  "1176": [
+    "Steel",
+    "Dragon"
+  ],
+  "1177": [
+    "Dragon",
+    "Ghost"
+  ],
+  "1178": [
+    "Dragon",
+    "Ghost"
+  ],
+  "1179": [
+    "Dragon",
+    "Ghost"
+  ],
+  "1180": [
+    "Fairy"
+  ],
+  "1181": [
+    "Fighting"
+  ],
+  "1182": [
+    "Poison",
+    "Dragon"
+  ],
+  "1183": [
+    "Fighting"
+  ],
+  "1184": [
+    "Fighting",
+    "Dark"
+  ],
+  "1185": [
+    "Dark",
+    "Grass"
+  ],
+  "1186": [
+    "Electric"
+  ],
+  "1187": [
+    "Dragon"
+  ],
+  "1188": [
+    "Ice"
+  ],
+  "1189": [
+    "Ghost"
+  ],
+  "1190": [
+    "Psychic",
+    "Grass"
+  ],
+  "1191": [
+    "Flying",
+    "Water"
+  ],
+  "1192": [
+    "Flying",
+    "Water"
+  ],
+  "1193": [
+    "Electric",
+    "Poison"
+  ],
+  "1194": [
+    "Ghost"
+  ],
+  "1195": [
+    "Ghost"
+  ],
+  "1196": [
+    "Fairy"
+  ],
+  "1197": [
+    "Fairy"
+  ],
+  "1198": [
+    "Fairy"
+  ],
+  "1199": [
+    "Fairy"
+  ],
+  "1200": [
+    "Fairy"
+  ],
+  "1201": [
+    "Fairy"
+  ],
+  "1202": [
+    "Ice"
+  ],
+  "1203": [
+    "Psychic",
+    "Normal"
+  ],
+  "1204": [
+    "Electric",
+    "Dark"
+  ],
+  "1205": [
+    "Fairy"
+  ],
+  "1206": [
+    "Fighting"
+  ],
+  "1207": [
+    "Poison",
+    "Dragon"
+  ],
+  "1208": [
+    "Fighting",
+    "Dark"
+  ],
+  "1209": [
+    "Dark",
+    "Grass"
+  ],
+  "1210": [
+    "Psychic",
+    "Grass"
+  ],
+  "1211": [
+    "Psychic",
+    "Grass"
+  ],
+  "1212": [
+    "Normal"
+  ],
+  "1213": [
+    "Fire"
+  ],
+  "1214": [
+    "Fire"
+  ],
+  "1215": [
+    "Water",
+    "Psychic"
+  ],
+  "1216": [
+    "Water",
+    "Psychic"
+  ],
+  "1217": [
+    "Normal",
+    "Flying"
+  ],
+  "1218": [
+    "Poison"
+  ],
+  "1219": [
+    "Poison"
+  ],
+  "1220": [
+    "Psychic",
+    "Fairy"
+  ],
+  "1221": [
+    "Ice",
+    "Flying"
+  ],
+  "1222": [
+    "Electric",
+    "Flying"
+  ],
+  "1223": [
+    "Fire",
+    "Flying"
+  ],
+  "1224": [
+    "Water",
+    "Psychic"
+  ],
+  "1225": [
+    "Water",
+    "Rock"
+  ],
+  "1226": [
+    "Normal"
+  ],
+  "1227": [
+    "Normal"
+  ],
+  "1228": [
+    "Psychic",
+    "Fairy"
+  ],
+  "1229": [
+    "Fire"
+  ],
+  "1230": [
+    "Fire"
+  ],
+  "1231": [
+    "Fire"
+  ],
+  "1232": [
+    "Ghost"
+  ],
+  "1233": [
+    "Ground",
+    "Electric"
+  ],
+  "1234": [
+    "Fire"
+  ],
+  "1235": [
+    "Fire"
+  ],
+  "1236": [
+    "Electric"
+  ],
+  "1237": [
+    "Electric"
+  ],
+  "1238": [
+    "Fire"
+  ],
+  "1239": [
+    "Water",
+    "Poison"
+  ],
+  "1240": [
+    "Dark",
+    "Ice"
+  ],
+  "1241": [
+    "Water"
+  ],
+  "1242": [
+    "Grass"
+  ],
+  "1243": [
+    "Water"
+  ],
+  "1244": [
+    "Dark"
+  ],
+  "1245": [
+    "Dark"
+  ],
+  "1246": [
+    "Normal",
+    "Flying"
+  ],
+  "1247": [
+    "Dragon"
+  ],
+  "1248": [
+    "Dragon"
+  ],
+  "1249": [
+    "Ice"
+  ],
+  "1250": [
+    "Grass",
+    "Ghost"
+  ],
+  "1251": [
+    "Normal",
+    "Psychic"
+  ],
+  "1252": [
+    "Bug",
+    "Rock"
+  ],
+  "1253": [
+    "Ground",
+    "Normal"
+  ],
+  "1254": [
+    "Water",
+    "Ghost"
+  ],
+  "1255": [
+    "Water",
+    "Ghost"
+  ],
+  "1256": [
+    "Fighting",
+    "Poison"
+  ],
+  "1257": [
+    "Poison",
+    "Water"
+  ],
+  "1258": [
+    "Fairy",
+    "Flying"
+  ],
+  "1259": [
+    "Fairy",
+    "Flying"
+  ],
+  "1260": [
+    "Grass",
+    "Poison"
+  ],
+  "1261": [
+    "Fire",
+    "Flying"
+  ],
+  "1262": [
+    "Water"
+  ],
+  "1263": [
+    "Bug",
+    "Flying"
+  ],
+  "1264": [
+    "Electric"
+  ],
+  "1265": [
+    "Normal"
+  ],
+  "1266": [
+    "Fighting"
+  ],
+  "1267": [
+    "Ghost",
+    "Poison"
+  ]
+}

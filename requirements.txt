@@ -1,2 +1,5 @@
 flask>=2.3
 openpyxl>=3.1
+waitress>=2.1
+pystray>=0.17
+Pillow>=9.0

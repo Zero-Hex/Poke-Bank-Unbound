@@ -1,1962 +1,3977 @@
 {
-  "1": {
-    "name": "Snorunt",
-    "location": "Route 1, 8"
-  },
-  "2": {
-    "name": "Glalie",
-    "location": "Victory Road (Snowy Area, 4F, Kyurem's Cave) / Evolve Snorunt (Lv. 42)"
-  },
-  "3": {
-    "name": "Froslass",
-    "location": "Evolve a female Snorunt by using a Dawn Stone"
-  },
-  "4": {
-    "name": "Vanillite",
-    "location": "Route 1"
-  },
-  "5": {
-    "name": "Vanillish",
-    "location": "Victory Road (Snowy Area) / Evolve Vanillite (Lv. 35)"
-  },
-  "6": {
-    "name": "Vanilluxe",
-    "location": "Evolve Vanillish (Lv. 47)"
-  },
-  "7": {
-    "name": "Delibird",
-    "location": "Route 1"
-  },
-  "8": {
-    "name": "Minior",
-    "location": "Route 1, 8, Victory Road (Snowy Area)"
-  },
-  "9": {
-    "name": "Zubat",
-    "location": "Route 5 (Night), Icicle Cave, KBT Expressway"
-  },
-  "10": {
-    "name": "Golbat",
-    "location": "Icicle Cave B1F, Icy Hole, Route 11 Mountain, Rift Cave, Antisis Sewers, Victory Road 1F+4F, Kyurem's Cave"
-  },
-  "11": {
-    "name": "Crobat",
-    "location": "Evolve Golbat (Max Happiness)"
-  },
-  "12": {
-    "name": "Makuhita",
-    "location": "Icicle Cave, KBT Expressway"
-  },
-  "13": {
-    "name": "Hariyama",
-    "location": "Icicle Cave B1F, Icy Hole, KBT Expressway, Kyurem's Cave, Victory Road 4F / Evolve Makuhita (Lv. 24)"
-  },
-  "14": {
-    "name": "Spheal",
-    "location": "Icicle Cave / Frost Mountain (Surf)"
-  },
-  "15": {
-    "name": "Sealeo",
-    "location": "Icicle Cave, Icy Hole, Frost Mountain, Kyurem's Cave (Walk & Surf) / Evolve Spheal (Lv. 32)"
-  },
-  "16": {
-    "name": "Walrein",
-    "location": "Evolve Sealeo (Lv. 44)"
-  },
-  "17": {
-    "name": "Smoochum",
-    "location": "Icicle Cave"
-  },
-  "18": {
-    "name": "Jynx",
-    "location": "Icicle Cave B1F, Icy Hole, Victory Road 4F, Kyurem's Cave / Evolve Smoochum (Lv. 30)"
-  },
-  "19": {
-    "name": "Roggenrola",
-    "location": "Icicle Cave, Frost Mountain / Route 2, 8 (Rock Smash)"
-  },
-  "20": {
-    "name": "Boldore",
-    "location": "Icicle Cave B1F, Icy Hole, Victory Road 1F / Evolve Roggenrola (Lv. 25)"
-  },
-  "21": {
-    "name": "Gigalith",
-    "location": "Evolve Boldore by using a Link Stone"
-  },
-  "22": {
-    "name": "Swinub",
-    "location": "Icicle Cave"
-  },
-  "23": {
-    "name": "Piloswine",
-    "location": "Icicle Cave 1F+B1F, Icy Hole, Kyurem's Cave, Victory Road 4F / Evolve Swinub (Lv. 33)"
-  },
-  "24": {
-    "name": "Mamoswine",
-    "location": "Evolve Piloswine (Leveled up while knowing Ancient Power)"
-  },
-  "25": {
-    "name": "Bergmite",
-    "location": "Icicle cave"
-  },
-  "26": {
-    "name": "Avalugg",
-    "location": "Icicle cave B1F, Icy Hole, Victory Road 4F / Evolve Bergmite (Lv. 37)"
-  },
-  "27": {
-    "name": "Drilbur",
-    "location": "Icicle Cave (Secret Entrance), Cinder Volcano"
-  },
-  "28": {
-    "name": "Excadrill",
-    "location": "Cinder Volcano (Shadow Base), Victory Road B1F / Evolve Drilbur (Lv. 31)"
-  },
-  "29": {
-    "name": "Mawile",
-    "location": "Icicle Cave (Secret Entrance)"
-  },
-  "30": {
-    "name": "Sandshrew",
-    "location": "Breed Sandslash"
-  },
-  "31": {
-    "name": "Sandslash",
-    "location": "Great Desert / Evolve Sandshrew (Lv. 22)"
-  },
-  "32": {
-    "name": "Pikipek",
-    "location": "Route 2 (Day)"
-  },
-  "33": {
-    "name": "Trumbeak",
-    "location": "Evolve Pikipek (Lv. 14)"
-  },
-  "34": {
-    "name": "Toucannon",
-    "location": "Evolve Trumbeak (Lv. 28)"
-  },
-  "35": {
-    "name": "Hoothoot",
-    "location": "Route 2, 7, 12 (Night)"
-  },
-  "36": {
-    "name": "Noctowl",
-    "location": "Route 12, 17, 18, Magnolia Fields (Night) / Evolve Hoothoot (Lv. 20)"
-  },
-  "37": {
-    "name": "Patrat",
-    "location": "Route 2 (Day)"
-  },
-  "38": {
-    "name": "Watchog",
-    "location": "Evolve Patrat (Lv. 20)"
-  },
-  "39": {
-    "name": "Rattata",
-    "location": "Route 2 (Night)"
-  },
-  "40": {
-    "name": "Raticate",
-    "location": "Antisis Sewers / Evolve Rattata (Lv. 20)"
-  },
-  "41": {
-    "name": "Minccino",
-    "location": "Route 2"
-  },
-  "42": {
-    "name": "Cinccino",
-    "location": "Evolve Minccino by using a Shiny Stone"
-  },
-  "43": {
-    "name": "Electrike",
-    "location": "Route 2"
-  },
-  "44": {
-    "name": "Manectric",
-    "location": "Evolve Electrike (Lv. 26)"
-  },
-  "45": {
-    "name": "Azurill",
-    "location": "Route 2 / Breed Marill with a Sea Incense"
-  },
-  "46": {
-    "name": "Marill",
-    "location": "Route 9, 10, Auburn Waterway (Walk) / Route 9, Tehl Town, Victory Road 1F+B1F+2F (Surf) / Evolve Azurill (friendship)"
-  },
-  "47": {
-    "name": "Azumarill",
-    "location": "Route 9, Tehl Town, Victory Road 1F+B1F+2F (Surf) / Evolve Marill (Lv. 18)"
-  },
-  "48": {
-    "name": "Stufful",
-    "location": "Route 2"
-  },
-  "49": {
-    "name": "Bewear",
-    "location": "Evolve Stufful (Lv. 27)"
-  },
-  "50": {
-    "name": "Scraggy",
-    "location": "Route 2"
-  },
-  "51": {
-    "name": "Scrafty",
-    "location": "Evolve Scraggy (Lv. 39)"
-  },
-  "52": {
-    "name": "Riolu",
-    "location": "Route 2"
-  },
-  "53": {
-    "name": "Lucario",
-    "location": "Evolve Riolu (Max Happiness during the day)"
-  },
-  "54": {
-    "name": "Inkay",
-    "location": "Route 2"
-  },
-  "55": {
-    "name": "Malamar",
-    "location": "Evolve Inkay (Lv. 30)"
-  },
-  "56": {
-    "name": "Poochyena",
-    "location": "Route 2 (Swarm Encounter)"
-  },
-  "57": {
-    "name": "Mightyena",
-    "location": "Evolve Poochyena (Lv. 18)"
-  },
-  "58": {
-    "name": "Wingull",
-    "location": "Route 3"
-  },
-  "59": {
-    "name": "Pelipper",
-    "location": "Route 14, 17 / Route 2, 3, 4, 5, 6, 7, 11, 12, 13, 14, 15, 16, 17, 18, Dresco Town, Fallshore City"
-  },
-  "60": {
-    "name": "Bidoof",
-    "location": "Route 3"
-  },
-  "61": {
-    "name": "Bibarel",
-    "location": "Route 14 / Evolve Bidoof (Lv. 15)"
-  },
-  "62": {
-    "name": "Buizel",
-    "location": "Route 3"
-  },
-  "63": {
-    "name": "Floatzel",
-    "location": "Route 14 / Victory Road Grass Maze Area (Surf) / Evolve Buizel (Lv. 26)"
-  },
-  "64": {
-    "name": "Shellos",
-    "location": "Route 3 (West Sea) / Breed Gastrodon-East for East Sea variant"
-  },
-  "65": {
-    "name": "Gastrodon",
-    "location": "Route 14 (West Sea) ; Polder Town, Cootes Bog, Crystal Peak (Surf, East Sea variant) / Evolve Shellos"
-  },
-  "66": {
-    "name": "Dewpider",
-    "location": "Route 3 (Day)"
-  },
-  "67": {
-    "name": "Araquanid",
-    "location": "Route 3 (Surf) / Evolve Dewpider (Lv. 22)"
-  },
-  "68": {
-    "name": "Surskit",
-    "location": "Route 3 (Night) / Grim Woods, Route 9, 10, Auburn Waterway, Vivill Woods (Surf)"
-  },
-  "69": {
-    "name": "Masquerain",
-    "location": "Grim Woods, Route 9, 10, Auburn Waterway, Vivill Woods (Surf) / Evolve Surskit (Lv. 22)"
-  },
-  "70": {
-    "name": "Krabby",
-    "location": "Route 3 (Good Rod) / Route 2, 13, 14, 16, 17, 18, Outside of the Thundercap Mountain (Rock Smash)"
-  },
-  "71": {
-    "name": "Kingler",
-    "location": "Route 3 (Super Rod) / Route 13, 14, 16, 17, 18, Outside of the Thundercap Mountain (Rock Smash)"
-  },
-  "72": {
-    "name": "Cherubi",
-    "location": "Route 3 (Day)"
-  },
-  "73": {
-    "name": "Cherrim",
-    "location": "Evolve Cherubi (Lv. 25)"
-  },
-  "74": {
-    "name": "Sandygast",
-    "location": "Interact with the Sand Castles on Route 3 (Monday & Tuesday), on Dehara Beach (Sunday & Wednesday)"
-  },
-  "75": {
-    "name": "Palossand",
-    "location": "Evolve Sandygast (Lv. 42)"
-  },
-  "76": {
-    "name": "Sentret",
-    "location": "Route 3 (Swarm Encounter)"
-  },
-  "77": {
-    "name": "Furret",
-    "location": "Route 8 / Evolve Sentret (Lv. 15)"
-  },
-  "79": {
-    "name": "Floette",
-    "location": "Evolve Flabébé (Lv. 19)"
-  },
-  "80": {
-    "name": "Florges",
-    "location": "Evolve Floette by using a Shiny Stone"
-  },
-  "81": {
-    "name": "Cutiefly",
-    "location": "Flower Paradise"
-  },
-  "82": {
-    "name": "Ribombee",
-    "location": "Evolve Cutiefly (Lv. 25)"
-  },
-  "83": {
-    "name": "Oricorio",
-    "location": "Flower Paradise (Change forms by using Nectar)"
-  },
-  "84": {
-    "name": "Pansage",
-    "location": "Flower Paradise (Pink Flowers)"
-  },
-  "85": {
-    "name": "Simisage",
-    "location": "Evolve Pansage by using a Leaf Stone"
-  },
-  "86": {
-    "name": "Pansear",
-    "location": "Flower Paradise (Red Flowers)"
-  },
-  "87": {
-    "name": "Simisear",
-    "location": "Evolve Pansear by using a Fire Stone"
-  },
-  "88": {
-    "name": "Panpour",
-    "location": "Flower Paradise (Blue Flowers)"
-  },
-  "89": {
-    "name": "Simipour",
-    "location": "Evolve Panpour by using a Water Stone"
-  },
-  "90": {
-    "name": "Combee",
-    "location": "Flower Paradise"
-  },
-  "91": {
-    "name": "Vespiquen",
-    "location": "Evolve a female Combee"
-  },
-  "92": {
-    "name": "Comfey",
-    "location": "Flower Paradise"
-  },
-  "93": {
-    "name": "Caterpie",
-    "location": "Grim Woods, Vivill Woods (Day)"
-  },
-  "94": {
-    "name": "Metapod",
-    "location": "Vivill Woods (Day) / Evolve Caterpie (Lv. 7)"
-  },
-  "95": {
-    "name": "Butterfree",
-    "location": "Evolve Metapod (Lv. 10)"
-  },
-  "96": {
-    "name": "Weedle",
-    "location": "Grim Woods, Vivill Woods (Night)"
-  },
-  "97": {
-    "name": "Kakuna",
-    "location": "Vivill Woods (Night) / Evolve Weedle (Lv. 7)"
-  },
-  "98": {
-    "name": "Beedrill",
-    "location": "Evolve Kakuna (Lv. 10)"
-  },
-  "99": {
-    "name": "Seedot",
-    "location": "Grim Woods"
-  },
-  "100": {
-    "name": "Nuzleaf",
-    "location": "Evolve Seedot (Lv. 14)"
-  },
-  "101": {
-    "name": "Shiftry",
-    "location": "Evolve Nuzleaf by using a Leaf Stone"
-  },
-  "102": {
-    "name": "Pumpkaboo",
-    "location": "Grim Woods"
-  },
-  "103": {
-    "name": "Gourgeist",
-    "location": "Evolve Pumpkaboo by using a Link Stone"
-  },
-  "104": {
-    "name": "Gastly",
-    "location": "Grim Woods"
-  },
-  "105": {
-    "name": "Haunter",
-    "location": "Rift Cave / Evolve Gastly (Lv. 25)"
-  },
-  "106": {
-    "name": "Gengar",
-    "location": "Evolve Haunter by using a Link Stone"
-  },
-  "107": {
-    "name": "Shuppet",
-    "location": "Grim Woods"
-  },
-  "108": {
-    "name": "Banette",
-    "location": "Evolve Shuppet (Lv. 37)"
-  },
-  "109": {
-    "name": "Duskull",
-    "location": "Grim Woods, Rift Cave, Ruins of Void"
-  },
-  "110": {
-    "name": "Dusclops",
-    "location": "Rift Cave, Ruins of Void / Evolve Duskull (Lv. 37)"
-  },
-  "111": {
-    "name": "Dusknoir",
-    "location": "Evolve Dusclops by using a Reaper Cloth"
-  },
-  "112": {
-    "name": "Phantump",
-    "location": "Grim Woods"
-  },
-  "113": {
-    "name": "Trevenant",
-    "location": "Evolve Phantump by using a Link Stone"
-  },
-  "114": {
-    "name": "Starly",
-    "location": "Route 4"
-  },
-  "115": {
-    "name": "Staravia",
-    "location": "Evolve Starly (Lv. 14)"
-  },
-  "116": {
-    "name": "Staraptor",
-    "location": "Evolve Staravia (Lv. 34)"
-  },
-  "117": {
-    "name": "Lillipup",
-    "location": "Route 4"
-  },
-  "118": {
-    "name": "Herdier",
-    "location": "Evolve Lillipup (Lv. 16)"
-  },
-  "119": {
-    "name": "Stoutland",
-    "location": "Evolve Herdier (Lv. 32)"
-  },
-  "120": {
-    "name": "Budew",
-    "location": "Route 4 / Breed Roselia with a Rose Incense"
-  },
-  "121": {
-    "name": "Roserade",
-    "location": "Evolve Roselia by using a Shiny Stone"
-  },
-  "123": {
-    "name": "Ekans",
-    "location": "Route 4"
-  },
-  "124": {
-    "name": "Arbok",
-    "location": "Evolve Ekans (Lv. 22)"
-  },
-  "125": {
-    "name": "Numel",
-    "location": "Route 4, Cinder Volcano"
-  },
-  "126": {
-    "name": "Camerupt",
-    "location": "Cinder Volcano (Shadow Base), Victory Road B1F / Evolve Numel (Lv. 33)"
-  },
-  "127": {
-    "name": "Mankey",
-    "location": "Route 4"
-  },
-  "128": {
-    "name": "Primeape",
-    "location": "Evolve Mankey (Lv. 28)"
-  },
-  "129": {
-    "name": "Ralts",
-    "location": "Route 4"
-  },
-  "130": {
-    "name": "Kirlia",
-    "location": "Evolve Ralts (Lv. 20)"
-  },
-  "131": {
-    "name": "Gardevoir",
-    "location": "Evolve Kirlia (Lv. 30)"
-  },
-  "132": {
-    "name": "Gallade",
-    "location": "Evolve a male Kirlia by using a Dawn Stone"
-  },
-  "133": {
-    "name": "Burmy",
-    "location": "Route 3 (Swarm Encounter), Route 4 (Swarm Encounter)"
-  },
-  "134": {
-    "name": "Wormadam",
-    "location": "Evolve a female Burmy (Lv. 20)"
-  },
-  "135": {
-    "name": "Mothim",
-    "location": "Evolve a male Burmy (Lv. 20)"
-  },
-  "136": {
-    "name": "Woobat",
-    "location": "Cinder Volcano, Valley Cave, KBT, Frost Mountain, Lost Tunnel, Crystal Peak, Victory Road"
-  },
-  "137": {
-    "name": "Swoobat",
-    "location": "Evolve Woobat (Max Happiness)"
-  },
-  "138": {
-    "name": "Slugma",
-    "location": "Cinder Volcano, Victory Road B1F"
-  },
-  "139": {
-    "name": "Magcargo",
-    "location": "Cinder Volcano, Victory Road B1F (Lava Surf) / Evolve Slugma (Lv. 38)"
-  },
-  "140": {
-    "name": "Salandit",
-    "location": "Cinder Volcano"
-  },
-  "141": {
-    "name": "Salazzle",
-    "location": "Victory Road B1F / Evolve a female Salandit (Lv. 33)"
-  },
-  "142": {
-    "name": "Geodude",
-    "location": "Route 13, 14, 16, 17, 18, Epidimy Town, Cinder Volcano, Valley Cave, KBT, Lost Tunnel, Ruins of Void"
-  },
-  "143": {
-    "name": "Graveler",
-    "location": "Epidimy Town, Cinder Volcano, Lost Tunnel, Tomb of Borrius, Crystal Peak (Rock Smash) / Lost Tunnel"
-  },
-  "144": {
-    "name": "Golem",
-    "location": "Evolve Graveler by using a Link Stone"
-  },
-  "145": {
-    "name": "Torkoal",
-    "location": "Cinder Volcano"
-  },
-  "146": {
-    "name": "Magby",
-    "location": "Cinder Volcano"
-  },
-  "147": {
-    "name": "Magmar",
-    "location": "Cinder Volcano (Shadow Base), Victory Road B1F / Evolve Magby (Lv. 30)"
-  },
-  "148": {
-    "name": "Magmortar",
-    "location": "Evolve Magmar by using a Magmarizer"
-  },
-  "149": {
-    "name": "Heatmor",
-    "location": "Cinder Volcano (Shadow Base), Victory Road (Grass Maze Area, B1F)"
-  },
-  "150": {
-    "name": "Vulpix",
-    "location": "Cinder Volcano (Swarm Encounter)"
-  },
-  "151": {
-    "name": "Ninetales",
-    "location": "Evolve Vulpix by using a Fire Stone"
-  },
-  "152": {
-    "name": "Taillow",
-    "location": "Route 5 (Day)"
-  },
-  "153": {
-    "name": "Swellow",
-    "location": "Evolve Taillow (Lv. 22)"
-  },
-  "154": {
-    "name": "Murkrow",
-    "location": "Route 5 (Night)"
-  },
-  "155": {
-    "name": "Honchkrow",
-    "location": "Evolve Murkrow by using a Dusk Stone"
-  },
-  "156": {
-    "name": "Lickitung",
-    "location": "Route 5"
-  },
-  "157": {
-    "name": "Lickilicky",
-    "location": "Evolve Lickitung (Leveled up while knowing Rollout)"
-  },
-  "159": {
-    "name": "Nidorino",
-    "location": "Evolve Nidoran♂ (Lv. 16)"
-  },
-  "160": {
-    "name": "Nidoking",
-    "location": "Evolve Nidorino by using a Moon Stone"
-  },
-  "162": {
-    "name": "Nidorina",
-    "location": "Evolve Nidoran♀ (Lv. 16)"
-  },
-  "163": {
-    "name": "Nidoqueen",
-    "location": "Evolve Nidorina by using a Moon Stone"
-  },
-  "164": {
-    "name": "Growlithe",
-    "location": "Route 5 (Day)"
-  },
-  "165": {
-    "name": "Arcanine",
-    "location": "Evolve Growlithe by using a Fire Stone"
-  },
-  "166": {
-    "name": "Houndour",
-    "location": "Route 5 (Night)"
-  },
-  "167": {
-    "name": "Houndoom",
-    "location": "Evolve Houndour (Lv. 24)"
-  },
-  "168": {
-    "name": "Yanma",
-    "location": "Route 5 (Day)"
-  },
-  "169": {
-    "name": "Yanmega",
-    "location": "Evolve Yanma (Leveled up while knowing Ancient Power)"
-  },
-  "170": {
-    "name": "Venonat",
-    "location": "Route 5 (Night)"
-  },
-  "171": {
-    "name": "Venomoth",
-    "location": "Evolve Venonat (Lv. 31)"
-  },
-  "172": {
-    "name": "Purrloin",
-    "location": "Route 5 (Static Encounter)"
-  },
-  "173": {
-    "name": "Liepard",
-    "location": "Evolve Purrloin (Lv. 20)"
-  },
-  "174": {
-    "name": "Elgyem",
-    "location": "Route 5 (Swarm Encounter)"
-  },
-  "175": {
-    "name": "Beheeyem",
-    "location": "Evolve Elgyem (Lv. 42)"
-  },
-  "176": {
-    "name": "Aron",
-    "location": "KBT Expressway, Valley Cave, Frost Mountain"
-  },
-  "177": {
-    "name": "Lairon",
-    "location": "KBT Expressway, Lost Tunnel / Evolve Aron (Lv. 32)"
-  },
-  "178": {
-    "name": "Aggron",
-    "location": "Evolve Lairon (Lv. 42)"
-  },
-  "179": {
-    "name": "Nosepass",
-    "location": "KBT Expressway, Valley Cave, Frost Mountain, Thundercap Mountain"
-  },
-  "180": {
-    "name": "Probopass",
-    "location": "Evolve Nosepass by using a Thunder Stone or leveled up in Thundercap Mountain"
-  },
-  "181": {
-    "name": "Noibat",
-    "location": "Valley Cave B1F, KBT Expressway, Crystal Peak"
-  },
-  "182": {
-    "name": "Noivern",
-    "location": "Crystal Peak 1F / Evolve Noibat (Lv. 48)"
-  },
-  "183": {
-    "name": "Carbink",
-    "location": "(Behind any collapsed doors in the KBT)"
-  },
-  "184": {
-    "name": "Phanpy",
-    "location": "Valley Cave"
-  },
-  "185": {
-    "name": "Donphan",
-    "location": "Evolve Phanpy (Lv. 25)"
-  },
-  "186": {
-    "name": "Gligar",
-    "location": "Valley Cave"
-  },
-  "187": {
-    "name": "Gliscor",
-    "location": "Evolve Gligar (Leveled up while holding a Razor Fang during the night)"
-  },
-  "188": {
-    "name": "Dunsparce",
-    "location": "Valley Cave (Swarm Encounter)"
-  },
-  "189": {
-    "name": "Bunnelby",
-    "location": "Route 6"
-  },
-  "190": {
-    "name": "Diggersby",
-    "location": "Evolve Bunnelby (Lv. 20)"
-  },
-  "191": {
-    "name": "Ledyba",
-    "location": "Route 6 (Day)"
-  },
-  "192": {
-    "name": "Ledian",
-    "location": "Route 6, Redwood Forest (Day) / Evolve Ledyba (Lv. 18)"
-  },
-  "193": {
-    "name": "Spinarak",
-    "location": "Route 6 (Night)"
-  },
-  "194": {
-    "name": "Ariados",
-    "location": "Route 6, Redwood Forest (Night) / Evolve Spinarak (Lv. 22)"
-  },
-  "195": {
-    "name": "Shinx",
-    "location": "Route 6, 7"
-  },
-  "196": {
-    "name": "Luxio",
-    "location": "Route 6, 7 / Evolve Shinx (Lv. 15)"
-  },
-  "197": {
-    "name": "Luxray",
-    "location": "Evolve Luxio (Lv. 30)"
-  },
-  "198": {
-    "name": "Deerling",
-    "location": "Route 6 (Spring), Route 8 (Winter), Route 9 (Autumn), Route 12 (Summer)"
-  },
-  "199": {
-    "name": "Sawsbuck",
-    "location": "Evolve Deerling (Lv. 34)"
-  },
-  "200": {
-    "name": "Sunkern",
-    "location": "Route 6 (Day)"
-  },
-  "201": {
-    "name": "Sunflora",
-    "location": "Evolve Sunkern by using a Sun Stone"
-  },
-  "202": {
-    "name": "Kricketot",
-    "location": "Route 6 (Night)"
-  },
-  "203": {
-    "name": "Kricketune",
-    "location": "Evolve Kricketot (Lv. 10)"
-  },
-  "204": {
-    "name": "Smeargle",
-    "location": "Route 6 (Swarm Encounter)"
-  },
-  "205": {
-    "name": "Yungoos",
-    "location": "Route 7 (Day)"
-  },
-  "206": {
-    "name": "Gumshoos",
-    "location": "Route 7 (Day) / Evolve Yungoos (Lv. 20 during the day)"
-  },
-  "207": {
-    "name": "Doduo",
-    "location": "Route 7 (Day)"
-  },
-  "208": {
-    "name": "Dodrio",
-    "location": "Evolve Doduo (Lv. 31)"
-  },
-  "209": {
-    "name": "Buneary",
-    "location": "Route 7"
-  },
-  "210": {
-    "name": "Lopunny",
-    "location": "Evolve Buneary (Max Happiness)"
-  },
-  "211": {
-    "name": "Abra",
-    "location": "Route 7"
-  },
-  "212": {
-    "name": "Kadabra",
-    "location": "Evolve Abra (Lv. 16)"
-  },
-  "213": {
-    "name": "Alakazam",
-    "location": "Evolve Kadabra by using a Link Stone"
-  },
-  "214": {
-    "name": "Mareep",
-    "location": "Route 7"
-  },
-  "215": {
-    "name": "Flaaffy",
-    "location": "Route 8 / Evolve Mareep (Lv. 15)"
-  },
-  "216": {
-    "name": "Ampharos",
-    "location": "Evolve Flaaffy (Lv. 30)"
-  },
-  "217": {
-    "name": "Espurr",
-    "location": "Route 7 (Day)"
-  },
-  "218": {
-    "name": "Meowstic",
-    "location": "Evolve Espurr (Lv. 25)"
-  },
-  "219": {
-    "name": "Drowzee",
-    "location": "Route 7 (Night)"
-  },
-  "220": {
-    "name": "Hypno",
-    "location": "Evolve Drowzee (Lv. 26)"
-  },
-  "221": {
-    "name": "Mime Jr?",
-    "location": "Breed Mr. Mime with an Odd Incense"
-  },
-  "222": {
-    "name": "Mr? Mime",
-    "location": "Route 7 (Swarm Encounter)"
-  },
-  "223": {
-    "name": "Magikarp",
-    "location": "All Water areas (Old Rod)"
-  },
-  "224": {
-    "name": "Gyarados",
-    "location": "Route 4, 5, 6, 7, 12, 15, 18, Dresco Town, Valley Cave, Auburn Waterway, Tehl Town, Ruins of Void"
-  },
-  "225": {
-    "name": "Bronzor",
-    "location": "Frost Mountain, Rift Cave 1F"
-  },
-  "226": {
-    "name": "Bronzong",
-    "location": "Ruins of Void, Rift Cave / Evolve Bronzor (Lv. 33)"
-  },
-  "227": {
-    "name": "Onix",
-    "location": "Frost Mountain, Route 11 Mountain, Crystal Peak"
-  },
-  "228": {
-    "name": "Steelix",
-    "location": "Route 11 Mountain / Evolve Onix by using a Metal Coat"
-  },
-  "229": {
-    "name": "Sneasel",
-    "location": "Frost Mountain / Route 8, Frozen Forest (Night)"
-  },
-  "230": {
-    "name": "Weavile",
-    "location": "Evolve Sneasel (Leveled up while holding a Razor Claw during the night)"
-  },
-  "231": {
-    "name": "Cryogonal",
-    "location": "Frost Mountain"
-  },
-  "232": {
-    "name": "Snover",
-    "location": "Route 8, Frozen Forest"
-  },
-  "233": {
-    "name": "Abomasnow",
-    "location": "Victory Road Snowy Area / Evolve Snover (Lv. 40)"
-  },
-  "234": {
-    "name": "Cubchoo",
-    "location": "Route 8, Frozen Forest"
-  },
-  "235": {
-    "name": "Beartic",
-    "location": "Victory Road (Snowy Area) / Evolve Cubchoo (Lv. 37)"
-  },
-  "236": {
-    "name": "Stantler",
-    "location": "Route 8 (Swarm Encounter)"
-  },
-  "237": {
-    "name": "Crabrawler",
-    "location": "Breed Crabominable"
-  },
-  "239": {
-    "name": "Spearow",
-    "location": "Route 9"
-  },
-  "240": {
-    "name": "Fearow",
-    "location": "Evolve Spearow (Lv. 20)"
-  },
-  "241": {
-    "name": "Grubbin",
-    "location": "Route 9"
-  },
-  "242": {
-    "name": "Charjabug",
-    "location": "Evolve Grubbin (Lv. 20)"
-  },
-  "243": {
-    "name": "Vikavolt",
-    "location": "Evolve Charjabug by using a Thunderstone or leveled up in Thundercap Mountain"
-  },
-  "244": {
-    "name": "Shroomish",
-    "location": "Route 9"
-  },
-  "245": {
-    "name": "Breloom",
-    "location": "Evolve Shroomish (Lv. 23)"
-  },
-  "246": {
-    "name": "Skorupi",
-    "location": "Obtained randomly from a gentleman in Bellin Town / Route 9"
-  },
-  "247": {
-    "name": "Drapion",
-    "location": "Cootes Bog / Evolve Skorupi (Lv. 40)"
-  },
-  "248": {
-    "name": "Audino",
-    "location": "Route 18, Victory Road (Grass Maze Area)"
-  },
-  "249": {
-    "name": "Karrablast",
-    "location": "Route 9 (Swarm Encounter)"
-  },
-  "250": {
-    "name": "Escavalier",
-    "location": "Evolve Karrablast by using a Link Stone"
-  },
-  "251": {
-    "name": "Lotad",
-    "location": "Route 10, Auburn Waterway"
-  },
-  "252": {
-    "name": "Lombre",
-    "location": "Route 10, Auburn Waterway (Walk & Surf) / Fallshore City Gym (Static Encounter) / Evolve Lotad (Lv. 14)"
-  },
-  "253": {
-    "name": "Ludicolo",
-    "location": "Evolve Lombre with a Water Stone"
-  },
-  "254": {
-    "name": "Tympole",
-    "location": "Route 10, Auburn Waterway"
-  },
-  "255": {
-    "name": "Palpitoad",
-    "location": "Route 10, Auburn Waterway (Walk & Surf), Polder Town (Surf) / Evolve Tympole (Lv. 25)"
-  },
-  "256": {
-    "name": "Seismitoad",
-    "location": "Evolve Palpitoad (Lv. 36)"
-  },
-  "257": {
-    "name": "Zigzagoon",
-    "location": "Route 6"
-  },
-  "258": {
-    "name": "Linoone",
-    "location": "Route 10, Evolve Zigzagoon (Lv. 20)"
-  },
-  "259": {
-    "name": "Goomy",
-    "location": "Route 10, Auburn Waterway"
-  },
-  "260": {
-    "name": "Sliggoo",
-    "location": "Cootes Bog (Walk), Polder Town (Surf) / Evolve Goomy (Lv. 40)"
-  },
-  "261": {
-    "name": "Goodra",
-    "location": "Evolve Sliggoo (at level 50 when leveled up during rain or fog)"
-  },
-  "262": {
-    "name": "Shelmet",
-    "location": "Route 10 (Swarm Encounter)"
-  },
-  "263": {
-    "name": "Accelgor",
-    "location": "Evolve Shelmet by using a Link Stone"
-  },
-  "264": {
-    "name": "Exeggcute",
-    "location": "Route 11, Safari Zone (Hard, Insane)"
-  },
-  "265": {
-    "name": "Exeggutor",
-    "location": "Evolve Exeggcute by using a Leaf Stone"
-  },
-  "266": {
-    "name": "Swablu",
-    "location": "Route 11 (Day)"
-  },
-  "267": {
-    "name": "Altaria",
-    "location": "Evolve Swablu (Lv. 35)"
-  },
-  "268": {
-    "name": "Togedemaru",
-    "location": "Route 11"
-  },
-  "269": {
-    "name": "Spoink",
-    "location": "Route 11"
-  },
-  "270": {
-    "name": "Grumpig",
-    "location": "Evolve Spoink (Lv. 32)"
-  },
-  "271": {
-    "name": "Meditite",
-    "location": "Route 11"
-  },
-  "272": {
-    "name": "Medicham",
-    "location": "Evolve Meditite (Lv. 37)"
-  },
-  "273": {
-    "name": "Gulpin",
-    "location": "Route 11, Breed Swalot / Obtained as an egg randomly from the Magnolia Café Egg Lady (RTC Event)"
-  },
-  "274": {
-    "name": "Swalot",
-    "location": "Evolve Gulpin (Lv. 26)"
-  },
-  "275": {
-    "name": "Glameow",
-    "location": "Obtained randomly from a gentleman in Bellin Town / Route 11 (Swarm Encounter)"
-  },
-  "276": {
-    "name": "Purugly",
-    "location": "Evolve Glameow (Lv. 38)"
-  },
-  "277": {
-    "name": "Seel",
-    "location": "Icicle Cave, Frost Mountain (Good Rod & Surf) / Icy Hole, Kyurem's Cave (Good Rod)"
-  },
-  "278": {
-    "name": "Dewgong",
-    "location": "Icicle Cave, Icy Hole, Frost Mountain, Kyurem's Cave (Super Rod & Surf) / Evolve Seel (Lv. 34)"
-  },
-  "279": {
-    "name": "Shellder",
-    "location": "Route 2, 3, 14, 15, Icicle Cave, Icy Hole, Dresco Town, Frost Mountain, Ruins of Void, Vivill Town"
-  },
-  "280": {
-    "name": "Cloyster",
-    "location": "Route 3, 14, 15, Icicle Cave, Icy Hole, Frost Mountain (Super Rod) / Evolve Shellder by using a Water Stone"
-  },
-  "281": {
-    "name": "Staryu",
-    "location": "Route 2, 3, 4, 5, Dresco Town, Dehara City (Good Rod & Super Rod)"
-  },
-  "282": {
-    "name": "Starmie",
-    "location": "Route 2, 4, 5, Dresco Town, Dehara City (Super Rod) / Evolve Staryu by using a Water Stone"
-  },
-  "283": {
-    "name": "Corphish",
-    "location": "Route 4, 5 (Good Rod)"
-  },
-  "284": {
-    "name": "Crawdaunt",
-    "location": "Route 4, 5 (Super Rod) / Evolve Corphish (Lv. 30)"
-  },
-  "285": {
-    "name": "Goldeen",
-    "location": "Route 6, 7, 9, Auburn Waterway, Tehl Town (Good Rod)"
-  },
-  "286": {
-    "name": "Seaking",
-    "location": "Route 6, 7, 9, Auburn Waterway, Tehl Town (Super Rod)"
-  },
-  "287": {
-    "name": "Remoraid",
-    "location": "Route 6, 7, 11, 16, 17, 18, Fallshore City, Gurun Town, Antisis City, Seaport City (Good Rod)"
-  },
-  "288": {
-    "name": "Octillery",
-    "location": "Route 6, 7, 11, 16, 17, 18, Fallshore City, Gurun Town, Antisis City, Seaport City (Super Rod)"
-  },
-  "289": {
-    "name": "Wishiwashi",
-    "location": "Route 9, 10, Tehl Town, Auburn Waterway (Good Rod & Super Rod)"
-  },
-  "290": {
-    "name": "Carvanha",
-    "location": "Route 12, 14, Fallshore City (Good Rod) / Route 17 (Underwater)"
-  },
-  "291": {
-    "name": "Sharpedo",
-    "location": "Route 12, 14, Fallshore City (Super Rod) Route 17 (Underwater) / Evolve Carvanha (Lv. 30)"
-  },
-  "292": {
-    "name": "Luvdisc",
-    "location": "Fallshore City, Epidimy Town, Route 11, 14, Victory Road Grass Maze Area (Good Rod & Super Rod)"
-  },
-  "293": {
-    "name": "Barboach",
-    "location": "Grim Woods, Route 11, Epidimy Town, Vivill Woods, Vivill Town, Polder Town, Cootes Bog (Good Rod)"
-  },
-  "294": {
-    "name": "Whiscash",
-    "location": "Grim Woods, Route 11, Epidimy Town, Vivill Woods, Vivill Town, Polder Town, Cootes Bog (Super Rod)"
-  },
-  "295": {
-    "name": "Magnemite",
-    "location": "Thundercap Mountain"
-  },
-  "296": {
-    "name": "Magneton",
-    "location": "Thundercap Mountain / Evolve Magnemite (Lv. 30)"
-  },
-  "297": {
-    "name": "Magnezone",
-    "location": "Evolve Magneton by using a Thunder Stone or leveled up in Thundercap Mountain"
-  },
-  "298": {
-    "name": "Cubone",
-    "location": "Thundercap Mountain (1F+3F), Safari Zone (Easy)"
-  },
-  "299": {
-    "name": "Marowak",
-    "location": "Thundercap Mountain 3F / Evolve Cubone (Lv. 28 during the day)"
-  },
-  "300": {
-    "name": "Klink",
-    "location": "Thundercap Mountain"
-  },
-  "301": {
-    "name": "Klang",
-    "location": "Thundercap Mountain 3F, 2F (Small room) / Evolve Klink (Lv. 38)"
-  },
-  "302": {
-    "name": "Klinklang",
-    "location": "Evolve Klang (Lv. 49)"
-  },
-  "303": {
-    "name": "Elekid",
-    "location": "Thundercap Mountain"
-  },
-  "304": {
-    "name": "Electabuzz",
-    "location": "Thundercap Mountain / Evolve Elekid (Lv. 30)"
-  },
-  "305": {
-    "name": "Electivire",
-    "location": "Evolve Electabuzz by using an Electirizer"
-  },
-  "306": {
-    "name": "Tynamo",
-    "location": "Thundercap Mountain"
-  },
-  "307": {
-    "name": "Eelektrik",
-    "location": "Thundercap Mountain 3F / Evolve Tynamo (Lv. 39)"
-  },
-  "308": {
-    "name": "Eelektross",
-    "location": "Evolve Eelektrik by using a Thunder Stone"
-  },
-  "309": {
-    "name": "Timburr",
-    "location": "Thundercap Mountain 2F+4F"
-  },
-  "310": {
-    "name": "Gurdurr",
-    "location": "Thundercap Mountain 2F (Small room) / Evolve Timburr (Lv. 25)"
-  },
-  "311": {
-    "name": "Conkeldurr",
-    "location": "Evolve Gurdurr by using a Link Stone"
-  },
-  "312": {
-    "name": "Joltik",
-    "location": "Thundercap Mountain (Swarm Encounter)"
-  },
-  "313": {
-    "name": "Galvantula",
-    "location": "Evolve Joltik (Lv. 36)"
-  },
-  "314": {
-    "name": "Ferroseed",
-    "location": "Thundercap Mountain (Swarm Encounter)"
-  },
-  "315": {
-    "name": "Ferrothorn",
-    "location": "Evolve Ferroseed (Lv. 40)"
-  },
-  "316": {
-    "name": "Chinchou",
-    "location": "Thundercap Mountain (Good Rod & Surf) / Route 14, 16, 17, Ruins of Void (Underwater)"
-  },
-  "317": {
-    "name": "Lanturn",
-    "location": "Thundercap Mountain (Super Rod & Surf) / Route 14, 16, 17, Ruins of Void (Underwater) / Evolve Chinchou"
-  },
-  "318": {
-    "name": "Machop",
-    "location": "Cliff Cave"
-  },
-  "319": {
-    "name": "Machoke",
-    "location": "Cliff Cave / Evolve Machop (Lv. 28)"
-  },
-  "320": {
-    "name": "Machamp",
-    "location": "Evolve Machoke by using a Link Stone"
-  },
-  "321": {
-    "name": "Wooper",
-    "location": "Route 11 Mountain"
-  },
-  "322": {
-    "name": "Quagsire",
-    "location": "Route 11 Mountain / Evolve Wooper (Lv. 20)"
-  },
-  "323": {
-    "name": "Misdreavus",
-    "location": "Route 11 Mountain"
-  },
-  "324": {
-    "name": "Mismagius",
-    "location": "Evolve Misdreavus by using a Dusk Stone"
-  },
-  "325": {
-    "name": "Poliwag",
-    "location": "Route 3 (Walk), Tarmigan Town (Good Rod & Surf) / Dehara City (Good Rod) / Polder Town, Cootes Bog (Old Rod)"
-  },
-  "326": {
-    "name": "Poliwhirl",
-    "location": "Tarmigan Town (Super Rod & Surf) / Dehara City (Super Rod) / Polder Town, Cootes Bog (Good Rod)"
-  },
-  "327": {
-    "name": "Poliwrath",
-    "location": "Evolve Poliwhirl by using a Water Stone"
-  },
-  "328": {
-    "name": "Politoed",
-    "location": "Tarmigan Town (Surf) / Polder Town, Cootes Bog (Super Rod) / Evolve Poliwhirl by using a King's Rock"
-  },
-  "329": {
-    "name": "Psyduck",
-    "location": "Grim Woods, Valley Cave, Vivill Woods (Good Rod & Surf) / Tehl Town, Epidimy Town (Surf)"
-  },
-  "330": {
-    "name": "Golduck",
-    "location": "Grim Woods, Valley Cave, Vivill Woods, Crystal Peak (Super Rod & Surf) / Tehl Town, Epidimy Town"
-  },
-  "331": {
-    "name": "Fletchling",
-    "location": "Route 12 (Day)"
-  },
-  "333": {
-    "name": "Talonflame",
-    "location": "Evolve Fletchinder (Lv. 35)"
-  },
-  "334": {
-    "name": "Rockruff",
-    "location": "Route 12"
-  },
-  "335": {
-    "name": "Lycanroc",
-    "location": "Evolve Rockruff (Lv. 25), Midday: From 04:00 - 16:59, Dusk: From 17:00 - 19:59, Midnight: From 20:00 - 03:59"
-  },
-  "336": {
-    "name": "Ponyta",
-    "location": "Route 12"
-  },
-  "337": {
-    "name": "Rapidash",
-    "location": "Evolve Ponyta (Lv. 40)"
-  },
-  "338": {
-    "name": "Snubbull",
-    "location": "Route 12"
-  },
-  "339": {
-    "name": "Granbull",
-    "location": "Evolve Snubbull (Lv. 23)"
-  },
-  "340": {
-    "name": "Mienfoo",
-    "location": "Route 12"
-  },
-  "341": {
-    "name": "Mienshao",
-    "location": "Evolve Mienfoo (Lv. 50)"
-  },
-  "342": {
-    "name": "Dedenne",
-    "location": "Route 12"
-  },
-  "343": {
-    "name": "Gothita",
-    "location": "Route 12 (Night)"
-  },
-  "344": {
-    "name": "Gothorita",
-    "location": "Evolve Gothita (Lv. 32)"
-  },
-  "345": {
-    "name": "Gothitelle",
-    "location": "Evolve Gothorita (Lv. 41)"
-  },
-  "346": {
-    "name": "Solosis",
-    "location": "Route 12 (Day)"
-  },
-  "347": {
-    "name": "Duosion",
-    "location": "Evolve Solosis (Lv. 32)"
-  },
-  "348": {
-    "name": "Reuniclus",
-    "location": "Evolve Duosion (Lv. 41)"
-  },
-  "349": {
-    "name": "Swirlix",
-    "location": "Route 12 (Swarm Encounter)"
-  },
-  "350": {
-    "name": "Slurpuff",
-    "location": "Evolve Swirlix by using a Whipped Dream"
-  },
-  "351": {
-    "name": "Spritzee",
-    "location": "Route 12 (Swarm Encounter)"
-  },
-  "352": {
-    "name": "Aromatisse",
-    "location": "Evolve Spritzee by using a Sachet"
-  },
-  "353": {
-    "name": "Wailmer",
-    "location": "Route 12, 14, Magnolia Fields (Good Rod)"
-  },
-  "354": {
-    "name": "Wailord",
-    "location": "Route 12, 14, Magnolia Fields (Super Rod) / Evolve Wailmer (Lv. 40)"
-  },
-  "355": {
-    "name": "Eevee",
-    "location": "Dehara City Game Corner (1500 Coins)"
-  },
-  "356": {
-    "name": "Vaporeon",
-    "location": "Evolve Eevee by using a Water Stone"
-  },
-  "357": {
-    "name": "Jolteon",
-    "location": "Evolve Eevee by using a Thunder Stone"
-  },
-  "358": {
-    "name": "Flareon",
-    "location": "Evolve Eevee by using a Fire Stone"
-  },
-  "359": {
-    "name": "Espeon",
-    "location": "Evolve Eevee (Max Happiness during the day)"
-  },
-  "360": {
-    "name": "Umbreon",
-    "location": "Evolve Eevee (Max Happiness during the night)"
-  },
-  "361": {
-    "name": "Leafeon",
-    "location": "Evolve Eevee by using a Leaf Stone"
-  },
-  "362": {
-    "name": "Glaceon",
-    "location": "Evolve Eevee by using an Ice Stone"
-  },
-  "363": {
-    "name": "Sylveon",
-    "location": "Evolve Eevee (Leveled up while knowing a Fairy-type move with low happiness)"
-  },
-  "364": {
-    "name": "Axew",
-    "location": "Dehara City Game Corner (5000 Coins)"
-  },
-  "365": {
-    "name": "Fraxure",
-    "location": "Crystal Peak / Evolve Axew (Lv. 38)"
-  },
-  "366": {
-    "name": "Haxorus",
-    "location": "Evolve Fraxure (Lv. 48)"
-  },
-  "367": {
-    "name": "Porygon",
-    "location": "Dehara City Game Corner (9999 Coins)"
-  },
-  "368": {
-    "name": "Porygon2",
-    "location": "Evolve Porygon by using an Up-Grade"
-  },
-  "369": {
-    "name": "Porygon-Z",
-    "location": "Evolve Porygon 2 by using a Dubious Disk"
-  },
-  "370": {
-    "name": "Emolga",
-    "location": "Dehara City Game Corner (500 Coins)"
-  },
-  "371": {
-    "name": "Hawlucha",
-    "location": "Dehara City Game Corner (1000 Coins)"
-  },
-  "372": {
-    "name": "Klefki",
-    "location": "Dehara City Game Corner (3000 Coins)"
-  },
-  "373": {
-    "name": "Golett",
-    "location": "Rift Cave 1F"
-  },
-  "374": {
-    "name": "Golurk",
-    "location": "Rift Cave B1F+B2F / Evolve Golett (Lv. 43)"
-  },
-  "375": {
-    "name": "Chingling",
-    "location": "Breed Chimecho with a Pure Incense"
-  },
-  "376": {
-    "name": "Stunky",
-    "location": "Obtained randomly from a gentleman in Bellin Town / Breed Skuntank"
-  },
-  "377": {
-    "name": "Horsea",
-    "location": "Route 14, 15, 16, 17, 18, Gurun Town, Antisis City, Seaport City, Ruins of Void, Vivill Town"
-  },
-  "378": {
-    "name": "Seadra",
-    "location": "Route 14, 15, 16, 17, 18, Gurun Town, Antisis City, Seaport City, Ruins of Void (Super Rod)"
-  },
-  "379": {
-    "name": "Kingdra",
-    "location": "Ruins of Void, Gurun Town (Super Rod) / Evolve Seadra by using a Dragon Scale"
-  },
-  "380": {
-    "name": "Baltoy",
-    "location": "Ruins of Void"
-  },
-  "381": {
-    "name": "Claydol",
-    "location": "Ruins of Void / Evolve Baltoy (Lv. 36)"
-  },
-  "382": {
-    "name": "Yamask",
-    "location": "Ruins of Void"
-  },
-  "383": {
-    "name": "Cofagrigus",
-    "location": "Ruins of Void / Evolve Yamask (Lv. 34)"
-  },
-  "384": {
-    "name": "Sableye",
-    "location": "Ruins of Void"
-  },
-  "385": {
-    "name": "Lunatone",
-    "location": "Ruins of Void"
-  },
-  "386": {
-    "name": "Solrock",
-    "location": "Ruins of Void"
-  },
-  "387": {
-    "name": "Sigilyph",
-    "location": "Ruins of Void, Tomb of Borrius"
-  },
-  "388": {
-    "name": "Tentacool",
-    "location": "Route 2, 3, 4, 5, 6, 7, 11, 12, 13, 14, 15, 16, 17, 18, Dresco Town, Fallshore City, Dehara City"
-  },
-  "389": {
-    "name": "Tentacruel",
-    "location": "Route 2, 3, 4, 5, 6, 7, 11, 12, 13, 14, 15, 16, 17, 18, Dresco Town, Fallshore City, Dehara City"
-  },
-  "390": {
-    "name": "Lapras",
-    "location": "Icicle Cave, Icy Hole, Frost Mountain, Kyurem's Cave (Surf) / Route 17, Seaport City (Super Rod)"
-  },
-  "391": {
-    "name": "Basculin",
-    "location": "Route 2, 4, 5, 11, 15, Dresco Town (Surf, Red-Striped), Victory Road Grass Maze Area"
-  },
-  "392": {
-    "name": "Mantyke",
-    "location": "Route 6, 7, 12, 16, 17, Antisis City, Seaport City (Surf) / Breed Mantine with a Wave Incense"
-  },
-  "393": {
-    "name": "Mantine",
-    "location": "Route 14, 18, Gurun Town, Ruins of Void (Surf) / Evolve Mantyke (Leveled up with a Remoraid in party)"
-  },
-  "394": {
-    "name": "Pyukumuku",
-    "location": "Fallshore City, Dehara City (Surf)"
-  },
-  "395": {
-    "name": "Finneon",
-    "location": "Valley Cave, Epidimy Town, Crystal Peak, Victory Road 1F+B1F+2F (Good Rod)"
-  },
-  "396": {
-    "name": "Lumineon",
-    "location": "Epidimy Town (Surf) / Valley Cave, Crystal Peak, Victory Road 1F+B1F+2F (Super Rod) / Evolve Finneon"
-  },
-  "397": {
-    "name": "Stunfisk",
-    "location": "Thundercap Mountain, Polder Town, Cootes Bog (Surf)"
-  },
-  "398": {
-    "name": "Alomomola",
-    "location": "Route 13 (Surf)"
-  },
-  "399": {
-    "name": "Skrelp",
-    "location": "Route 13 (Good Rod)"
-  },
-  "400": {
-    "name": "Dragalge",
-    "location": "Route 13 (Super Rod) / Evolve Skrelp (Lv. 48)"
-  },
-  "401": {
-    "name": "Clauncher",
-    "location": "Route 13 (Good Rod)"
-  },
-  "402": {
-    "name": "Clawitzer",
-    "location": "Route 13 (Super Rod) / Evolve Clauncher (Lv. 37)"
-  },
-  "403": {
-    "name": "Slowpoke",
-    "location": "Route 3, Route 14 / Tarmigan Town (Surf)"
-  },
-  "404": {
-    "name": "Slowbro",
-    "location": "Evolve Slowpoke (Lv. 37)"
-  },
-  "405": {
-    "name": "Slowking",
-    "location": "Tarmigan Town (Surf) / Polder Town, Cootes Bog (Super Rod) / Evolve Slowpoke by using a King's Rock"
-  },
-  "406": {
-    "name": "Bellsprout",
-    "location": "Route 14 (Day)"
-  },
-  "407": {
-    "name": "Weepinbell",
-    "location": "Route 14, Cootes Bog (Day) / Evolve Bellsprout (Lv. 21)"
-  },
-  "408": {
-    "name": "Victreebel",
-    "location": "Evolve Weepinbell by using a Leaf Stone"
-  },
-  "409": {
-    "name": "Oddish",
-    "location": "Route 14 (Night)"
-  },
-  "410": {
-    "name": "Gloom",
-    "location": "Route 14, Cootes Bog (Night) / Evolve Oddish (Lv. 21)"
-  },
-  "411": {
-    "name": "Vileplume",
-    "location": "Evolve Gloom by using a Leaf Stone"
-  },
-  "412": {
-    "name": "Bellossom",
-    "location": "Evolve Gloom by using a Sunstone"
-  },
-  "413": {
-    "name": "Dwebble",
-    "location": "Great Desert"
-  },
-  "414": {
-    "name": "Crustle",
-    "location": "Evolve Dwebble (Lv. 34)"
-  },
-  "415": {
-    "name": "Sandile",
-    "location": "Breed Krokorok / Obtained as an egg randomly from the Magnolia Café Egg Lady (RTC Event)"
-  },
-  "416": {
-    "name": "Krokorok",
-    "location": "Great Desert / Evolve Sandile (Lv. 29)"
-  },
-  "417": {
-    "name": "Krookodile",
-    "location": "Evolve Krokorok (Lv. 40)"
-  },
-  "420": {
-    "name": "Darumaka",
-    "location": "Great Desert"
-  },
-  "421": {
-    "name": "Darmanitan",
-    "location": "Evolve Darumaka (Lv. 35)"
-  },
-  "422": {
-    "name": "Hippopotas",
-    "location": "Breed Hippowdon / Obtained as an egg randomly from the Magnolia Café Egg Lady (RTC Event)"
-  },
-  "423": {
-    "name": "Hippowdon",
-    "location": "Great Desert / Evolve Hippopotas (Lv. 34)"
-  },
-  "424": {
-    "name": "Trapinch",
-    "location": "Breed Vibrava / Obtained as an egg randomly from the Magnolia Café Egg Lady (RTC Event)"
-  },
-  "425": {
-    "name": "Vibrava",
-    "location": "Great Desert / Evolve Trapinch (Lv. 35)"
-  },
-  "426": {
-    "name": "Flygon",
-    "location": "Evolve Vibrava (Lv. 45)"
-  },
-  "427": {
-    "name": "Maractus",
-    "location": "Great Desert"
-  },
-  "428": {
-    "name": "Wurmple",
-    "location": "Vivill Woods"
-  },
-  "429": {
-    "name": "Silcoon",
-    "location": "Vivill Woods / Evolve Wurmple (Lv. 7)"
-  },
-  "430": {
-    "name": "Beautifly",
-    "location": "Evolve Silcoon (Lv. 10)"
-  },
-  "431": {
-    "name": "Cascoon",
-    "location": "Vivill Woods / Evolve Wurmple (Lv. 7)"
-  },
-  "432": {
-    "name": "Dustox",
-    "location": "Evolve Cascoon (Lv. 10)"
-  },
-  "433": {
-    "name": "Scatterbug",
-    "location": "Vivill Woods"
-  },
-  "434": {
-    "name": "Spewpa",
-    "location": "Vivill Woods / Evolve Scatterbug (Lv. 9)"
-  },
-  "435": {
-    "name": "Vivillon",
-    "location": "Evolve Spewpa (Lv. 12)"
-  },
-  "436": {
-    "name": "Cottonee",
-    "location": "Vivill Woods"
-  },
-  "437": {
-    "name": "Whimsicott",
-    "location": "Evolve Cottonee by using a Sun Stone"
-  },
-  "438": {
-    "name": "Petilil",
-    "location": "Vivill Woods"
-  },
-  "439": {
-    "name": "Lilligant",
-    "location": "Evolve Petilil by using a Sun Stone"
-  },
-  "440": {
-    "name": "Paras",
-    "location": "Vivill Woods (Static Encounter)"
-  },
-  "441": {
-    "name": "Parasect",
-    "location": "Evolve Paras (Lv. 24)"
-  },
-  "442": {
-    "name": "Foongus",
-    "location": "Vivill Woods (Trainer ID dependant) / Breed Amoongus"
-  },
-  "443": {
-    "name": "Amoonguss",
-    "location": "Trade for a Shiinotic in Vivill Town / Evolve Foongus (Lv. 39)"
-  },
-  "444": {
-    "name": "Morelull",
-    "location": "Vivill Woods (Trainer ID dependant) / Breed Shiinotic"
-  },
-  "445": {
-    "name": "Shiinotic",
-    "location": "Trade for an Amoongus in Vivill Town / Evolve Morelull (Lv. 24)"
-  },
-  "446": {
-    "name": "Pichu",
-    "location": "Breed Pikachu"
-  },
-  "447": {
-    "name": "Pikachu",
-    "location": "Vivill Woods (Swarm Encounter) / Evolve Pichu (Max Happiness)"
-  },
-  "448": {
-    "name": "Raichu",
-    "location": "Evolve Pikachu by using a Thunderstone"
-  },
-  "449": {
-    "name": "Tangela",
-    "location": "Route 16"
-  },
-  "450": {
-    "name": "Tangrowth",
-    "location": "Evolve Tangela (Leveled up while knowing Ancient Power)"
-  },
-  "451": {
-    "name": "Girafarig",
-    "location": "Route 16"
-  },
-  "452": {
-    "name": "Pancham",
-    "location": "Route 16"
-  },
-  "453": {
-    "name": "Pangoro",
-    "location": "Evolve Pancham (Lv. 32 with a Dark-type Pokémon in the party)"
-  },
-  "454": {
-    "name": "Pawniard",
-    "location": "Route 16"
-  },
-  "455": {
-    "name": "Bisharp",
-    "location": "Evolve Pawniard (Lv. 52)"
-  },
-  "456": {
-    "name": "Chatot",
-    "location": "Route 16"
-  },
-  "457": {
-    "name": "Throh",
-    "location": "Route 16"
-  },
-  "458": {
-    "name": "Sawk",
-    "location": "Route 16"
-  },
-  "459": {
-    "name": "Grimer",
-    "location": "Antisis Sewers (Walk, Old Rod, Good Rod, Surf)"
-  },
-  "460": {
-    "name": "Muk",
-    "location": "Antisis Sewers (Walk, Super Rod, Surf) / Evolve Grimer (Lv. 38)"
-  },
-  "461": {
-    "name": "Koffing",
-    "location": "Antisis Sewers"
-  },
-  "462": {
-    "name": "Weezing",
-    "location": "Antisis Sewers / Evolve Koffing (Lv. 35)"
-  },
-  "463": {
-    "name": "Hoppip",
-    "location": "Breed Skiploom / Obtained as an egg randomly from the Magnolia Café Egg Lady (RTC Event)"
-  },
-  "464": {
-    "name": "Skiploom",
-    "location": "Route 17 (Day) / Evolve Hoppip (Lv. 18)"
-  },
-  "465": {
-    "name": "Jumpluff",
-    "location": "Evolve Skiploom (Lv. 27)"
-  },
-  "466": {
-    "name": "Tropius",
-    "location": "Route 17 (Day)"
-  },
-  "467": {
-    "name": "Pidgey",
-    "location": "Breed Pidgeotto"
-  },
-  "468": {
-    "name": "Pidgeotto",
-    "location": "Route 17 (Day) / Evolve Pidgey (Lv. 18)"
-  },
-  "469": {
-    "name": "Pidgeot",
-    "location": "Evolve Pidgeotto (Lv. 36)"
-  },
-  "470": {
-    "name": "Zangoose",
-    "location": "Route 17"
-  },
-  "471": {
-    "name": "Seviper",
-    "location": "Route 17"
-  },
-  "472": {
-    "name": "Bagon",
-    "location": "Route 17"
-  },
-  "473": {
-    "name": "Shelgon",
-    "location": "Evolve Bagon (Lv. 30)"
-  },
-  "474": {
-    "name": "Salamence",
-    "location": "Evolve Shelgon (Lv. 50)"
-  },
-  "475": {
-    "name": "Volbeat",
-    "location": "Route 17 (Swarm Encounter)"
-  },
-  "476": {
-    "name": "Illumise",
-    "location": "Route 17 (Swarm Encounter)"
-  },
-  "477": {
-    "name": "Clamperl",
-    "location": "Route 14, 16, 17, Ruins of Void (Underwater)"
-  },
-  "478": {
-    "name": "Huntail",
-    "location": "Evolve Clamperl by using a Deep Sea Tooth"
-  },
-  "479": {
-    "name": "Gorebyss",
-    "location": "Evolve Clamperl by using a Deep Sea Scale"
-  },
-  "480": {
-    "name": "Relicanth",
-    "location": "Ruins of Void (Underwater)"
-  },
-  "481": {
-    "name": "Mareanie",
-    "location": "Route 14, Ruins of Void (Underwater)"
-  },
-  "482": {
-    "name": "Toxapex",
-    "location": "Route 14, Ruins of Void (Underwater) / Evolve Mareanie (Lv. 38)"
-  },
-  "483": {
-    "name": "Articuno",
-    "location": "North of Frozen Heights"
-  },
-  "484": {
-    "name": "Zapdos",
-    "location": "On top of Thundercap Mountain"
-  },
-  "485": {
-    "name": "Moltres",
-    "location": "On top of Cinder Volcano"
-  },
-  "486": {
-    "name": "Regirock",
-    "location": "Desert Ruins (Great Desert - the \"Tomb Raider\" mission must be completed)"
-  },
-  "487": {
-    "name": "Regice",
-    "location": "Frozen Cave (Frozen Forest - the \"Tomb Raider\" mission must be completed)"
-  },
-  "488": {
-    "name": "Registeel",
-    "location": "Ancient Tomb (Route 18 - the \"Tomb Raider\" mission must be completed)"
-  },
-  "489": {
-    "name": "Regigigas",
-    "location": "Icy Hole (Beneath Bellin Town)"
-  },
-  "490": {
-    "name": "Jirachi",
-    "location": "Crater Town locked house (Talk to an old man in Crater Town first)"
-  },
-  "491": {
-    "name": "Deoxys",
-    "location": "Route 5 to Route 13 path (Jirachi must be in the party) Formes: Interact with the meteorites center"
-  },
-  "492": {
-    "name": "Heatran",
-    "location": "Cinder Volcano (Magma Stone is required)"
-  },
-  "493": {
-    "name": "Shaymin",
-    "location": "Flower Paradise, Sky Forme: Using a Gracidea Flower in the daytime"
-  },
-  "494": {
-    "name": "Keldeo",
-    "location": "Route 17 (Cobalion, Terrakion & Virizion must be in the party)"
-  },
-  "495": {
-    "name": "Diancie",
-    "location": "Behind any collapsed doors in the KBT Expressway (the \"Major Miner\" mission must be completed)"
-  },
-  "496": {
-    "name": "Magearna",
-    "location": "Tomb of Borrius"
-  },
-  "497": {
-    "name": "Zeraora",
-    "location": "Thundercap Mountain 4F (the ADM is required)"
-  },
-  "498": {
-    "name": "Hoopa",
-    "location": "On top of Crystal Peak (Storyline), Unbound Forme: Use Prison Bottle"
+  "- sevenk": {
+    "locations": [
+      "Route 2"
+    ]
+  },
+  "1F": {
+    "locations": [
+      "Rift Cave",
+      "Tomb of Borrius",
+      "Victory Road",
+      "Crystal Peak"
+    ]
+  },
+  "1F (Main Room)": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "1F + 3F": {
+    "locations": [
+      "Thundercap Mt."
+    ]
+  },
+  "1F + B1F": {
+    "locations": [
+      "Icicle Cave"
+    ]
+  },
+  "1F - 2F": {
+    "locations": [
+      "Valley Cave"
+    ]
+  },
+  "1F - 4F": {
+    "locations": [
+      "Cinder Volcano"
+    ]
+  },
+  "1F - B1F": {
+    "locations": [
+      "Victory Road (Surfing)"
+    ]
+  },
+  "1F - B1F - 2F": {
+    "locations": [
+      "Victory Road (Surfing)"
+    ]
+  },
+  "2F": {
+    "locations": [
+      "Victory Road",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "2F (Small Floor)": {
+    "locations": [
+      "Thundercap Mt."
+    ]
+  },
+  "2F + 4F": {
+    "locations": [
+      "Thundercap Mt."
+    ]
+  },
+  "3F": {
+    "locations": [
+      "Thundercap Mt.",
+      "Victory Road"
+    ]
+  },
+  "45 Misions": {
+    "locations": [
+      "Roaming (Legendary/Mythical)"
+    ]
+  },
+  "4F (Outside)": {
+    "locations": [
+      "Icicle Cave"
+    ]
+  },
+  "4F (Secret Entrance)": {
+    "locations": [
+      "Icicle Cave"
+    ]
+  },
+  "4F + Kyurem's Cave": {
+    "locations": [
+      "Victory Road"
+    ]
+  },
+  "4F - 1F": {
+    "locations": [
+      "Icicle Cave"
+    ]
+  },
+  "=HYPERLINK(\"https://bit.ly/2M0DskC\", \"- General Guide\")": {
+    "locations": [
+      "Route 3"
+    ]
+  },
+  "=HYPERLINK(\"https://bit.ly/3PA8Z8J\", \"- Trainers Doc\")": {
+    "locations": [
+      "Route 3"
+    ]
+  },
+  "=HYPERLINK(\"https://bit.ly/3afc7oi\", \"- Misson List +\")": {
+    "locations": [
+      "Route 3"
+    ]
+  },
+  "=HYPERLINK(\"https://bit.ly/3pcWQcu\", \"- Raid Drops & Locations\")": {
+    "locations": [
+      "Route 3"
+    ]
+  },
+  "=HYPERLINK(\"https://bit.ly/3qK6VxZ\", \"- Battle Frontier Guide\")": {
+    "locations": [
+      "Route 3"
+    ]
+  },
+  "=HYPERLINK(\"https://discord.gg/qff5HYPpHF\", \"  Unbound's Discord server\")": {
+    "locations": [
+      "Route 1"
+    ]
+  },
+  "=HYPERLINK(\"https://www.pokecommunity.com/member.php?u=468232\", \"- skeli789\")": {
+    "locations": [
+      "Route 2"
+    ]
+  },
+  "Abomasnow": {
+    "locations": [
+      "Victory Road"
+    ]
+  },
+  "Abra": {
+    "locations": [
+      "Route 7"
+    ]
+  },
+  "Absol": {
+    "locations": [
+      "Crystal Peak"
+    ]
+  },
+  "Aipom": {
+    "locations": [
+      "Redwood Forest"
+    ]
+  },
+  "Alola Starters": {
+    "locations": [
+      "Seaport City (Gift)"
+    ]
+  },
+  "Alolan Diglett": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Alolan Dugtrio": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Alolan Exeggcute": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Alolan Geodude": {
+    "locations": [
+      "Cliff Cave",
+      "Thundercap Mt. (Surfing)"
+    ]
+  },
+  "Alolan Graveler": {
+    "locations": [
+      "Cliff Cave",
+      "Thundercap Mt. (Surfing)"
+    ]
+  },
+  "Alolan Grimer Egg": {
+    "locations": [
+      "Antisis City (Black Player HQ) (Mission Reward)"
+    ]
+  },
+  "Alolan Meowth": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Alolan Raticate": {
+    "locations": [
+      "Route 7"
+    ]
+  },
+  "Alolan Rattata": {
+    "locations": [
+      "Route 7"
+    ]
+  },
+  "Alolan Sandshrew": {
+    "locations": [
+      "Icicle Cave"
+    ]
+  },
+  "Alolan Vulpix Egg": {
+    "locations": [
+      "Blizzard City (Mission Reward)"
+    ]
+  },
+  "Alomomola": {
+    "locations": [
+      "Route 13 (Surfing)"
+    ]
+  },
+  "Applin": {
+    "locations": [
+      "Route 12"
+    ]
+  },
+  "Araquanid": {
+    "locations": [
+      "Route 3 (Surfing)"
+    ]
+  },
+  "Arceus": {
+    "locations": [
+      "Dream Lab (Legendary/Mythical)"
+    ]
+  },
+  "Arctovish": {
+    "locations": [
+      "Cube Corp. (Surfing)"
+    ]
+  },
+  "Arctozolt": {
+    "locations": [
+      "Crystal Peak"
+    ]
+  },
+  "Ariados": {
+    "locations": [
+      "Redwood Forest",
+      "Route 6"
+    ]
+  },
+  "Armor Fossil": {
+    "locations": [
+      "Great Desert (Surfing)"
+    ]
+  },
+  "Aron": {
+    "locations": [
+      "Frost Mountain",
+      "Valley Cave",
+      "KBT Expressway"
+    ]
+  },
+  "Arrokuda": {
+    "locations": [
+      "Route 9 + Autl Woods (Surfing)"
+    ]
+  },
+  "Articuno": {
+    "locations": [
+      "Frozen Height (Legendary/Mythical)"
+    ]
+  },
+  "Audino": {
+    "locations": [
+      "Route 9 + Autl Woods"
+    ]
+  },
+  "Avalugg": {
+    "locations": [
+      "Ice Hole",
+      "Icicle Cave",
+      "Victory Road",
+      "Icicle Cave (Surfing)"
+    ]
+  },
+  "Azelf": {
+    "locations": [
+      "Route 18 (Legendary/Mythical)",
+      "Mission HQ (Legendary/Mythical)"
+    ]
+  },
+  "Azumarill": {
+    "locations": [
+      "Route 9 + Autl Woods (Surfing)",
+      "Tehl Town (Surfing)",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Azurill": {
+    "locations": [
+      "Route 2"
+    ]
+  },
+  "B1F": {
+    "locations": [
+      "Victory Road",
+      "Valley Cave",
+      "Tomb of Borrius",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "B1F + 1F - 5F": {
+    "locations": [
+      "Crystal Peak"
+    ]
+  },
+  "B1F - B2F": {
+    "locations": [
+      "Rift Cave",
+      "Ruins of Void"
+    ]
+  },
+  "B2F": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "B3F": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "B3F - B1F": {
+    "locations": [
+      "Ruins of Void"
+    ]
+  },
+  "B4F": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Bagon": {
+    "locations": [
+      "Route 17"
+    ]
+  },
+  "Baltoy": {
+    "locations": [
+      "Ruins of Void",
+      "Ruins of Void (Surfing)"
+    ]
+  },
+  "Barboach": {
+    "locations": [
+      "Route 11 (Surfing)",
+      "Epidimy Town (Surfing)",
+      "Polder Town (Surfing)",
+      "Grim Woods (Surfing)",
+      "Vivill Woods (Surfing)",
+      "Cootes Bog (Surfing)",
+      "Redwood Forest (Surfing)"
+    ]
+  },
+  "Basculin": {
+    "locations": [
+      "Vivill Warehouse (Surfing)",
+      "Route 2 (Surfing)",
+      "Route 4 (Surfing)",
+      "Route 5 (Surfing)",
+      "Route 11 (Surfing)",
+      "Route 15 (Surfing)",
+      "Dresco Town (Surfing)",
+      "Vivill Town (Surfing)",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Bayleef": {
+    "locations": [
+      "Route 18",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Beartic": {
+    "locations": [
+      "Victory Road"
+    ]
+  },
+  "Bellsprout": {
+    "locations": [
+      "Route 14"
+    ]
+  },
+  "Bergmite": {
+    "locations": [
+      "Icicle Cave",
+      "Icicle Cave (Surfing)"
+    ]
+  },
+  "Bibarel": {
+    "locations": [
+      "Route 14"
+    ]
+  },
+  "Bidoof": {
+    "locations": [
+      "Route 3"
+    ]
+  },
+  "Binacle": {
+    "locations": [
+      "Great Desert (Surfing)",
+      "Route 13 (Surfing)",
+      "Route 2 (Surfing)",
+      "Route 18 (Surfing)",
+      "Thundercap Mt. (Surfing)",
+      "Route 17 (Surfing)",
+      "Route 16 (Surfing)",
+      "Route 14 (Rock Smash)",
+      "Route 2 (Static)"
+    ]
+  },
+  "Blacephalon": {
+    "locations": [
+      "Magnolia Fields (Legendary/Mythical)"
+    ]
+  },
+  "Blipbug": {
+    "locations": [
+      "Grim Woods"
+    ]
+  },
+  "Blitzle": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Blizzard, Fallshore,": {
+    "locations": [
+      "KBT Expressway"
+    ]
+  },
+  "Blue Flowers": {
+    "locations": [
+      "Flower Paradise"
+    ]
+  },
+  "Blue-Yellow Flowers": {
+    "locations": [
+      "Flower Paradise"
+    ]
+  },
+  "Boldore": {
+    "locations": [
+      "Victory Road",
+      "Ice Hole",
+      "Icicle Cave",
+      "Icicle Cave (Surfing)"
+    ]
+  },
+  "Bouffalant": {
+    "locations": [
+      "Route 18"
+    ]
+  },
+  "Bounsweet": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Bronzong": {
+    "locations": [
+      "Ruins of Void",
+      "Rift Cave"
+    ]
+  },
+  "Bronzor": {
+    "locations": [
+      "Frost Mountain",
+      "Rift Cave"
+    ]
+  },
+  "Bruxish": {
+    "locations": [
+      "Route 10 (Surfing)",
+      "Route 9 + Autl Woods (Surfing)",
+      "Tehl Town (Surfing)",
+      "Auburn Waterway (Surfing)",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Budew": {
+    "locations": [
+      "Route 4"
+    ]
+  },
+  "Buizel": {
+    "locations": [
+      "Route 3"
+    ]
+  },
+  "Buneary": {
+    "locations": [
+      "Route 7"
+    ]
+  },
+  "Bunnelby": {
+    "locations": [
+      "Route 6"
+    ]
+  },
+  "Burmy": {
+    "locations": [
+      "Route 4",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Buzzwole": {
+    "locations": [
+      "Route 4 (Legendary/Mythical)"
+    ]
+  },
+  "Cacnea": {
+    "locations": [
+      "Great Desert"
+    ]
+  },
+  "Camerupt": {
+    "locations": [
+      "Victory Road",
+      "Cinder Volcano"
+    ]
+  },
+  "Carbink": {
+    "locations": [
+      "KBT Expressway (Behind any collapsed doors) (Static)"
+    ]
+  },
+  "Carkol": {
+    "locations": [
+      "Cinder Volcano"
+    ]
+  },
+  "Carnivine": {
+    "locations": [
+      "Cootes Bog"
+    ]
+  },
+  "Carvanha": {
+    "locations": [
+      "Route 12 (Surfing)",
+      "Fallshore City (Surfing)",
+      "Route 14 (Surfing)",
+      "Route 17 (Surfing)"
+    ]
+  },
+  "Cascoon": {
+    "locations": [
+      "Vivill Woods"
+    ]
+  },
+  "Castform": {
+    "locations": [
+      "Seaport City (Port) Post-game (Gift)"
+    ]
+  },
+  "Caterpie": {
+    "locations": [
+      "Grim Woods",
+      "Vivill Woods"
+    ]
+  },
+  "Celebi": {
+    "locations": [
+      "Redwood Village (Legendary/Mythical)"
+    ]
+  },
+  "Celesteela": {
+    "locations": [
+      "Crater Town (Legendary/Mythical)"
+    ]
+  },
+  "Chansey": {
+    "locations": [
+      "Victory Road"
+    ]
+  },
+  "Chatot": {
+    "locations": [
+      "Route 16"
+    ]
+  },
+  "Cherubi": {
+    "locations": [
+      "Route 3"
+    ]
+  },
+  "Chewtle": {
+    "locations": [
+      "Route 3"
+    ]
+  },
+  "Chimecho": {
+    "locations": [
+      "Rift Cave"
+    ]
+  },
+  "Chinchou": {
+    "locations": [
+      "Thundercap Mt. (Surfing)",
+      "Route 16 (Surfing)",
+      "Ruins of Void (Surfing)",
+      "Route 17 (Surfing)",
+      "Route 14 (Surfing)"
+    ]
+  },
+  "Clamperl": {
+    "locations": [
+      "Route 16 (Surfing)",
+      "Ruins of Void (Surfing)",
+      "Route 17 (Surfing)",
+      "Route 14 (Surfing)"
+    ]
+  },
+  "Clauncher": {
+    "locations": [
+      "Route 13 (Surfing)"
+    ]
+  },
+  "Claw Fossil": {
+    "locations": [
+      "Great Desert (Surfing)"
+    ]
+  },
+  "Clawitzer": {
+    "locations": [
+      "Route 13 (Surfing)"
+    ]
+  },
+  "Claydol": {
+    "locations": [
+      "Ruins of Void"
+    ]
+  },
+  "Clefairy (Daily)": {
+    "locations": [
+      "Crater Town (Behind a bookshelf in the PC) (Static)"
+    ]
+  },
+  "Clobbopus": {
+    "locations": [
+      "Route 2"
+    ]
+  },
+  "Cloyster": {
+    "locations": [
+      "Icy Hole (Surfing)",
+      "Icicle Cave (Surfing)",
+      "Frost Mountain (Surfing)",
+      "Route 15 (Surfing)",
+      "Vivill Town (Surfing)",
+      "Route 3 (Surfing)",
+      "Route 14 (Surfing)"
+    ]
+  },
+  "Cofagrigus": {
+    "locations": [
+      "Ruins of Void"
+    ]
+  },
+  "Combee": {
+    "locations": [
+      "Flower Paradise"
+    ]
+  },
+  "Combusken": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Comfey": {
+    "locations": [
+      "Flower Paradise"
+    ]
+  },
+  "Copperajah": {
+    "locations": [
+      "Route 16"
+    ]
+  },
+  "Corphish": {
+    "locations": [
+      "Route 4 (Surfing)",
+      "Route 5 (Surfing)"
+    ]
+  },
+  "Corsola": {
+    "locations": [
+      "Route 16 (Surfing)",
+      "Route 17 (Surfing)",
+      "Route 18 (Surfing)",
+      "Gurun Town (Surfing)",
+      "Seaport City (Surfing)",
+      "Route 13 (Surfing)",
+      "Thundercap Mt. (Surfing)",
+      "Route 14 (Rock Smash)"
+    ]
+  },
+  "Corvisquire": {
+    "locations": [
+      "Victory Road"
+    ]
+  },
+  "Cosmog": {
+    "locations": [
+      "Route 12 (Legendary/Mythical)"
+    ]
+  },
+  "Cottonee": {
+    "locations": [
+      "Vivill Woods"
+    ]
+  },
+  "Cover Fossil": {
+    "locations": [
+      "Great Desert (Surfing)"
+    ]
+  },
+  "Crabominable": {
+    "locations": [
+      "Blizzard City (Frozen Forest) (Static)"
+    ]
+  },
+  "Crabominable (Weekly)": {
+    "locations": [
+      "Blizzard City (Frozen Forest) (Static)"
+    ]
+  },
+  "Cramorant": {
+    "locations": [
+      "Route 10 (Surfing)",
+      "Auburn Waterway (Surfing)"
+    ]
+  },
+  "Crawdaunt": {
+    "locations": [
+      "Route 4 (Surfing)",
+      "Route 5 (Surfing)"
+    ]
+  },
+  "Credits to:": {
+    "locations": [
+      "Route 1"
+    ]
+  },
+  "Cresselia": {
+    "locations": [
+      "Fullmoon Island (Legendary/Mythical)",
+      "Tarmigan Town (Legendary/Mythical)"
+    ]
+  },
+  "Croagunk": {
+    "locations": [
+      "Cootes Bog"
+    ]
+  },
+  "Croconaw": {
+    "locations": [
+      "Cootes Bog",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Cryogonal": {
+    "locations": [
+      "Frost Mountain"
+    ]
+  },
+  "Cubchoo": {
+    "locations": [
+      "Frozen Forest",
+      "Route 8"
+    ]
+  },
+  "Cubone": {
+    "locations": [
+      "Thundercap Mt."
+    ]
+  },
+  "Current Game Version:": {
+    "locations": [
+      "Route 1"
+    ]
+  },
+  "Cursola": {
+    "locations": [
+      "Route 16 (Surfing)"
+    ]
+  },
+  "Cutiefly": {
+    "locations": [
+      "Flower Paradise"
+    ]
+  },
+  "Darkrai": {
+    "locations": [
+      "Newmoon Island (Legendary/Mythical)",
+      "Tarmigan Town (Legendary/Mythical)"
+    ]
+  },
+  "Darumaka": {
+    "locations": [
+      "Great Desert"
+    ]
+  },
+  "Dedenne": {
+    "locations": [
+      "Route 12"
+    ]
+  },
+  "Deerling": {
+    "locations": [
+      "Route 9 + Autl Woods",
+      "Route 6",
+      "Route 8",
+      "Route 12"
+    ]
+  },
+  "Dehara, Gurun, Antisis,": {
+    "locations": [
+      "KBT Expressway"
+    ]
+  },
+  "Delibird": {
+    "locations": [
+      "Route 1"
+    ]
+  },
+  "Deoxys": {
+    "locations": [
+      "Route 13 (Legendary/Mythical)"
+    ]
+  },
+  "Dewgong": {
+    "locations": [
+      "Icy Hole (Surfing)",
+      "Icicle Cave (Surfing)",
+      "Frost Mountain (Surfing)",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Dewpider": {
+    "locations": [
+      "Route 3"
+    ]
+  },
+  "Dhelmise": {
+    "locations": [
+      "Vivill Warehouse (Surfing)"
+    ]
+  },
+  "Dialga": {
+    "locations": [
+      "Cave of Being (Legendary/Mythical)"
+    ]
+  },
+  "Diancie": {
+    "locations": [
+      "KBT Expressway (Legendary/Mythical)",
+      "Crater Town (Legendary/Mythical)"
+    ]
+  },
+  "Diglett": {
+    "locations": [
+      "Lost Tunnel"
+    ]
+  },
+  "Ditto": {
+    "locations": [
+      "Route 10",
+      "Auburn Waterway",
+      "Route 5",
+      "Cube Corp. (Surfing)",
+      "Seaport City (Breeder's School) (Mission Reward)"
+    ]
+  },
+  "Doduo": {
+    "locations": [
+      "Route 7"
+    ]
+  },
+  "Dome Fossil": {
+    "locations": [
+      "Great Desert (Surfing)"
+    ]
+  },
+  "Doublade": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Dracovish": {
+    "locations": [
+      "Cube Corp. (Surfing)"
+    ]
+  },
+  "Dracozolt": {
+    "locations": [
+      "Crystal Peak"
+    ]
+  },
+  "Dragalge": {
+    "locations": [
+      "Route 13 (Surfing)"
+    ]
+  },
+  "Dragonair": {
+    "locations": [
+      "Crystal Peak (Surfing)"
+    ]
+  },
+  "Drakloak": {
+    "locations": [
+      "Victory Road"
+    ]
+  },
+  "Drampa": {
+    "locations": [
+      "Victory Road"
+    ]
+  },
+  "Drapion": {
+    "locations": [
+      "Cootes Bog"
+    ]
+  },
+  "Drifblim": {
+    "locations": [
+      "Crystal Peak"
+    ]
+  },
+  "Drilbur": {
+    "locations": [
+      "Cinder Volcano",
+      "Icicle Cave"
+    ]
+  },
+  "Drizzile": {
+    "locations": [
+      "Redwood Forest (Surfing)"
+    ]
+  },
+  "Drowzee": {
+    "locations": [
+      "Route 7"
+    ]
+  },
+  "Druddigon": {
+    "locations": [
+      "Victory Road"
+    ]
+  },
+  "Dubwool": {
+    "locations": [
+      "Magnolia Fields"
+    ]
+  },
+  "Dugtrio": {
+    "locations": [
+      "Lost Tunnel"
+    ]
+  },
+  "Dunsparce": {
+    "locations": [
+      "Valley Cave",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Duraludon": {
+    "locations": [
+      "Crystal Peak"
+    ]
+  },
+  "Durant": {
+    "locations": [
+      "Victory Road"
+    ]
+  },
+  "Dusclops": {
+    "locations": [
+      "Ruins of Void",
+      "Rift Cave"
+    ]
+  },
+  "Duskull": {
+    "locations": [
+      "Ruins of Void",
+      "Rift Cave",
+      "Grim Woods"
+    ]
+  },
+  "Dwebble": {
+    "locations": [
+      "Great Desert",
+      "Great Desert (Surfing)"
+    ]
+  },
+  "East": {
+    "locations": [
+      "Route 14 (Surfing)"
+    ]
+  },
+  "Easy": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Eelektrik": {
+    "locations": [
+      "Thundercap Mt.",
+      "Thundercap Mt. (Surfing)"
+    ]
+  },
+  "Eiscue": {
+    "locations": [
+      "Ice Hole"
+    ]
+  },
+  "Ekans": {
+    "locations": [
+      "Route 4"
+    ]
+  },
+  "Eldegoss": {
+    "locations": [
+      "Route 14"
+    ]
+  },
+  "Electabuzz": {
+    "locations": [
+      "Thundercap Mt."
+    ]
+  },
+  "Electrike": {
+    "locations": [
+      "Route 2"
+    ]
+  },
+  "Electrode (Daily)": {
+    "locations": [
+      "Dehara City (Gym) (Static)"
+    ]
+  },
+  "Elekid": {
+    "locations": [
+      "Thundercap Mt."
+    ]
+  },
+  "Elekid Egg": {
+    "locations": [
+      "Epidimy Town (Pokémon Center) (Mission Reward)"
+    ]
+  },
+  "Elgyem": {
+    "locations": [
+      "Route 5",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Enamorus": {
+    "locations": [
+      "Magnolia Fields (Surfing)"
+    ]
+  },
+  "Entei": {
+    "locations": [
+      "Ruins of Void (Legendary/Mythical)",
+      "Roaming (Legendary/Mythical)"
+    ]
+  },
+  "Espurr": {
+    "locations": [
+      "Route 7"
+    ]
+  },
+  "Eternal Floette": {
+    "locations": [
+      "Vivill Warehouse (Legendary/Mythical)"
+    ]
+  },
+  "Excadrill": {
+    "locations": [
+      "Victory Road",
+      "Cinder Volcano"
+    ]
+  },
+  "Exeggcute": {
+    "locations": [
+      "Route 11"
+    ]
+  },
+  "Falinks": {
+    "locations": [
+      "Route 16"
+    ]
+  },
+  "Farfetch'd": {
+    "locations": [
+      "Route 18"
+    ]
+  },
+  "Feebas": {
+    "locations": [
+      "Polder Town (Mission Reward)"
+    ]
+  },
+  "Feraligatr": {
+    "locations": [
+      "Cootes Bog (Static)"
+    ]
+  },
+  "Ferroseed": {
+    "locations": [
+      "Thundercap Mt.",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Finneon": {
+    "locations": [
+      "Epidimy Town (Surfing)",
+      "Valley Cave (Surfing)",
+      "Crystal Peak (Surfing)",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Flaaffy": {
+    "locations": [
+      "Route 8"
+    ]
+  },
+  "Flabébé": {
+    "locations": [
+      "Flower Paradise"
+    ]
+  },
+  "Fletchinder": {
+    "locations": [
+      "Route 12"
+    ]
+  },
+  "Fletchling": {
+    "locations": [
+      "Route 12"
+    ]
+  },
+  "Floatzel": {
+    "locations": [
+      "Route 14",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Flying Pikachu": {
+    "locations": [
+      "Dehara City (Mission Reward)"
+    ]
+  },
+  "Foongus": {
+    "locations": [
+      "Vivill Woods (Static)"
+    ]
+  },
+  "Frillish": {
+    "locations": [
+      "Magnolia Fields (Surfing)"
+    ]
+  },
+  "Frozen Heights, Crater,": {
+    "locations": [
+      "KBT Expressway"
+    ]
+  },
+  "Furfrou": {
+    "locations": [
+      "Magnolia Fields"
+    ]
+  },
+  "Galarian Darmanitan": {
+    "locations": [
+      "Victory Road"
+    ]
+  },
+  "Galarian Farfetch'd": {
+    "locations": [
+      "Route 17"
+    ]
+  },
+  "Galarian Linoone": {
+    "locations": [
+      "Route 10"
+    ]
+  },
+  "Galarian Meowth": {
+    "locations": [
+      "Valley Cave"
+    ]
+  },
+  "Galarian Mr. Mime": {
+    "locations": [
+      "Route 8"
+    ]
+  },
+  "Galarian Ponyta": {
+    "locations": [
+      "Route 12"
+    ]
+  },
+  "Galarian Slowpoke": {
+    "locations": [
+      "Route 13 (Surfing)",
+      "Route 14 (Surfing)"
+    ]
+  },
+  "Galarian Stunfisk": {
+    "locations": [
+      "Cootes Bog"
+    ]
+  },
+  "Galarian Weezing": {
+    "locations": [
+      "Antisis Sewers"
+    ]
+  },
+  "Galarian Yamask": {
+    "locations": [
+      "Ruins of Void"
+    ]
+  },
+  "Garbodor": {
+    "locations": [
+      "Antisis City (Static)"
+    ]
+  },
+  "Gastly": {
+    "locations": [
+      "Grim Woods"
+    ]
+  },
+  "Gastrodon": {
+    "locations": [
+      "Route 14",
+      "Crystal Peak (Surfing)",
+      "Polder Town (Surfing)",
+      "Cootes Bog (Surfing)"
+    ]
+  },
+  "Genesect": {
+    "locations": [
+      "Pokémon Center (Legendary/Mythical)"
+    ]
+  },
+  "Geodude": {
+    "locations": [
+      "Cinder Volcano",
+      "KBT Expressway",
+      "Cinder Volcano (Surfing)",
+      "KBT Expressway (Surfing)",
+      "Lost Tunnel (Surfing)",
+      "Epidimy Town (Surfing)",
+      "Great Desert (Surfing)",
+      "Route 13 (Surfing)",
+      "Valley Cave (Surfing)",
+      "Route 18 (Surfing)",
+      "Ruins of Void (Surfing)",
+      "Route 17 (Surfing)",
+      "Route 16 (Surfing)",
+      "Route 14 (Rock Smash)"
+    ]
+  },
+  "Gigantamax Butterfree": {
+    "locations": [
+      "Fallshore City (Mission HQ) Post-game (Mission Reward)"
+    ]
+  },
+  "Girafarig": {
+    "locations": [
+      "Route 16"
+    ]
+  },
+  "Giratina": {
+    "locations": [
+      "Distortion World (Legendary/Mythical)"
+    ]
+  },
+  "Glalie": {
+    "locations": [
+      "Victory Road"
+    ]
+  },
+  "Glameow": {
+    "locations": [
+      "Route 11",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Gligar": {
+    "locations": [
+      "Valley Cave"
+    ]
+  },
+  "Gloom": {
+    "locations": [
+      "Cootes Bog",
+      "Route 14"
+    ]
+  },
+  "Gogoat": {
+    "locations": [
+      "Magnolia Fields"
+    ]
+  },
+  "Golbat": {
+    "locations": [
+      "Ice Hole",
+      "Cliff Cave",
+      "Rift Cave",
+      "Victory Road",
+      "Antisis Sewers",
+      "KBT Expressway",
+      "Icicle Cave",
+      "Antisis Sewers (Surfing)",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Goldeen": {
+    "locations": [
+      "Route 6 (Surfing)",
+      "Route 7 (Surfing)",
+      "Route 9 + Autl Woods (Surfing)",
+      "Tehl Town (Surfing)",
+      "Auburn Waterway (Surfing)"
+    ]
+  },
+  "Golduck": {
+    "locations": [
+      "Route 14",
+      "Redwood Forest (Surfing)",
+      "Vivill Woods (Surfing)",
+      "Crystal Peak (Surfing)",
+      "Tehl Town (Surfing)",
+      "Grim Woods (Surfing)",
+      "Epidimy Town (Surfing)",
+      "Valley Cave (Surfing)",
+      "Ruins of Void (Surfing)",
+      "Tarmigan Town (Surfing)",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Golett": {
+    "locations": [
+      "Rift Cave"
+    ]
+  },
+  "Golisopod": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Golurk": {
+    "locations": [
+      "Rift Cave"
+    ]
+  },
+  "Goomy": {
+    "locations": [
+      "Route 10",
+      "Auburn Waterway"
+    ]
+  },
+  "Gothita": {
+    "locations": [
+      "Route 12"
+    ]
+  },
+  "Graveler": {
+    "locations": [
+      "Lost Tunnel",
+      "Victory Road",
+      "Cinder Volcano",
+      "KBT Expressway",
+      "Tomb of Borrius (Surfing)",
+      "Cinder Volcano (Surfing)",
+      "Lost Tunnel (Surfing)",
+      "Epidimy Town (Surfing)",
+      "Crystal Peak (Surfing)"
+    ]
+  },
+  "Grimer": {
+    "locations": [
+      "Antisis Sewers",
+      "Antisis Sewers (Surfing)"
+    ]
+  },
+  "Groudon": {
+    "locations": [
+      "Cinder Volcano (Legendary/Mythical)"
+    ]
+  },
+  "Grovyle": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Growlithe": {
+    "locations": [
+      "Route 5"
+    ]
+  },
+  "Grubbin": {
+    "locations": [
+      "Route 9 + Autl Woods"
+    ]
+  },
+  "Gulpin": {
+    "locations": [
+      "Route 11"
+    ]
+  },
+  "Gumshoos": {
+    "locations": [
+      "Route 7"
+    ]
+  },
+  "Gurdurr": {
+    "locations": [
+      "Thundercap Mt."
+    ]
+  },
+  "Guzzlord": {
+    "locations": [
+      "Antisis Sewers (Legendary/Mythical)"
+    ]
+  },
+  "Gyarados": {
+    "locations": [
+      "Magnolia Fields (Surfing)",
+      "Cube Corp. (Surfing)",
+      "Route 2 (Surfing)",
+      "Route 4 (Surfing)",
+      "Route 5 (Surfing)",
+      "Route 6 (Surfing)",
+      "Route 7 (Surfing)",
+      "Route 9 + Autl Woods (Surfing)",
+      "Route 12 (Surfing)",
+      "Route 15 (Surfing)",
+      "Dresco Town (Surfing)",
+      "Tehl Town (Surfing)",
+      "Vivill Town (Surfing)",
+      "Antisis City (Surfing)",
+      "Valley Cave (Surfing)",
+      "Auburn Waterway (Surfing)",
+      "Ruins of Void (Surfing)",
+      "Vivill Warehouse (Surfing)",
+      "Route 18 (Surfing)",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Hakamo-o": {
+    "locations": [
+      "Victory Road"
+    ]
+  },
+  "Happiny": {
+    "locations": [
+      "Route 18"
+    ]
+  },
+  "Hard": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Hariyama": {
+    "locations": [
+      "Ice Hole",
+      "KBT Expressway",
+      "Icicle Cave",
+      "Victory Road"
+    ]
+  },
+  "Hattrem": {
+    "locations": [
+      "Vivill Woods"
+    ]
+  },
+  "Haunter": {
+    "locations": [
+      "Rift Cave"
+    ]
+  },
+  "Headbutt Trees": {
+    "locations": [
+      "Redwood Forest"
+    ]
+  },
+  "Heatmor": {
+    "locations": [
+      "Victory Road",
+      "Cinder Volcano"
+    ]
+  },
+  "Heatran": {
+    "locations": [
+      "Cinder Volcano (Legendary/Mythical)"
+    ]
+  },
+  "Heliolisk": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Helioptile": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Helix Fossil": {
+    "locations": [
+      "Great Desert (Surfing)"
+    ]
+  },
+  "Heracross": {
+    "locations": [
+      "Redwood Forest"
+    ]
+  },
+  "Hippowdon": {
+    "locations": [
+      "Great Desert"
+    ]
+  },
+  "Hoopa": {
+    "locations": [
+      "Crystal Peak (Legendary/Mythical)"
+    ]
+  },
+  "Hoothoot": {
+    "locations": [
+      "Route 12",
+      "Route 4",
+      "Route 7",
+      "Route 2"
+    ]
+  },
+  "Horsea": {
+    "locations": [
+      "Route 15 (Surfing)",
+      "Vivill Town (Surfing)",
+      "Ruins of Void (Surfing)",
+      "Vivill Warehouse (Surfing)",
+      "Route 14 (Surfing)",
+      "Antisis City (Surfing)",
+      "Route 16 (Surfing)",
+      "Route 17 (Surfing)",
+      "Route 18 (Surfing)",
+      "Gurun Town (Surfing)",
+      "Seaport City (Surfing)"
+    ]
+  },
+  "Houndour": {
+    "locations": [
+      "Route 5"
+    ]
+  },
+  "Illumise": {
+    "locations": [
+      "Route 17",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Indeedee♀️": {
+    "locations": [
+      "Route 7"
+    ]
+  },
+  "Indeedee♂️": {
+    "locations": [
+      "Route 7"
+    ]
+  },
+  "Inkay": {
+    "locations": [
+      "Route 2"
+    ]
+  },
+  "Insane": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Inside": {
+    "locations": [
+      "Thundercap Mt. (Surfing)"
+    ]
+  },
+  "Jaw Fossil": {
+    "locations": [
+      "Great Desert (Surfing)"
+    ]
+  },
+  "Jellicent": {
+    "locations": [
+      "Cube Corp. (Surfing)",
+      "Magnolia Fields (Surfing)"
+    ]
+  },
+  "Jigglypuff": {
+    "locations": [
+      "Victory Road"
+    ]
+  },
+  "Jirachi": {
+    "locations": [
+      "Crater Town (Legendary/Mythical)"
+    ]
+  },
+  "Joltik": {
+    "locations": [
+      "Thundercap Mt.",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Jynx": {
+    "locations": [
+      "Ice Hole",
+      "Icicle Cave",
+      "Victory Road"
+    ]
+  },
+  "Kakuna": {
+    "locations": [
+      "Vivill Woods"
+    ]
+  },
+  "Kangaskhan": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Karrablast": {
+    "locations": [
+      "Route 9 + Autl Woods",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Kartana": {
+    "locations": [
+      "Vivill Woods (Legendary/Mythical)"
+    ]
+  },
+  "Kecleon (Daily)": {
+    "locations": [
+      "Route 16 (Static)"
+    ]
+  },
+  "Keldeo": {
+    "locations": [
+      "Route 17 (Legendary/Mythical)"
+    ]
+  },
+  "Kingdra": {
+    "locations": [
+      "Ruins of Void (Surfing)",
+      "Gurun Town (Surfing)",
+      "Route 18 (Surfing)"
+    ]
+  },
+  "Kingler": {
+    "locations": [
+      "Route 3 (Surfing)",
+      "Route 13 (Surfing)",
+      "Route 18 (Surfing)",
+      "Thundercap Mt. (Surfing)",
+      "Route 17 (Surfing)",
+      "Route 16 (Surfing)",
+      "Route 14 (Rock Smash)"
+    ]
+  },
+  "Klang": {
+    "locations": [
+      "Thundercap Mt."
+    ]
+  },
+  "Klank": {
+    "locations": [
+      "Thundercap Mt."
+    ]
+  },
+  "Klink": {
+    "locations": [
+      "Thundercap Mt."
+    ]
+  },
+  "Koffing": {
+    "locations": [
+      "Antisis Sewers"
+    ]
+  },
+  "Komala": {
+    "locations": [
+      "Redwood Forest"
+    ]
+  },
+  "Krabby": {
+    "locations": [
+      "Route 3 (Surfing)",
+      "Route 2 (Surfing)",
+      "Route 13 (Surfing)",
+      "Route 18 (Surfing)",
+      "Thundercap Mt. (Surfing)",
+      "Route 17 (Surfing)",
+      "Route 16 (Surfing)",
+      "Route 14 (Rock Smash)"
+    ]
+  },
+  "Kricketot": {
+    "locations": [
+      "Route 6"
+    ]
+  },
+  "Krokorok": {
+    "locations": [
+      "Great Desert"
+    ]
+  },
+  "Kyogre": {
+    "locations": [
+      "Vivill Warehouse (Legendary/Mythical)"
+    ]
+  },
+  "Kyurem": {
+    "locations": [
+      "Victory Road (Legendary/Mythical)"
+    ]
+  },
+  "Kyurem's Cave": {
+    "locations": [
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Lairon": {
+    "locations": [
+      "Lost Tunnel",
+      "KBT Expressway"
+    ]
+  },
+  "Landorus": {
+    "locations": [
+      "Magnolia Fields (Legendary/Mythical)"
+    ]
+  },
+  "Lanturn": {
+    "locations": [
+      "Thundercap Mt. (Surfing)",
+      "Route 16 (Surfing)",
+      "Ruins of Void (Surfing)",
+      "Route 17 (Surfing)",
+      "Route 14 (Surfing)"
+    ]
+  },
+  "Lapras": {
+    "locations": [
+      "Icy Hole (Surfing)",
+      "Icicle Cave (Surfing)",
+      "Frost Mountain (Surfing)",
+      "Route 17 (Surfing)",
+      "Seaport City (Surfing)",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Larvesta Egg": {
+    "locations": [
+      "Gurun Town Post-game (Mission Reward)"
+    ]
+  },
+  "Latias": {
+    "locations": [
+      "Mission HQ (Legendary/Mythical)",
+      "Pkm League (Legendary/Mythical)"
+    ]
+  },
+  "Latios": {
+    "locations": [
+      "Mission HQ (Legendary/Mythical)",
+      "Roaming (Legendary/Mythical)"
+    ]
+  },
+  "Ledian": {
+    "locations": [
+      "Redwood Forest",
+      "Route 6"
+    ]
+  },
+  "Ledyba": {
+    "locations": [
+      "Route 6"
+    ]
+  },
+  "Lickitung": {
+    "locations": [
+      "Route 5"
+    ]
+  },
+  "Lillipup": {
+    "locations": [
+      "Route 4"
+    ]
+  },
+  "Linoone": {
+    "locations": [
+      "Route 10",
+      "Auburn Waterway"
+    ]
+  },
+  "Litleo": {
+    "locations": [
+      "Route 2 (Gift)"
+    ]
+  },
+  "Lombre": {
+    "locations": [
+      "Route 10",
+      "Auburn Waterway",
+      "Route 10 (Surfing)",
+      "Auburn Waterway (Surfing)"
+    ]
+  },
+  "Lombre (Daily)": {
+    "locations": [
+      "Fallshore City (Gym) (Static)"
+    ]
+  },
+  "Lotad": {
+    "locations": [
+      "Route 10",
+      "Auburn Waterway"
+    ]
+  },
+  "Loudred": {
+    "locations": [
+      "Crystal Peak"
+    ]
+  },
+  "Lugia + Ho-Oh": {
+    "locations": [
+      "Ruins of Void (Legendary/Mythical)"
+    ]
+  },
+  "Lumineon": {
+    "locations": [
+      "Victory Road (Surfing)",
+      "Epidimy Town (Surfing)",
+      "Valley Cave (Surfing)",
+      "Crystal Peak (Surfing)"
+    ]
+  },
+  "Lunatone": {
+    "locations": [
+      "Ruins of Void"
+    ]
+  },
+  "Lurantis": {
+    "locations": [
+      "Victory Road"
+    ]
+  },
+  "Luvdisc": {
+    "locations": [
+      "Epidimy Town (Surfing)",
+      "Route 11 (Surfing)",
+      "Fallshore City (Surfing)",
+      "Route 14 (Surfing)",
+      "Ruins of Void (Surfing)",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Luxio": {
+    "locations": [
+      "Route 6",
+      "Route 7"
+    ]
+  },
+  "Machoke": {
+    "locations": [
+      "Cliff Cave"
+    ]
+  },
+  "Machop": {
+    "locations": [
+      "Cliff Cave"
+    ]
+  },
+  "Magby": {
+    "locations": [
+      "Cinder Volcano"
+    ]
+  },
+  "Magcargo": {
+    "locations": [
+      "Victory Road",
+      "Cinder Volcano (Surfing)",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Magearna": {
+    "locations": [
+      "Tomb of Borrius (Legendary/Mythical)"
+    ]
+  },
+  "Magikarp": {
+    "locations": [
+      "Route 2 (Surfing)",
+      "Route 3 (Surfing)",
+      "Route 4 (Surfing)",
+      "Route 5 (Surfing)",
+      "Route 6 (Surfing)",
+      "Route 7 (Surfing)",
+      "Route 9 + Autl Woods (Surfing)",
+      "Route 10 (Surfing)",
+      "Route 11 (Surfing)",
+      "Route 12 (Surfing)",
+      "Route 13 (Surfing)",
+      "Route 14 (Surfing)",
+      "Route 15 (Surfing)",
+      "Route 16 (Surfing)",
+      "Route 17 (Surfing)",
+      "Route 18 (Surfing)",
+      "Dresco Town (Surfing)",
+      "Fallshore City (Surfing)",
+      "Tehl Town (Surfing)",
+      "Epidimy Town (Surfing)",
+      "Tarmigan Town (Surfing)",
+      "Dehara City (Surfing)",
+      "Gurun Town (Surfing)",
+      "Vivill Town (Surfing)",
+      "Antisis City (Surfing)",
+      "Seaport City (Surfing)",
+      "Polder Town (Surfing)",
+      "Icy Hole (Surfing)",
+      "Icicle Cave (Surfing)",
+      "Grim Woods (Surfing)",
+      "Valley Cave (Surfing)",
+      "Frost Mountain (Surfing)",
+      "Auburn Waterway (Surfing)",
+      "Thundercap Mt. (Surfing)",
+      "Ruins of Void (Surfing)",
+      "Vivill Woods (Surfing)",
+      "Vivill Warehouse (Surfing)",
+      "Cootes Bog (Surfing)",
+      "Crystal Peak (Surfing)",
+      "Magnolia Fields (Surfing)",
+      "Redwood Forest (Surfing)",
+      "Cube Corp. (Surfing)",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Magmar": {
+    "locations": [
+      "Victory Road",
+      "Cinder Volcano"
+    ]
+  },
+  "Magnemite": {
+    "locations": [
+      "Thundercap Mt."
+    ]
+  },
+  "Magneton": {
+    "locations": [
+      "Thundercap Mt."
+    ]
+  },
+  "Makuhita": {
+    "locations": [
+      "Icicle Cave",
+      "KBT Expressway"
+    ]
+  },
+  "Manaphy": {
+    "locations": [
+      "RoV (Underwater) (Legendary/Mythical)"
+    ]
+  },
+  "Mankey": {
+    "locations": [
+      "Route 4"
+    ]
+  },
+  "Mantine": {
+    "locations": [
+      "Route 14 (Surfing)",
+      "Route 18 (Surfing)",
+      "Gurun Town (Surfing)",
+      "Ruins of Void (Surfing)"
+    ]
+  },
+  "Mantyke": {
+    "locations": [
+      "Route 6 (Surfing)",
+      "Route 7 (Surfing)",
+      "Route 12 (Surfing)",
+      "Route 16 (Surfing)",
+      "Route 17 (Surfing)",
+      "Antisis City (Surfing)",
+      "Seaport City (Surfing)"
+    ]
+  },
+  "Maractus": {
+    "locations": [
+      "Great Desert",
+      "Great Desert (Static)"
+    ]
+  },
+  "Mareanie": {
+    "locations": [
+      "Ruins of Void (Surfing)",
+      "Route 14 (Surfing)"
+    ]
+  },
+  "Mareep": {
+    "locations": [
+      "Route 7"
+    ]
+  },
+  "Marill": {
+    "locations": [
+      "Route 9 + Autl Woods",
+      "Route 10",
+      "Auburn Waterway",
+      "Route 9 + Autl Woods (Surfing)",
+      "Tehl Town (Surfing)",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Marowak": {
+    "locations": [
+      "Thundercap Mt."
+    ]
+  },
+  "Marshadow": {
+    "locations": [
+      "Pokémon Center (Legendary/Mythical)"
+    ]
+  },
+  "Marshtomp": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Masquerain": {
+    "locations": [
+      "Grim Woods (Surfing)",
+      "Redwood Forest (Surfing)",
+      "Route 9 + Autl Woods (Surfing)",
+      "Vivill Woods (Surfing)",
+      "Route 10 (Surfing)",
+      "Auburn Waterway (Surfing)"
+    ]
+  },
+  "Mawile": {
+    "locations": [
+      "Icicle Cave"
+    ]
+  },
+  "Maze Area": {
+    "locations": [
+      "Victory Road",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Meditite": {
+    "locations": [
+      "Route 11"
+    ]
+  },
+  "Medium": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Meloetta": {
+    "locations": [
+      "Polder Town (Legendary/Mythical)"
+    ]
+  },
+  "Meltan": {
+    "locations": [
+      "Pokémon Center (Legendary/Mythical)"
+    ]
+  },
+  "Mesprit": {
+    "locations": [
+      "Shadow Base (Legendary/Mythical)",
+      "Mission HQ (Legendary/Mythical)"
+    ]
+  },
+  "Metapod": {
+    "locations": [
+      "Vivill Woods"
+    ]
+  },
+  "Mew": {
+    "locations": [
+      "Mission HQ (Legendary/Mythical)"
+    ]
+  },
+  "Mewtwo": {
+    "locations": [
+      "Pokémon Center (Legendary/Mythical)"
+    ]
+  },
+  "Mienfoo": {
+    "locations": [
+      "Route 12"
+    ]
+  },
+  "Milcery": {
+    "locations": [
+      "Route 11"
+    ]
+  },
+  "Miltank": {
+    "locations": [
+      "Magnolia Fields"
+    ]
+  },
+  "Mimikyu (Daily)": {
+    "locations": [
+      "Seaport City (Warehouse) (Static)"
+    ]
+  },
+  "Minccino": {
+    "locations": [
+      "Route 2"
+    ]
+  },
+  "Minior": {
+    "locations": [
+      "Route 1",
+      "Route 8",
+      "Victory Road"
+    ]
+  },
+  "Minun": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Misdreavus": {
+    "locations": [
+      "Cliff Cave"
+    ]
+  },
+  "Mission": {
+    "locations": [
+      "Pkm League (Legendary/Mythical)"
+    ]
+  },
+  "Moltres": {
+    "locations": [
+      "Cinder Volcano (Legendary/Mythical)"
+    ]
+  },
+  "Morelull (Daily)": {
+    "locations": [
+      "Vivill Woods (Static)"
+    ]
+  },
+  "Morgrem": {
+    "locations": [
+      "Vivill Woods"
+    ]
+  },
+  "Morpeko": {
+    "locations": [
+      "Route 6"
+    ]
+  },
+  "Mr. Mime": {
+    "locations": [
+      "Route 7",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Mr. Rime": {
+    "locations": [
+      "Route 8"
+    ]
+  },
+  "Mudkip": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Mudsdale": {
+    "locations": [
+      "Magnolia Fields"
+    ]
+  },
+  "Muk": {
+    "locations": [
+      "Antisis Sewers",
+      "Antisis Sewers (Surfing)"
+    ]
+  },
+  "Murkrow": {
+    "locations": [
+      "Route 5"
+    ]
+  },
+  "Natu": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Necrozma": {
+    "locations": [
+      "Frost Mountain (Legendary/Mythical)"
+    ]
+  },
+  "Nickit": {
+    "locations": [
+      "Route 5"
+    ]
+  },
+  "Nidoran♀️": {
+    "locations": [
+      "Route 5"
+    ]
+  },
+  "Nidoran♂️": {
+    "locations": [
+      "Route 5"
+    ]
+  },
+  "Nihilego": {
+    "locations": [
+      "Route 14 (Legendary/Mythical)",
+      "Underwater (Legendary/Mythical)"
+    ]
+  },
+  "Nincada": {
+    "locations": [
+      "Redwood Forest",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Noctowl": {
+    "locations": [
+      "Magnolia Fields",
+      "Route 11",
+      "Route 17",
+      "Route 18",
+      "Route 12"
+    ]
+  },
+  "Noibat": {
+    "locations": [
+      "Crystal Peak",
+      "KBT Expressway",
+      "Valley Cave"
+    ]
+  },
+  "Noivern": {
+    "locations": [
+      "Crystal Peak"
+    ]
+  },
+  "Nosepass": {
+    "locations": [
+      "Thundercap Mt.",
+      "Valley Cave",
+      "Frost Mountain",
+      "KBT Expressway",
+      "KBT Expressway (Surfing)",
+      "Thundercap Mt. (Surfing)",
+      "Valley Cave (Surfing)"
+    ]
+  },
+  "Numel": {
+    "locations": [
+      "Cinder Volcano",
+      "Route 4"
+    ]
+  },
+  "Obstagoon": {
+    "locations": [
+      "Route 10"
+    ]
+  },
+  "Octillery": {
+    "locations": [
+      "Antisis City (Surfing)",
+      "Route 6 (Surfing)",
+      "Route 7 (Surfing)",
+      "Route 16 (Surfing)",
+      "Route 17 (Surfing)",
+      "Route 18 (Surfing)",
+      "Gurun Town (Surfing)",
+      "Seaport City (Surfing)",
+      "Route 11 (Surfing)",
+      "Fallshore City (Surfing)"
+    ]
+  },
+  "Oddish": {
+    "locations": [
+      "Route 14"
+    ]
+  },
+  "Old Amber": {
+    "locations": [
+      "Great Desert (Surfing)"
+    ]
+  },
+  "One of the Borrius Starters": {
+    "locations": [
+      "Frozen Heights (Rival's House) Post-game (Gift)",
+      "Shadow Base Post-game (Static)"
+    ]
+  },
+  "Onix": {
+    "locations": [
+      "Cliff Cave",
+      "Crystal Peak",
+      "Frost Mountain",
+      "Crystal Peak (Surfing)"
+    ]
+  },
+  "Orange Color: Daytime Encounter: 5:00 AM - 7:59 PM": {
+    "locations": [
+      "Route 1"
+    ]
+  },
+  "Oranguru": {
+    "locations": [
+      "Redwood Forest"
+    ]
+  },
+  "Oricorio": {
+    "locations": [
+      "Flower Paradise"
+    ]
+  },
+  "Other useful Guides:": {
+    "locations": [
+      "Route 1"
+    ]
+  },
+  "Outside": {
+    "locations": [
+      "Crystal Peak",
+      "Thundercap Mt. (Surfing)"
+    ]
+  },
+  "Palkia": {
+    "locations": [
+      "Rift Cave (Legendary/Mythical)",
+      "Dehara City (Legendary/Mythical)"
+    ]
+  },
+  "Palpitoad": {
+    "locations": [
+      "Route 10",
+      "Auburn Waterway",
+      "Route 10 (Surfing)",
+      "Polder Town (Surfing)",
+      "Auburn Waterway (Surfing)"
+    ]
+  },
+  "Pancham": {
+    "locations": [
+      "Route 16"
+    ]
+  },
+  "Panpour": {
+    "locations": [
+      "Flower Paradise"
+    ]
+  },
+  "Pansage": {
+    "locations": [
+      "Flower Paradise"
+    ]
+  },
+  "Pansear": {
+    "locations": [
+      "Flower Paradise"
+    ]
+  },
+  "Paras (Daily)": {
+    "locations": [
+      "Vivill Woods (Static)"
+    ]
+  },
+  "Passimian": {
+    "locations": [
+      "Redwood Forest"
+    ]
+  },
+  "Patrat": {
+    "locations": [
+      "Route 2"
+    ]
+  },
+  "Pawniard": {
+    "locations": [
+      "Route 16"
+    ]
+  },
+  "Pelipper": {
+    "locations": [
+      "Route 14",
+      "Route 17",
+      "Route 2 (Surfing)",
+      "Route 3 (Surfing)",
+      "Route 4 (Surfing)",
+      "Route 5 (Surfing)",
+      "Route 6 (Surfing)",
+      "Route 7 (Surfing)",
+      "Route 11 (Surfing)",
+      "Route 12 (Surfing)",
+      "Route 13 (Surfing)",
+      "Route 14 (Surfing)",
+      "Route 15 (Surfing)",
+      "Route 16 (Surfing)",
+      "Route 17 (Surfing)",
+      "Route 18 (Surfing)",
+      "Dresco Town (Surfing)",
+      "Fallshore City (Surfing)",
+      "Dehara City (Surfing)",
+      "Gurun Town (Surfing)",
+      "Vivill Town (Surfing)",
+      "Antisis City (Surfing)",
+      "Seaport City (Surfing)",
+      "Ruins of Void (Surfing)",
+      "Magnolia Fields (Surfing)",
+      "Cube Corp. (Surfing)"
+    ]
+  },
+  "Perrserker": {
+    "locations": [
+      "Valley Cave"
+    ]
+  },
+  "Persian": {
+    "locations": [
+      "Route 18"
+    ]
+  },
+  "Petilil": {
+    "locations": [
+      "Vivill Woods"
+    ]
+  },
+  "Phanpy": {
+    "locations": [
+      "Valley Cave"
+    ]
+  },
+  "Phantump": {
+    "locations": [
+      "Grim Woods"
+    ]
+  },
+  "Pheromosa": {
+    "locations": [
+      "Great Desert (Legendary/Mythical)"
+    ]
+  },
+  "Pidgeotto": {
+    "locations": [
+      "Route 17"
+    ]
+  },
+  "Pikachu": {
+    "locations": [
+      "Vivill Woods",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Pikipek": {
+    "locations": [
+      "Route 2"
+    ]
+  },
+  "Piloswine": {
+    "locations": [
+      "Ice Hole",
+      "Icicle Cave",
+      "Victory Road"
+    ]
+  },
+  "Pincurchin": {
+    "locations": [
+      "Thundercap Mt."
+    ]
+  },
+  "Pineco": {
+    "locations": [
+      "Redwood Forest"
+    ]
+  },
+  "Pink Flowers": {
+    "locations": [
+      "Flower Paradise"
+    ]
+  },
+  "Pink-Purple Flowers": {
+    "locations": [
+      "Flower Paradise"
+    ]
+  },
+  "Pinsir": {
+    "locations": [
+      "Redwood Forest"
+    ]
+  },
+  "Plume Fossil": {
+    "locations": [
+      "Great Desert (Surfing)"
+    ]
+  },
+  "Plusle": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Poipole": {
+    "locations": [
+      "Pokémon Center (Legendary/Mythical)"
+    ]
+  },
+  "Pokémon Unbound Location Guide": {
+    "locations": [
+      "Route 1"
+    ]
+  },
+  "Politoed": {
+    "locations": [
+      "Tarmigan Town (Surfing)",
+      "Polder Town (Surfing)",
+      "Cootes Bog (Surfing)"
+    ]
+  },
+  "Poliwag": {
+    "locations": [
+      "Route 3",
+      "Tarmigan Town (Surfing)",
+      "Polder Town (Surfing)",
+      "Cootes Bog (Surfing)",
+      "Dehara City (Surfing)"
+    ]
+  },
+  "Poliwhirl": {
+    "locations": [
+      "Tarmigan Town (Surfing)",
+      "Polder Town (Surfing)",
+      "Cootes Bog (Surfing)",
+      "Dehara City (Surfing)"
+    ]
+  },
+  "Ponyta": {
+    "locations": [
+      "Route 12"
+    ]
+  },
+  "Poochyena": {
+    "locations": [
+      "Route 2",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Post-Game": {
+    "locations": [
+      "Tomb of Borrius (Legendary/Mythical)",
+      "Mission HQ (Legendary/Mythical)",
+      "Roaming (Legendary/Mythical)",
+      "Tarmigan Town (Legendary/Mythical)",
+      "Crater Town (Legendary/Mythical)",
+      "Underwater (Legendary/Mythical)",
+      "Dehara City (Legendary/Mythical)"
+    ]
+  },
+  "Psyduck": {
+    "locations": [
+      "Grim Woods (Surfing)",
+      "Tehl Town (Surfing)",
+      "Epidimy Town (Surfing)",
+      "Valley Cave (Surfing)",
+      "Vivill Woods (Surfing)",
+      "Crystal Peak (Surfing)",
+      "Redwood Forest (Surfing)",
+      "Tarmigan Town (Surfing)",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Pumpkaboo": {
+    "locations": [
+      "Grim Woods"
+    ]
+  },
+  "Purple Color: Nighttime Encounter: 8:00 PM - 4:59 AM": {
+    "locations": [
+      "Route 1"
+    ]
+  },
+  "Purrloin": {
+    "locations": [
+      "Route 5"
+    ]
+  },
+  "Pyukumuku": {
+    "locations": [
+      "Fallshore City (Surfing)",
+      "Dehara City (Surfing)"
+    ]
+  },
+  "Quagsire": {
+    "locations": [
+      "Cootes Bog",
+      "Cliff Cave",
+      "Cootes Bog (Surfing)"
+    ]
+  },
+  "Quilava": {
+    "locations": [
+      "Magnolia Fields",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Qwilfish": {
+    "locations": [
+      "Crystal Peak (Surfing)",
+      "Magnolia Fields (Surfing)"
+    ]
+  },
+  "Raboot": {
+    "locations": [
+      "Redwood Forest"
+    ]
+  },
+  "Raikou": {
+    "locations": [
+      "Ruins of Void (Legendary/Mythical)",
+      "Roaming (Legendary/Mythical)"
+    ]
+  },
+  "Ralts": {
+    "locations": [
+      "Route 4"
+    ]
+  },
+  "Random": {
+    "locations": [
+      "Bellin Town (Gift)"
+    ]
+  },
+  "Raticate": {
+    "locations": [
+      "Antisis Sewers"
+    ]
+  },
+  "Rattata": {
+    "locations": [
+      "Route 2"
+    ]
+  },
+  "Rayquaza": {
+    "locations": [
+      "Crystal Peak (Legendary/Mythical)"
+    ]
+  },
+  "Red Flowers": {
+    "locations": [
+      "Flower Paradise"
+    ]
+  },
+  "Regice": {
+    "locations": [
+      "Frozen Forest (Legendary/Mythical)",
+      "Tomb of Borrius (Legendary/Mythical)"
+    ]
+  },
+  "Regidrago": {
+    "locations": [
+      "Ice Hole"
+    ]
+  },
+  "Regieleki": {
+    "locations": [
+      "Ice Hole"
+    ]
+  },
+  "Regigigas": {
+    "locations": [
+      "Icy Hole (Legendary/Mythical)"
+    ]
+  },
+  "Regirock": {
+    "locations": [
+      "Great Desert (Legendary/Mythical)",
+      "Tomb of Borrius (Legendary/Mythical)"
+    ]
+  },
+  "Registeel": {
+    "locations": [
+      "Route 18 (Legendary/Mythical)",
+      "Tomb of Borrius (Legendary/Mythical)"
+    ]
+  },
+  "Relicanth": {
+    "locations": [
+      "Ruins of Void (Surfing)"
+    ]
+  },
+  "Remoraid": {
+    "locations": [
+      "Route 16 (Surfing)",
+      "Route 17 (Surfing)",
+      "Route 18 (Surfing)",
+      "Fallshore City (Surfing)",
+      "Gurun Town (Surfing)",
+      "Antisis City (Surfing)",
+      "Seaport City (Surfing)",
+      "Route 6 (Surfing)",
+      "Route 7 (Surfing)",
+      "Route 11 (Surfing)"
+    ]
+  },
+  "Reshiram": {
+    "locations": [
+      "Crystal Peak (Legendary/Mythical)"
+    ]
+  },
+  "Rhydon": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Rhyhorn": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Riolu": {
+    "locations": [
+      "Route 2"
+    ]
+  },
+  "Rockruff": {
+    "locations": [
+      "Route 12"
+    ]
+  },
+  "Roggenrola": {
+    "locations": [
+      "Frost Mountain",
+      "Icicle Cave",
+      "Route 8 (Surfing)",
+      "Icicle Cave (Surfing)",
+      "Route 2 (Surfing)"
+    ]
+  },
+  "Rolycoly": {
+    "locations": [
+      "Cinder Volcano"
+    ]
+  },
+  "Root Fossil": {
+    "locations": [
+      "Great Desert (Surfing)"
+    ]
+  },
+  "Roselia": {
+    "locations": [
+      "Victory Road"
+    ]
+  },
+  "Rotom": {
+    "locations": [
+      "Polder Town (Mission Reward)"
+    ]
+  },
+  "Rufflet": {
+    "locations": [
+      "Crystal Peak",
+      "Great Desert (Static)"
+    ]
+  },
+  "Runerigus": {
+    "locations": [
+      "Ruins of Void"
+    ]
+  },
+  "Sableye": {
+    "locations": [
+      "Ruins of Void"
+    ]
+  },
+  "Sail Fossil": {
+    "locations": [
+      "Great Desert (Surfing)"
+    ]
+  },
+  "Salandit": {
+    "locations": [
+      "Cinder Volcano"
+    ]
+  },
+  "Salazzle": {
+    "locations": [
+      "Victory Road"
+    ]
+  },
+  "Sandslash": {
+    "locations": [
+      "Great Desert"
+    ]
+  },
+  "Sandygast (Specific days)": {
+    "locations": [
+      "Route 3 (Beach) (Static)",
+      "Dehara City (Beach) (Static)"
+    ]
+  },
+  "Sawk": {
+    "locations": [
+      "Route 16"
+    ]
+  },
+  "Scatterbug": {
+    "locations": [
+      "Vivill Woods"
+    ]
+  },
+  "Scraggy": {
+    "locations": [
+      "Route 2"
+    ]
+  },
+  "Scyther": {
+    "locations": [
+      "Redwood Forest"
+    ]
+  },
+  "Seadra": {
+    "locations": [
+      "Vivill Warehouse (Surfing)",
+      "Route 15 (Surfing)",
+      "Vivill Town (Surfing)",
+      "Ruins of Void (Surfing)",
+      "Antisis City (Surfing)",
+      "Route 16 (Surfing)",
+      "Route 17 (Surfing)",
+      "Route 18 (Surfing)",
+      "Gurun Town (Surfing)",
+      "Seaport City (Surfing)",
+      "Route 14 (Surfing)"
+    ]
+  },
+  "Seaking": {
+    "locations": [
+      "Route 6 (Surfing)",
+      "Route 7 (Surfing)",
+      "Route 9 + Autl Woods (Surfing)",
+      "Tehl Town (Surfing)",
+      "Auburn Waterway (Surfing)"
+    ]
+  },
+  "Sealeo": {
+    "locations": [
+      "Ice Hole",
+      "Icicle Cave",
+      "Victory Road",
+      "Icy Hole (Surfing)",
+      "Icicle Cave (Surfing)",
+      "Frost Mountain (Surfing)",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Seaport Entrances": {
+    "locations": [
+      "KBT Expressway"
+    ]
+  },
+  "Seedot": {
+    "locations": [
+      "Grim Woods"
+    ]
+  },
+  "Seel": {
+    "locations": [
+      "Icicle Cave (Surfing)",
+      "Frost Mountain (Surfing)",
+      "Icy Hole (Surfing)",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Sentret": {
+    "locations": [
+      "Route 3",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Seviper": {
+    "locations": [
+      "Route 17"
+    ]
+  },
+  "Shadow Basement": {
+    "locations": [
+      "Cinder Volcano"
+    ]
+  },
+  "Sharpedo": {
+    "locations": [
+      "Route 12 (Surfing)",
+      "Fallshore City (Surfing)",
+      "Route 17 (Surfing)",
+      "Route 14 (Surfing)",
+      "Route 17 (Underwater) (Static)"
+    ]
+  },
+  "Shaymin": {
+    "locations": [
+      "Flower Paradise (Legendary/Mythical)"
+    ]
+  },
+  "Shellder": {
+    "locations": [
+      "Route 2 (Surfing)",
+      "Route 15 (Surfing)",
+      "Dresco Town (Surfing)",
+      "Vivill Town (Surfing)",
+      "Icy Hole (Surfing)",
+      "Icicle Cave (Surfing)",
+      "Frost Mountain (Surfing)",
+      "Ruins of Void (Surfing)",
+      "Vivill Warehouse (Surfing)",
+      "Route 3 (Surfing)",
+      "Route 14 (Surfing)",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Shellder (Daily)": {
+    "locations": [
+      "Route 17 (Static)"
+    ]
+  },
+  "Shellos": {
+    "locations": [
+      "Route 3"
+    ]
+  },
+  "Shelmet": {
+    "locations": [
+      "Route 10",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Shinx": {
+    "locations": [
+      "Route 6",
+      "Route 7"
+    ]
+  },
+  "Shiny Gigantamax Garbodor": {
+    "locations": [
+      "Fallshore City (Mission HQ) Post-game (Mission Reward)"
+    ]
+  },
+  "Shiny Magikarp": {
+    "locations": [
+      "Redwood Village (Mission Reward)"
+    ]
+  },
+  "Shiny Vivillon": {
+    "locations": [
+      "Magnolia Town (Mission Reward)"
+    ]
+  },
+  "Shroomish": {
+    "locations": [
+      "Route 9 + Autl Woods"
+    ]
+  },
+  "Shuckle": {
+    "locations": [
+      "Tomb of Borrius (Surfing)",
+      "Cinder Volcano (Surfing)",
+      "Thundercap Mt. (Surfing)",
+      "Icicle Cave (Surfing)"
+    ]
+  },
+  "Shuppet": {
+    "locations": [
+      "Grim Woods"
+    ]
+  },
+  "Sigilyph": {
+    "locations": [
+      "Tomb of Borrius",
+      "Ruins of Void"
+    ]
+  },
+  "Silcoon": {
+    "locations": [
+      "Vivill Woods"
+    ]
+  },
+  "Silicobra": {
+    "locations": [
+      "Great Desert"
+    ]
+  },
+  "Sinistea": {
+    "locations": [
+      "Rift Cave"
+    ]
+  },
+  "Sinnoh Starters": {
+    "locations": [
+      "Dehara City (Gift)"
+    ]
+  },
+  "Sirfetch'd": {
+    "locations": [
+      "Route 17"
+    ]
+  },
+  "Sizzlipede": {
+    "locations": [
+      "Route 4"
+    ]
+  },
+  "Skarmory": {
+    "locations": [
+      "Crystal Peak"
+    ]
+  },
+  "Skiploom": {
+    "locations": [
+      "Route 17"
+    ]
+  },
+  "Skitty": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Skorupi": {
+    "locations": [
+      "Route 9 + Autl Woods"
+    ]
+  },
+  "Skrelp": {
+    "locations": [
+      "Route 13 (Surfing)"
+    ]
+  },
+  "Skull Fossil": {
+    "locations": [
+      "Great Desert (Surfing)"
+    ]
+  },
+  "Skuntank": {
+    "locations": [
+      "Route 18"
+    ]
+  },
+  "Skwovet": {
+    "locations": [
+      "Route 3"
+    ]
+  },
+  "Sliggoo": {
+    "locations": [
+      "Cootes Bog",
+      "Polder Town (Surfing)",
+      "Cootes Bog (Surfing)"
+    ]
+  },
+  "Slowpoke": {
+    "locations": [
+      "Route 3",
+      "Route 14",
+      "Tarmigan Town (Surfing)"
+    ]
+  },
+  "Slugma": {
+    "locations": [
+      "Cinder Volcano",
+      "Cinder Volcano (Surfing)"
+    ]
+  },
+  "Small Island": {
+    "locations": [
+      "Route 14 (Surfing)"
+    ]
+  },
+  "Smeargle": {
+    "locations": [
+      "Route 6",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Smoochum": {
+    "locations": [
+      "Icicle Cave"
+    ]
+  },
+  "Sneasel": {
+    "locations": [
+      "Route 8",
+      "Frozen Forest",
+      "Frost Mountain"
+    ]
+  },
+  "Snom": {
+    "locations": [
+      "Frozen Forest"
+    ]
+  },
+  "Snorlax": {
+    "locations": [
+      "Redwood Forest Post-game (Static)"
+    ]
+  },
+  "Snorunt": {
+    "locations": [
+      "Route 1",
+      "Route 8"
+    ]
+  },
+  "Snover": {
+    "locations": [
+      "Route 8",
+      "Frozen Forest"
+    ]
+  },
+  "Snowy Area": {
+    "locations": [
+      "Victory Road"
+    ]
+  },
+  "Snubbull": {
+    "locations": [
+      "Route 12"
+    ]
+  },
+  "Solgaleo/Lunala": {
+    "locations": [
+      "Route 12 (Legendary/Mythical)"
+    ]
+  },
+  "Solosis": {
+    "locations": [
+      "Route 12"
+    ]
+  },
+  "Solrock": {
+    "locations": [
+      "Ruins of Void"
+    ]
+  },
+  "Spearow": {
+    "locations": [
+      "Route 9 + Autl Woods"
+    ]
+  },
+  "Spewpa": {
+    "locations": [
+      "Vivill Woods"
+    ]
+  },
+  "Spheal": {
+    "locations": [
+      "Icicle Cave",
+      "Icicle Cave (Surfing)",
+      "Frost Mountain (Surfing)"
+    ]
+  },
+  "Spiky-Eared Pichu": {
+    "locations": [
+      "Seaport City (Breeder's School) (Gift)"
+    ]
+  },
+  "Spinarak": {
+    "locations": [
+      "Route 6"
+    ]
+  },
+  "Spinda": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Spiritomb": {
+    "locations": [
+      "Gurun Town (Pokémon Center) Post-game (Static)"
+    ]
+  },
+  "Spoink": {
+    "locations": [
+      "Route 11"
+    ]
+  },
+  "Spritzee": {
+    "locations": [
+      "Route 12",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Stakataka": {
+    "locations": [
+      "Route 7 (Legendary/Mythical)"
+    ]
+  },
+  "Stantler": {
+    "locations": [
+      "Route 8",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Starly": {
+    "locations": [
+      "Route 4"
+    ]
+  },
+  "Starmie": {
+    "locations": [
+      "Dehara City (Surfing)",
+      "Route 2 (Surfing)",
+      "Route 4 (Surfing)",
+      "Route 5 (Surfing)",
+      "Dresco Town (Surfing)"
+    ]
+  },
+  "Staryu": {
+    "locations": [
+      "Route 2 (Surfing)",
+      "Route 3 (Surfing)",
+      "Dresco Town (Surfing)",
+      "Dehara City (Surfing)",
+      "Route 4 (Surfing)",
+      "Route 5 (Surfing)"
+    ]
+  },
+  "Steelix": {
+    "locations": [
+      "Crystal Peak",
+      "Cliff Cave"
+    ]
+  },
+  "Steenee": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Stonjourner": {
+    "locations": [
+      "Route 18"
+    ]
+  },
+  "Stufful": {
+    "locations": [
+      "Route 2"
+    ]
+  },
+  "Stunfisk": {
+    "locations": [
+      "Thundercap Mt. (Surfing)",
+      "Polder Town (Surfing)",
+      "Cootes Bog (Surfing)"
+    ]
+  },
+  "Sudowoodo": {
+    "locations": [
+      "Route 18"
+    ]
+  },
+  "Suicune": {
+    "locations": [
+      "Ruins of Void (Legendary/Mythical)"
+    ]
+  },
+  "Sunkern": {
+    "locations": [
+      "Route 6"
+    ]
+  },
+  "Surskit": {
+    "locations": [
+      "Route 3",
+      "Vivill Woods (Surfing)",
+      "Route 9 + Autl Woods (Surfing)",
+      "Route 10 (Surfing)",
+      "Auburn Waterway (Surfing)",
+      "Grim Woods (Surfing)"
+    ]
+  },
+  "Swablu": {
+    "locations": [
+      "Route 11"
+    ]
+  },
+  "Swadloon": {
+    "locations": [
+      "Vivill Woods"
+    ]
+  },
+  "Swarm": {
+    "locations": [
+      "Antisis Sewers",
+      "Route 8",
+      "Route 9 + Autl Woods",
+      "Route 11",
+      "Route 18",
+      "Magnolia Fields",
+      "Route 4",
+      "Route 10",
+      "Route 17",
+      "Cootes Bog",
+      "Route 3",
+      "Route 6",
+      "Route 2",
+      "Route 5",
+      "Route 12",
+      "Valley Cave",
+      "Vivill Woods",
+      "Route 7",
+      "Redwood Forest",
+      "Cinder Volcano",
+      "Thundercap Mt."
+    ]
+  },
+  "Swinub": {
+    "locations": [
+      "Icicle Cave"
+    ]
+  },
+  "Swirlix": {
+    "locations": [
+      "Route 12",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Swords of Justice": {
+    "locations": [
+      "Victory Road (Legendary/Mythical)",
+      "Mission HQ (Legendary/Mythical)"
+    ]
+  },
+  "Taillow": {
+    "locations": [
+      "Route 5"
+    ]
+  },
+  "Tangela": {
+    "locations": [
+      "Route 16"
+    ]
+  },
+  "Tapu Bulu": {
+    "locations": [
+      "Route 9 (Legendary/Mythical)"
+    ]
+  },
+  "Tapu Fini": {
+    "locations": [
+      "Route 2 (Legendary/Mythical)"
+    ]
+  },
+  "Tapu Koko": {
+    "locations": [
+      "Route 11 (Legendary/Mythical)"
+    ]
+  },
+  "Tapu Lele": {
+    "locations": [
+      "Route 17 (Legendary/Mythical)"
+    ]
+  },
+  "Tauros": {
+    "locations": [
+      "Magnolia Fields",
+      "Safari Zone"
+    ]
+  },
+  "Tehl, Epidimy Entrances": {
+    "locations": [
+      "KBT Expressway"
+    ]
+  },
+  "Tentacool": {
+    "locations": [
+      "Route 2 (Surfing)",
+      "Route 3 (Surfing)",
+      "Route 4 (Surfing)",
+      "Route 5 (Surfing)",
+      "Route 6 (Surfing)",
+      "Route 7 (Surfing)",
+      "Route 11 (Surfing)",
+      "Route 12 (Surfing)",
+      "Route 13 (Surfing)",
+      "Route 14 (Surfing)",
+      "Route 15 (Surfing)",
+      "Route 16 (Surfing)",
+      "Route 17 (Surfing)",
+      "Route 18 (Surfing)",
+      "Dresco Town (Surfing)",
+      "Fallshore City (Surfing)",
+      "Dehara City (Surfing)",
+      "Gurun Town (Surfing)",
+      "Vivill Town (Surfing)",
+      "Antisis City (Surfing)",
+      "Seaport City (Surfing)",
+      "Ruins of Void (Surfing)",
+      "Vivill Warehouse (Surfing)"
+    ]
+  },
+  "Tentacruel": {
+    "locations": [
+      "Route 2 (Surfing)",
+      "Route 3 (Surfing)",
+      "Route 4 (Surfing)",
+      "Route 5 (Surfing)",
+      "Route 6 (Surfing)",
+      "Route 7 (Surfing)",
+      "Route 11 (Surfing)",
+      "Route 12 (Surfing)",
+      "Route 13 (Surfing)",
+      "Route 14 (Surfing)",
+      "Route 15 (Surfing)",
+      "Route 16 (Surfing)",
+      "Route 17 (Surfing)",
+      "Route 18 (Surfing)",
+      "Dresco Town (Surfing)",
+      "Fallshore City (Surfing)",
+      "Dehara City (Surfing)",
+      "Gurun Town (Surfing)",
+      "Vivill Town (Surfing)",
+      "Antisis City (Surfing)",
+      "Seaport City (Surfing)",
+      "Ruins of Void (Surfing)",
+      "Vivill Warehouse (Surfing)"
+    ]
+  },
+  "Throh": {
+    "locations": [
+      "Route 16"
+    ]
+  },
+  "Thwackey": {
+    "locations": [
+      "Redwood Forest"
+    ]
+  },
+  "Timburr": {
+    "locations": [
+      "Thundercap Mt."
+    ]
+  },
+  "Togedemaru": {
+    "locations": [
+      "Route 11"
+    ]
+  },
+  "Togepi Egg": {
+    "locations": [
+      "Fallshore City (Gift)"
+    ]
+  },
+  "Torchic": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Torkoal": {
+    "locations": [
+      "Cinder Volcano"
+    ]
+  },
+  "Tornadus, Thundurus": {
+    "locations": [
+      "Magnolia Fields (Legendary/Mythical)",
+      "Roaming (Legendary/Mythical)"
+    ]
+  },
+  "Toxapex": {
+    "locations": [
+      "Ruins of Void (Surfing)",
+      "Route 14 (Surfing)"
+    ]
+  },
+  "Toxel": {
+    "locations": [
+      "Route 9 + Autl Woods"
+    ]
+  },
+  "Toxicroak": {
+    "locations": [
+      "Cootes Bog"
+    ]
+  },
+  "Tranquill": {
+    "locations": [
+      "Magnolia Fields"
+    ]
+  },
+  "Treecko": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Tropius": {
+    "locations": [
+      "Route 17"
+    ]
+  },
+  "Trubbish": {
+    "locations": [
+      "Antisis City (Static)"
+    ]
+  },
+  "Turtonator": {
+    "locations": [
+      "Victory Road"
+    ]
+  },
+  "Tympole": {
+    "locations": [
+      "Route 10",
+      "Auburn Waterway"
+    ]
+  },
+  "Tynamo": {
+    "locations": [
+      "Thundercap Mt.",
+      "Thundercap Mt. (Surfing)"
+    ]
+  },
+  "Type: Null": {
+    "locations": [
+      "Mision HQ (Legendary/Mythical)"
+    ]
+  },
+  "Underwater": {
+    "locations": [
+      "Route 16 (Surfing)",
+      "Ruins of Void (Surfing)",
+      "Route 17 (Surfing)",
+      "Route 14 (Surfing)"
+    ]
+  },
+  "Unova Starters": {
+    "locations": [
+      "Route 5 (Gift)"
+    ]
+  },
+  "Unown !": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown ?": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown A": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown B": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown C": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown D": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown E": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown F": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown G": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown H": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown I": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown J": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown K": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown L": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown M": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown N": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown O": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown P": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown Q": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown R": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown S": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown T": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown U": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown V": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown W": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown X": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown Y": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Unown Z": {
+    "locations": [
+      "Tomb of Borrius"
+    ]
+  },
+  "Ursaring": {
+    "locations": [
+      "Redwood Forest"
+    ]
+  },
+  "Uxie": {
+    "locations": [
+      "Tarmigan Town (Legendary/Mythical)",
+      "Mission HQ (Legendary/Mythical)"
+    ]
+  },
+  "Vanillish": {
+    "locations": [
+      "Victory Road"
+    ]
+  },
+  "Vanillite": {
+    "locations": [
+      "Route 1"
+    ]
+  },
+  "Venonat": {
+    "locations": [
+      "Route 5"
+    ]
+  },
+  "Vibrava": {
+    "locations": [
+      "Great Desert"
+    ]
+  },
+  "Victini": {
+    "locations": [
+      "Battleground (Legendary/Mythical)"
+    ]
+  },
+  "Vigoroth": {
+    "locations": [
+      "Redwood Forest"
+    ]
+  },
+  "Volbeat": {
+    "locations": [
+      "Route 17",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Volcanion": {
+    "locations": [
+      "Cinder Volcano (Legendary/Mythical)"
+    ]
+  },
+  "Voltorb": {
+    "locations": [
+      "Dehara City (Gym) (Static)"
+    ]
+  },
+  "Vullaby": {
+    "locations": [
+      "Crystal Peak"
+    ]
+  },
+  "Vullaby (Weekly)": {
+    "locations": [
+      "Great Desert (Static)"
+    ]
+  },
+  "Vulpix": {
+    "locations": [
+      "Cinder Volcano",
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Wailmer": {
+    "locations": [
+      "Route 12 (Surfing)",
+      "Magnolia Fields (Surfing)",
+      "Cube Corp. (Surfing)",
+      "Route 14 (Surfing)"
+    ]
+  },
+  "Wailord": {
+    "locations": [
+      "Route 12 (Surfing)",
+      "Magnolia Fields (Surfing)",
+      "Cube Corp. (Surfing)",
+      "Route 14 (Surfing)"
+    ]
+  },
+  "Weedle": {
+    "locations": [
+      "Grim Woods",
+      "Vivill Woods"
+    ]
+  },
+  "Weepinbell": {
+    "locations": [
+      "Cootes Bog",
+      "Route 14"
+    ]
+  },
+  "Weezing": {
+    "locations": [
+      "Antisis Sewers"
+    ]
+  },
+  "West": {
+    "locations": [
+      "Route 14 (Surfing)"
+    ]
+  },
+  "Whirlipede": {
+    "locations": [
+      "Antisis Sewers"
+    ]
+  },
+  "Whirlpide": {
+    "locations": [
+      "Various routes (timed swarm) (Swarm)"
+    ]
+  },
+  "Whiscash": {
+    "locations": [
+      "Epidimy Town (Surfing)",
+      "Route 11 (Surfing)",
+      "Grim Woods (Surfing)",
+      "Vivill Woods (Surfing)",
+      "Redwood Forest (Surfing)",
+      "Polder Town (Surfing)",
+      "Cootes Bog (Surfing)"
+    ]
+  },
+  "Wild Encounters": {
+    "locations": [
+      "Lost Tunnel (Static)"
+    ]
+  },
+  "Wingull": {
+    "locations": [
+      "Route 3"
+    ]
+  },
+  "Wishiwashi": {
+    "locations": [
+      "Route 9 + Autl Woods (Surfing)",
+      "Route 10 (Surfing)",
+      "Tehl Town (Surfing)",
+      "Auburn Waterway (Surfing)"
+    ]
+  },
+  "Wobbuffet": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Woobat": {
+    "locations": [
+      "Cinder Volcano",
+      "Valley Cave",
+      "Frost Mountain",
+      "Lost Tunnel",
+      "Crystal Peak",
+      "KBT Expressway",
+      "Victory Road",
+      "Valley Cave (Surfing)",
+      "Victory Road (Surfing)"
+    ]
+  },
+  "Wooper": {
+    "locations": [
+      "Cliff Cave"
+    ]
+  },
+  "Wurmple": {
+    "locations": [
+      "Vivill Woods"
+    ]
+  },
+  "Xatu": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Xerneas": {
+    "locations": [
+      "Redwood Forest (Legendary/Mythical)"
+    ]
+  },
+  "Xurkitree": {
+    "locations": [
+      "Thundercap Mt. (Legendary/Mythical)"
+    ]
+  },
+  "Yamask": {
+    "locations": [
+      "Ruins of Void"
+    ]
+  },
+  "Yamper": {
+    "locations": [
+      "Route 5"
+    ]
+  },
+  "Yanma": {
+    "locations": [
+      "Route 5"
+    ]
+  },
+  "Yellow Flowers": {
+    "locations": [
+      "Flower Paradise"
+    ]
+  },
+  "Yungoos": {
+    "locations": [
+      "Route 7"
+    ]
+  },
+  "Yveltal": {
+    "locations": [
+      "Crystal Peak (Legendary/Mythical)"
+    ]
+  },
+  "Zangoose": {
+    "locations": [
+      "Route 17"
+    ]
+  },
+  "Zapdos": {
+    "locations": [
+      "Thundercap Mt. (Legendary/Mythical)"
+    ]
+  },
+  "Zebstrika": {
+    "locations": [
+      "Safari Zone"
+    ]
+  },
+  "Zekrom": {
+    "locations": [
+      "Crystal Peak (Legendary/Mythical)"
+    ]
+  },
+  "Zeraora": {
+    "locations": [
+      "Thundercap Mt. (Legendary/Mythical)"
+    ]
+  },
+  "Zoroark": {
+    "locations": [
+      "Redwood Forest Post-game (Static)"
+    ]
+  },
+  "Zubat": {
+    "locations": [
+      "Icicle Cave",
+      "KBT Expressway"
+    ]
+  },
+  "Zweilous": {
+    "locations": [
+      "Crystal Peak"
+    ]
+  },
+  "Zygarde": {
+    "locations": [
+      "Dresco Town (Legendary/Mythical)"
+    ]
   }
 }

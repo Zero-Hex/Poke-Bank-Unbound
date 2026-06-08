@@ -3,7 +3,7 @@
 block_cipher = None
 
 a = Analysis(
-    ["app.py"],
+    ["launcher.py"],
     pathex=["."],
     binaries=[],
     datas=[
@@ -29,6 +29,13 @@ a = Analysis(
         "openpyxl.utils",
         "openpyxl.writer.excel",
         "openpyxl.reader.excel",
+        "waitress",
+        "waitress.runner",
+        "webbrowser",
+        "pystray",
+        "PIL",
+        "PIL.Image",
+        "PIL.ImageDraw",
     ],
     hookspath=[],
     hooksconfig={},
@@ -45,9 +52,6 @@ pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 exe = EXE(
     pyz,
     a.scripts,
-    a.binaries,
-    a.zipfiles,
-    a.datas,
     [],
     name="UnboundBank",
     debug=False,
@@ -55,11 +59,21 @@ exe = EXE(
     strip=False,
     upx=True,
     upx_exclude=[],
-    runtime_tmpdir=None,
-    console=True,
+    console=False,
     disable_windowed_traceback=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=None,
+    icon="hoopa_icon.ico",
+)
+
+coll = COLLECT(
+    exe,
+    a.binaries,
+    a.zipfiles,
+    a.datas,
+    strip=False,
+    upx=True,
+    upx_exclude=[],
+    name="UnboundBank",
 )

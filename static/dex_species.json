@@ -1,1 +1,4467 @@
-{"1": {"name": "Bulbasaur", "national": 1, "borrius": 0}, "2": {"name": "Ivysaur", "national": 2, "borrius": 0}, "3": {"name": "Venusaur", "national": 3, "borrius": 0}, "4": {"name": "Charmander", "national": 4, "borrius": 0}, "5": {"name": "Charmeleon", "national": 5, "borrius": 0}, "6": {"name": "Charizard", "national": 6, "borrius": 0}, "7": {"name": "Squirtle", "national": 7, "borrius": 0}, "8": {"name": "Wartortle", "national": 8, "borrius": 0}, "9": {"name": "Blastoise", "national": 9, "borrius": 0}, "10": {"name": "Caterpie", "national": 10, "borrius": 93}, "11": {"name": "Metapod", "national": 11, "borrius": 94}, "12": {"name": "Butterfree", "national": 12, "borrius": 95}, "13": {"name": "Weedle", "national": 13, "borrius": 96}, "14": {"name": "Kakuna", "national": 14, "borrius": 97}, "15": {"name": "Beedrill", "national": 15, "borrius": 98}, "16": {"name": "Pidgey", "national": 16, "borrius": 467}, "17": {"name": "Pidgeotto", "national": 17, "borrius": 468}, "18": {"name": "Pidgeot", "national": 18, "borrius": 469}, "19": {"name": "Rattata", "national": 19, "borrius": 39}, "20": {"name": "Raticate", "national": 20, "borrius": 40}, "21": {"name": "Spearow", "national": 21, "borrius": 239}, "22": {"name": "Fearow", "national": 22, "borrius": 240}, "23": {"name": "Ekans", "national": 23, "borrius": 123}, "24": {"name": "Arbok", "national": 24, "borrius": 124}, "25": {"name": "Pikachu", "national": 25, "borrius": 447}, "26": {"name": "Raichu", "national": 26, "borrius": 448}, "27": {"name": "Sandshrew", "national": 27, "borrius": 30}, "28": {"name": "Sandslash", "national": 28, "borrius": 31}, "30": {"name": "Nidorina", "national": 30, "borrius": 162}, "31": {"name": "Nidoqueen", "national": 31, "borrius": 163}, "33": {"name": "Nidorino", "national": 33, "borrius": 159}, "34": {"name": "Nidoking", "national": 34, "borrius": 160}, "35": {"name": "Clefairy", "national": 35, "borrius": 0}, "36": {"name": "Clefable", "national": 36, "borrius": 0}, "37": {"name": "Vulpix", "national": 37, "borrius": 150}, "38": {"name": "Ninetales", "national": 38, "borrius": 151}, "39": {"name": "Jigglypuff", "national": 39, "borrius": 0}, "40": {"name": "Wigglytuff", "national": 40, "borrius": 0}, "41": {"name": "Zubat", "national": 41, "borrius": 9}, "42": {"name": "Golbat", "national": 42, "borrius": 10}, "43": {"name": "Oddish", "national": 43, "borrius": 409}, "44": {"name": "Gloom", "national": 44, "borrius": 410}, "45": {"name": "Vileplume", "national": 45, "borrius": 411}, "46": {"name": "Paras", "national": 46, "borrius": 440}, "47": {"name": "Parasect", "national": 47, "borrius": 441}, "48": {"name": "Venonat", "national": 48, "borrius": 170}, "49": {"name": "Venomoth", "national": 49, "borrius": 171}, "50": {"name": "Diglett", "national": 50, "borrius": 0}, "51": {"name": "Dugtrio", "national": 51, "borrius": 0}, "52": {"name": "Meowth", "national": 52, "borrius": 0}, "53": {"name": "Persian", "national": 53, "borrius": 0}, "54": {"name": "Psyduck", "national": 54, "borrius": 329}, "55": {"name": "Golduck", "national": 55, "borrius": 330}, "56": {"name": "Mankey", "national": 56, "borrius": 127}, "57": {"name": "Primeape", "national": 57, "borrius": 128}, "58": {"name": "Growlithe", "national": 58, "borrius": 164}, "59": {"name": "Arcanine", "national": 59, "borrius": 165}, "60": {"name": "Poliwag", "national": 60, "borrius": 325}, "61": {"name": "Poliwhirl", "national": 61, "borrius": 326}, "62": {"name": "Poliwrath", "national": 62, "borrius": 327}, "63": {"name": "Abra", "national": 63, "borrius": 211}, "64": {"name": "Kadabra", "national": 64, "borrius": 212}, "65": {"name": "Alakazam", "national": 65, "borrius": 213}, "66": {"name": "Machop", "national": 66, "borrius": 318}, "67": {"name": "Machoke", "national": 67, "borrius": 319}, "68": {"name": "Machamp", "national": 68, "borrius": 320}, "69": {"name": "Bellsprout", "national": 69, "borrius": 406}, "70": {"name": "Weepinbell", "national": 70, "borrius": 407}, "71": {"name": "Victreebel", "national": 71, "borrius": 408}, "72": {"name": "Tentacool", "national": 72, "borrius": 388}, "73": {"name": "Tentacruel", "national": 73, "borrius": 389}, "74": {"name": "Geodude", "national": 74, "borrius": 142}, "75": {"name": "Graveler", "national": 75, "borrius": 143}, "76": {"name": "Golem", "national": 76, "borrius": 144}, "77": {"name": "Ponyta", "national": 77, "borrius": 336}, "78": {"name": "Rapidash", "national": 78, "borrius": 337}, "79": {"name": "Slowpoke", "national": 79, "borrius": 403}, "80": {"name": "Slowbro", "national": 80, "borrius": 404}, "81": {"name": "Magnemite", "national": 81, "borrius": 295}, "82": {"name": "Magneton", "national": 82, "borrius": 296}, "83": {"name": "Farfetch'd", "national": 83, "borrius": 0}, "84": {"name": "Doduo", "national": 84, "borrius": 207}, "85": {"name": "Dodrio", "national": 85, "borrius": 208}, "86": {"name": "Seel", "national": 86, "borrius": 277}, "87": {"name": "Dewgong", "national": 87, "borrius": 278}, "88": {"name": "Grimer", "national": 88, "borrius": 459}, "89": {"name": "Muk", "national": 89, "borrius": 460}, "90": {"name": "Shellder", "national": 90, "borrius": 279}, "91": {"name": "Cloyster", "national": 91, "borrius": 280}, "92": {"name": "Gastly", "national": 92, "borrius": 104}, "93": {"name": "Haunter", "national": 93, "borrius": 105}, "94": {"name": "Gengar", "national": 94, "borrius": 106}, "95": {"name": "Onix", "national": 95, "borrius": 227}, "96": {"name": "Drowzee", "national": 96, "borrius": 219}, "97": {"name": "Hypno", "national": 97, "borrius": 220}, "98": {"name": "Krabby", "national": 98, "borrius": 70}, "99": {"name": "Kingler", "national": 99, "borrius": 71}, "100": {"name": "Voltorb", "national": 100, "borrius": 0}, "101": {"name": "Electrode", "national": 101, "borrius": 0}, "102": {"name": "Exeggcute", "national": 102, "borrius": 264}, "103": {"name": "Exeggutor", "national": 103, "borrius": 265}, "104": {"name": "Cubone", "national": 104, "borrius": 298}, "105": {"name": "Marowak", "national": 105, "borrius": 299}, "106": {"name": "Hitmonlee", "national": 106, "borrius": 0}, "107": {"name": "Hitmonchan", "national": 107, "borrius": 0}, "108": {"name": "Lickitung", "national": 108, "borrius": 156}, "109": {"name": "Koffing", "national": 109, "borrius": 461}, "110": {"name": "Weezing", "national": 110, "borrius": 462}, "111": {"name": "Rhyhorn", "national": 111, "borrius": 0}, "112": {"name": "Rhydon", "national": 112, "borrius": 0}, "113": {"name": "Chansey", "national": 113, "borrius": 0}, "114": {"name": "Tangela", "national": 114, "borrius": 449}, "115": {"name": "Kangaskhan", "national": 115, "borrius": 0}, "116": {"name": "Horsea", "national": 116, "borrius": 377}, "117": {"name": "Seadra", "national": 117, "borrius": 378}, "118": {"name": "Goldeen", "national": 118, "borrius": 285}, "119": {"name": "Seaking", "national": 119, "borrius": 286}, "120": {"name": "Staryu", "national": 120, "borrius": 281}, "121": {"name": "Starmie", "national": 121, "borrius": 282}, "122": {"name": "Mr? Mime", "national": 122, "borrius": 222}, "123": {"name": "Scyther", "national": 123, "borrius": 0}, "124": {"name": "Jynx", "national": 124, "borrius": 18}, "125": {"name": "Electabuzz", "national": 125, "borrius": 304}, "126": {"name": "Magmar", "national": 126, "borrius": 147}, "127": {"name": "Pinsir", "national": 127, "borrius": 0}, "128": {"name": "Tauros", "national": 128, "borrius": 0}, "129": {"name": "Magikarp", "national": 129, "borrius": 223}, "130": {"name": "Gyarados", "national": 130, "borrius": 224}, "131": {"name": "Lapras", "national": 131, "borrius": 390}, "132": {"name": "Ditto", "national": 132, "borrius": 0}, "133": {"name": "Eevee", "national": 133, "borrius": 355}, "134": {"name": "Vaporeon", "national": 134, "borrius": 356}, "135": {"name": "Jolteon", "national": 135, "borrius": 357}, "136": {"name": "Flareon", "national": 136, "borrius": 358}, "137": {"name": "Porygon", "national": 137, "borrius": 367}, "138": {"name": "Omanyte", "national": 138, "borrius": 0}, "139": {"name": "Omastar", "national": 139, "borrius": 0}, "140": {"name": "Kabuto", "national": 140, "borrius": 0}, "141": {"name": "Kabutops", "national": 141, "borrius": 0}, "142": {"name": "Aerodactyl", "national": 142, "borrius": 0}, "143": {"name": "Snorlax", "national": 143, "borrius": 0}, "144": {"name": "Articuno", "national": 144, "borrius": 483}, "145": {"name": "Zapdos", "national": 145, "borrius": 484}, "146": {"name": "Moltres", "national": 146, "borrius": 485}, "147": {"name": "Dratini", "national": 147, "borrius": 0}, "148": {"name": "Dragonair", "national": 148, "borrius": 0}, "149": {"name": "Dragonite", "national": 149, "borrius": 0}, "150": {"name": "Mewtwo", "national": 150, "borrius": 0}, "151": {"name": "Mew", "national": 151, "borrius": 0}, "152": {"name": "Chikorita", "national": 152, "borrius": 0}, "153": {"name": "Bayleef", "national": 153, "borrius": 0}, "154": {"name": "Meganium", "national": 154, "borrius": 0}, "155": {"name": "Cyndaquil", "national": 155, "borrius": 0}, "156": {"name": "Quilava", "national": 156, "borrius": 0}, "157": {"name": "Typhlosion", "national": 157, "borrius": 0}, "158": {"name": "Totodile", "national": 158, "borrius": 0}, "159": {"name": "Croconaw", "national": 159, "borrius": 0}, "160": {"name": "Feraligatr", "national": 160, "borrius": 0}, "161": {"name": "Sentret", "national": 161, "borrius": 76}, "162": {"name": "Furret", "national": 162, "borrius": 77}, "163": {"name": "Hoothoot", "national": 163, "borrius": 35}, "164": {"name": "Noctowl", "national": 164, "borrius": 36}, "165": {"name": "Ledyba", "national": 165, "borrius": 191}, "166": {"name": "Ledian", "national": 166, "borrius": 192}, "167": {"name": "Spinarak", "national": 167, "borrius": 193}, "168": {"name": "Ariados", "national": 168, "borrius": 194}, "169": {"name": "Crobat", "national": 169, "borrius": 11}, "170": {"name": "Chinchou", "national": 170, "borrius": 316}, "171": {"name": "Lanturn", "national": 171, "borrius": 317}, "172": {"name": "Pichu", "national": 172, "borrius": 446}, "173": {"name": "Cleffa", "national": 173, "borrius": 0}, "174": {"name": "Igglybuff", "national": 174, "borrius": 0}, "175": {"name": "Togepi", "national": 175, "borrius": 0}, "176": {"name": "Togetic", "national": 176, "borrius": 0}, "177": {"name": "Natu", "national": 177, "borrius": 0}, "178": {"name": "Xatu", "national": 178, "borrius": 0}, "179": {"name": "Mareep", "national": 179, "borrius": 214}, "180": {"name": "Flaaffy", "national": 180, "borrius": 215}, "181": {"name": "Ampharos", "national": 181, "borrius": 216}, "182": {"name": "Bellossom", "national": 182, "borrius": 412}, "183": {"name": "Marill", "national": 183, "borrius": 46}, "184": {"name": "Azumarill", "national": 184, "borrius": 47}, "185": {"name": "Sudowoodo", "national": 185, "borrius": 0}, "186": {"name": "Politoed", "national": 186, "borrius": 328}, "187": {"name": "Hoppip", "national": 187, "borrius": 463}, "188": {"name": "Skiploom", "national": 188, "borrius": 464}, "189": {"name": "Jumpluff", "national": 189, "borrius": 465}, "190": {"name": "Aipom", "national": 190, "borrius": 0}, "191": {"name": "Sunkern", "national": 191, "borrius": 200}, "192": {"name": "Sunflora", "national": 192, "borrius": 201}, "193": {"name": "Yanma", "national": 193, "borrius": 168}, "194": {"name": "Wooper", "national": 194, "borrius": 321}, "195": {"name": "Quagsire", "national": 195, "borrius": 322}, "196": {"name": "Espeon", "national": 196, "borrius": 359}, "197": {"name": "Umbreon", "national": 197, "borrius": 360}, "198": {"name": "Murkrow", "national": 198, "borrius": 154}, "199": {"name": "Slowking", "national": 199, "borrius": 405}, "200": {"name": "Misdreavus", "national": 200, "borrius": 323}, "201": {"name": "Unown", "national": 201, "borrius": 0}, "202": {"name": "Wobbuffet", "national": 202, "borrius": 0}, "203": {"name": "Girafarig", "national": 203, "borrius": 451}, "204": {"name": "Pineco", "national": 204, "borrius": 0}, "205": {"name": "Forretress", "national": 205, "borrius": 0}, "206": {"name": "Dunsparce", "national": 206, "borrius": 188}, "207": {"name": "Gligar", "national": 207, "borrius": 186}, "208": {"name": "Steelix", "national": 208, "borrius": 228}, "209": {"name": "Snubbull", "national": 209, "borrius": 338}, "210": {"name": "Granbull", "national": 210, "borrius": 339}, "211": {"name": "Qwilfish", "national": 211, "borrius": 0}, "212": {"name": "Scizor", "national": 212, "borrius": 0}, "213": {"name": "Shuckle", "national": 213, "borrius": 0}, "214": {"name": "Heracross", "national": 214, "borrius": 0}, "215": {"name": "Sneasel", "national": 215, "borrius": 229}, "216": {"name": "Teddiursa", "national": 216, "borrius": 0}, "217": {"name": "Ursaring", "national": 217, "borrius": 0}, "218": {"name": "Slugma", "national": 218, "borrius": 138}, "219": {"name": "Magcargo", "national": 219, "borrius": 139}, "220": {"name": "Swinub", "national": 220, "borrius": 22}, "221": {"name": "Piloswine", "national": 221, "borrius": 23}, "222": {"name": "Corsola", "national": 222, "borrius": 0}, "223": {"name": "Remoraid", "national": 223, "borrius": 287}, "224": {"name": "Octillery", "national": 224, "borrius": 288}, "225": {"name": "Delibird", "national": 225, "borrius": 7}, "226": {"name": "Mantine", "national": 226, "borrius": 393}, "227": {"name": "Skarmory", "national": 227, "borrius": 0}, "228": {"name": "Houndour", "national": 228, "borrius": 166}, "229": {"name": "Houndoom", "national": 229, "borrius": 167}, "230": {"name": "Kingdra", "national": 230, "borrius": 379}, "231": {"name": "Phanpy", "national": 231, "borrius": 184}, "232": {"name": "Donphan", "national": 232, "borrius": 185}, "233": {"name": "Porygon2", "national": 233, "borrius": 368}, "234": {"name": "Stantler", "national": 234, "borrius": 236}, "235": {"name": "Smeargle", "national": 235, "borrius": 204}, "236": {"name": "Tyrogue", "national": 236, "borrius": 0}, "237": {"name": "Hitmontop", "national": 237, "borrius": 0}, "238": {"name": "Smoochum", "national": 238, "borrius": 17}, "239": {"name": "Elekid", "national": 239, "borrius": 303}, "240": {"name": "Magby", "national": 240, "borrius": 146}, "241": {"name": "Miltank", "national": 241, "borrius": 0}, "242": {"name": "Blissey", "national": 242, "borrius": 0}, "243": {"name": "Raikou", "national": 243, "borrius": 0}, "244": {"name": "Entei", "national": 244, "borrius": 0}, "245": {"name": "Suicune", "national": 245, "borrius": 0}, "246": {"name": "Larvitar", "national": 246, "borrius": 0}, "247": {"name": "Pupitar", "national": 247, "borrius": 0}, "248": {"name": "Tyranitar", "national": 248, "borrius": 0}, "249": {"name": "Lugia", "national": 249, "borrius": 0}, "250": {"name": "Ho-Oh", "national": 250, "borrius": 0}, "251": {"name": "Celebi", "national": 251, "borrius": 0}, "277": {"name": "Treecko", "national": 252, "borrius": 0}, "278": {"name": "Grovyle", "national": 253, "borrius": 0}, "279": {"name": "Sceptile", "national": 254, "borrius": 0}, "280": {"name": "Torchic", "national": 255, "borrius": 0}, "281": {"name": "Combusken", "national": 256, "borrius": 0}, "282": {"name": "Blaziken", "national": 257, "borrius": 0}, "283": {"name": "Mudkip", "national": 258, "borrius": 0}, "284": {"name": "Marshtomp", "national": 259, "borrius": 0}, "285": {"name": "Swampert", "national": 260, "borrius": 0}, "286": {"name": "Poochyena", "national": 261, "borrius": 56}, "287": {"name": "Mightyena", "national": 262, "borrius": 57}, "288": {"name": "Zigzagoon", "national": 263, "borrius": 257}, "289": {"name": "Linoone", "national": 264, "borrius": 258}, "290": {"name": "Wurmple", "national": 265, "borrius": 428}, "291": {"name": "Silcoon", "national": 266, "borrius": 429}, "292": {"name": "Beautifly", "national": 267, "borrius": 430}, "293": {"name": "Cascoon", "national": 268, "borrius": 431}, "294": {"name": "Dustox", "national": 269, "borrius": 432}, "295": {"name": "Lotad", "national": 270, "borrius": 251}, "296": {"name": "Lombre", "national": 271, "borrius": 252}, "297": {"name": "Ludicolo", "national": 272, "borrius": 253}, "298": {"name": "Seedot", "national": 273, "borrius": 99}, "299": {"name": "Nuzleaf", "national": 274, "borrius": 100}, "300": {"name": "Shiftry", "national": 275, "borrius": 101}, "304": {"name": "Taillow", "national": 276, "borrius": 152}, "305": {"name": "Swellow", "national": 277, "borrius": 153}, "309": {"name": "Wingull", "national": 278, "borrius": 58}, "310": {"name": "Pelipper", "national": 279, "borrius": 59}, "392": {"name": "Ralts", "national": 280, "borrius": 129}, "393": {"name": "Kirlia", "national": 281, "borrius": 130}, "394": {"name": "Gardevoir", "national": 282, "borrius": 131}, "311": {"name": "Surskit", "national": 283, "borrius": 68}, "312": {"name": "Masquerain", "national": 284, "borrius": 69}, "306": {"name": "Shroomish", "national": 285, "borrius": 244}, "307": {"name": "Breloom", "national": 286, "borrius": 245}, "364": {"name": "Slakoth", "national": 287, "borrius": 0}, "365": {"name": "Vigoroth", "national": 288, "borrius": 0}, "366": {"name": "Slaking", "national": 289, "borrius": 0}, "301": {"name": "Nincada", "national": 290, "borrius": 0}, "302": {"name": "Ninjask", "national": 291, "borrius": 0}, "303": {"name": "Shedinja", "national": 292, "borrius": 0}, "370": {"name": "Whismur", "national": 293, "borrius": 0}, "371": {"name": "Loudred", "national": 294, "borrius": 0}, "372": {"name": "Exploud", "national": 295, "borrius": 0}, "335": {"name": "Makuhita", "national": 296, "borrius": 12}, "336": {"name": "Hariyama", "national": 297, "borrius": 13}, "350": {"name": "Azurill", "national": 298, "borrius": 45}, "320": {"name": "Nosepass", "national": 299, "borrius": 179}, "315": {"name": "Skitty", "national": 300, "borrius": 0}, "316": {"name": "Delcatty", "national": 301, "borrius": 0}, "322": {"name": "Sableye", "national": 302, "borrius": 384}, "355": {"name": "Mawile", "national": 303, "borrius": 29}, "382": {"name": "Aron", "national": 304, "borrius": 176}, "383": {"name": "Lairon", "national": 305, "borrius": 177}, "384": {"name": "Aggron", "national": 306, "borrius": 178}, "356": {"name": "Meditite", "national": 307, "borrius": 271}, "357": {"name": "Medicham", "national": 308, "borrius": 272}, "337": {"name": "Electrike", "national": 309, "borrius": 43}, "338": {"name": "Manectric", "national": 310, "borrius": 44}, "353": {"name": "Plusle", "national": 311, "borrius": 0}, "354": {"name": "Minun", "national": 312, "borrius": 0}, "386": {"name": "Volbeat", "national": 313, "borrius": 475}, "387": {"name": "Illumise", "national": 314, "borrius": 476}, "363": {"name": "Roselia", "national": 315, "borrius": 0}, "367": {"name": "Gulpin", "national": 316, "borrius": 273}, "368": {"name": "Swalot", "national": 317, "borrius": 274}, "330": {"name": "Carvanha", "national": 318, "borrius": 290}, "331": {"name": "Sharpedo", "national": 319, "borrius": 291}, "313": {"name": "Wailmer", "national": 320, "borrius": 353}, "314": {"name": "Wailord", "national": 321, "borrius": 354}, "339": {"name": "Numel", "national": 322, "borrius": 125}, "340": {"name": "Camerupt", "national": 323, "borrius": 126}, "321": {"name": "Torkoal", "national": 324, "borrius": 145}, "351": {"name": "Spoink", "national": 325, "borrius": 269}, "352": {"name": "Grumpig", "national": 326, "borrius": 270}, "308": {"name": "Spinda", "national": 327, "borrius": 0}, "332": {"name": "Trapinch", "national": 328, "borrius": 424}, "333": {"name": "Vibrava", "national": 329, "borrius": 425}, "334": {"name": "Flygon", "national": 330, "borrius": 426}, "344": {"name": "Cacnea", "national": 331, "borrius": 0}, "345": {"name": "Cacturne", "national": 332, "borrius": 0}, "358": {"name": "Swablu", "national": 333, "borrius": 266}, "359": {"name": "Altaria", "national": 334, "borrius": 267}, "380": {"name": "Zangoose", "national": 335, "borrius": 470}, "379": {"name": "Seviper", "national": 336, "borrius": 471}, "348": {"name": "Lunatone", "national": 337, "borrius": 385}, "349": {"name": "Solrock", "national": 338, "borrius": 386}, "323": {"name": "Barboach", "national": 339, "borrius": 293}, "324": {"name": "Whiscash", "national": 340, "borrius": 294}, "326": {"name": "Corphish", "national": 341, "borrius": 283}, "327": {"name": "Crawdaunt", "national": 342, "borrius": 284}, "318": {"name": "Baltoy", "national": 343, "borrius": 380}, "319": {"name": "Claydol", "national": 344, "borrius": 381}, "388": {"name": "Lileep", "national": 345, "borrius": 0}, "389": {"name": "Cradily", "national": 346, "borrius": 0}, "390": {"name": "Anorith", "national": 347, "borrius": 0}, "391": {"name": "Armaldo", "national": 348, "borrius": 0}, "328": {"name": "Feebas", "national": 349, "borrius": 0}, "329": {"name": "Milotic", "national": 350, "borrius": 0}, "385": {"name": "Castform", "national": 351, "borrius": 0}, "317": {"name": "Kecleon", "national": 352, "borrius": 0}, "377": {"name": "Shuppet", "national": 353, "borrius": 107}, "378": {"name": "Banette", "national": 354, "borrius": 108}, "361": {"name": "Duskull", "national": 355, "borrius": 109}, "362": {"name": "Dusclops", "national": 356, "borrius": 110}, "369": {"name": "Tropius", "national": 357, "borrius": 466}, "411": {"name": "Chimecho", "national": 358, "borrius": 0}, "376": {"name": "Absol", "national": 359, "borrius": 0}, "360": {"name": "Wynaut", "national": 360, "borrius": 0}, "346": {"name": "Snorunt", "national": 361, "borrius": 1}, "347": {"name": "Glalie", "national": 362, "borrius": 2}, "341": {"name": "Spheal", "national": 363, "borrius": 14}, "342": {"name": "Sealeo", "national": 364, "borrius": 15}, "343": {"name": "Walrein", "national": 365, "borrius": 16}, "373": {"name": "Clamperl", "national": 366, "borrius": 477}, "374": {"name": "Huntail", "national": 367, "borrius": 478}, "375": {"name": "Gorebyss", "national": 368, "borrius": 479}, "381": {"name": "Relicanth", "national": 369, "borrius": 480}, "325": {"name": "Luvdisc", "national": 370, "borrius": 292}, "395": {"name": "Bagon", "national": 371, "borrius": 472}, "396": {"name": "Shelgon", "national": 372, "borrius": 473}, "397": {"name": "Salamence", "national": 373, "borrius": 474}, "398": {"name": "Beldum", "national": 374, "borrius": 0}, "399": {"name": "Metang", "national": 375, "borrius": 0}, "400": {"name": "Metagross", "national": 376, "borrius": 0}, "401": {"name": "Regirock", "national": 377, "borrius": 486}, "402": {"name": "Regice", "national": 378, "borrius": 487}, "403": {"name": "Registeel", "national": 379, "borrius": 488}, "407": {"name": "Latias", "national": 380, "borrius": 0}, "408": {"name": "Latios", "national": 381, "borrius": 0}, "404": {"name": "Kyogre", "national": 382, "borrius": 0}, "405": {"name": "Groudon", "national": 383, "borrius": 0}, "406": {"name": "Rayquaza", "national": 384, "borrius": 0}, "409": {"name": "Jirachi", "national": 385, "borrius": 490}, "410": {"name": "Deoxys", "national": 386, "borrius": 491}, "440": {"name": "Turtwig", "national": 387, "borrius": 0}, "441": {"name": "Grotle", "national": 388, "borrius": 0}, "442": {"name": "Torterra", "national": 389, "borrius": 0}, "443": {"name": "Chimchar", "national": 390, "borrius": 0}, "444": {"name": "Monferno", "national": 391, "borrius": 0}, "445": {"name": "Infernape", "national": 392, "borrius": 0}, "446": {"name": "Piplup", "national": 393, "borrius": 0}, "447": {"name": "Prinplup", "national": 394, "borrius": 0}, "448": {"name": "Empoleon", "national": 395, "borrius": 0}, "449": {"name": "Starly", "national": 396, "borrius": 114}, "450": {"name": "Staravia", "national": 397, "borrius": 115}, "451": {"name": "Staraptor", "national": 398, "borrius": 116}, "452": {"name": "Bidoof", "national": 399, "borrius": 60}, "453": {"name": "Bibarel", "national": 400, "borrius": 61}, "454": {"name": "Kricketot", "national": 401, "borrius": 202}, "455": {"name": "Kricketune", "national": 402, "borrius": 203}, "456": {"name": "Shinx", "national": 403, "borrius": 195}, "457": {"name": "Luxio", "national": 404, "borrius": 196}, "458": {"name": "Luxray", "national": 405, "borrius": 197}, "459": {"name": "Budew", "national": 406, "borrius": 120}, "460": {"name": "Roserade", "national": 407, "borrius": 121}, "461": {"name": "Cranidos", "national": 408, "borrius": 0}, "462": {"name": "Rampardos", "national": 409, "borrius": 0}, "463": {"name": "Shieldon", "national": 410, "borrius": 0}, "464": {"name": "Bastiodon", "national": 411, "borrius": 0}, "465": {"name": "Burmy", "national": 412, "borrius": 133}, "466": {"name": "Wormadam", "national": 413, "borrius": 134}, "467": {"name": "Mothim", "national": 414, "borrius": 135}, "468": {"name": "Combee", "national": 415, "borrius": 90}, "469": {"name": "Vespiquen", "national": 416, "borrius": 91}, "470": {"name": "Pachirisu", "national": 417, "borrius": 0}, "471": {"name": "Buizel", "national": 418, "borrius": 62}, "472": {"name": "Floatzel", "national": 419, "borrius": 63}, "473": {"name": "Cherubi", "national": 420, "borrius": 72}, "474": {"name": "Cherrim", "national": 421, "borrius": 73}, "475": {"name": "Shellos", "national": 422, "borrius": 64}, "476": {"name": "Gastrodon", "national": 423, "borrius": 65}, "477": {"name": "Ambipom", "national": 424, "borrius": 0}, "478": {"name": "Drifloon", "national": 425, "borrius": 0}, "479": {"name": "Drifblim", "national": 426, "borrius": 0}, "480": {"name": "Buneary", "national": 427, "borrius": 209}, "481": {"name": "Lopunny", "national": 428, "borrius": 210}, "482": {"name": "Mismagius", "national": 429, "borrius": 324}, "483": {"name": "Honchkrow", "national": 430, "borrius": 155}, "484": {"name": "Glameow", "national": 431, "borrius": 275}, "485": {"name": "Purugly", "national": 432, "borrius": 276}, "486": {"name": "Chingling", "national": 433, "borrius": 375}, "487": {"name": "Stunky", "national": 434, "borrius": 376}, "488": {"name": "Skuntank", "national": 435, "borrius": 0}, "489": {"name": "Bronzor", "national": 436, "borrius": 225}, "490": {"name": "Bronzong", "national": 437, "borrius": 226}, "491": {"name": "Bonsly", "national": 438, "borrius": 0}, "492": {"name": "Mime Jr?", "national": 439, "borrius": 221}, "493": {"name": "Happiny", "national": 440, "borrius": 0}, "494": {"name": "Chatot", "national": 441, "borrius": 456}, "495": {"name": "Spiritomb", "national": 442, "borrius": 0}, "496": {"name": "Gible", "national": 443, "borrius": 0}, "497": {"name": "Gabite", "national": 444, "borrius": 0}, "498": {"name": "Garchomp", "national": 445, "borrius": 0}, "499": {"name": "Munchlax", "national": 446, "borrius": 0}, "500": {"name": "Riolu", "national": 447, "borrius": 52}, "501": {"name": "Lucario", "national": 448, "borrius": 53}, "502": {"name": "Hippopotas", "national": 449, "borrius": 422}, "503": {"name": "Hippowdon", "national": 450, "borrius": 423}, "504": {"name": "Skorupi", "national": 451, "borrius": 246}, "505": {"name": "Drapion", "national": 452, "borrius": 247}, "506": {"name": "Croagunk", "national": 453, "borrius": 0}, "507": {"name": "Toxicroak", "national": 454, "borrius": 0}, "508": {"name": "Carnivine", "national": 455, "borrius": 0}, "509": {"name": "Finneon", "national": 456, "borrius": 395}, "510": {"name": "Lumineon", "national": 457, "borrius": 396}, "511": {"name": "Mantyke", "national": 458, "borrius": 392}, "512": {"name": "Snover", "national": 459, "borrius": 232}, "513": {"name": "Abomasnow", "national": 460, "borrius": 233}, "514": {"name": "Weavile", "national": 461, "borrius": 230}, "515": {"name": "Magnezone", "national": 462, "borrius": 297}, "516": {"name": "Lickilicky", "national": 463, "borrius": 157}, "517": {"name": "Rhyperior", "national": 464, "borrius": 0}, "518": {"name": "Tangrowth", "national": 465, "borrius": 450}, "519": {"name": "Electivire", "national": 466, "borrius": 305}, "520": {"name": "Magmortar", "national": 467, "borrius": 148}, "521": {"name": "Togekiss", "national": 468, "borrius": 0}, "522": {"name": "Yanmega", "national": 469, "borrius": 169}, "523": {"name": "Leafeon", "national": 470, "borrius": 361}, "524": {"name": "Glaceon", "national": 471, "borrius": 362}, "525": {"name": "Gliscor", "national": 472, "borrius": 187}, "526": {"name": "Mamoswine", "national": 473, "borrius": 24}, "527": {"name": "Porygon-Z", "national": 474, "borrius": 369}, "528": {"name": "Gallade", "national": 475, "borrius": 132}, "529": {"name": "Probopass", "national": 476, "borrius": 180}, "530": {"name": "Dusknoir", "national": 477, "borrius": 111}, "531": {"name": "Froslass", "national": 478, "borrius": 3}, "532": {"name": "Rotom", "national": 479, "borrius": 0}, "533": {"name": "Uxie", "national": 480, "borrius": 0}, "534": {"name": "Mesprit", "national": 481, "borrius": 0}, "535": {"name": "Azelf", "national": 482, "borrius": 0}, "536": {"name": "Dialga", "national": 483, "borrius": 0}, "537": {"name": "Palkia", "national": 484, "borrius": 0}, "538": {"name": "Heatran", "national": 485, "borrius": 492}, "539": {"name": "Regigigas", "national": 486, "borrius": 489}, "540": {"name": "Giratina", "national": 487, "borrius": 0}, "541": {"name": "Cresselia", "national": 488, "borrius": 0}, "542": {"name": "Phione", "national": 489, "borrius": 0}, "543": {"name": "Manaphy", "national": 490, "borrius": 0}, "544": {"name": "Darkrai", "national": 491, "borrius": 0}, "545": {"name": "Shaymin", "national": 492, "borrius": 493}, "546": {"name": "Arceus", "national": 493, "borrius": 0}, "547": {"name": "Victini", "national": 494, "borrius": 0}, "548": {"name": "Snivy", "national": 495, "borrius": 0}, "549": {"name": "Servine", "national": 496, "borrius": 0}, "550": {"name": "Serperior", "national": 497, "borrius": 0}, "551": {"name": "Tepig", "national": 498, "borrius": 0}, "552": {"name": "Pignite", "national": 499, "borrius": 0}, "553": {"name": "Emboar", "national": 500, "borrius": 0}, "554": {"name": "Oshawott", "national": 501, "borrius": 0}, "555": {"name": "Dewott", "national": 502, "borrius": 0}, "556": {"name": "Samurott", "national": 503, "borrius": 0}, "557": {"name": "Patrat", "national": 504, "borrius": 37}, "558": {"name": "Watchog", "national": 505, "borrius": 38}, "559": {"name": "Lillipup", "national": 506, "borrius": 117}, "560": {"name": "Herdier", "national": 507, "borrius": 118}, "561": {"name": "Stoutland", "national": 508, "borrius": 119}, "562": {"name": "Purrloin", "national": 509, "borrius": 172}, "563": {"name": "Liepard", "national": 510, "borrius": 173}, "564": {"name": "Pansage", "national": 511, "borrius": 84}, "565": {"name": "Simisage", "national": 512, "borrius": 85}, "566": {"name": "Pansear", "national": 513, "borrius": 86}, "567": {"name": "Simisear", "national": 514, "borrius": 87}, "568": {"name": "Panpour", "national": 515, "borrius": 88}, "569": {"name": "Simipour", "national": 516, "borrius": 89}, "570": {"name": "Munna", "national": 517, "borrius": 0}, "571": {"name": "Musharna", "national": 518, "borrius": 0}, "572": {"name": "Pidove", "national": 519, "borrius": 0}, "573": {"name": "Tranquill", "national": 520, "borrius": 0}, "574": {"name": "Unfezant", "national": 521, "borrius": 0}, "575": {"name": "Blitzle", "national": 522, "borrius": 0}, "576": {"name": "Zebstrika", "national": 523, "borrius": 0}, "577": {"name": "Roggenrola", "national": 524, "borrius": 19}, "578": {"name": "Boldore", "national": 525, "borrius": 20}, "579": {"name": "Gigalith", "national": 526, "borrius": 21}, "580": {"name": "Woobat", "national": 527, "borrius": 136}, "581": {"name": "Swoobat", "national": 528, "borrius": 137}, "582": {"name": "Drilbur", "national": 529, "borrius": 27}, "583": {"name": "Excadrill", "national": 530, "borrius": 28}, "584": {"name": "Audino", "national": 531, "borrius": 248}, "585": {"name": "Timburr", "national": 532, "borrius": 309}, "586": {"name": "Gurdurr", "national": 533, "borrius": 310}, "587": {"name": "Conkeldurr", "national": 534, "borrius": 311}, "588": {"name": "Tympole", "national": 535, "borrius": 254}, "589": {"name": "Palpitoad", "national": 536, "borrius": 255}, "590": {"name": "Seismitoad", "national": 537, "borrius": 256}, "591": {"name": "Throh", "national": 538, "borrius": 457}, "592": {"name": "Sawk", "national": 539, "borrius": 458}, "593": {"name": "Sewaddle", "national": 540, "borrius": 0}, "594": {"name": "Swadloon", "national": 541, "borrius": 0}, "595": {"name": "Leavanny", "national": 542, "borrius": 0}, "596": {"name": "Venipede", "national": 543, "borrius": 0}, "597": {"name": "Whirlipede", "national": 544, "borrius": 0}, "598": {"name": "Scolipede", "national": 545, "borrius": 0}, "599": {"name": "Cottonee", "national": 546, "borrius": 436}, "600": {"name": "Whimsicott", "national": 547, "borrius": 437}, "601": {"name": "Petilil", "national": 548, "borrius": 438}, "602": {"name": "Lilligant", "national": 549, "borrius": 439}, "603": {"name": "Basculin", "national": 550, "borrius": 391}, "604": {"name": "Sandile", "national": 551, "borrius": 415}, "605": {"name": "Krokorok", "national": 552, "borrius": 416}, "606": {"name": "Krookodile", "national": 553, "borrius": 417}, "607": {"name": "Darumaka", "national": 554, "borrius": 420}, "608": {"name": "Darmanitan", "national": 555, "borrius": 421}, "609": {"name": "Maractus", "national": 556, "borrius": 427}, "610": {"name": "Dwebble", "national": 557, "borrius": 413}, "611": {"name": "Crustle", "national": 558, "borrius": 414}, "612": {"name": "Scraggy", "national": 559, "borrius": 50}, "613": {"name": "Scrafty", "national": 560, "borrius": 51}, "614": {"name": "Sigilyph", "national": 561, "borrius": 387}, "615": {"name": "Yamask", "national": 562, "borrius": 382}, "616": {"name": "Cofagrigus", "national": 563, "borrius": 383}, "617": {"name": "Tirtouga", "national": 564, "borrius": 0}, "618": {"name": "Carracosta", "national": 565, "borrius": 0}, "619": {"name": "Archen", "national": 566, "borrius": 0}, "620": {"name": "Archeops", "national": 567, "borrius": 0}, "621": {"name": "Trubbish", "national": 568, "borrius": 0}, "622": {"name": "Garbodor", "national": 569, "borrius": 0}, "623": {"name": "Zorua", "national": 570, "borrius": 0}, "624": {"name": "Zoroark", "national": 571, "borrius": 0}, "625": {"name": "Minccino", "national": 572, "borrius": 41}, "626": {"name": "Cinccino", "national": 573, "borrius": 42}, "627": {"name": "Gothita", "national": 574, "borrius": 343}, "628": {"name": "Gothorita", "national": 575, "borrius": 344}, "629": {"name": "Gothitelle", "national": 576, "borrius": 345}, "630": {"name": "Solosis", "national": 577, "borrius": 346}, "631": {"name": "Duosion", "national": 578, "borrius": 347}, "632": {"name": "Reuniclus", "national": 579, "borrius": 348}, "633": {"name": "Ducklett", "national": 580, "borrius": 0}, "634": {"name": "Swanna", "national": 581, "borrius": 0}, "635": {"name": "Vanillite", "national": 582, "borrius": 4}, "636": {"name": "Vanillish", "national": 583, "borrius": 5}, "637": {"name": "Vanilluxe", "national": 584, "borrius": 6}, "638": {"name": "Deerling", "national": 585, "borrius": 198}, "639": {"name": "Sawsbuck", "national": 586, "borrius": 199}, "640": {"name": "Emolga", "national": 587, "borrius": 370}, "641": {"name": "Karrablast", "national": 588, "borrius": 249}, "642": {"name": "Escavalier", "national": 589, "borrius": 250}, "643": {"name": "Foongus", "national": 590, "borrius": 442}, "644": {"name": "Amoonguss", "national": 591, "borrius": 443}, "645": {"name": "Frillish", "national": 592, "borrius": 0}, "646": {"name": "Jellicent", "national": 593, "borrius": 0}, "647": {"name": "Alomomola", "national": 594, "borrius": 398}, "648": {"name": "Joltik", "national": 595, "borrius": 312}, "649": {"name": "Galvantula", "national": 596, "borrius": 313}, "650": {"name": "Ferroseed", "national": 597, "borrius": 314}, "651": {"name": "Ferrothorn", "national": 598, "borrius": 315}, "652": {"name": "Klink", "national": 599, "borrius": 300}, "653": {"name": "Klang", "national": 600, "borrius": 301}, "654": {"name": "Klinklang", "national": 601, "borrius": 302}, "655": {"name": "Tynamo", "national": 602, "borrius": 306}, "656": {"name": "Eelektrik", "national": 603, "borrius": 307}, "657": {"name": "Eelektross", "national": 604, "borrius": 308}, "658": {"name": "Elgyem", "national": 605, "borrius": 174}, "659": {"name": "Beheeyem", "national": 606, "borrius": 175}, "660": {"name": "Litwick", "national": 607, "borrius": 0}, "661": {"name": "Lampent", "national": 608, "borrius": 0}, "662": {"name": "Chandelure", "national": 609, "borrius": 0}, "663": {"name": "Axew", "national": 610, "borrius": 364}, "664": {"name": "Fraxure", "national": 611, "borrius": 365}, "665": {"name": "Haxorus", "national": 612, "borrius": 366}, "666": {"name": "Cubchoo", "national": 613, "borrius": 234}, "667": {"name": "Beartic", "national": 614, "borrius": 235}, "668": {"name": "Cryogonal", "national": 615, "borrius": 231}, "669": {"name": "Shelmet", "national": 616, "borrius": 262}, "670": {"name": "Accelgor", "national": 617, "borrius": 263}, "671": {"name": "Stunfisk", "national": 618, "borrius": 397}, "672": {"name": "Mienfoo", "national": 619, "borrius": 340}, "673": {"name": "Mienshao", "national": 620, "borrius": 341}, "674": {"name": "Druddigon", "national": 621, "borrius": 0}, "675": {"name": "Golett", "national": 622, "borrius": 373}, "676": {"name": "Golurk", "national": 623, "borrius": 374}, "677": {"name": "Pawniard", "national": 624, "borrius": 454}, "678": {"name": "Bisharp", "national": 625, "borrius": 455}, "679": {"name": "Bouffalant", "national": 626, "borrius": 0}, "680": {"name": "Rufflet", "national": 627, "borrius": 0}, "681": {"name": "Braviary", "national": 628, "borrius": 0}, "682": {"name": "Vullaby", "national": 629, "borrius": 0}, "683": {"name": "Mandibuzz", "national": 630, "borrius": 0}, "684": {"name": "Heatmor", "national": 631, "borrius": 149}, "685": {"name": "Durant", "national": 632, "borrius": 0}, "686": {"name": "Deino", "national": 633, "borrius": 0}, "687": {"name": "Zweilous", "national": 634, "borrius": 0}, "688": {"name": "Hydreigon", "national": 635, "borrius": 0}, "689": {"name": "Larvesta", "national": 636, "borrius": 0}, "690": {"name": "Volcarona", "national": 637, "borrius": 0}, "691": {"name": "Cobalion", "national": 638, "borrius": 0}, "692": {"name": "Terrakion", "national": 639, "borrius": 0}, "693": {"name": "Virizion", "national": 640, "borrius": 0}, "694": {"name": "Tornadus", "national": 641, "borrius": 0}, "695": {"name": "Thundurus", "national": 642, "borrius": 0}, "696": {"name": "Reshiram", "national": 643, "borrius": 0}, "697": {"name": "Zekrom", "national": 644, "borrius": 0}, "698": {"name": "Landorus", "national": 645, "borrius": 0}, "699": {"name": "Kyurem", "national": 646, "borrius": 0}, "700": {"name": "Keldeo", "national": 647, "borrius": 494}, "701": {"name": "Meloetta", "national": 648, "borrius": 0}, "702": {"name": "Genesect", "national": 649, "borrius": 0}, "758": {"name": "Chespin", "national": 650, "borrius": 0}, "759": {"name": "Quilladin", "national": 651, "borrius": 0}, "760": {"name": "Chesnaught", "national": 652, "borrius": 0}, "761": {"name": "Fennekin", "national": 653, "borrius": 0}, "762": {"name": "Braixen", "national": 654, "borrius": 0}, "763": {"name": "Delphox", "national": 655, "borrius": 0}, "764": {"name": "Froakie", "national": 656, "borrius": 0}, "765": {"name": "Frogadier", "national": 657, "borrius": 0}, "766": {"name": "Greninja", "national": 658, "borrius": 0}, "767": {"name": "Bunnelby", "national": 659, "borrius": 189}, "768": {"name": "Diggersby", "national": 660, "borrius": 190}, "769": {"name": "Fletchling", "national": 661, "borrius": 331}, "771": {"name": "Talonflame", "national": 663, "borrius": 333}, "772": {"name": "Scatterbug", "national": 664, "borrius": 433}, "773": {"name": "Spewpa", "national": 665, "borrius": 434}, "774": {"name": "Vivillon", "national": 666, "borrius": 435}, "775": {"name": "Litleo", "national": 667, "borrius": 0}, "776": {"name": "Pyroar", "national": 668, "borrius": 0}, "778": {"name": "Floette", "national": 670, "borrius": 79}, "779": {"name": "Florges", "national": 671, "borrius": 80}, "780": {"name": "Skiddo", "national": 672, "borrius": 0}, "781": {"name": "Gogoat", "national": 673, "borrius": 0}, "782": {"name": "Pancham", "national": 674, "borrius": 452}, "783": {"name": "Pangoro", "national": 675, "borrius": 453}, "784": {"name": "Furfrou", "national": 676, "borrius": 0}, "785": {"name": "Espurr", "national": 677, "borrius": 217}, "786": {"name": "Meowstic", "national": 678, "borrius": 218}, "787": {"name": "Honedge", "national": 679, "borrius": 0}, "788": {"name": "Doublade", "national": 680, "borrius": 0}, "789": {"name": "Aegislash", "national": 681, "borrius": 0}, "790": {"name": "Spritzee", "national": 682, "borrius": 351}, "791": {"name": "Aromatisse", "national": 683, "borrius": 352}, "792": {"name": "Swirlix", "national": 684, "borrius": 349}, "793": {"name": "Slurpuff", "national": 685, "borrius": 350}, "794": {"name": "Inkay", "national": 686, "borrius": 54}, "795": {"name": "Malamar", "national": 687, "borrius": 55}, "796": {"name": "Binacle", "national": 688, "borrius": 0}, "797": {"name": "Barbaracle", "national": 689, "borrius": 0}, "798": {"name": "Skrelp", "national": 690, "borrius": 399}, "799": {"name": "Dragalge", "national": 691, "borrius": 400}, "800": {"name": "Clauncher", "national": 692, "borrius": 401}, "801": {"name": "Clawitzer", "national": 693, "borrius": 402}, "802": {"name": "Helioptile", "national": 694, "borrius": 0}, "803": {"name": "Heliolisk", "national": 695, "borrius": 0}, "804": {"name": "Tyrunt", "national": 696, "borrius": 0}, "805": {"name": "Tyrantrum", "national": 697, "borrius": 0}, "806": {"name": "Amaura", "national": 698, "borrius": 0}, "807": {"name": "Aurorus", "national": 699, "borrius": 0}, "808": {"name": "Sylveon", "national": 700, "borrius": 363}, "809": {"name": "Hawlucha", "national": 701, "borrius": 371}, "810": {"name": "Dedenne", "national": 702, "borrius": 342}, "811": {"name": "Carbink", "national": 703, "borrius": 183}, "812": {"name": "Goomy", "national": 704, "borrius": 259}, "813": {"name": "Sliggoo", "national": 705, "borrius": 260}, "814": {"name": "Goodra", "national": 706, "borrius": 261}, "815": {"name": "Klefki", "national": 707, "borrius": 372}, "816": {"name": "Phantump", "national": 708, "borrius": 112}, "817": {"name": "Trevenant", "national": 709, "borrius": 113}, "818": {"name": "Pumpkaboo", "national": 710, "borrius": 102}, "819": {"name": "Gourgeist", "national": 711, "borrius": 103}, "820": {"name": "Bergmite", "national": 712, "borrius": 25}, "821": {"name": "Avalugg", "national": 713, "borrius": 26}, "822": {"name": "Noibat", "national": 714, "borrius": 181}, "823": {"name": "Noivern", "national": 715, "borrius": 182}, "824": {"name": "Xerneas", "national": 716, "borrius": 0}, "825": {"name": "Yveltal", "national": 717, "borrius": 0}, "826": {"name": "Zygarde", "national": 718, "borrius": 0}, "827": {"name": "Diancie", "national": 719, "borrius": 495}, "828": {"name": "Hoopa", "national": 720, "borrius": 498}, "830": {"name": "Volcanion", "national": 721, "borrius": 0}, "939": {"name": "Rowlet", "national": 722, "borrius": 0}, "940": {"name": "Dartrix", "national": 723, "borrius": 0}, "941": {"name": "Decidueye", "national": 724, "borrius": 0}, "942": {"name": "Litten", "national": 725, "borrius": 0}, "943": {"name": "Torracat", "national": 726, "borrius": 0}, "944": {"name": "Incineroar", "national": 727, "borrius": 0}, "945": {"name": "Popplio", "national": 728, "borrius": 0}, "946": {"name": "Brionne", "national": 729, "borrius": 0}, "947": {"name": "Primarina", "national": 730, "borrius": 0}, "948": {"name": "Pikipek", "national": 731, "borrius": 32}, "949": {"name": "Trumbeak", "national": 732, "borrius": 33}, "950": {"name": "Toucannon", "national": 733, "borrius": 34}, "951": {"name": "Yungoos", "national": 734, "borrius": 205}, "952": {"name": "Gumshoos", "national": 735, "borrius": 206}, "953": {"name": "Grubbin", "national": 736, "borrius": 241}, "954": {"name": "Charjabug", "national": 737, "borrius": 242}, "955": {"name": "Vikavolt", "national": 738, "borrius": 243}, "956": {"name": "Crabrawler", "national": 739, "borrius": 237}, "958": {"name": "Oricorio", "national": 741, "borrius": 83}, "959": {"name": "Cutiefly", "national": 742, "borrius": 81}, "960": {"name": "Ribombee", "national": 743, "borrius": 82}, "961": {"name": "Rockruff", "national": 744, "borrius": 334}, "962": {"name": "Lycanroc", "national": 745, "borrius": 335}, "963": {"name": "Wishiwashi", "national": 746, "borrius": 289}, "964": {"name": "Mareanie", "national": 747, "borrius": 481}, "965": {"name": "Toxapex", "national": 748, "borrius": 482}, "966": {"name": "Mudbray", "national": 749, "borrius": 0}, "967": {"name": "Mudsdale", "national": 750, "borrius": 0}, "968": {"name": "Dewpider", "national": 751, "borrius": 66}, "969": {"name": "Araquanid", "national": 752, "borrius": 67}, "970": {"name": "Fomantis", "national": 753, "borrius": 0}, "971": {"name": "Lurantis", "national": 754, "borrius": 0}, "972": {"name": "Morelull", "national": 755, "borrius": 444}, "973": {"name": "Shiinotic", "national": 756, "borrius": 445}, "974": {"name": "Salandit", "national": 757, "borrius": 140}, "975": {"name": "Salazzle", "national": 758, "borrius": 141}, "976": {"name": "Stufful", "national": 759, "borrius": 48}, "977": {"name": "Bewear", "national": 760, "borrius": 49}, "978": {"name": "Bounsweet", "national": 761, "borrius": 0}, "979": {"name": "Steenee", "national": 762, "borrius": 0}, "980": {"name": "Tsareena", "national": 763, "borrius": 0}, "981": {"name": "Comfey", "national": 764, "borrius": 92}, "982": {"name": "Oranguru", "national": 765, "borrius": 0}, "983": {"name": "Passimian", "national": 766, "borrius": 0}, "984": {"name": "Wimpod", "national": 767, "borrius": 0}, "985": {"name": "Golisopod", "national": 768, "borrius": 0}, "986": {"name": "Sandygast", "national": 769, "borrius": 74}, "987": {"name": "Palossand", "national": 770, "borrius": 75}, "988": {"name": "Pyukumuku", "national": 771, "borrius": 394}, "989": {"name": "Type: Null", "national": 772, "borrius": 0}, "990": {"name": "Silvally", "national": 773, "borrius": 0}, "991": {"name": "Minior", "national": 774, "borrius": 8}, "992": {"name": "Komala", "national": 775, "borrius": 0}, "993": {"name": "Turtonator", "national": 776, "borrius": 0}, "994": {"name": "Togedemaru", "national": 777, "borrius": 268}, "995": {"name": "Mimikyu", "national": 778, "borrius": 0}, "996": {"name": "Bruxish", "national": 779, "borrius": 0}, "997": {"name": "Drampa", "national": 780, "borrius": 0}, "998": {"name": "Dhelmise", "national": 781, "borrius": 0}, "999": {"name": "Jangmo-o", "national": 782, "borrius": 0}, "1000": {"name": "Hakamo-o", "national": 783, "borrius": 0}, "1001": {"name": "Kommo-o", "national": 784, "borrius": 0}, "1002": {"name": "Tapu Koko", "national": 785, "borrius": 0}, "1003": {"name": "Tapu Lele", "national": 786, "borrius": 0}, "1004": {"name": "Tapu Bulu", "national": 787, "borrius": 0}, "1005": {"name": "Tapu Fini", "national": 788, "borrius": 0}, "1006": {"name": "Cosmog", "national": 789, "borrius": 0}, "1007": {"name": "Cosmoem", "national": 790, "borrius": 0}, "1008": {"name": "Solgaleo", "national": 791, "borrius": 0}, "1009": {"name": "Lunala", "national": 792, "borrius": 0}, "1010": {"name": "Nihilego", "national": 793, "borrius": 0}, "1011": {"name": "Buzzwole", "national": 794, "borrius": 0}, "1012": {"name": "Pheromosa", "national": 795, "borrius": 0}, "1013": {"name": "Xurkitree", "national": 796, "borrius": 0}, "1014": {"name": "Celesteela", "national": 797, "borrius": 0}, "1015": {"name": "Kartana", "national": 798, "borrius": 0}, "1016": {"name": "Guzzlord", "national": 799, "borrius": 0}, "1017": {"name": "Necrozma", "national": 800, "borrius": 0}, "1018": {"name": "Magearna", "national": 801, "borrius": 496}, "1019": {"name": "Marshadow", "national": 802, "borrius": 0}, "1074": {"name": "Poipole", "national": 803, "borrius": 0}, "1075": {"name": "Naganadel", "national": 804, "borrius": 0}, "1076": {"name": "Stakataka", "national": 805, "borrius": 0}, "1078": {"name": "Zeraora", "national": 807, "borrius": 497}, "1083": {"name": "Meltan", "national": 808, "borrius": 0}, "1084": {"name": "Melmetal", "national": 809, "borrius": 0}, "1102": {"name": "Grookey", "national": 810, "borrius": 0}, "1103": {"name": "Thwackey", "national": 811, "borrius": 0}, "1104": {"name": "Rillaboom", "national": 812, "borrius": 0}, "1105": {"name": "Scorbunny", "national": 813, "borrius": 0}, "1106": {"name": "Raboot", "national": 814, "borrius": 0}, "1107": {"name": "Cinderace", "national": 815, "borrius": 0}, "1108": {"name": "Sobble", "national": 816, "borrius": 0}, "1109": {"name": "Drizzile", "national": 817, "borrius": 0}, "1110": {"name": "Inteleon", "national": 818, "borrius": 0}, "1111": {"name": "Skwovet", "national": 819, "borrius": 0}, "1112": {"name": "Greedent", "national": 820, "borrius": 0}, "1113": {"name": "Rookidee", "national": 821, "borrius": 0}, "1116": {"name": "Blipbug", "national": 824, "borrius": 0}, "1117": {"name": "Dottler", "national": 825, "borrius": 0}, "1118": {"name": "Orbeetle", "national": 826, "borrius": 0}, "1119": {"name": "Nickit", "national": 827, "borrius": 0}, "1120": {"name": "Thievul", "national": 828, "borrius": 0}, "1121": {"name": "Gossifleur", "national": 829, "borrius": 0}, "1122": {"name": "Eldegoss", "national": 830, "borrius": 0}, "1123": {"name": "Wooloo", "national": 831, "borrius": 0}, "1124": {"name": "Dubwool", "national": 832, "borrius": 0}, "1125": {"name": "Chewtle", "national": 833, "borrius": 0}, "1126": {"name": "Drednaw", "national": 834, "borrius": 0}, "1127": {"name": "Yamper", "national": 835, "borrius": 0}, "1128": {"name": "Boltund", "national": 836, "borrius": 0}, "1129": {"name": "Rolycoly", "national": 837, "borrius": 0}, "1130": {"name": "Carkol", "national": 838, "borrius": 0}, "1131": {"name": "Coalossal", "national": 839, "borrius": 0}, "1132": {"name": "Applin", "national": 840, "borrius": 0}, "1133": {"name": "Flapple", "national": 841, "borrius": 0}, "1134": {"name": "Appletun", "national": 842, "borrius": 0}, "1135": {"name": "Silicobra", "national": 843, "borrius": 0}, "1136": {"name": "Sandaconda", "national": 844, "borrius": 0}, "1137": {"name": "Cramorant", "national": 845, "borrius": 0}, "1138": {"name": "Arrokuda", "national": 846, "borrius": 0}, "1140": {"name": "Toxel", "national": 848, "borrius": 0}, "1141": {"name": "Toxtricity", "national": 849, "borrius": 0}, "1142": {"name": "Sizzlipede", "national": 850, "borrius": 0}, "1144": {"name": "Clobbopus", "national": 852, "borrius": 0}, "1145": {"name": "Grapploct", "national": 853, "borrius": 0}, "1146": {"name": "Sinistea", "national": 854, "borrius": 0}, "1148": {"name": "Hatenna", "national": 856, "borrius": 0}, "1149": {"name": "Hattrem", "national": 857, "borrius": 0}, "1150": {"name": "Hatterene", "national": 858, "borrius": 0}, "1151": {"name": "Impidimp", "national": 859, "borrius": 0}, "1152": {"name": "Morgrem", "national": 860, "borrius": 0}, "1153": {"name": "Grimmsnarl", "national": 861, "borrius": 0}, "1154": {"name": "Obstagoon", "national": 862, "borrius": 0}, "1155": {"name": "Perrserker", "national": 863, "borrius": 0}, "1156": {"name": "Cursola", "national": 864, "borrius": 0}, "1157": {"name": "Sirfetch'd", "national": 865, "borrius": 0}, "1158": {"name": "Mr? Rime", "national": 866, "borrius": 0}, "1159": {"name": "Runerigus", "national": 867, "borrius": 0}, "1160": {"name": "Milcery", "national": 868, "borrius": 0}, "1161": {"name": "Alcremie", "national": 869, "borrius": 0}, "1162": {"name": "Falinks", "national": 870, "borrius": 0}, "1163": {"name": "Pincurchin", "national": 871, "borrius": 0}, "1164": {"name": "Snom", "national": 872, "borrius": 0}, "1165": {"name": "Frosmoth", "national": 873, "borrius": 0}, "1167": {"name": "Eiscue", "national": 875, "borrius": 0}, "1168": {"name": "Indeedee", "national": 876, "borrius": 0}, "1169": {"name": "Morpeko", "national": 877, "borrius": 0}, "1170": {"name": "Cufant", "national": 878, "borrius": 0}, "1171": {"name": "Copperajah", "national": 879, "borrius": 0}, "1172": {"name": "Dracozolt", "national": 880, "borrius": 0}, "1173": {"name": "Arctozolt", "national": 881, "borrius": 0}, "1174": {"name": "Dracovish", "national": 882, "borrius": 0}, "1175": {"name": "Arctovish", "national": 883, "borrius": 0}, "1176": {"name": "Duraludon", "national": 884, "borrius": 0}, "1177": {"name": "Dreepy", "national": 885, "borrius": 0}, "1178": {"name": "Drakloak", "national": 886, "borrius": 0}, "1179": {"name": "Dragapult", "national": 887, "borrius": 0}, "1180": {"name": "Zacian", "national": 888, "borrius": 0}, "1181": {"name": "Zamazenta", "national": 889, "borrius": 0}, "1182": {"name": "Eternatus", "national": 890, "borrius": 0}, "1183": {"name": "Kubfu", "national": 891, "borrius": 0}, "1184": {"name": "Urshifu", "national": 892, "borrius": 0}, "1185": {"name": "Zarude", "national": 893, "borrius": 0}, "1186": {"name": "Regieleki", "national": 894, "borrius": 0}, "1187": {"name": "Regidrago", "national": 895, "borrius": 0}, "1188": {"name": "Glastrier", "national": 896, "borrius": 0}, "1189": {"name": "Spectrier", "national": 897, "borrius": 0}, "1190": {"name": "Calyrex", "national": 898, "borrius": 0}}
+{
+  "1": {
+    "name": "Bulbasaur",
+    "national": 1,
+    "borrius": 0
+  },
+  "2": {
+    "name": "Ivysaur",
+    "national": 2,
+    "borrius": 0
+  },
+  "3": {
+    "name": "Venusaur",
+    "national": 3,
+    "borrius": 0
+  },
+  "4": {
+    "name": "Charmander",
+    "national": 4,
+    "borrius": 0
+  },
+  "5": {
+    "name": "Charmeleon",
+    "national": 5,
+    "borrius": 0
+  },
+  "6": {
+    "name": "Charizard",
+    "national": 6,
+    "borrius": 0
+  },
+  "7": {
+    "name": "Squirtle",
+    "national": 7,
+    "borrius": 0
+  },
+  "8": {
+    "name": "Wartortle",
+    "national": 8,
+    "borrius": 0
+  },
+  "9": {
+    "name": "Blastoise",
+    "national": 9,
+    "borrius": 0
+  },
+  "10": {
+    "name": "Caterpie",
+    "national": 10,
+    "borrius": 93
+  },
+  "11": {
+    "name": "Metapod",
+    "national": 11,
+    "borrius": 94
+  },
+  "12": {
+    "name": "Butterfree",
+    "national": 12,
+    "borrius": 95
+  },
+  "13": {
+    "name": "Weedle",
+    "national": 13,
+    "borrius": 96
+  },
+  "14": {
+    "name": "Kakuna",
+    "national": 14,
+    "borrius": 97
+  },
+  "15": {
+    "name": "Beedrill",
+    "national": 15,
+    "borrius": 98
+  },
+  "16": {
+    "name": "Pidgey",
+    "national": 16,
+    "borrius": 467
+  },
+  "17": {
+    "name": "Pidgeotto",
+    "national": 17,
+    "borrius": 468
+  },
+  "18": {
+    "name": "Pidgeot",
+    "national": 18,
+    "borrius": 469
+  },
+  "19": {
+    "name": "Rattata",
+    "national": 19,
+    "borrius": 39
+  },
+  "20": {
+    "name": "Raticate",
+    "national": 20,
+    "borrius": 40
+  },
+  "21": {
+    "name": "Spearow",
+    "national": 21,
+    "borrius": 239
+  },
+  "22": {
+    "name": "Fearow",
+    "national": 22,
+    "borrius": 240
+  },
+  "23": {
+    "name": "Ekans",
+    "national": 23,
+    "borrius": 123
+  },
+  "24": {
+    "name": "Arbok",
+    "national": 24,
+    "borrius": 124
+  },
+  "25": {
+    "name": "Pikachu",
+    "national": 25,
+    "borrius": 447
+  },
+  "26": {
+    "name": "Raichu",
+    "national": 26,
+    "borrius": 448
+  },
+  "27": {
+    "name": "Sandshrew",
+    "national": 27,
+    "borrius": 0
+  },
+  "28": {
+    "name": "Sandslash",
+    "national": 28,
+    "borrius": 0
+  },
+  "30": {
+    "name": "Nidorina",
+    "national": 30,
+    "borrius": 162
+  },
+  "31": {
+    "name": "Nidoqueen",
+    "national": 31,
+    "borrius": 163
+  },
+  "33": {
+    "name": "Nidorino",
+    "national": 33,
+    "borrius": 159
+  },
+  "34": {
+    "name": "Nidoking",
+    "national": 34,
+    "borrius": 160
+  },
+  "35": {
+    "name": "Clefairy",
+    "national": 35,
+    "borrius": 0
+  },
+  "36": {
+    "name": "Clefable",
+    "national": 36,
+    "borrius": 0
+  },
+  "37": {
+    "name": "Vulpix",
+    "national": 37,
+    "borrius": 150
+  },
+  "38": {
+    "name": "Ninetales",
+    "national": 38,
+    "borrius": 151
+  },
+  "39": {
+    "name": "Jigglypuff",
+    "national": 39,
+    "borrius": 0
+  },
+  "40": {
+    "name": "Wigglytuff",
+    "national": 40,
+    "borrius": 0
+  },
+  "41": {
+    "name": "Zubat",
+    "national": 41,
+    "borrius": 9
+  },
+  "42": {
+    "name": "Golbat",
+    "national": 42,
+    "borrius": 10
+  },
+  "43": {
+    "name": "Oddish",
+    "national": 43,
+    "borrius": 409
+  },
+  "44": {
+    "name": "Gloom",
+    "national": 44,
+    "borrius": 410
+  },
+  "45": {
+    "name": "Vileplume",
+    "national": 45,
+    "borrius": 411
+  },
+  "46": {
+    "name": "Paras",
+    "national": 46,
+    "borrius": 440
+  },
+  "47": {
+    "name": "Parasect",
+    "national": 47,
+    "borrius": 441
+  },
+  "48": {
+    "name": "Venonat",
+    "national": 48,
+    "borrius": 170
+  },
+  "49": {
+    "name": "Venomoth",
+    "national": 49,
+    "borrius": 171
+  },
+  "50": {
+    "name": "Diglett",
+    "national": 50,
+    "borrius": 0
+  },
+  "51": {
+    "name": "Dugtrio",
+    "national": 51,
+    "borrius": 0
+  },
+  "52": {
+    "name": "Meowth",
+    "national": 52,
+    "borrius": 0
+  },
+  "53": {
+    "name": "Persian",
+    "national": 53,
+    "borrius": 0
+  },
+  "54": {
+    "name": "Psyduck",
+    "national": 54,
+    "borrius": 329
+  },
+  "55": {
+    "name": "Golduck",
+    "national": 55,
+    "borrius": 330
+  },
+  "56": {
+    "name": "Mankey",
+    "national": 56,
+    "borrius": 127
+  },
+  "57": {
+    "name": "Primeape",
+    "national": 57,
+    "borrius": 128
+  },
+  "58": {
+    "name": "Growlithe",
+    "national": 58,
+    "borrius": 164
+  },
+  "59": {
+    "name": "Arcanine",
+    "national": 59,
+    "borrius": 165
+  },
+  "60": {
+    "name": "Poliwag",
+    "national": 60,
+    "borrius": 325
+  },
+  "61": {
+    "name": "Poliwhirl",
+    "national": 61,
+    "borrius": 326
+  },
+  "62": {
+    "name": "Poliwrath",
+    "national": 62,
+    "borrius": 327
+  },
+  "63": {
+    "name": "Abra",
+    "national": 63,
+    "borrius": 211
+  },
+  "64": {
+    "name": "Kadabra",
+    "national": 64,
+    "borrius": 212
+  },
+  "65": {
+    "name": "Alakazam",
+    "national": 65,
+    "borrius": 213
+  },
+  "66": {
+    "name": "Machop",
+    "national": 66,
+    "borrius": 318
+  },
+  "67": {
+    "name": "Machoke",
+    "national": 67,
+    "borrius": 319
+  },
+  "68": {
+    "name": "Machamp",
+    "national": 68,
+    "borrius": 320
+  },
+  "69": {
+    "name": "Bellsprout",
+    "national": 69,
+    "borrius": 406
+  },
+  "70": {
+    "name": "Weepinbell",
+    "national": 70,
+    "borrius": 407
+  },
+  "71": {
+    "name": "Victreebel",
+    "national": 71,
+    "borrius": 408
+  },
+  "72": {
+    "name": "Tentacool",
+    "national": 72,
+    "borrius": 388
+  },
+  "73": {
+    "name": "Tentacruel",
+    "national": 73,
+    "borrius": 389
+  },
+  "74": {
+    "name": "Geodude",
+    "national": 74,
+    "borrius": 142
+  },
+  "75": {
+    "name": "Graveler",
+    "national": 75,
+    "borrius": 143
+  },
+  "76": {
+    "name": "Golem",
+    "national": 76,
+    "borrius": 144
+  },
+  "77": {
+    "name": "Ponyta",
+    "national": 77,
+    "borrius": 336
+  },
+  "78": {
+    "name": "Rapidash",
+    "national": 78,
+    "borrius": 337
+  },
+  "79": {
+    "name": "Slowpoke",
+    "national": 79,
+    "borrius": 403
+  },
+  "80": {
+    "name": "Slowbro",
+    "national": 80,
+    "borrius": 404
+  },
+  "81": {
+    "name": "Magnemite",
+    "national": 81,
+    "borrius": 295
+  },
+  "82": {
+    "name": "Magneton",
+    "national": 82,
+    "borrius": 296
+  },
+  "83": {
+    "name": "Farfetch'd",
+    "national": 83,
+    "borrius": 0
+  },
+  "84": {
+    "name": "Doduo",
+    "national": 84,
+    "borrius": 207
+  },
+  "85": {
+    "name": "Dodrio",
+    "national": 85,
+    "borrius": 208
+  },
+  "86": {
+    "name": "Seel",
+    "national": 86,
+    "borrius": 277
+  },
+  "87": {
+    "name": "Dewgong",
+    "national": 87,
+    "borrius": 278
+  },
+  "88": {
+    "name": "Grimer",
+    "national": 88,
+    "borrius": 459
+  },
+  "89": {
+    "name": "Muk",
+    "national": 89,
+    "borrius": 460
+  },
+  "90": {
+    "name": "Shellder",
+    "national": 90,
+    "borrius": 279
+  },
+  "91": {
+    "name": "Cloyster",
+    "national": 91,
+    "borrius": 280
+  },
+  "92": {
+    "name": "Gastly",
+    "national": 92,
+    "borrius": 104
+  },
+  "93": {
+    "name": "Haunter",
+    "national": 93,
+    "borrius": 105
+  },
+  "94": {
+    "name": "Gengar",
+    "national": 94,
+    "borrius": 106
+  },
+  "95": {
+    "name": "Onix",
+    "national": 95,
+    "borrius": 227
+  },
+  "96": {
+    "name": "Drowzee",
+    "national": 96,
+    "borrius": 219
+  },
+  "97": {
+    "name": "Hypno",
+    "national": 97,
+    "borrius": 220
+  },
+  "98": {
+    "name": "Krabby",
+    "national": 98,
+    "borrius": 70
+  },
+  "99": {
+    "name": "Kingler",
+    "national": 99,
+    "borrius": 71
+  },
+  "100": {
+    "name": "Voltorb",
+    "national": 100,
+    "borrius": 0
+  },
+  "101": {
+    "name": "Electrode",
+    "national": 101,
+    "borrius": 0
+  },
+  "102": {
+    "name": "Exeggcute",
+    "national": 102,
+    "borrius": 264
+  },
+  "103": {
+    "name": "Exeggutor",
+    "national": 103,
+    "borrius": 265
+  },
+  "104": {
+    "name": "Cubone",
+    "national": 104,
+    "borrius": 298
+  },
+  "105": {
+    "name": "Marowak",
+    "national": 105,
+    "borrius": 299
+  },
+  "106": {
+    "name": "Hitmonlee",
+    "national": 106,
+    "borrius": 0
+  },
+  "107": {
+    "name": "Hitmonchan",
+    "national": 107,
+    "borrius": 0
+  },
+  "108": {
+    "name": "Lickitung",
+    "national": 108,
+    "borrius": 156
+  },
+  "109": {
+    "name": "Koffing",
+    "national": 109,
+    "borrius": 461
+  },
+  "110": {
+    "name": "Weezing",
+    "national": 110,
+    "borrius": 462
+  },
+  "111": {
+    "name": "Rhyhorn",
+    "national": 111,
+    "borrius": 0
+  },
+  "112": {
+    "name": "Rhydon",
+    "national": 112,
+    "borrius": 0
+  },
+  "113": {
+    "name": "Chansey",
+    "national": 113,
+    "borrius": 0
+  },
+  "114": {
+    "name": "Tangela",
+    "national": 114,
+    "borrius": 449
+  },
+  "115": {
+    "name": "Kangaskhan",
+    "national": 115,
+    "borrius": 0
+  },
+  "116": {
+    "name": "Horsea",
+    "national": 116,
+    "borrius": 377
+  },
+  "117": {
+    "name": "Seadra",
+    "national": 117,
+    "borrius": 378
+  },
+  "118": {
+    "name": "Goldeen",
+    "national": 118,
+    "borrius": 285
+  },
+  "119": {
+    "name": "Seaking",
+    "national": 119,
+    "borrius": 286
+  },
+  "120": {
+    "name": "Staryu",
+    "national": 120,
+    "borrius": 281
+  },
+  "121": {
+    "name": "Starmie",
+    "national": 121,
+    "borrius": 282
+  },
+  "122": {
+    "name": "Mr? Mime",
+    "national": 122,
+    "borrius": 222
+  },
+  "123": {
+    "name": "Scyther",
+    "national": 123,
+    "borrius": 0
+  },
+  "124": {
+    "name": "Jynx",
+    "national": 124,
+    "borrius": 18
+  },
+  "125": {
+    "name": "Electabuzz",
+    "national": 125,
+    "borrius": 304
+  },
+  "126": {
+    "name": "Magmar",
+    "national": 126,
+    "borrius": 147
+  },
+  "127": {
+    "name": "Pinsir",
+    "national": 127,
+    "borrius": 0
+  },
+  "128": {
+    "name": "Tauros",
+    "national": 128,
+    "borrius": 0
+  },
+  "129": {
+    "name": "Magikarp",
+    "national": 129,
+    "borrius": 223
+  },
+  "130": {
+    "name": "Gyarados",
+    "national": 130,
+    "borrius": 224
+  },
+  "131": {
+    "name": "Lapras",
+    "national": 131,
+    "borrius": 390
+  },
+  "132": {
+    "name": "Ditto",
+    "national": 132,
+    "borrius": 0
+  },
+  "133": {
+    "name": "Eevee",
+    "national": 133,
+    "borrius": 355
+  },
+  "134": {
+    "name": "Vaporeon",
+    "national": 134,
+    "borrius": 356
+  },
+  "135": {
+    "name": "Jolteon",
+    "national": 135,
+    "borrius": 357
+  },
+  "136": {
+    "name": "Flareon",
+    "national": 136,
+    "borrius": 358
+  },
+  "137": {
+    "name": "Porygon",
+    "national": 137,
+    "borrius": 367
+  },
+  "138": {
+    "name": "Omanyte",
+    "national": 138,
+    "borrius": 0
+  },
+  "139": {
+    "name": "Omastar",
+    "national": 139,
+    "borrius": 0
+  },
+  "140": {
+    "name": "Kabuto",
+    "national": 140,
+    "borrius": 0
+  },
+  "141": {
+    "name": "Kabutops",
+    "national": 141,
+    "borrius": 0
+  },
+  "142": {
+    "name": "Aerodactyl",
+    "national": 142,
+    "borrius": 0
+  },
+  "143": {
+    "name": "Snorlax",
+    "national": 143,
+    "borrius": 0
+  },
+  "144": {
+    "name": "Articuno",
+    "national": 144,
+    "borrius": 483
+  },
+  "145": {
+    "name": "Zapdos",
+    "national": 145,
+    "borrius": 484
+  },
+  "146": {
+    "name": "Moltres",
+    "national": 146,
+    "borrius": 485
+  },
+  "147": {
+    "name": "Dratini",
+    "national": 147,
+    "borrius": 0
+  },
+  "148": {
+    "name": "Dragonair",
+    "national": 148,
+    "borrius": 0
+  },
+  "149": {
+    "name": "Dragonite",
+    "national": 149,
+    "borrius": 0
+  },
+  "150": {
+    "name": "Mewtwo",
+    "national": 150,
+    "borrius": 0
+  },
+  "151": {
+    "name": "Mew",
+    "national": 151,
+    "borrius": 0
+  },
+  "152": {
+    "name": "Chikorita",
+    "national": 152,
+    "borrius": 0
+  },
+  "153": {
+    "name": "Bayleef",
+    "national": 153,
+    "borrius": 0
+  },
+  "154": {
+    "name": "Meganium",
+    "national": 154,
+    "borrius": 0
+  },
+  "155": {
+    "name": "Cyndaquil",
+    "national": 155,
+    "borrius": 0
+  },
+  "156": {
+    "name": "Quilava",
+    "national": 156,
+    "borrius": 0
+  },
+  "157": {
+    "name": "Typhlosion",
+    "national": 157,
+    "borrius": 0
+  },
+  "158": {
+    "name": "Totodile",
+    "national": 158,
+    "borrius": 0
+  },
+  "159": {
+    "name": "Croconaw",
+    "national": 159,
+    "borrius": 0
+  },
+  "160": {
+    "name": "Feraligatr",
+    "national": 160,
+    "borrius": 0
+  },
+  "161": {
+    "name": "Sentret",
+    "national": 161,
+    "borrius": 76
+  },
+  "162": {
+    "name": "Furret",
+    "national": 162,
+    "borrius": 77
+  },
+  "163": {
+    "name": "Hoothoot",
+    "national": 163,
+    "borrius": 35
+  },
+  "164": {
+    "name": "Noctowl",
+    "national": 164,
+    "borrius": 36
+  },
+  "165": {
+    "name": "Ledyba",
+    "national": 165,
+    "borrius": 191
+  },
+  "166": {
+    "name": "Ledian",
+    "national": 166,
+    "borrius": 192
+  },
+  "167": {
+    "name": "Spinarak",
+    "national": 167,
+    "borrius": 193
+  },
+  "168": {
+    "name": "Ariados",
+    "national": 168,
+    "borrius": 194
+  },
+  "169": {
+    "name": "Crobat",
+    "national": 169,
+    "borrius": 11
+  },
+  "170": {
+    "name": "Chinchou",
+    "national": 170,
+    "borrius": 316
+  },
+  "171": {
+    "name": "Lanturn",
+    "national": 171,
+    "borrius": 317
+  },
+  "172": {
+    "name": "Pichu",
+    "national": 172,
+    "borrius": 446
+  },
+  "173": {
+    "name": "Cleffa",
+    "national": 173,
+    "borrius": 0
+  },
+  "174": {
+    "name": "Igglybuff",
+    "national": 174,
+    "borrius": 0
+  },
+  "175": {
+    "name": "Togepi",
+    "national": 175,
+    "borrius": 0
+  },
+  "176": {
+    "name": "Togetic",
+    "national": 176,
+    "borrius": 0
+  },
+  "177": {
+    "name": "Natu",
+    "national": 177,
+    "borrius": 0
+  },
+  "178": {
+    "name": "Xatu",
+    "national": 178,
+    "borrius": 0
+  },
+  "179": {
+    "name": "Mareep",
+    "national": 179,
+    "borrius": 214
+  },
+  "180": {
+    "name": "Flaaffy",
+    "national": 180,
+    "borrius": 215
+  },
+  "181": {
+    "name": "Ampharos",
+    "national": 181,
+    "borrius": 216
+  },
+  "182": {
+    "name": "Bellossom",
+    "national": 182,
+    "borrius": 412
+  },
+  "183": {
+    "name": "Marill",
+    "national": 183,
+    "borrius": 46
+  },
+  "184": {
+    "name": "Azumarill",
+    "national": 184,
+    "borrius": 47
+  },
+  "185": {
+    "name": "Sudowoodo",
+    "national": 185,
+    "borrius": 0
+  },
+  "186": {
+    "name": "Politoed",
+    "national": 186,
+    "borrius": 328
+  },
+  "187": {
+    "name": "Hoppip",
+    "national": 187,
+    "borrius": 463
+  },
+  "188": {
+    "name": "Skiploom",
+    "national": 188,
+    "borrius": 464
+  },
+  "189": {
+    "name": "Jumpluff",
+    "national": 189,
+    "borrius": 465
+  },
+  "190": {
+    "name": "Aipom",
+    "national": 190,
+    "borrius": 0
+  },
+  "191": {
+    "name": "Sunkern",
+    "national": 191,
+    "borrius": 200
+  },
+  "192": {
+    "name": "Sunflora",
+    "national": 192,
+    "borrius": 201
+  },
+  "193": {
+    "name": "Yanma",
+    "national": 193,
+    "borrius": 168
+  },
+  "194": {
+    "name": "Wooper",
+    "national": 194,
+    "borrius": 321
+  },
+  "195": {
+    "name": "Quagsire",
+    "national": 195,
+    "borrius": 322
+  },
+  "196": {
+    "name": "Espeon",
+    "national": 196,
+    "borrius": 359
+  },
+  "197": {
+    "name": "Umbreon",
+    "national": 197,
+    "borrius": 360
+  },
+  "198": {
+    "name": "Murkrow",
+    "national": 198,
+    "borrius": 154
+  },
+  "199": {
+    "name": "Slowking",
+    "national": 199,
+    "borrius": 405
+  },
+  "200": {
+    "name": "Misdreavus",
+    "national": 200,
+    "borrius": 323
+  },
+  "201": {
+    "name": "Unown",
+    "national": 201,
+    "borrius": 0
+  },
+  "202": {
+    "name": "Wobbuffet",
+    "national": 202,
+    "borrius": 0
+  },
+  "203": {
+    "name": "Girafarig",
+    "national": 203,
+    "borrius": 451
+  },
+  "204": {
+    "name": "Pineco",
+    "national": 204,
+    "borrius": 0
+  },
+  "205": {
+    "name": "Forretress",
+    "national": 205,
+    "borrius": 0
+  },
+  "206": {
+    "name": "Dunsparce",
+    "national": 206,
+    "borrius": 188
+  },
+  "207": {
+    "name": "Gligar",
+    "national": 207,
+    "borrius": 186
+  },
+  "208": {
+    "name": "Steelix",
+    "national": 208,
+    "borrius": 228
+  },
+  "209": {
+    "name": "Snubbull",
+    "national": 209,
+    "borrius": 338
+  },
+  "210": {
+    "name": "Granbull",
+    "national": 210,
+    "borrius": 339
+  },
+  "211": {
+    "name": "Qwilfish",
+    "national": 211,
+    "borrius": 0
+  },
+  "212": {
+    "name": "Scizor",
+    "national": 212,
+    "borrius": 0
+  },
+  "213": {
+    "name": "Shuckle",
+    "national": 213,
+    "borrius": 0
+  },
+  "214": {
+    "name": "Heracross",
+    "national": 214,
+    "borrius": 0
+  },
+  "215": {
+    "name": "Sneasel",
+    "national": 215,
+    "borrius": 229
+  },
+  "216": {
+    "name": "Teddiursa",
+    "national": 216,
+    "borrius": 0
+  },
+  "217": {
+    "name": "Ursaring",
+    "national": 217,
+    "borrius": 0
+  },
+  "218": {
+    "name": "Slugma",
+    "national": 218,
+    "borrius": 138
+  },
+  "219": {
+    "name": "Magcargo",
+    "national": 219,
+    "borrius": 139
+  },
+  "220": {
+    "name": "Swinub",
+    "national": 220,
+    "borrius": 22
+  },
+  "221": {
+    "name": "Piloswine",
+    "national": 221,
+    "borrius": 23
+  },
+  "222": {
+    "name": "Corsola",
+    "national": 222,
+    "borrius": 0
+  },
+  "223": {
+    "name": "Remoraid",
+    "national": 223,
+    "borrius": 287
+  },
+  "224": {
+    "name": "Octillery",
+    "national": 224,
+    "borrius": 288
+  },
+  "225": {
+    "name": "Delibird",
+    "national": 225,
+    "borrius": 7
+  },
+  "226": {
+    "name": "Mantine",
+    "national": 226,
+    "borrius": 393
+  },
+  "227": {
+    "name": "Skarmory",
+    "national": 227,
+    "borrius": 0
+  },
+  "228": {
+    "name": "Houndour",
+    "national": 228,
+    "borrius": 166
+  },
+  "229": {
+    "name": "Houndoom",
+    "national": 229,
+    "borrius": 167
+  },
+  "230": {
+    "name": "Kingdra",
+    "national": 230,
+    "borrius": 379
+  },
+  "231": {
+    "name": "Phanpy",
+    "national": 231,
+    "borrius": 184
+  },
+  "232": {
+    "name": "Donphan",
+    "national": 232,
+    "borrius": 185
+  },
+  "233": {
+    "name": "Porygon2",
+    "national": 233,
+    "borrius": 368
+  },
+  "234": {
+    "name": "Stantler",
+    "national": 234,
+    "borrius": 236
+  },
+  "235": {
+    "name": "Smeargle",
+    "national": 235,
+    "borrius": 204
+  },
+  "236": {
+    "name": "Tyrogue",
+    "national": 236,
+    "borrius": 0
+  },
+  "237": {
+    "name": "Hitmontop",
+    "national": 237,
+    "borrius": 0
+  },
+  "238": {
+    "name": "Smoochum",
+    "national": 238,
+    "borrius": 17
+  },
+  "239": {
+    "name": "Elekid",
+    "national": 239,
+    "borrius": 303
+  },
+  "240": {
+    "name": "Magby",
+    "national": 240,
+    "borrius": 146
+  },
+  "241": {
+    "name": "Miltank",
+    "national": 241,
+    "borrius": 0
+  },
+  "242": {
+    "name": "Blissey",
+    "national": 242,
+    "borrius": 0
+  },
+  "243": {
+    "name": "Raikou",
+    "national": 243,
+    "borrius": 0
+  },
+  "244": {
+    "name": "Entei",
+    "national": 244,
+    "borrius": 0
+  },
+  "245": {
+    "name": "Suicune",
+    "national": 245,
+    "borrius": 0
+  },
+  "246": {
+    "name": "Larvitar",
+    "national": 246,
+    "borrius": 0
+  },
+  "247": {
+    "name": "Pupitar",
+    "national": 247,
+    "borrius": 0
+  },
+  "248": {
+    "name": "Tyranitar",
+    "national": 248,
+    "borrius": 0
+  },
+  "249": {
+    "name": "Lugia",
+    "national": 249,
+    "borrius": 0
+  },
+  "250": {
+    "name": "Ho-Oh",
+    "national": 250,
+    "borrius": 0
+  },
+  "251": {
+    "name": "Celebi",
+    "national": 251,
+    "borrius": 0
+  },
+  "277": {
+    "name": "Treecko",
+    "national": 252,
+    "borrius": 0
+  },
+  "278": {
+    "name": "Grovyle",
+    "national": 253,
+    "borrius": 0
+  },
+  "279": {
+    "name": "Sceptile",
+    "national": 254,
+    "borrius": 0
+  },
+  "280": {
+    "name": "Torchic",
+    "national": 255,
+    "borrius": 0
+  },
+  "281": {
+    "name": "Combusken",
+    "national": 256,
+    "borrius": 0
+  },
+  "282": {
+    "name": "Blaziken",
+    "national": 257,
+    "borrius": 0
+  },
+  "283": {
+    "name": "Mudkip",
+    "national": 258,
+    "borrius": 0
+  },
+  "284": {
+    "name": "Marshtomp",
+    "national": 259,
+    "borrius": 0
+  },
+  "285": {
+    "name": "Swampert",
+    "national": 260,
+    "borrius": 0
+  },
+  "286": {
+    "name": "Poochyena",
+    "national": 261,
+    "borrius": 56
+  },
+  "287": {
+    "name": "Mightyena",
+    "national": 262,
+    "borrius": 57
+  },
+  "288": {
+    "name": "Zigzagoon",
+    "national": 263,
+    "borrius": 257
+  },
+  "289": {
+    "name": "Linoone",
+    "national": 264,
+    "borrius": 258
+  },
+  "290": {
+    "name": "Wurmple",
+    "national": 265,
+    "borrius": 428
+  },
+  "291": {
+    "name": "Silcoon",
+    "national": 266,
+    "borrius": 429
+  },
+  "292": {
+    "name": "Beautifly",
+    "national": 267,
+    "borrius": 430
+  },
+  "293": {
+    "name": "Cascoon",
+    "national": 268,
+    "borrius": 431
+  },
+  "294": {
+    "name": "Dustox",
+    "national": 269,
+    "borrius": 432
+  },
+  "295": {
+    "name": "Lotad",
+    "national": 270,
+    "borrius": 251
+  },
+  "296": {
+    "name": "Lombre",
+    "national": 271,
+    "borrius": 252
+  },
+  "297": {
+    "name": "Ludicolo",
+    "national": 272,
+    "borrius": 253
+  },
+  "298": {
+    "name": "Seedot",
+    "national": 273,
+    "borrius": 99
+  },
+  "299": {
+    "name": "Nuzleaf",
+    "national": 274,
+    "borrius": 100
+  },
+  "300": {
+    "name": "Shiftry",
+    "national": 275,
+    "borrius": 101
+  },
+  "304": {
+    "name": "Taillow",
+    "national": 276,
+    "borrius": 152
+  },
+  "305": {
+    "name": "Swellow",
+    "national": 277,
+    "borrius": 153
+  },
+  "309": {
+    "name": "Wingull",
+    "national": 278,
+    "borrius": 58
+  },
+  "310": {
+    "name": "Pelipper",
+    "national": 279,
+    "borrius": 59
+  },
+  "392": {
+    "name": "Ralts",
+    "national": 280,
+    "borrius": 129
+  },
+  "393": {
+    "name": "Kirlia",
+    "national": 281,
+    "borrius": 130
+  },
+  "394": {
+    "name": "Gardevoir",
+    "national": 282,
+    "borrius": 131
+  },
+  "311": {
+    "name": "Surskit",
+    "national": 283,
+    "borrius": 68
+  },
+  "312": {
+    "name": "Masquerain",
+    "national": 284,
+    "borrius": 69
+  },
+  "306": {
+    "name": "Shroomish",
+    "national": 285,
+    "borrius": 244
+  },
+  "307": {
+    "name": "Breloom",
+    "national": 286,
+    "borrius": 245
+  },
+  "364": {
+    "name": "Slakoth",
+    "national": 287,
+    "borrius": 0
+  },
+  "365": {
+    "name": "Vigoroth",
+    "national": 288,
+    "borrius": 0
+  },
+  "366": {
+    "name": "Slaking",
+    "national": 289,
+    "borrius": 0
+  },
+  "301": {
+    "name": "Nincada",
+    "national": 290,
+    "borrius": 0
+  },
+  "302": {
+    "name": "Ninjask",
+    "national": 291,
+    "borrius": 0
+  },
+  "303": {
+    "name": "Shedinja",
+    "national": 292,
+    "borrius": 0
+  },
+  "370": {
+    "name": "Whismur",
+    "national": 293,
+    "borrius": 0
+  },
+  "371": {
+    "name": "Loudred",
+    "national": 294,
+    "borrius": 0
+  },
+  "372": {
+    "name": "Exploud",
+    "national": 295,
+    "borrius": 0
+  },
+  "335": {
+    "name": "Makuhita",
+    "national": 296,
+    "borrius": 12
+  },
+  "336": {
+    "name": "Hariyama",
+    "national": 297,
+    "borrius": 13
+  },
+  "350": {
+    "name": "Azurill",
+    "national": 298,
+    "borrius": 45
+  },
+  "320": {
+    "name": "Nosepass",
+    "national": 299,
+    "borrius": 179
+  },
+  "315": {
+    "name": "Skitty",
+    "national": 300,
+    "borrius": 0
+  },
+  "316": {
+    "name": "Delcatty",
+    "national": 301,
+    "borrius": 0
+  },
+  "322": {
+    "name": "Sableye",
+    "national": 302,
+    "borrius": 384
+  },
+  "355": {
+    "name": "Mawile",
+    "national": 303,
+    "borrius": 29
+  },
+  "382": {
+    "name": "Aron",
+    "national": 304,
+    "borrius": 176
+  },
+  "383": {
+    "name": "Lairon",
+    "national": 305,
+    "borrius": 177
+  },
+  "384": {
+    "name": "Aggron",
+    "national": 306,
+    "borrius": 178
+  },
+  "356": {
+    "name": "Meditite",
+    "national": 307,
+    "borrius": 271
+  },
+  "357": {
+    "name": "Medicham",
+    "national": 308,
+    "borrius": 272
+  },
+  "337": {
+    "name": "Electrike",
+    "national": 309,
+    "borrius": 43
+  },
+  "338": {
+    "name": "Manectric",
+    "national": 310,
+    "borrius": 44
+  },
+  "353": {
+    "name": "Plusle",
+    "national": 311,
+    "borrius": 0
+  },
+  "354": {
+    "name": "Minun",
+    "national": 312,
+    "borrius": 0
+  },
+  "386": {
+    "name": "Volbeat",
+    "national": 313,
+    "borrius": 475
+  },
+  "387": {
+    "name": "Illumise",
+    "national": 314,
+    "borrius": 476
+  },
+  "363": {
+    "name": "Roselia",
+    "national": 315,
+    "borrius": 121
+  },
+  "367": {
+    "name": "Gulpin",
+    "national": 316,
+    "borrius": 273
+  },
+  "368": {
+    "name": "Swalot",
+    "national": 317,
+    "borrius": 274
+  },
+  "330": {
+    "name": "Carvanha",
+    "national": 318,
+    "borrius": 290
+  },
+  "331": {
+    "name": "Sharpedo",
+    "national": 319,
+    "borrius": 291
+  },
+  "313": {
+    "name": "Wailmer",
+    "national": 320,
+    "borrius": 353
+  },
+  "314": {
+    "name": "Wailord",
+    "national": 321,
+    "borrius": 354
+  },
+  "339": {
+    "name": "Numel",
+    "national": 322,
+    "borrius": 125
+  },
+  "340": {
+    "name": "Camerupt",
+    "national": 323,
+    "borrius": 126
+  },
+  "321": {
+    "name": "Torkoal",
+    "national": 324,
+    "borrius": 145
+  },
+  "351": {
+    "name": "Spoink",
+    "national": 325,
+    "borrius": 269
+  },
+  "352": {
+    "name": "Grumpig",
+    "national": 326,
+    "borrius": 270
+  },
+  "308": {
+    "name": "Spinda",
+    "national": 327,
+    "borrius": 0
+  },
+  "332": {
+    "name": "Trapinch",
+    "national": 328,
+    "borrius": 424
+  },
+  "333": {
+    "name": "Vibrava",
+    "national": 329,
+    "borrius": 425
+  },
+  "334": {
+    "name": "Flygon",
+    "national": 330,
+    "borrius": 426
+  },
+  "344": {
+    "name": "Cacnea",
+    "national": 344,
+    "borrius": 418
+  },
+  "345": {
+    "name": "Cacturne",
+    "national": 345,
+    "borrius": 419
+  },
+  "358": {
+    "name": "Swablu",
+    "national": 333,
+    "borrius": 266
+  },
+  "359": {
+    "name": "Altaria",
+    "national": 334,
+    "borrius": 267
+  },
+  "380": {
+    "name": "Zangoose",
+    "national": 335,
+    "borrius": 470
+  },
+  "379": {
+    "name": "Seviper",
+    "national": 336,
+    "borrius": 471
+  },
+  "348": {
+    "name": "Lunatone",
+    "national": 337,
+    "borrius": 385
+  },
+  "349": {
+    "name": "Solrock",
+    "national": 338,
+    "borrius": 386
+  },
+  "323": {
+    "name": "Barboach",
+    "national": 339,
+    "borrius": 293
+  },
+  "324": {
+    "name": "Whiscash",
+    "national": 340,
+    "borrius": 294
+  },
+  "326": {
+    "name": "Corphish",
+    "national": 341,
+    "borrius": 283
+  },
+  "327": {
+    "name": "Crawdaunt",
+    "national": 342,
+    "borrius": 284
+  },
+  "318": {
+    "name": "Baltoy",
+    "national": 343,
+    "borrius": 380
+  },
+  "319": {
+    "name": "Claydol",
+    "national": 344,
+    "borrius": 381
+  },
+  "388": {
+    "name": "Lileep",
+    "national": 345,
+    "borrius": 0
+  },
+  "389": {
+    "name": "Cradily",
+    "national": 346,
+    "borrius": 0
+  },
+  "390": {
+    "name": "Anorith",
+    "national": 347,
+    "borrius": 0
+  },
+  "391": {
+    "name": "Armaldo",
+    "national": 348,
+    "borrius": 0
+  },
+  "328": {
+    "name": "Feebas",
+    "national": 349,
+    "borrius": 0
+  },
+  "329": {
+    "name": "Milotic",
+    "national": 350,
+    "borrius": 0
+  },
+  "385": {
+    "name": "Castform",
+    "national": 351,
+    "borrius": 0
+  },
+  "317": {
+    "name": "Kecleon",
+    "national": 352,
+    "borrius": 0
+  },
+  "377": {
+    "name": "Shuppet",
+    "national": 353,
+    "borrius": 107
+  },
+  "378": {
+    "name": "Banette",
+    "national": 354,
+    "borrius": 108
+  },
+  "361": {
+    "name": "Duskull",
+    "national": 355,
+    "borrius": 109
+  },
+  "362": {
+    "name": "Dusclops",
+    "national": 356,
+    "borrius": 110
+  },
+  "369": {
+    "name": "Tropius",
+    "national": 357,
+    "borrius": 466
+  },
+  "411": {
+    "name": "Chimecho",
+    "national": 358,
+    "borrius": 376
+  },
+  "376": {
+    "name": "Absol",
+    "national": 359,
+    "borrius": 0
+  },
+  "360": {
+    "name": "Wynaut",
+    "national": 360,
+    "borrius": 0
+  },
+  "346": {
+    "name": "Snorunt",
+    "national": 361,
+    "borrius": 1
+  },
+  "347": {
+    "name": "Glalie",
+    "national": 362,
+    "borrius": 2
+  },
+  "341": {
+    "name": "Spheal",
+    "national": 363,
+    "borrius": 14
+  },
+  "342": {
+    "name": "Sealeo",
+    "national": 364,
+    "borrius": 15
+  },
+  "343": {
+    "name": "Walrein",
+    "national": 365,
+    "borrius": 16
+  },
+  "373": {
+    "name": "Clamperl",
+    "national": 366,
+    "borrius": 477
+  },
+  "374": {
+    "name": "Huntail",
+    "national": 367,
+    "borrius": 478
+  },
+  "375": {
+    "name": "Gorebyss",
+    "national": 368,
+    "borrius": 479
+  },
+  "381": {
+    "name": "Relicanth",
+    "national": 369,
+    "borrius": 480
+  },
+  "325": {
+    "name": "Luvdisc",
+    "national": 370,
+    "borrius": 292
+  },
+  "395": {
+    "name": "Bagon",
+    "national": 371,
+    "borrius": 472
+  },
+  "396": {
+    "name": "Shelgon",
+    "national": 372,
+    "borrius": 473
+  },
+  "397": {
+    "name": "Salamence",
+    "national": 373,
+    "borrius": 474
+  },
+  "398": {
+    "name": "Beldum",
+    "national": 374,
+    "borrius": 0
+  },
+  "399": {
+    "name": "Metang",
+    "national": 375,
+    "borrius": 0
+  },
+  "400": {
+    "name": "Metagross",
+    "national": 376,
+    "borrius": 0
+  },
+  "401": {
+    "name": "Regirock",
+    "national": 377,
+    "borrius": 486
+  },
+  "402": {
+    "name": "Regice",
+    "national": 378,
+    "borrius": 487
+  },
+  "403": {
+    "name": "Registeel",
+    "national": 379,
+    "borrius": 488
+  },
+  "407": {
+    "name": "Latias",
+    "national": 380,
+    "borrius": 0
+  },
+  "408": {
+    "name": "Latios",
+    "national": 381,
+    "borrius": 0
+  },
+  "404": {
+    "name": "Kyogre",
+    "national": 382,
+    "borrius": 0
+  },
+  "405": {
+    "name": "Groudon",
+    "national": 383,
+    "borrius": 0
+  },
+  "406": {
+    "name": "Rayquaza",
+    "national": 384,
+    "borrius": 0
+  },
+  "409": {
+    "name": "Jirachi",
+    "national": 385,
+    "borrius": 490
+  },
+  "410": {
+    "name": "Deoxys",
+    "national": 386,
+    "borrius": 491
+  },
+  "440": {
+    "name": "Turtwig",
+    "national": 387,
+    "borrius": 0
+  },
+  "441": {
+    "name": "Grotle",
+    "national": 388,
+    "borrius": 0
+  },
+  "442": {
+    "name": "Torterra",
+    "national": 389,
+    "borrius": 0
+  },
+  "443": {
+    "name": "Chimchar",
+    "national": 390,
+    "borrius": 0
+  },
+  "444": {
+    "name": "Monferno",
+    "national": 391,
+    "borrius": 0
+  },
+  "445": {
+    "name": "Infernape",
+    "national": 392,
+    "borrius": 0
+  },
+  "446": {
+    "name": "Piplup",
+    "national": 393,
+    "borrius": 0
+  },
+  "447": {
+    "name": "Prinplup",
+    "national": 394,
+    "borrius": 0
+  },
+  "448": {
+    "name": "Empoleon",
+    "national": 395,
+    "borrius": 0
+  },
+  "449": {
+    "name": "Starly",
+    "national": 396,
+    "borrius": 114
+  },
+  "450": {
+    "name": "Staravia",
+    "national": 397,
+    "borrius": 115
+  },
+  "451": {
+    "name": "Staraptor",
+    "national": 398,
+    "borrius": 116
+  },
+  "452": {
+    "name": "Bidoof",
+    "national": 399,
+    "borrius": 60
+  },
+  "453": {
+    "name": "Bibarel",
+    "national": 400,
+    "borrius": 61
+  },
+  "454": {
+    "name": "Kricketot",
+    "national": 401,
+    "borrius": 202
+  },
+  "455": {
+    "name": "Kricketune",
+    "national": 402,
+    "borrius": 203
+  },
+  "456": {
+    "name": "Shinx",
+    "national": 403,
+    "borrius": 195
+  },
+  "457": {
+    "name": "Luxio",
+    "national": 404,
+    "borrius": 196
+  },
+  "458": {
+    "name": "Luxray",
+    "national": 405,
+    "borrius": 197
+  },
+  "459": {
+    "name": "Budew",
+    "national": 406,
+    "borrius": 120
+  },
+  "460": {
+    "name": "Roserade",
+    "national": 407,
+    "borrius": 122
+  },
+  "461": {
+    "name": "Cranidos",
+    "national": 408,
+    "borrius": 0
+  },
+  "462": {
+    "name": "Rampardos",
+    "national": 409,
+    "borrius": 0
+  },
+  "463": {
+    "name": "Shieldon",
+    "national": 410,
+    "borrius": 0
+  },
+  "464": {
+    "name": "Bastiodon",
+    "national": 411,
+    "borrius": 0
+  },
+  "465": {
+    "name": "Burmy",
+    "national": 412,
+    "borrius": 133
+  },
+  "466": {
+    "name": "Wormadam",
+    "national": 413,
+    "borrius": 134
+  },
+  "467": {
+    "name": "Mothim",
+    "national": 414,
+    "borrius": 135
+  },
+  "468": {
+    "name": "Combee",
+    "national": 415,
+    "borrius": 90
+  },
+  "469": {
+    "name": "Vespiquen",
+    "national": 416,
+    "borrius": 91
+  },
+  "470": {
+    "name": "Pachirisu",
+    "national": 417,
+    "borrius": 0
+  },
+  "471": {
+    "name": "Buizel",
+    "national": 418,
+    "borrius": 62
+  },
+  "472": {
+    "name": "Floatzel",
+    "national": 419,
+    "borrius": 63
+  },
+  "473": {
+    "name": "Cherubi",
+    "national": 420,
+    "borrius": 72
+  },
+  "474": {
+    "name": "Cherrim",
+    "national": 421,
+    "borrius": 73
+  },
+  "475": {
+    "name": "Shellos",
+    "national": 422,
+    "borrius": 64
+  },
+  "476": {
+    "name": "Gastrodon",
+    "national": 423,
+    "borrius": 65
+  },
+  "477": {
+    "name": "Ambipom",
+    "national": 424,
+    "borrius": 0
+  },
+  "478": {
+    "name": "Drifloon",
+    "national": 425,
+    "borrius": 0
+  },
+  "479": {
+    "name": "Drifblim",
+    "national": 426,
+    "borrius": 0
+  },
+  "480": {
+    "name": "Buneary",
+    "national": 427,
+    "borrius": 209
+  },
+  "481": {
+    "name": "Lopunny",
+    "national": 428,
+    "borrius": 210
+  },
+  "482": {
+    "name": "Mismagius",
+    "national": 429,
+    "borrius": 324
+  },
+  "483": {
+    "name": "Honchkrow",
+    "national": 430,
+    "borrius": 155
+  },
+  "484": {
+    "name": "Glameow",
+    "national": 431,
+    "borrius": 275
+  },
+  "485": {
+    "name": "Purugly",
+    "national": 432,
+    "borrius": 276
+  },
+  "486": {
+    "name": "Chingling",
+    "national": 433,
+    "borrius": 375
+  },
+  "487": {
+    "name": "Stunky",
+    "national": 434,
+    "borrius": 0
+  },
+  "488": {
+    "name": "Skuntank",
+    "national": 435,
+    "borrius": 0
+  },
+  "489": {
+    "name": "Bronzor",
+    "national": 436,
+    "borrius": 225
+  },
+  "490": {
+    "name": "Bronzong",
+    "national": 437,
+    "borrius": 226
+  },
+  "491": {
+    "name": "Bonsly",
+    "national": 438,
+    "borrius": 0
+  },
+  "492": {
+    "name": "Mime Jr?",
+    "national": 439,
+    "borrius": 221
+  },
+  "493": {
+    "name": "Happiny",
+    "national": 440,
+    "borrius": 0
+  },
+  "494": {
+    "name": "Chatot",
+    "national": 441,
+    "borrius": 456
+  },
+  "495": {
+    "name": "Spiritomb",
+    "national": 442,
+    "borrius": 0
+  },
+  "496": {
+    "name": "Gible",
+    "national": 443,
+    "borrius": 0
+  },
+  "497": {
+    "name": "Gabite",
+    "national": 444,
+    "borrius": 0
+  },
+  "498": {
+    "name": "Garchomp",
+    "national": 445,
+    "borrius": 0
+  },
+  "499": {
+    "name": "Munchlax",
+    "national": 446,
+    "borrius": 0
+  },
+  "500": {
+    "name": "Riolu",
+    "national": 447,
+    "borrius": 52
+  },
+  "501": {
+    "name": "Lucario",
+    "national": 448,
+    "borrius": 53
+  },
+  "502": {
+    "name": "Hippopotas",
+    "national": 449,
+    "borrius": 422
+  },
+  "503": {
+    "name": "Hippowdon",
+    "national": 450,
+    "borrius": 423
+  },
+  "504": {
+    "name": "Skorupi",
+    "national": 451,
+    "borrius": 246
+  },
+  "505": {
+    "name": "Drapion",
+    "national": 452,
+    "borrius": 247
+  },
+  "506": {
+    "name": "Croagunk",
+    "national": 453,
+    "borrius": 0
+  },
+  "507": {
+    "name": "Toxicroak",
+    "national": 454,
+    "borrius": 0
+  },
+  "508": {
+    "name": "Carnivine",
+    "national": 455,
+    "borrius": 0
+  },
+  "509": {
+    "name": "Finneon",
+    "national": 456,
+    "borrius": 395
+  },
+  "510": {
+    "name": "Lumineon",
+    "national": 457,
+    "borrius": 396
+  },
+  "511": {
+    "name": "Mantyke",
+    "national": 458,
+    "borrius": 392
+  },
+  "512": {
+    "name": "Snover",
+    "national": 459,
+    "borrius": 232
+  },
+  "513": {
+    "name": "Abomasnow",
+    "national": 460,
+    "borrius": 233
+  },
+  "514": {
+    "name": "Weavile",
+    "national": 461,
+    "borrius": 230
+  },
+  "515": {
+    "name": "Magnezone",
+    "national": 462,
+    "borrius": 297
+  },
+  "516": {
+    "name": "Lickilicky",
+    "national": 463,
+    "borrius": 157
+  },
+  "517": {
+    "name": "Rhyperior",
+    "national": 464,
+    "borrius": 0
+  },
+  "518": {
+    "name": "Tangrowth",
+    "national": 465,
+    "borrius": 450
+  },
+  "519": {
+    "name": "Electivire",
+    "national": 466,
+    "borrius": 305
+  },
+  "520": {
+    "name": "Magmortar",
+    "national": 467,
+    "borrius": 148
+  },
+  "521": {
+    "name": "Togekiss",
+    "national": 468,
+    "borrius": 0
+  },
+  "522": {
+    "name": "Yanmega",
+    "national": 469,
+    "borrius": 169
+  },
+  "523": {
+    "name": "Leafeon",
+    "national": 470,
+    "borrius": 361
+  },
+  "524": {
+    "name": "Glaceon",
+    "national": 471,
+    "borrius": 362
+  },
+  "525": {
+    "name": "Gliscor",
+    "national": 472,
+    "borrius": 187
+  },
+  "526": {
+    "name": "Mamoswine",
+    "national": 473,
+    "borrius": 24
+  },
+  "527": {
+    "name": "Porygon-Z",
+    "national": 474,
+    "borrius": 369
+  },
+  "528": {
+    "name": "Gallade",
+    "national": 475,
+    "borrius": 132
+  },
+  "529": {
+    "name": "Probopass",
+    "national": 476,
+    "borrius": 180
+  },
+  "530": {
+    "name": "Dusknoir",
+    "national": 477,
+    "borrius": 111
+  },
+  "531": {
+    "name": "Froslass",
+    "national": 478,
+    "borrius": 3
+  },
+  "532": {
+    "name": "Rotom",
+    "national": 479,
+    "borrius": 0
+  },
+  "533": {
+    "name": "Uxie",
+    "national": 480,
+    "borrius": 0
+  },
+  "534": {
+    "name": "Mesprit",
+    "national": 481,
+    "borrius": 0
+  },
+  "535": {
+    "name": "Azelf",
+    "national": 482,
+    "borrius": 0
+  },
+  "536": {
+    "name": "Dialga",
+    "national": 483,
+    "borrius": 0
+  },
+  "537": {
+    "name": "Palkia",
+    "national": 484,
+    "borrius": 0
+  },
+  "538": {
+    "name": "Heatran",
+    "national": 485,
+    "borrius": 492
+  },
+  "539": {
+    "name": "Regigigas",
+    "national": 486,
+    "borrius": 489
+  },
+  "540": {
+    "name": "Giratina",
+    "national": 487,
+    "borrius": 0
+  },
+  "541": {
+    "name": "Cresselia",
+    "national": 488,
+    "borrius": 0
+  },
+  "542": {
+    "name": "Phione",
+    "national": 489,
+    "borrius": 0
+  },
+  "543": {
+    "name": "Manaphy",
+    "national": 490,
+    "borrius": 0
+  },
+  "544": {
+    "name": "Darkrai",
+    "national": 491,
+    "borrius": 0
+  },
+  "545": {
+    "name": "Shaymin",
+    "national": 492,
+    "borrius": 493
+  },
+  "546": {
+    "name": "Arceus",
+    "national": 493,
+    "borrius": 0
+  },
+  "547": {
+    "name": "Victini",
+    "national": 494,
+    "borrius": 0
+  },
+  "548": {
+    "name": "Snivy",
+    "national": 495,
+    "borrius": 0
+  },
+  "549": {
+    "name": "Servine",
+    "national": 496,
+    "borrius": 0
+  },
+  "550": {
+    "name": "Serperior",
+    "national": 497,
+    "borrius": 0
+  },
+  "551": {
+    "name": "Tepig",
+    "national": 498,
+    "borrius": 0
+  },
+  "552": {
+    "name": "Pignite",
+    "national": 499,
+    "borrius": 0
+  },
+  "553": {
+    "name": "Emboar",
+    "national": 500,
+    "borrius": 0
+  },
+  "554": {
+    "name": "Oshawott",
+    "national": 501,
+    "borrius": 0
+  },
+  "555": {
+    "name": "Dewott",
+    "national": 502,
+    "borrius": 0
+  },
+  "556": {
+    "name": "Samurott",
+    "national": 503,
+    "borrius": 0
+  },
+  "557": {
+    "name": "Patrat",
+    "national": 504,
+    "borrius": 37
+  },
+  "558": {
+    "name": "Watchog",
+    "national": 505,
+    "borrius": 38
+  },
+  "559": {
+    "name": "Lillipup",
+    "national": 506,
+    "borrius": 117
+  },
+  "560": {
+    "name": "Herdier",
+    "national": 507,
+    "borrius": 118
+  },
+  "561": {
+    "name": "Stoutland",
+    "national": 508,
+    "borrius": 119
+  },
+  "562": {
+    "name": "Purrloin",
+    "national": 509,
+    "borrius": 172
+  },
+  "563": {
+    "name": "Liepard",
+    "national": 510,
+    "borrius": 173
+  },
+  "564": {
+    "name": "Pansage",
+    "national": 511,
+    "borrius": 84
+  },
+  "565": {
+    "name": "Simisage",
+    "national": 512,
+    "borrius": 85
+  },
+  "566": {
+    "name": "Pansear",
+    "national": 513,
+    "borrius": 86
+  },
+  "567": {
+    "name": "Simisear",
+    "national": 514,
+    "borrius": 87
+  },
+  "568": {
+    "name": "Panpour",
+    "national": 515,
+    "borrius": 88
+  },
+  "569": {
+    "name": "Simipour",
+    "national": 516,
+    "borrius": 89
+  },
+  "570": {
+    "name": "Munna",
+    "national": 517,
+    "borrius": 0
+  },
+  "571": {
+    "name": "Musharna",
+    "national": 518,
+    "borrius": 0
+  },
+  "572": {
+    "name": "Pidove",
+    "national": 519,
+    "borrius": 0
+  },
+  "573": {
+    "name": "Tranquill",
+    "national": 520,
+    "borrius": 0
+  },
+  "574": {
+    "name": "Unfezant",
+    "national": 521,
+    "borrius": 0
+  },
+  "575": {
+    "name": "Blitzle",
+    "national": 522,
+    "borrius": 0
+  },
+  "576": {
+    "name": "Zebstrika",
+    "national": 523,
+    "borrius": 0
+  },
+  "577": {
+    "name": "Roggenrola",
+    "national": 524,
+    "borrius": 19
+  },
+  "578": {
+    "name": "Boldore",
+    "national": 525,
+    "borrius": 20
+  },
+  "579": {
+    "name": "Gigalith",
+    "national": 526,
+    "borrius": 21
+  },
+  "580": {
+    "name": "Woobat",
+    "national": 527,
+    "borrius": 136
+  },
+  "581": {
+    "name": "Swoobat",
+    "national": 528,
+    "borrius": 137
+  },
+  "582": {
+    "name": "Drilbur",
+    "national": 529,
+    "borrius": 27
+  },
+  "583": {
+    "name": "Excadrill",
+    "national": 530,
+    "borrius": 28
+  },
+  "584": {
+    "name": "Audino",
+    "national": 531,
+    "borrius": 248
+  },
+  "585": {
+    "name": "Timburr",
+    "national": 532,
+    "borrius": 309
+  },
+  "586": {
+    "name": "Gurdurr",
+    "national": 533,
+    "borrius": 310
+  },
+  "587": {
+    "name": "Conkeldurr",
+    "national": 534,
+    "borrius": 311
+  },
+  "588": {
+    "name": "Tympole",
+    "national": 535,
+    "borrius": 254
+  },
+  "589": {
+    "name": "Palpitoad",
+    "national": 536,
+    "borrius": 255
+  },
+  "590": {
+    "name": "Seismitoad",
+    "national": 537,
+    "borrius": 256
+  },
+  "591": {
+    "name": "Throh",
+    "national": 538,
+    "borrius": 457
+  },
+  "592": {
+    "name": "Sawk",
+    "national": 539,
+    "borrius": 458
+  },
+  "593": {
+    "name": "Sewaddle",
+    "national": 540,
+    "borrius": 0
+  },
+  "594": {
+    "name": "Swadloon",
+    "national": 541,
+    "borrius": 0
+  },
+  "595": {
+    "name": "Leavanny",
+    "national": 542,
+    "borrius": 0
+  },
+  "596": {
+    "name": "Venipede",
+    "national": 543,
+    "borrius": 0
+  },
+  "597": {
+    "name": "Whirlipede",
+    "national": 544,
+    "borrius": 0
+  },
+  "598": {
+    "name": "Scolipede",
+    "national": 545,
+    "borrius": 0
+  },
+  "599": {
+    "name": "Cottonee",
+    "national": 546,
+    "borrius": 436
+  },
+  "600": {
+    "name": "Whimsicott",
+    "national": 547,
+    "borrius": 437
+  },
+  "601": {
+    "name": "Petilil",
+    "national": 548,
+    "borrius": 438
+  },
+  "602": {
+    "name": "Lilligant",
+    "national": 549,
+    "borrius": 439
+  },
+  "603": {
+    "name": "Basculin",
+    "national": 550,
+    "borrius": 391
+  },
+  "604": {
+    "name": "Sandile",
+    "national": 551,
+    "borrius": 415
+  },
+  "605": {
+    "name": "Krokorok",
+    "national": 552,
+    "borrius": 416
+  },
+  "606": {
+    "name": "Krookodile",
+    "national": 553,
+    "borrius": 417
+  },
+  "607": {
+    "name": "Darumaka",
+    "national": 554,
+    "borrius": 420
+  },
+  "608": {
+    "name": "Darmanitan",
+    "national": 555,
+    "borrius": 421
+  },
+  "609": {
+    "name": "Maractus",
+    "national": 556,
+    "borrius": 427
+  },
+  "610": {
+    "name": "Dwebble",
+    "national": 557,
+    "borrius": 413
+  },
+  "611": {
+    "name": "Crustle",
+    "national": 558,
+    "borrius": 414
+  },
+  "612": {
+    "name": "Scraggy",
+    "national": 559,
+    "borrius": 50
+  },
+  "613": {
+    "name": "Scrafty",
+    "national": 560,
+    "borrius": 51
+  },
+  "614": {
+    "name": "Sigilyph",
+    "national": 561,
+    "borrius": 387
+  },
+  "615": {
+    "name": "Yamask",
+    "national": 562,
+    "borrius": 382
+  },
+  "616": {
+    "name": "Cofagrigus",
+    "national": 563,
+    "borrius": 383
+  },
+  "617": {
+    "name": "Tirtouga",
+    "national": 564,
+    "borrius": 0
+  },
+  "618": {
+    "name": "Carracosta",
+    "national": 565,
+    "borrius": 0
+  },
+  "619": {
+    "name": "Archen",
+    "national": 566,
+    "borrius": 0
+  },
+  "620": {
+    "name": "Archeops",
+    "national": 567,
+    "borrius": 0
+  },
+  "621": {
+    "name": "Trubbish",
+    "national": 568,
+    "borrius": 0
+  },
+  "622": {
+    "name": "Garbodor",
+    "national": 569,
+    "borrius": 0
+  },
+  "623": {
+    "name": "Zorua",
+    "national": 570,
+    "borrius": 0
+  },
+  "624": {
+    "name": "Zoroark",
+    "national": 571,
+    "borrius": 0
+  },
+  "625": {
+    "name": "Minccino",
+    "national": 572,
+    "borrius": 41
+  },
+  "626": {
+    "name": "Cinccino",
+    "national": 573,
+    "borrius": 42
+  },
+  "627": {
+    "name": "Gothita",
+    "national": 574,
+    "borrius": 343
+  },
+  "628": {
+    "name": "Gothorita",
+    "national": 575,
+    "borrius": 344
+  },
+  "629": {
+    "name": "Gothitelle",
+    "national": 576,
+    "borrius": 345
+  },
+  "630": {
+    "name": "Solosis",
+    "national": 577,
+    "borrius": 346
+  },
+  "631": {
+    "name": "Duosion",
+    "national": 578,
+    "borrius": 347
+  },
+  "632": {
+    "name": "Reuniclus",
+    "national": 579,
+    "borrius": 348
+  },
+  "633": {
+    "name": "Ducklett",
+    "national": 580,
+    "borrius": 0
+  },
+  "634": {
+    "name": "Swanna",
+    "national": 581,
+    "borrius": 0
+  },
+  "635": {
+    "name": "Vanillite",
+    "national": 582,
+    "borrius": 4
+  },
+  "636": {
+    "name": "Vanillish",
+    "national": 583,
+    "borrius": 5
+  },
+  "637": {
+    "name": "Vanilluxe",
+    "national": 584,
+    "borrius": 6
+  },
+  "638": {
+    "name": "Deerling",
+    "national": 585,
+    "borrius": 198
+  },
+  "639": {
+    "name": "Sawsbuck",
+    "national": 586,
+    "borrius": 199
+  },
+  "640": {
+    "name": "Emolga",
+    "national": 587,
+    "borrius": 370
+  },
+  "641": {
+    "name": "Karrablast",
+    "national": 588,
+    "borrius": 249
+  },
+  "642": {
+    "name": "Escavalier",
+    "national": 589,
+    "borrius": 250
+  },
+  "643": {
+    "name": "Foongus",
+    "national": 590,
+    "borrius": 442
+  },
+  "644": {
+    "name": "Amoonguss",
+    "national": 591,
+    "borrius": 443
+  },
+  "645": {
+    "name": "Frillish",
+    "national": 592,
+    "borrius": 0
+  },
+  "646": {
+    "name": "Jellicent",
+    "national": 593,
+    "borrius": 0
+  },
+  "647": {
+    "name": "Alomomola",
+    "national": 594,
+    "borrius": 398
+  },
+  "648": {
+    "name": "Joltik",
+    "national": 595,
+    "borrius": 312
+  },
+  "649": {
+    "name": "Galvantula",
+    "national": 596,
+    "borrius": 313
+  },
+  "650": {
+    "name": "Ferroseed",
+    "national": 597,
+    "borrius": 314
+  },
+  "651": {
+    "name": "Ferrothorn",
+    "national": 598,
+    "borrius": 315
+  },
+  "652": {
+    "name": "Klink",
+    "national": 599,
+    "borrius": 300
+  },
+  "653": {
+    "name": "Klang",
+    "national": 600,
+    "borrius": 301
+  },
+  "654": {
+    "name": "Klinklang",
+    "national": 601,
+    "borrius": 302
+  },
+  "655": {
+    "name": "Tynamo",
+    "national": 602,
+    "borrius": 306
+  },
+  "656": {
+    "name": "Eelektrik",
+    "national": 603,
+    "borrius": 307
+  },
+  "657": {
+    "name": "Eelektross",
+    "national": 604,
+    "borrius": 308
+  },
+  "658": {
+    "name": "Elgyem",
+    "national": 605,
+    "borrius": 174
+  },
+  "659": {
+    "name": "Beheeyem",
+    "national": 606,
+    "borrius": 175
+  },
+  "660": {
+    "name": "Litwick",
+    "national": 607,
+    "borrius": 0
+  },
+  "661": {
+    "name": "Lampent",
+    "national": 608,
+    "borrius": 0
+  },
+  "662": {
+    "name": "Chandelure",
+    "national": 609,
+    "borrius": 0
+  },
+  "663": {
+    "name": "Axew",
+    "national": 610,
+    "borrius": 364
+  },
+  "664": {
+    "name": "Fraxure",
+    "national": 611,
+    "borrius": 365
+  },
+  "665": {
+    "name": "Haxorus",
+    "national": 612,
+    "borrius": 366
+  },
+  "666": {
+    "name": "Cubchoo",
+    "national": 613,
+    "borrius": 234
+  },
+  "667": {
+    "name": "Beartic",
+    "national": 614,
+    "borrius": 235
+  },
+  "668": {
+    "name": "Cryogonal",
+    "national": 615,
+    "borrius": 231
+  },
+  "669": {
+    "name": "Shelmet",
+    "national": 616,
+    "borrius": 262
+  },
+  "670": {
+    "name": "Accelgor",
+    "national": 617,
+    "borrius": 263
+  },
+  "671": {
+    "name": "Stunfisk",
+    "national": 618,
+    "borrius": 397
+  },
+  "672": {
+    "name": "Mienfoo",
+    "national": 619,
+    "borrius": 340
+  },
+  "673": {
+    "name": "Mienshao",
+    "national": 620,
+    "borrius": 341
+  },
+  "674": {
+    "name": "Druddigon",
+    "national": 621,
+    "borrius": 0
+  },
+  "675": {
+    "name": "Golett",
+    "national": 622,
+    "borrius": 373
+  },
+  "676": {
+    "name": "Golurk",
+    "national": 623,
+    "borrius": 374
+  },
+  "677": {
+    "name": "Pawniard",
+    "national": 624,
+    "borrius": 454
+  },
+  "678": {
+    "name": "Bisharp",
+    "national": 625,
+    "borrius": 455
+  },
+  "679": {
+    "name": "Bouffalant",
+    "national": 626,
+    "borrius": 0
+  },
+  "680": {
+    "name": "Rufflet",
+    "national": 627,
+    "borrius": 0
+  },
+  "681": {
+    "name": "Braviary",
+    "national": 628,
+    "borrius": 0
+  },
+  "682": {
+    "name": "Vullaby",
+    "national": 629,
+    "borrius": 0
+  },
+  "683": {
+    "name": "Mandibuzz",
+    "national": 630,
+    "borrius": 0
+  },
+  "684": {
+    "name": "Heatmor",
+    "national": 631,
+    "borrius": 149
+  },
+  "685": {
+    "name": "Durant",
+    "national": 632,
+    "borrius": 0
+  },
+  "686": {
+    "name": "Deino",
+    "national": 633,
+    "borrius": 0
+  },
+  "687": {
+    "name": "Zweilous",
+    "national": 634,
+    "borrius": 0
+  },
+  "688": {
+    "name": "Hydreigon",
+    "national": 635,
+    "borrius": 0
+  },
+  "689": {
+    "name": "Larvesta",
+    "national": 636,
+    "borrius": 0
+  },
+  "690": {
+    "name": "Volcarona",
+    "national": 637,
+    "borrius": 0
+  },
+  "691": {
+    "name": "Cobalion",
+    "national": 638,
+    "borrius": 0
+  },
+  "692": {
+    "name": "Terrakion",
+    "national": 639,
+    "borrius": 0
+  },
+  "693": {
+    "name": "Virizion",
+    "national": 640,
+    "borrius": 0
+  },
+  "694": {
+    "name": "Tornadus",
+    "national": 641,
+    "borrius": 0
+  },
+  "695": {
+    "name": "Thundurus",
+    "national": 642,
+    "borrius": 0
+  },
+  "696": {
+    "name": "Reshiram",
+    "national": 643,
+    "borrius": 0
+  },
+  "697": {
+    "name": "Zekrom",
+    "national": 644,
+    "borrius": 0
+  },
+  "698": {
+    "name": "Landorus",
+    "national": 645,
+    "borrius": 0
+  },
+  "699": {
+    "name": "Kyurem",
+    "national": 646,
+    "borrius": 0
+  },
+  "700": {
+    "name": "Keldeo",
+    "national": 647,
+    "borrius": 494
+  },
+  "701": {
+    "name": "Meloetta",
+    "national": 648,
+    "borrius": 0
+  },
+  "702": {
+    "name": "Genesect",
+    "national": 649,
+    "borrius": 0
+  },
+  "758": {
+    "name": "Chespin",
+    "national": 650,
+    "borrius": 0
+  },
+  "759": {
+    "name": "Quilladin",
+    "national": 651,
+    "borrius": 0
+  },
+  "760": {
+    "name": "Chesnaught",
+    "national": 652,
+    "borrius": 0
+  },
+  "761": {
+    "name": "Fennekin",
+    "national": 653,
+    "borrius": 0
+  },
+  "762": {
+    "name": "Braixen",
+    "national": 654,
+    "borrius": 0
+  },
+  "763": {
+    "name": "Delphox",
+    "national": 655,
+    "borrius": 0
+  },
+  "764": {
+    "name": "Froakie",
+    "national": 656,
+    "borrius": 0
+  },
+  "765": {
+    "name": "Frogadier",
+    "national": 657,
+    "borrius": 0
+  },
+  "766": {
+    "name": "Greninja",
+    "national": 658,
+    "borrius": 0
+  },
+  "767": {
+    "name": "Bunnelby",
+    "national": 659,
+    "borrius": 189
+  },
+  "768": {
+    "name": "Diggersby",
+    "national": 660,
+    "borrius": 190
+  },
+  "769": {
+    "name": "Fletchling",
+    "national": 661,
+    "borrius": 331
+  },
+  "771": {
+    "name": "Talonflame",
+    "national": 663,
+    "borrius": 333
+  },
+  "772": {
+    "name": "Scatterbug",
+    "national": 664,
+    "borrius": 433
+  },
+  "773": {
+    "name": "Spewpa",
+    "national": 665,
+    "borrius": 434
+  },
+  "774": {
+    "name": "Vivillon",
+    "national": 666,
+    "borrius": 435
+  },
+  "775": {
+    "name": "Litleo",
+    "national": 667,
+    "borrius": 0
+  },
+  "776": {
+    "name": "Pyroar",
+    "national": 668,
+    "borrius": 0
+  },
+  "778": {
+    "name": "Floette",
+    "national": 670,
+    "borrius": 79
+  },
+  "779": {
+    "name": "Florges",
+    "national": 671,
+    "borrius": 80
+  },
+  "780": {
+    "name": "Skiddo",
+    "national": 672,
+    "borrius": 0
+  },
+  "781": {
+    "name": "Gogoat",
+    "national": 673,
+    "borrius": 0
+  },
+  "782": {
+    "name": "Pancham",
+    "national": 674,
+    "borrius": 452
+  },
+  "783": {
+    "name": "Pangoro",
+    "national": 675,
+    "borrius": 453
+  },
+  "784": {
+    "name": "Furfrou",
+    "national": 676,
+    "borrius": 0
+  },
+  "785": {
+    "name": "Espurr",
+    "national": 677,
+    "borrius": 217
+  },
+  "786": {
+    "name": "Meowstic",
+    "national": 678,
+    "borrius": 218
+  },
+  "787": {
+    "name": "Honedge",
+    "national": 679,
+    "borrius": 0
+  },
+  "788": {
+    "name": "Doublade",
+    "national": 680,
+    "borrius": 0
+  },
+  "789": {
+    "name": "Aegislash",
+    "national": 681,
+    "borrius": 0
+  },
+  "790": {
+    "name": "Spritzee",
+    "national": 682,
+    "borrius": 351
+  },
+  "791": {
+    "name": "Aromatisse",
+    "national": 683,
+    "borrius": 352
+  },
+  "792": {
+    "name": "Swirlix",
+    "national": 684,
+    "borrius": 349
+  },
+  "793": {
+    "name": "Slurpuff",
+    "national": 685,
+    "borrius": 350
+  },
+  "794": {
+    "name": "Inkay",
+    "national": 686,
+    "borrius": 54
+  },
+  "795": {
+    "name": "Malamar",
+    "national": 687,
+    "borrius": 55
+  },
+  "796": {
+    "name": "Binacle",
+    "national": 688,
+    "borrius": 0
+  },
+  "797": {
+    "name": "Barbaracle",
+    "national": 689,
+    "borrius": 0
+  },
+  "798": {
+    "name": "Skrelp",
+    "national": 690,
+    "borrius": 399
+  },
+  "799": {
+    "name": "Dragalge",
+    "national": 691,
+    "borrius": 400
+  },
+  "800": {
+    "name": "Clauncher",
+    "national": 692,
+    "borrius": 401
+  },
+  "801": {
+    "name": "Clawitzer",
+    "national": 693,
+    "borrius": 402
+  },
+  "802": {
+    "name": "Helioptile",
+    "national": 694,
+    "borrius": 0
+  },
+  "803": {
+    "name": "Heliolisk",
+    "national": 695,
+    "borrius": 0
+  },
+  "804": {
+    "name": "Tyrunt",
+    "national": 696,
+    "borrius": 0
+  },
+  "805": {
+    "name": "Tyrantrum",
+    "national": 697,
+    "borrius": 0
+  },
+  "806": {
+    "name": "Amaura",
+    "national": 698,
+    "borrius": 0
+  },
+  "807": {
+    "name": "Aurorus",
+    "national": 699,
+    "borrius": 0
+  },
+  "808": {
+    "name": "Sylveon",
+    "national": 700,
+    "borrius": 363
+  },
+  "809": {
+    "name": "Hawlucha",
+    "national": 701,
+    "borrius": 371
+  },
+  "810": {
+    "name": "Dedenne",
+    "national": 702,
+    "borrius": 342
+  },
+  "811": {
+    "name": "Carbink",
+    "national": 703,
+    "borrius": 183
+  },
+  "812": {
+    "name": "Goomy",
+    "national": 704,
+    "borrius": 259
+  },
+  "813": {
+    "name": "Sliggoo",
+    "national": 705,
+    "borrius": 260
+  },
+  "814": {
+    "name": "Goodra",
+    "national": 706,
+    "borrius": 261
+  },
+  "815": {
+    "name": "Klefki",
+    "national": 707,
+    "borrius": 372
+  },
+  "816": {
+    "name": "Phantump",
+    "national": 708,
+    "borrius": 112
+  },
+  "817": {
+    "name": "Trevenant",
+    "national": 709,
+    "borrius": 113
+  },
+  "818": {
+    "name": "Pumpkaboo",
+    "national": 710,
+    "borrius": 102
+  },
+  "819": {
+    "name": "Gourgeist",
+    "national": 711,
+    "borrius": 103
+  },
+  "820": {
+    "name": "Bergmite",
+    "national": 712,
+    "borrius": 25
+  },
+  "821": {
+    "name": "Avalugg",
+    "national": 713,
+    "borrius": 26
+  },
+  "822": {
+    "name": "Noibat",
+    "national": 714,
+    "borrius": 181
+  },
+  "823": {
+    "name": "Noivern",
+    "national": 715,
+    "borrius": 182
+  },
+  "824": {
+    "name": "Xerneas",
+    "national": 716,
+    "borrius": 0
+  },
+  "825": {
+    "name": "Yveltal",
+    "national": 717,
+    "borrius": 0
+  },
+  "826": {
+    "name": "Zygarde",
+    "national": 718,
+    "borrius": 0
+  },
+  "827": {
+    "name": "Diancie",
+    "national": 719,
+    "borrius": 495
+  },
+  "828": {
+    "name": "Hoopa",
+    "national": 720,
+    "borrius": 498
+  },
+  "830": {
+    "name": "Volcanion",
+    "national": 721,
+    "borrius": 0
+  },
+  "939": {
+    "name": "Rowlet",
+    "national": 722,
+    "borrius": 0
+  },
+  "940": {
+    "name": "Dartrix",
+    "national": 723,
+    "borrius": 0
+  },
+  "941": {
+    "name": "Decidueye",
+    "national": 724,
+    "borrius": 0
+  },
+  "942": {
+    "name": "Litten",
+    "national": 725,
+    "borrius": 0
+  },
+  "943": {
+    "name": "Torracat",
+    "national": 726,
+    "borrius": 0
+  },
+  "944": {
+    "name": "Incineroar",
+    "national": 727,
+    "borrius": 0
+  },
+  "945": {
+    "name": "Popplio",
+    "national": 728,
+    "borrius": 0
+  },
+  "946": {
+    "name": "Brionne",
+    "national": 729,
+    "borrius": 0
+  },
+  "947": {
+    "name": "Primarina",
+    "national": 730,
+    "borrius": 0
+  },
+  "948": {
+    "name": "Pikipek",
+    "national": 731,
+    "borrius": 32
+  },
+  "949": {
+    "name": "Trumbeak",
+    "national": 732,
+    "borrius": 33
+  },
+  "950": {
+    "name": "Toucannon",
+    "national": 733,
+    "borrius": 34
+  },
+  "951": {
+    "name": "Yungoos",
+    "national": 734,
+    "borrius": 205
+  },
+  "952": {
+    "name": "Gumshoos",
+    "national": 735,
+    "borrius": 206
+  },
+  "953": {
+    "name": "Grubbin",
+    "national": 736,
+    "borrius": 241
+  },
+  "954": {
+    "name": "Charjabug",
+    "national": 737,
+    "borrius": 242
+  },
+  "955": {
+    "name": "Vikavolt",
+    "national": 738,
+    "borrius": 243
+  },
+  "956": {
+    "name": "Crabrawler",
+    "national": 739,
+    "borrius": 237
+  },
+  "958": {
+    "name": "Oricorio",
+    "national": 741,
+    "borrius": 83
+  },
+  "959": {
+    "name": "Cutiefly",
+    "national": 742,
+    "borrius": 81
+  },
+  "960": {
+    "name": "Ribombee",
+    "national": 743,
+    "borrius": 82
+  },
+  "961": {
+    "name": "Rockruff",
+    "national": 744,
+    "borrius": 334
+  },
+  "962": {
+    "name": "Lycanroc",
+    "national": 745,
+    "borrius": 335
+  },
+  "963": {
+    "name": "Wishiwashi",
+    "national": 746,
+    "borrius": 289
+  },
+  "964": {
+    "name": "Mareanie",
+    "national": 747,
+    "borrius": 481
+  },
+  "965": {
+    "name": "Toxapex",
+    "national": 748,
+    "borrius": 482
+  },
+  "966": {
+    "name": "Mudbray",
+    "national": 749,
+    "borrius": 0
+  },
+  "967": {
+    "name": "Mudsdale",
+    "national": 750,
+    "borrius": 0
+  },
+  "968": {
+    "name": "Dewpider",
+    "national": 751,
+    "borrius": 66
+  },
+  "969": {
+    "name": "Araquanid",
+    "national": 752,
+    "borrius": 67
+  },
+  "970": {
+    "name": "Fomantis",
+    "national": 753,
+    "borrius": 0
+  },
+  "971": {
+    "name": "Lurantis",
+    "national": 754,
+    "borrius": 0
+  },
+  "972": {
+    "name": "Morelull",
+    "national": 755,
+    "borrius": 444
+  },
+  "973": {
+    "name": "Shiinotic",
+    "national": 756,
+    "borrius": 445
+  },
+  "974": {
+    "name": "Salandit",
+    "national": 757,
+    "borrius": 140
+  },
+  "975": {
+    "name": "Salazzle",
+    "national": 758,
+    "borrius": 141
+  },
+  "976": {
+    "name": "Stufful",
+    "national": 759,
+    "borrius": 48
+  },
+  "977": {
+    "name": "Bewear",
+    "national": 760,
+    "borrius": 49
+  },
+  "978": {
+    "name": "Bounsweet",
+    "national": 761,
+    "borrius": 0
+  },
+  "979": {
+    "name": "Steenee",
+    "national": 762,
+    "borrius": 0
+  },
+  "980": {
+    "name": "Tsareena",
+    "national": 763,
+    "borrius": 0
+  },
+  "981": {
+    "name": "Comfey",
+    "national": 764,
+    "borrius": 92
+  },
+  "982": {
+    "name": "Oranguru",
+    "national": 765,
+    "borrius": 0
+  },
+  "983": {
+    "name": "Passimian",
+    "national": 766,
+    "borrius": 0
+  },
+  "984": {
+    "name": "Wimpod",
+    "national": 767,
+    "borrius": 0
+  },
+  "985": {
+    "name": "Golisopod",
+    "national": 768,
+    "borrius": 0
+  },
+  "986": {
+    "name": "Sandygast",
+    "national": 769,
+    "borrius": 74
+  },
+  "987": {
+    "name": "Palossand",
+    "national": 770,
+    "borrius": 75
+  },
+  "988": {
+    "name": "Pyukumuku",
+    "national": 771,
+    "borrius": 394
+  },
+  "989": {
+    "name": "Type: Null",
+    "national": 772,
+    "borrius": 0
+  },
+  "990": {
+    "name": "Silvally",
+    "national": 773,
+    "borrius": 0
+  },
+  "991": {
+    "name": "Minior",
+    "national": 774,
+    "borrius": 8
+  },
+  "992": {
+    "name": "Komala",
+    "national": 775,
+    "borrius": 0
+  },
+  "993": {
+    "name": "Turtonator",
+    "national": 776,
+    "borrius": 0
+  },
+  "994": {
+    "name": "Togedemaru",
+    "national": 777,
+    "borrius": 268
+  },
+  "995": {
+    "name": "Mimikyu",
+    "national": 778,
+    "borrius": 0
+  },
+  "996": {
+    "name": "Bruxish",
+    "national": 779,
+    "borrius": 0
+  },
+  "997": {
+    "name": "Drampa",
+    "national": 780,
+    "borrius": 0
+  },
+  "998": {
+    "name": "Dhelmise",
+    "national": 781,
+    "borrius": 0
+  },
+  "999": {
+    "name": "Jangmo-o",
+    "national": 782,
+    "borrius": 0
+  },
+  "1000": {
+    "name": "Hakamo-o",
+    "national": 783,
+    "borrius": 0
+  },
+  "1001": {
+    "name": "Kommo-o",
+    "national": 784,
+    "borrius": 0
+  },
+  "1002": {
+    "name": "Tapu Koko",
+    "national": 785,
+    "borrius": 0
+  },
+  "1003": {
+    "name": "Tapu Lele",
+    "national": 786,
+    "borrius": 0
+  },
+  "1004": {
+    "name": "Tapu Bulu",
+    "national": 787,
+    "borrius": 0
+  },
+  "1005": {
+    "name": "Tapu Fini",
+    "national": 788,
+    "borrius": 0
+  },
+  "1006": {
+    "name": "Cosmog",
+    "national": 789,
+    "borrius": 0
+  },
+  "1007": {
+    "name": "Cosmoem",
+    "national": 790,
+    "borrius": 0
+  },
+  "1008": {
+    "name": "Solgaleo",
+    "national": 791,
+    "borrius": 0
+  },
+  "1009": {
+    "name": "Lunala",
+    "national": 792,
+    "borrius": 0
+  },
+  "1010": {
+    "name": "Nihilego",
+    "national": 793,
+    "borrius": 0
+  },
+  "1011": {
+    "name": "Buzzwole",
+    "national": 794,
+    "borrius": 0
+  },
+  "1012": {
+    "name": "Pheromosa",
+    "national": 795,
+    "borrius": 0
+  },
+  "1013": {
+    "name": "Xurkitree",
+    "national": 796,
+    "borrius": 0
+  },
+  "1014": {
+    "name": "Celesteela",
+    "national": 797,
+    "borrius": 0
+  },
+  "1015": {
+    "name": "Kartana",
+    "national": 798,
+    "borrius": 0
+  },
+  "1016": {
+    "name": "Guzzlord",
+    "national": 799,
+    "borrius": 0
+  },
+  "1017": {
+    "name": "Necrozma",
+    "national": 800,
+    "borrius": 0
+  },
+  "1018": {
+    "name": "Magearna",
+    "national": 801,
+    "borrius": 496
+  },
+  "1019": {
+    "name": "Marshadow",
+    "national": 802,
+    "borrius": 0
+  },
+  "1074": {
+    "name": "Poipole",
+    "national": 803,
+    "borrius": 0
+  },
+  "1075": {
+    "name": "Naganadel",
+    "national": 804,
+    "borrius": 0
+  },
+  "1076": {
+    "name": "Stakataka",
+    "national": 805,
+    "borrius": 0
+  },
+  "1078": {
+    "name": "Zeraora",
+    "national": 807,
+    "borrius": 497
+  },
+  "1083": {
+    "name": "Meltan",
+    "national": 808,
+    "borrius": 0
+  },
+  "1084": {
+    "name": "Melmetal",
+    "national": 809,
+    "borrius": 0
+  },
+  "1102": {
+    "name": "Grookey",
+    "national": 810,
+    "borrius": 0
+  },
+  "1103": {
+    "name": "Thwackey",
+    "national": 811,
+    "borrius": 0
+  },
+  "1104": {
+    "name": "Rillaboom",
+    "national": 812,
+    "borrius": 0
+  },
+  "1105": {
+    "name": "Scorbunny",
+    "national": 813,
+    "borrius": 0
+  },
+  "1106": {
+    "name": "Raboot",
+    "national": 814,
+    "borrius": 0
+  },
+  "1107": {
+    "name": "Cinderace",
+    "national": 815,
+    "borrius": 0
+  },
+  "1108": {
+    "name": "Sobble",
+    "national": 816,
+    "borrius": 0
+  },
+  "1109": {
+    "name": "Drizzile",
+    "national": 817,
+    "borrius": 0
+  },
+  "1110": {
+    "name": "Inteleon",
+    "national": 818,
+    "borrius": 0
+  },
+  "1111": {
+    "name": "Skwovet",
+    "national": 819,
+    "borrius": 0
+  },
+  "1112": {
+    "name": "Greedent",
+    "national": 820,
+    "borrius": 0
+  },
+  "1113": {
+    "name": "Rookidee",
+    "national": 821,
+    "borrius": 0
+  },
+  "1116": {
+    "name": "Blipbug",
+    "national": 824,
+    "borrius": 0
+  },
+  "1117": {
+    "name": "Dottler",
+    "national": 825,
+    "borrius": 0
+  },
+  "1118": {
+    "name": "Orbeetle",
+    "national": 826,
+    "borrius": 0
+  },
+  "1119": {
+    "name": "Nickit",
+    "national": 827,
+    "borrius": 0
+  },
+  "1120": {
+    "name": "Thievul",
+    "national": 828,
+    "borrius": 0
+  },
+  "1121": {
+    "name": "Gossifleur",
+    "national": 829,
+    "borrius": 0
+  },
+  "1122": {
+    "name": "Eldegoss",
+    "national": 830,
+    "borrius": 0
+  },
+  "1123": {
+    "name": "Wooloo",
+    "national": 831,
+    "borrius": 0
+  },
+  "1124": {
+    "name": "Dubwool",
+    "national": 832,
+    "borrius": 0
+  },
+  "1125": {
+    "name": "Chewtle",
+    "national": 833,
+    "borrius": 0
+  },
+  "1126": {
+    "name": "Drednaw",
+    "national": 834,
+    "borrius": 0
+  },
+  "1127": {
+    "name": "Yamper",
+    "national": 835,
+    "borrius": 0
+  },
+  "1128": {
+    "name": "Boltund",
+    "national": 836,
+    "borrius": 0
+  },
+  "1129": {
+    "name": "Rolycoly",
+    "national": 837,
+    "borrius": 0
+  },
+  "1130": {
+    "name": "Carkol",
+    "national": 838,
+    "borrius": 0
+  },
+  "1131": {
+    "name": "Coalossal",
+    "national": 839,
+    "borrius": 0
+  },
+  "1132": {
+    "name": "Applin",
+    "national": 840,
+    "borrius": 0
+  },
+  "1133": {
+    "name": "Flapple",
+    "national": 841,
+    "borrius": 0
+  },
+  "1134": {
+    "name": "Appletun",
+    "national": 842,
+    "borrius": 0
+  },
+  "1135": {
+    "name": "Silicobra",
+    "national": 843,
+    "borrius": 0
+  },
+  "1136": {
+    "name": "Sandaconda",
+    "national": 844,
+    "borrius": 0
+  },
+  "1137": {
+    "name": "Cramorant",
+    "national": 845,
+    "borrius": 0
+  },
+  "1138": {
+    "name": "Arrokuda",
+    "national": 846,
+    "borrius": 0
+  },
+  "1140": {
+    "name": "Toxel",
+    "national": 848,
+    "borrius": 0
+  },
+  "1141": {
+    "name": "Toxtricity",
+    "national": 849,
+    "borrius": 0
+  },
+  "1142": {
+    "name": "Sizzlipede",
+    "national": 850,
+    "borrius": 0
+  },
+  "1144": {
+    "name": "Clobbopus",
+    "national": 852,
+    "borrius": 0
+  },
+  "1145": {
+    "name": "Grapploct",
+    "national": 853,
+    "borrius": 0
+  },
+  "1146": {
+    "name": "Sinistea",
+    "national": 854,
+    "borrius": 0
+  },
+  "1148": {
+    "name": "Hatenna",
+    "national": 856,
+    "borrius": 0
+  },
+  "1149": {
+    "name": "Hattrem",
+    "national": 857,
+    "borrius": 0
+  },
+  "1150": {
+    "name": "Hatterene",
+    "national": 858,
+    "borrius": 0
+  },
+  "1151": {
+    "name": "Impidimp",
+    "national": 859,
+    "borrius": 0
+  },
+  "1152": {
+    "name": "Morgrem",
+    "national": 860,
+    "borrius": 0
+  },
+  "1153": {
+    "name": "Grimmsnarl",
+    "national": 861,
+    "borrius": 0
+  },
+  "1154": {
+    "name": "Obstagoon",
+    "national": 862,
+    "borrius": 0
+  },
+  "1155": {
+    "name": "Perrserker",
+    "national": 863,
+    "borrius": 0
+  },
+  "1156": {
+    "name": "Cursola",
+    "national": 864,
+    "borrius": 0
+  },
+  "1157": {
+    "name": "Sirfetch'd",
+    "national": 865,
+    "borrius": 0
+  },
+  "1158": {
+    "name": "Mr? Rime",
+    "national": 866,
+    "borrius": 0
+  },
+  "1159": {
+    "name": "Runerigus",
+    "national": 867,
+    "borrius": 0
+  },
+  "1160": {
+    "name": "Milcery",
+    "national": 868,
+    "borrius": 0
+  },
+  "1161": {
+    "name": "Alcremie",
+    "national": 869,
+    "borrius": 0
+  },
+  "1162": {
+    "name": "Falinks",
+    "national": 870,
+    "borrius": 0
+  },
+  "1163": {
+    "name": "Pincurchin",
+    "national": 871,
+    "borrius": 0
+  },
+  "1164": {
+    "name": "Snom",
+    "national": 872,
+    "borrius": 0
+  },
+  "1165": {
+    "name": "Frosmoth",
+    "national": 873,
+    "borrius": 0
+  },
+  "1167": {
+    "name": "Eiscue",
+    "national": 875,
+    "borrius": 0
+  },
+  "1168": {
+    "name": "Indeedee",
+    "national": 876,
+    "borrius": 0
+  },
+  "1169": {
+    "name": "Morpeko",
+    "national": 877,
+    "borrius": 0
+  },
+  "1170": {
+    "name": "Cufant",
+    "national": 878,
+    "borrius": 0
+  },
+  "1171": {
+    "name": "Copperajah",
+    "national": 879,
+    "borrius": 0
+  },
+  "1172": {
+    "name": "Dracozolt",
+    "national": 880,
+    "borrius": 0
+  },
+  "1173": {
+    "name": "Arctozolt",
+    "national": 881,
+    "borrius": 0
+  },
+  "1174": {
+    "name": "Dracovish",
+    "national": 882,
+    "borrius": 0
+  },
+  "1175": {
+    "name": "Arctovish",
+    "national": 883,
+    "borrius": 0
+  },
+  "1176": {
+    "name": "Duraludon",
+    "national": 884,
+    "borrius": 0
+  },
+  "1177": {
+    "name": "Dreepy",
+    "national": 885,
+    "borrius": 0
+  },
+  "1178": {
+    "name": "Drakloak",
+    "national": 886,
+    "borrius": 0
+  },
+  "1179": {
+    "name": "Dragapult",
+    "national": 887,
+    "borrius": 0
+  },
+  "1180": {
+    "name": "Zacian",
+    "national": 888,
+    "borrius": 0
+  },
+  "1181": {
+    "name": "Zamazenta",
+    "national": 889,
+    "borrius": 0
+  },
+  "1182": {
+    "name": "Eternatus",
+    "national": 890,
+    "borrius": 0
+  },
+  "1183": {
+    "name": "Kubfu",
+    "national": 891,
+    "borrius": 0
+  },
+  "1184": {
+    "name": "Urshifu",
+    "national": 892,
+    "borrius": 0
+  },
+  "1185": {
+    "name": "Zarude",
+    "national": 893,
+    "borrius": 0
+  },
+  "1186": {
+    "name": "Regieleki",
+    "national": 894,
+    "borrius": 0
+  },
+  "1187": {
+    "name": "Regidrago",
+    "national": 895,
+    "borrius": 0
+  },
+  "1188": {
+    "name": "Glastrier",
+    "national": 896,
+    "borrius": 0
+  },
+  "1189": {
+    "name": "Spectrier",
+    "national": 897,
+    "borrius": 0
+  },
+  "1190": {
+    "name": "Calyrex",
+    "national": 898,
+    "borrius": 0
+  },
+  "29": {
+    "name": "Nidoran♀",
+    "national": 29,
+    "borrius": 161
+  },
+  "32": {
+    "name": "Nidoran♂",
+    "national": 32,
+    "borrius": 158
+  },
+  "770": {
+    "name": "Fletchinder",
+    "national": 662,
+    "borrius": 332
+  },
+  "777": {
+    "name": "Flabébé",
+    "national": 669,
+    "borrius": 78
+  },
+  "957": {
+    "name": "Crabominable",
+    "national": 740,
+    "borrius": 238
+  },
+  "1023": {
+    "name": "Sandshrew",
+    "national": 27,
+    "borrius": 30
+  },
+  "1024": {
+    "name": "Sandslash",
+    "national": 28,
+    "borrius": 31
+  }
+}

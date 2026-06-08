@@ -4,11 +4,14 @@ Run with: python app.py
 Then open http://localhost:5000
 """
 
-import struct, json, base64, math, re, sys
+import struct, json, base64, math, re, sys, urllib.request
 from pathlib import Path
 from flask import Flask, request, jsonify, send_from_directory
 import vault_boxes as cb
 import trade_session as ts
+
+VERSION = "2.0.0"
+GITHUB_RELEASES_API = "https://api.github.com/repos/Zero-Hex/Poke-Bank-Unbound/releases/latest"
 
 if getattr(sys, "frozen", False):
     BASE_DIR = Path(sys._MEIPASS)
@@ -24,6 +27,11 @@ else:
 
 app = Flask(__name__, static_folder=str(BASE_DIR / "static"), static_url_path="/static")
 
+# User data folder (persists across updates)
+DO_NOT_DELETE_DIR = BASE_DIR / "DoNotDelete"
+DO_NOT_DELETE_DIR.mkdir(exist_ok=True)
+(DO_NOT_DELETE_DIR / "data").mkdir(exist_ok=True)
+
 # ---------------------------------------------------------------------------
 # Constants (mirrors save_core.py)
 # ---------------------------------------------------------------------------
@@ -32,15 +40,16 @@ SECTION_PAYLOAD_MAX   = 0xFF0   # = SECTOR_PAYLOAD; checksum covers payload only
 SECTION_13_VALID_LEN  = 0x450
 PRESET_SECTOR_ID      = 0
 PRESET_VALID_LEN      = 0xADC
+SECTION_3_VALID_LEN   = 0xFEC   # Fallback box storage section 3
 SECTION_4_VALID_LEN   = 0xD94   # SaveBlock1 tail — valid payload is shorter than max
 OPAQUE_SECTION_IDS    = {4}
-POKEMON_STREAM_SECTORS = [5,6,7,8,9,10,11,12]
+POKEMON_STREAM_SECTORS = [5,6,7,8,9,10,11,12,13]
 SECTOR_PAYLOAD        = 0xFF0
 SECTOR_HEADER         = 4
 MON_SIZE              = 58
 SLOTS_PER_BOX         = 30
-STREAM_BOXES          = 19   # Total PC boxes (some are fallback)
-STREAM_BOXES_WRITABLE = 18   # Boxes that fit in stream sectors 5-12
+STREAM_BOXES          = 19   # Boxes stored in stream sectors 5-13
+STREAM_BOXES_WRITABLE = 19   # Same — all stream boxes are writable
 OFF_CHECKSUM          = 0xFF6
 OFF_VALID_LEN         = 0xFF0
 OFF_SECTION_ID        = 0xFF4
@@ -49,13 +58,18 @@ BOX_NAMES_1_14_OFF    = 0x03C4
 BOX_NAMES_15_25_OFF   = 0x0361
 BOX_NAME_SIZE         = 9
 
+# Fallback box layouts: (type, slot_start, slot_end, offset)
+# type 'absolute' = offset from save file start
+# type 'section'  = (section_id, slot_start, slot_end, rel_offset_within_section_payload)
+# Box 20 has a 16-byte internal gap after slot 21 — handled by read/write_fallback_slot
 FALLBACK_BOX_LAYOUTS = {
-    20: [('absolute', 1, 21, 0x1EB0C)],
-    21: [('absolute', 1, 30, 0x1F1E8)],
-    22: [('absolute', 1, 30, 0x1F8B4)],
-    23: [('section',  2, 1,  4,  0x0F18),
-         ('section',  3, 5,  30, 0x0010)],
-    24: [('section',  3, 1,  30, 0x05F4)],
+    20: [('absolute', 1,  21, 0x1EB0C),           # slots 1-21 sequential
+         ('absolute', 22, 30, 0x1EB0C + 16 + 21*58)],  # slots 22-30 after 16-byte gap
+    21: [('absolute', 1,  30, 0x1F1E8)],
+    22: [('absolute', 1,  30, 0x1F8B4)],
+    23: [('section',  2,  1,   4,  0x0F18),        # sec2 payload slots 1-4
+         ('section',  3,  5,  30,  0x0010)],       # sec3 payload slots 5-30
+    24: [('section',  3,  1,  30,  0x05F4)],
 }
 
 CHARMAP = {
@@ -120,6 +134,8 @@ def recalculate_checksum(data, section_offset):
         return
     if sec_id == PRESET_SECTOR_ID:
         valid_len = PRESET_VALID_LEN
+    elif sec_id == 3:
+        valid_len = SECTION_3_VALID_LEN
     elif sec_id == 4:
         valid_len = SECTION_4_VALID_LEN
     elif sec_id == 13:
@@ -184,9 +200,11 @@ def write_stream_buffer(data, sections, stream):
     for sec_id in sorted(POKEMON_STREAM_SECTORS):
         payload = stream[pos : pos + SECTOR_PAYLOAD]
         pos += SECTOR_PAYLOAD
+        # Section 13 has a shorter valid payload (bag data only)
+        chk_len = SECTION_13_VALID_LEN if sec_id == 13 else SECTOR_PAYLOAD
         for abs_off in find_all_section_offsets(data, sec_id):
             data[abs_off + SECTOR_HEADER : abs_off + SECTOR_HEADER + SECTOR_PAYLOAD] = payload
-            chk = gba_checksum(data, abs_off, SECTOR_PAYLOAD)
+            chk = gba_checksum(data, abs_off, chk_len)
             wu16(data, abs_off + OFF_CHECKSUM, chk)
 
 def read_stream_slot(stream, box, slot):
@@ -204,15 +222,33 @@ def is_empty(mon): return all(b == 0 for b in mon)
 # Fallback boxes (20-24) — read only for now
 # ---------------------------------------------------------------------------
 def get_fallback_section_offsets(data):
-    best = {}
+    """
+    Find the best copies of sections 2 and 3 (fallback box storage).
+    Prefer: (1) valid checksum + highest save_idx, (2) any valid checksum, (3) highest save_idx.
+    """
+    candidates = {2: [], 3: []}
     for i in range(0, len(data), SECTION_SIZE):
         if i + SECTION_SIZE > len(data): break
         sid  = ru16(data, i + OFF_SECTION_ID)
         sidx = ru32(data, i + OFF_SAVE_IDX)
         if sid in (2, 3):
-            if sid not in best or sidx > best[sid][0]:
-                best[sid] = (sidx, i)
-    return {sid: off for sid, (_, off) in best.items()}
+            stored = ru16(data, i + OFF_CHECKSUM)
+            vl_chk = SECTION_3_VALID_LEN if sid == 3 else SECTION_PAYLOAD_MAX
+            calc   = gba_checksum(data, i, vl_chk)
+            valid  = stored == calc
+            candidates[sid].append((sidx, valid, i))
+
+    result = {}
+    for sid, copies in candidates.items():
+        if not copies: continue
+        # Prefer valid checksum with highest save_idx
+        valid_copies = [c for c in copies if c[1]]
+        if valid_copies:
+            best = max(valid_copies, key=lambda x: x[0])
+        else:
+            best = max(copies, key=lambda x: x[0])
+        result[sid] = best[2]
+    return result
 
 def read_fallback_slot(data, fb_secs, box, slot):
     for seg in FALLBACK_BOX_LAYOUTS.get(box, []):
@@ -260,7 +296,17 @@ def write_fallback_slot(data, fb_secs, box, slot, mon_bytes):
                     raise ValueError(f"Section {sec_id} not found in save")
                 off = sec_off + rel + (slot - s) * MON_SIZE
                 if off + MON_SIZE <= len(data):
-                    data[off:off+MON_SIZE] = mon
+                    # Preserve footer bytes if the write overlaps the section footer
+                    footer_start = sec_off + 0xFF4
+                    write_end    = off + MON_SIZE
+                    if write_end > footer_start:
+                        # Save the section footer (12 bytes: valid_len + sec_id + chk + save_idx + pad)
+                        footer = bytearray(data[footer_start:sec_off + 0x1000])
+                        data[off:off+MON_SIZE] = mon
+                        # Restore footer
+                        data[footer_start:sec_off + 0x1000] = footer
+                    else:
+                        data[off:off+MON_SIZE] = mon
                     dirty_sections.add(sec_id)
                 return dirty_sections
 
@@ -404,7 +450,7 @@ def calc_level(rate, exp):
 # Mon parsing
 # ---------------------------------------------------------------------------
 def is_shiny(otid, pid):
-    return ((otid & 0xFFFF) ^ (otid >> 16) ^ (pid & 0xFFFF) ^ (pid >> 16)) < 8
+    return ((otid & 0xFFFF) ^ (otid >> 16) ^ (pid & 0xFFFF) ^ (pid >> 16)) < 16
 
 def gender_from_pid(pid, threshold):
     if threshold is None: return "?"
@@ -462,14 +508,21 @@ def parse_pc_mon(raw, box, slot, db):
     # Nature
     nature = NATURES[pid % 25] if pid > 0 else "—"
 
-    # Ability
-    ability_idx = (iv_raw >> 31) & 1
+    # Ability — CFRU: bit 31 of IV word is the hidden-ability flag; regular
+    # ability slot (1 or 2) is determined by pid & 1, same as vanilla Gen III.
+    hidden = (iv_raw >> 31) & 1
+    ability_slot = 2 if hidden else (pid & 1)
     ability_name = "—"
     meta = db['ability_meta'].get(sp)
     if meta:
-        ab_ids = meta.get("ability_ids", [])
-        if ability_idx < len(ab_ids):
-            ability_name = db['abilities'].get(ab_ids[ability_idx], "—")
+        if ability_slot == 2:
+            ab_id = meta.get("hidden_ability_id") or meta.get("ability_1_id")
+        elif ability_slot == 1:
+            ab_id = meta.get("ability_2_id") or meta.get("ability_1_id")
+        else:
+            ab_id = meta.get("ability_1_id")
+        if ab_id:
+            ability_name = db['abilities'].get(ab_id, "—")
 
     # Item
     item_id = ru16(raw, 0x1E) if len(raw) >= 0x20 else 0
@@ -548,13 +601,19 @@ def parse_party_mon(raw, slot, db):
     shiny  = is_shiny(otid, pid)
     gender = gender_from_pid(pid, db['gender'].get(sp))
 
-    ability_idx  = (iv_raw >> 31) & 1
+    hidden = (iv_raw >> 31) & 1
+    ability_slot = 2 if hidden else (pid & 1)
     ability_name = "—"
     meta = db['ability_meta'].get(sp)
     if meta:
-        ab_ids = meta.get("ability_ids", [])
-        if ability_idx < len(ab_ids):
-            ability_name = db['abilities'].get(ab_ids[ability_idx], "—")
+        if ability_slot == 2:
+            ab_id = meta.get("hidden_ability_id") or meta.get("ability_1_id")
+        elif ability_slot == 1:
+            ab_id = meta.get("ability_2_id") or meta.get("ability_1_id")
+        else:
+            ab_id = meta.get("ability_1_id")
+        if ab_id:
+            ability_name = db['abilities'].get(ab_id, "—")
 
     item_id   = ru16(raw, 0x22)
     item_name = db['items'].get(item_id, "") if item_id else ""
@@ -1158,11 +1217,12 @@ def load_evo_table():
 # Sort logic (reuses organizer.py)
 # ---------------------------------------------------------------------------
 def run_sort(data, sort_mode, reserve_boxes):
-    """Sort PC boxes using organizer logic. Returns modified data."""
+    """Sort all PC boxes (stream 1-18 + fallback 19-24). Returns modified data."""
     import organizer as org
 
     sections  = find_active_sections(data)
-    db        = session.get("db") or load_databases()
+    fb_secs   = get_fallback_section_offsets(data)
+    db = session['db']
     db_growth = db.get('growth', {})
 
     data_dir = find_data_dir()
@@ -1173,45 +1233,58 @@ def run_sort(data, sort_mode, reserve_boxes):
         db_species_simple[k] = v
 
     box_names   = read_box_names(data, sections)
-    named_boxes = {b for b in (
-        {bn for bn, nm in box_names.items()
-         if bn > 0 and nm.strip() and not nm.strip() in (f'Box{bn}', f'Box {bn}')}
-    ) if b <= STREAM_BOXES}
+    named_boxes = {bn for bn, nm in box_names.items()
+                   if bn > 0 and nm.strip() and nm.strip() not in (f'Box{bn}', f'Box {bn}')}
 
     stream_buf = bytearray(build_stream_buffer(data, sections))
-
-    # Collect all movable mons (same logic as organizer)
     SPLIT = find_split_slots()
 
     def slot_idx(box, slot): return (box-1)*SLOTS_PER_BOX + (slot-1)
 
+    # ── Collect mons from ALL boxes (stream 1-18 + fallback 19-24) ──────────
     mons = []
+
     for box in range(1, STREAM_BOXES_WRITABLE+1):
         if box in named_boxes: continue
         for slot in range(1, SLOTS_PER_BOX+1):
             idx = slot_idx(box, slot)
+            if idx in SPLIT: continue
             raw = stream_buf[idx*MON_SIZE:(idx+1)*MON_SIZE]
             if all(b==0 for b in raw): continue
-            sp  = ru16(raw, 0x1C)
+            sp = ru16(raw, 0x1C)
             if not (1 <= sp <= 2500): continue
-            exp   = ru32(raw, 0x20)
-            rate  = db_growth.get(sp, 0)
+            exp  = ru32(raw, 0x20)
+            rate = db_growth.get(sp, 0)
             level = calc_level(rate, exp)
             root  = (species_to_root.get(sp, sp) if species_to_root else sp)
             mons.append({'raw': bytearray(raw), 'species': sp, 'level': level,
                          'root': root, 'name': db_species_simple.get(sp, f'#{sp}')})
 
-    # Sort
+    for box in sorted(FALLBACK_BOX_LAYOUTS.keys()):
+        if box in named_boxes: continue
+        for slot in range(1, SLOTS_PER_BOX+1):
+            raw = read_fallback_slot(data, fb_secs, box, slot)
+            if not raw or is_empty(raw): continue
+            sp = ru16(raw, 0x1C)
+            if not (1 <= sp <= 2500): continue
+            exp  = ru32(raw, 0x20)
+            rate = db_growth.get(sp, 0)
+            level = calc_level(rate, exp)
+            root  = (species_to_root.get(sp, sp) if species_to_root else sp)
+            mons.append({'raw': bytearray(raw), 'species': sp, 'level': level,
+                         'root': root, 'name': db_species_simple.get(sp, f'#{sp}')})
+
+    # ── Sort ────────────────────────────────────────────────────────────────
     if sort_mode == 'level_asc':
         mons.sort(key=lambda m: (m['level'], m['root'], m['species']))
     elif sort_mode == 'level_desc':
         mons.sort(key=lambda m: (-m['level'], m['root'], m['species']))
     elif sort_mode == 'species':
         mons.sort(key=lambda m: (m['species'], m['level']))
-    else:  # evo_family (default)
+    else:
         mons.sort(key=lambda m: (m['root'], m['species'], m['level']))
 
-    # Clear all unnamed, non-split slots
+    # ── Clear all unnamed non-split slots in stream + fallback ──────────────
     for box in range(1, STREAM_BOXES_WRITABLE+1):
         if box in named_boxes: continue
         for slot in range(1, SLOTS_PER_BOX+1):
@@ -1219,9 +1292,17 @@ def run_sort(data, sort_mode, reserve_boxes):
             if idx not in SPLIT:
                 stream_buf[idx*MON_SIZE:(idx+1)*MON_SIZE] = bytes(MON_SIZE)
 
-    # Build destination slots (skip reserved boxes at start)
-    dest_slots = []
+    dirty_clear = set()
+    for box in sorted(FALLBACK_BOX_LAYOUTS.keys()):
+        if box in named_boxes: continue
+        for slot in range(1, SLOTS_PER_BOX+1):
+            dirty_clear |= write_fallback_slot(data, fb_secs, box, slot, bytes(MON_SIZE))
+
+    # ── Build dest slots: stream 1-18 first, then fallback 19-24 ────────────
+    dest_stream = []   # list of stream buffer indices
+    dest_fallback = [] # list of (box, slot) for fallback boxes
     unnamed_count = 0
+
     for box in range(1, STREAM_BOXES_WRITABLE+1):
         if box in named_boxes: continue
         unnamed_count += 1
@@ -1229,16 +1310,34 @@ def run_sort(data, sort_mode, reserve_boxes):
         for slot in range(1, SLOTS_PER_BOX+1):
             idx = slot_idx(box, slot)
             if idx not in SPLIT:
-                dest_slots.append(idx)
+                dest_stream.append(idx)
 
-    # Write sorted mons
-    for i, m in enumerate(mons):
-        if i >= len(dest_slots): break
-        idx = dest_slots[i]
-        stream_buf[idx*MON_SIZE:(idx+1)*MON_SIZE] = m['raw']
+    for box in sorted(FALLBACK_BOX_LAYOUTS.keys()):
+        if box in named_boxes: continue
+        for slot in range(1, SLOTS_PER_BOX+1):
+            dest_fallback.append((box, slot))
 
-    # Write back
+    # ── Write sorted mons ────────────────────────────────────────────────────
+    mon_idx = 0
+    for idx in dest_stream:
+        if mon_idx >= len(mons): break
+        stream_buf[idx*MON_SIZE:(idx+1)*MON_SIZE] = mons[mon_idx]['raw']
+        mon_idx += 1
+
+    dirty = set(dirty_clear)  # include sections dirtied during clear
+    for box, slot in dest_fallback:
+        if mon_idx >= len(mons): break
+        dirty |= write_fallback_slot(data, fb_secs, box, slot, mons[mon_idx]['raw'])
+        mon_idx += 1
+
+    # ── Write stream back ────────────────────────────────────────────────────
     write_stream_buffer(data, sections, stream_buf)
+
+    # Recalculate checksums for any modified fallback sections (2, 3)
+    for sec_id in dirty:
+        for abs_off in find_all_section_offsets(data, sec_id):
+            recalculate_checksum(data, abs_off)
+
     return data
 
 
@@ -1250,7 +1349,7 @@ def run_excel_export(data):
     import save_reader as sr
     import io, tempfile, os
 
-    db = session.get("db") or load_databases()
+    db = session['db']
 
     db_species   = db.get('species', {})
     db_items     = db.get('items', {})
@@ -1288,7 +1387,7 @@ def run_evo_export(data):
         sys.path.insert(0, app_dir)
     import unbound_evo_checker as ec
 
-    db = session.get("db") or load_databases()
+    db = session['db']
     db_species = db.get('species', {})
     db_items   = db.get('items', {})
     db_moves   = db.get('moves', {})
@@ -1368,7 +1467,7 @@ def run_evo_export(data):
 def run_sort_single_box(data, box_num, sort_mode):
     """Sort a single box in-place."""
     sections = find_active_sections(data)
-    db = session.get("db") or load_databases()
+    db = session['db']
     db_growth = db.get('growth', {})
     db_species_simple = db.get('species', {})
 
@@ -1427,6 +1526,24 @@ def run_sort_single_box(data, box_num, sort_mode):
 
 
 # ---------------------------------------------------------------------------
+# Preferences (user settings that persist across updates)
+# ---------------------------------------------------------------------------
+def load_preferences():
+    prefs = DEFAULT_PREFS.copy()
+    if PREFERENCES_FILE.exists():
+        try:
+            loaded = json.loads(PREFERENCES_FILE.read_text(encoding="utf-8"))
+            prefs.update({k: v for k, v in loaded.items() if k in prefs})
+        except Exception:
+            pass
+    return prefs
+
+def save_preferences(prefs):
+    PREFERENCES_FILE.parent.mkdir(parents=True, exist_ok=True)
+    PREFERENCES_FILE.write_text(json.dumps(prefs, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+# ---------------------------------------------------------------------------
 # Routes
 # ---------------------------------------------------------------------------
 @app.route("/")
@@ -1436,13 +1553,135 @@ def index():
     from flask import Response
     return Response(index_path.read_bytes(), mimetype="text/html")
 
+@app.route("/icons/<path:filename>")
+def serve_icons(filename):
+    return send_from_directory(str(BASE_DIR / "static" / "icons"), filename)
+
+@app.route("/sprites/<path:filename>")
+def serve_sprites(filename):
+    return send_from_directory(str(BASE_DIR / "static" / "sprites"), filename)
+
+
 @app.route("/species_types.json")
 def species_types():
     return send_from_directory(str(BASE_DIR / "static"), "species_types.json")
 
+@app.route("/pokemon-icon-manifest.json")
+def pokemon_icon_manifest():
+    return send_from_directory(str(BASE_DIR / "static"), "pokemon-icon-manifest.json")
+
 @app.route("/assets/<path:filename>")
 def assets(filename):
     return send_from_directory(str(BASE_DIR / "static" / "dist" / "assets"), filename)
+
+# ── Before-request hooks ───────────────────────────────────────────────────────
+
+# Paths under /api/ that work without a save being loaded (load the save,
+# work on vault/trade alone, or handle the missing-save case themselves).
+_SKIP_SAVE_CHECK = {
+    '/api/load', '/api/load_recent',
+    '/api/undo',             # owns its own "no save" logic
+    '/api/status',           # reports whether a save is loaded
+    '/api/has_porta_pc',     # returns False gracefully when no save
+    '/api/recent_saves',
+    '/api/check_update',
+    '/api/preferences',
+    '/api/vault/boxes',      # vault-only; works with default trainer key
+    '/api/vault/move',
+    '/api/vault/batch_move',
+    '/api/vault/sort',
+    '/api/vault/rename',
+    '/api/vault/release',
+    '/api/trade/vault',
+    '/api/trade/load_secondary',
+    '/api/trade/unload_secondary',
+    '/api/trade/secondary_status',
+    '/api/trade/transfer',   # checks primary/secondary internally
+    '/api/trade/swap',
+    '/api/trade/save_primary',
+    '/api/trade/save_secondary',
+}
+
+@app.before_request
+def require_save_loaded():
+    """Return 400 for any /api/ route that needs a save when none is loaded."""
+    if request.path.startswith('/api/') and request.path not in _SKIP_SAVE_CHECK:
+        if session.get('data') is None:
+            return jsonify({'error': 'No save loaded'}), 400
+
+@app.before_request
+def ensure_db():
+    """Keep the lookup-table dict in session whenever a save is present."""
+    if session.get('data') is not None and not session.get('db'):
+        session['db'] = load_databases() or {}
+
+# ── Undo Management ────────────────────────────────────────────────────────────
+
+# POST paths that must NOT trigger an undo snapshot (non-mutating or
+# administrative operations where restoring old state would be wrong).
+_SKIP_UNDO_PATHS = {
+    '/api/load',
+    '/api/load_recent',
+    '/api/undo',
+    '/api/current_save',
+    '/api/download',
+    '/api/preferences',
+    '/api/has_porta_pc',
+    '/api/trade/load_secondary',
+    '/api/trade/unload_secondary',
+    '/api/trade/save_primary',
+    '/api/trade/save_secondary',
+    '/api/trade/transfer',
+    '/api/trade/swap',
+    '/api/check_update',
+    '/api/export_excel',
+    '/api/export_evolutions',
+}
+
+def save_undo_state():
+    """Save current save state (save + vault) as undo checkpoint before mutation."""
+    if "data" in session:
+        session["prev_data"] = bytearray(session["data"])
+        try:
+            vault_snapshot = cb.load_cloud(_get_data_dir(), *_get_trainer_key())
+            session["prev_vault"] = json.dumps(vault_snapshot)
+        except Exception:
+            session["prev_vault"] = None
+
+@app.before_request
+def auto_save_undo():
+    """Automatically snapshot state before any mutating POST request."""
+    if request.method == 'POST' and request.path not in _SKIP_UNDO_PATHS:
+        save_undo_state()
+
+@app.route("/api/undo", methods=["POST"])
+def api_undo():
+    """Restore previous save state (save + vault)"""
+    prev_data = session.get("prev_data")
+    if not prev_data:
+        return jsonify({"error": "No undo state available"}), 400
+    if "data" not in session:
+        return jsonify({"error": "No save loaded"}), 400
+
+    try:
+        session["data"] = prev_data
+        session["prev_data"] = None
+        session["sections"] = find_active_sections(session["data"])
+
+        # Restore vault state if we have a snapshot
+        prev_vault_json = session.pop("prev_vault", None)
+        if prev_vault_json:
+            try:
+                vault_snapshot = json.loads(prev_vault_json)
+                cb.save_cloud(_get_data_dir(), vault_snapshot, *_get_trainer_key())
+            except Exception:
+                pass  # Best-effort; save data restore still completes
+
+        db = session.get("db", {})
+        result = parse_save(bytearray(session["data"]), db)
+        return jsonify({"ok": True, "save": result})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route("/api/load", methods=["POST"])
 def api_load():
@@ -1453,7 +1692,7 @@ def api_load():
     if len(raw) not in (131072, 131088):
         return jsonify({"error": f"Unexpected file size {len(raw)} — expected 131072 or 131088 bytes"}), 400
 
-    db = session.get("db") or load_databases()
+    db = session.get('db') or load_databases()
     if not db:
         return jsonify({"error": "data/ directory not found. Place PUSE's backend/data/ folder next to app.py"}), 500
     session["db"] = db
@@ -1471,8 +1710,6 @@ def api_load():
 
 @app.route("/api/move", methods=["POST"])
 def api_move():
-    if session.get("data") is None:
-        return jsonify({"error": "No save loaded"}), 400
     body = request.get_json()
     moves = body.get("moves", [])
     if not moves:
@@ -1499,8 +1736,6 @@ def api_has_porta_pc():
 @app.route("/api/move_to_box", methods=["POST"])
 def api_move_to_box():
     """Move multiple selected mons into the first available empty slots of a target box."""
-    if session.get("data") is None:
-        return jsonify({"error": "No save loaded"}), 400
     body = request.get_json()
     items = body.get("items", [])   # [{box, slot}, ...]
     target_box = body.get("target_box")
@@ -1516,11 +1751,11 @@ def api_move_to_box():
     if target_box_data is None:
         return jsonify({"error": f"Box {target_box} not found"}), 400
 
-    # Collect empty slots in order (slot numbers are 1-indexed in parse_save)
+    # Collect empty slots in order, excluding split slots (sector boundary artifacts)
     empty_slots = [
         i + 1
         for i, sl in enumerate(target_box_data["slots"])
-        if not sl.get("mon")
+        if not sl.get("mon") and not sl.get("split")
     ]
 
     if not empty_slots:
@@ -1552,7 +1787,6 @@ def api_move_to_box():
 
 @app.route("/api/release", methods=["POST"])
 def api_release():
-    if session.get("data") is None:return jsonify({"error":"No save loaded"}),400
     body=request.get_json();items=body.get("items",[])
     if not items:return jsonify({"error":"Nothing to release"}),400
     data=bytearray(session["data"]);db=session["db"]
@@ -1585,8 +1819,6 @@ def api_release():
 
 @app.route("/api/download")
 def api_download():
-    if session.get("data") is None:
-        return jsonify({"error": "No save loaded"}), 400
     from flask import Response
     return Response(
         bytes(session["data"]),
@@ -1601,8 +1833,6 @@ def api_status():
 
 @app.route("/api/evo_table")
 def api_evo_table():
-    if session.get("data") is None:
-        return jsonify({"error": "No save loaded"}), 400
     try:
         table = load_evo_table()
         # Return as {species_id: [{target_name, description}, ...]}
@@ -1616,8 +1846,6 @@ def api_evo_table():
 
 @app.route("/api/sort", methods=["POST"])
 def api_sort():
-    if session.get("data") is None:
-        return jsonify({"error": "No save loaded"}), 400
     body         = request.get_json()
     sort_mode    = body.get("sort_mode", "evo_family")   # evo_family|level_asc|level_desc|species
     scope        = body.get("scope", "all")              # all|current
@@ -1643,8 +1871,6 @@ def api_sort():
 
 @app.route("/api/export_excel")
 def api_export_excel():
-    if session.get("data") is None:
-        return jsonify({"error": "No save loaded"}), 400
     try:
         xlsx_bytes = run_excel_export(bytearray(session["data"]))
     except Exception as e:
@@ -1659,8 +1885,6 @@ def api_export_excel():
 
 @app.route("/api/export_evolutions")
 def api_export_evolutions():
-    if session.get("data") is None:
-        return jsonify({"error": "No save loaded"}), 400
     try:
         xlsx_bytes = run_evo_export(bytearray(session["data"]))
     except Exception as e:
@@ -1685,6 +1909,10 @@ def dex_species_route():
 def species_to_national_route():
     return send_from_directory(str(BASE_DIR / "static"), "species_to_national.json")
 
+@app.route("/species_base_stats.json")
+def species_base_stats_route():
+    return send_from_directory(str(BASE_DIR / "static"), "species_base_stats.json")
+
 
 @app.route("/api/dex_flags")
 def api_dex_flags():
@@ -1692,8 +1920,6 @@ def api_dex_flags():
     Flags live directly in active section 1 at fixed offsets — no
     SaveBlock1 reconstruction needed.
     """
-    if session.get("data") is None:
-        return jsonify({"error": "No save loaded"}), 400
 
     data = session["data"]
     sections  = find_active_sections(data)
@@ -1725,7 +1951,7 @@ def api_dex_flags():
 @app.route("/api/species_list")
 def api_species_list():
     """Return all species as {id: name} for the dex view."""
-    db = session.get("db") or load_databases()
+    db = session['db']
     species = db.get("species", {})
     return jsonify({str(k): v for k, v in species.items()})
 
@@ -1761,9 +1987,7 @@ def _get_data_dir() -> Path:
 @app.route("/api/current_save")
 def api_current_save():
     """Return the current parsed save state (for Trade view to display primary boxes)."""
-    if session.get("data") is None:
-        return jsonify({"ok": False, "error": "No save loaded"}), 400
-    db = session.get("db") or load_databases()
+    db = session['db']
     data = bytearray(session["data"])
     result = parse_save(data, db)
     sections = find_active_sections(data)
@@ -1784,8 +2008,6 @@ def api_vault_deposit():
     Body: {from_box, from_slot, to_vault_box, to_vault_slot}
     from_box 0 = party
     """
-    if session.get("data") is None:
-        return jsonify({"error": "No save loaded"}), 400
     body = request.get_json()
     from_box   = body["from_box"]
     from_slot  = body["from_slot"]
@@ -1794,7 +2016,7 @@ def api_vault_deposit():
 
     data     = bytearray(session["data"])
     sections = find_active_sections(data)
-    db       = session.get("db") or load_databases()
+    db = session['db']
 
     # Read the mon raw bytes from the save
     if from_box == 0:
@@ -1870,81 +2092,211 @@ def api_vault_deposit():
     return jsonify({"ok": True, "save": result, "cloud": cloud})
 
 
+@app.route("/api/vault/batch_deposit", methods=["POST"])
+def api_vault_batch_deposit():
+    """
+    Move multiple mons FROM the primary save INTO cloud slots in one atomic operation.
+    Saves undo state once before any mutation.
+    Body: {items: [{from_box, from_slot, to_vault_box, to_vault_slot}]}
+    """
+
+    try:
+        body = request.get_json()
+        items = body.get("items", [])
+        if not items:
+            return jsonify({"error": "No items provided"}), 400
+
+
+        data     = bytearray(session["data"])
+        sections = find_active_sections(data)
+        db = session['db']
+        trainer  = read_trainer_info(data, sections)
+
+        # Load vault once and track occupied slots
+        vault_current = cb.load_cloud(_get_data_dir(), *_get_trainer_key())
+        vault_boxes = [bx["box"] for bx in vault_current]
+        max_vault_box = max(vault_boxes) if vault_boxes else 0
+        occupied = set()
+        all_vault_pids = set()
+        for bx in vault_current:
+            for i, s in enumerate(bx["slots"]):
+                if s.get("mon"):
+                    occupied.add((bx["box"], i + 1))
+                    if s["mon"].get("pid"):
+                        all_vault_pids.add(s["mon"]["pid"])
+
+        cloud = None
+        for idx, item in enumerate(items):
+            from_box = item["from_box"]
+            from_slot = item["from_slot"]
+            to_cb = item["to_vault_box"]
+            to_cs = item["to_vault_slot"]
+
+            if from_box == 0:
+                sec1_off = sections[1]["offset"]
+                raw = bytearray(data[sec1_off + 0x38 + (from_slot-1)*100 :
+                                     sec1_off + 0x38 + (from_slot-1)*100 + 100])
+                mon = parse_party_mon(raw, from_slot, db)
+            elif from_box <= STREAM_BOXES:
+                stream = bytearray(build_stream_buffer(data, sections))
+                raw = read_stream_slot(stream, from_box, from_slot)
+                mon = parse_pc_mon(raw, from_box, from_slot, db)
+            else:
+                fb_secs = get_fallback_section_offsets(data)
+                raw = read_fallback_slot(data, fb_secs, from_box, from_slot)
+                mon = parse_pc_mon(raw, from_box, from_slot, db)
+
+            if raw is None or is_empty(raw) or mon is None:
+                return jsonify({"error": f"No Pokémon in item {idx+1}: box={from_box} slot={from_slot}"}), 400
+
+            mon_pid = mon.get("pid")
+            if mon_pid and mon_pid in all_vault_pids:
+                return jsonify({"error": f"Item {idx+1}: Pokémon already in vault. Reload to sync."}), 400
+
+            mon["vault_from_trainer"] = trainer["name"]
+            mon["vault_from_tid"]     = trainer["tid"]
+
+            # Find empty vault slot if not specified
+            if to_cs == 0:
+                found = False
+                for bx in vault_current:
+                    if bx["box"] < to_cb:
+                        continue
+                    for i, s in enumerate(bx["slots"]):
+                        slot_key = (bx["box"], i + 1)
+                        if s["mon"] is None and slot_key not in occupied:
+                            to_cb = bx["box"]
+                            to_cs = i + 1
+                            found = True
+                            break
+                    if found:
+                        break
+                if not found:
+                    return jsonify({"error": "Vault is full — no empty slots available"}), 400
+
+            # Safeguard: if target slot somehow occupied, find next available
+            # (This shouldn't happen with proper frontend logic, but protects against edge cases)
+            attempts = 0
+            while (to_cb, to_cs) in occupied and attempts < 600:
+                to_cs += 1
+                if to_cs > 30:
+                    to_cs = 1
+                    to_cb += 1
+                attempts += 1
+
+            if attempts >= 600:
+                return jsonify({"error": "Item {}: could not find available vault slot (vault possibly full)".format(idx+1)}), 400
+
+            if to_cb > max_vault_box:
+                return jsonify({"error": "Item {}: target vault box {} out of range".format(idx+1, to_cb)}), 400
+
+            occupied.add((to_cb, to_cs))
+            if mon_pid:
+                all_vault_pids.add(mon_pid)
+
+            cloud = cb.deposit(_get_data_dir(), to_cb, to_cs, mon, list(raw[:MON_SIZE]), *_get_trainer_key())
+
+            # Clear the slot in the save
+            empty = bytearray(MON_SIZE)
+            if from_box == 0:
+                sec1_off = sections[1]["offset"]
+                data[sec1_off + 0x38 + (from_slot-1)*100 :
+                     sec1_off + 0x38 + (from_slot-1)*100 + MON_SIZE] = empty
+            elif from_box <= STREAM_BOXES:
+                stream = bytearray(build_stream_buffer(data, sections))
+                write_stream_slot(stream, from_box, from_slot, empty)
+                write_stream_buffer(data, sections, stream)
+            else:
+                fb_secs = get_fallback_section_offsets(data)
+                write_fallback_slot(data, fb_secs, from_box, from_slot, empty)
+
+            sections = find_active_sections(data)
+
+        session["data"] = data
+        session["sections"] = find_active_sections(data)
+
+        result = parse_save(data, db)
+        final_cloud = cloud if cloud is not None else cb.load_cloud(_get_data_dir(), *_get_trainer_key())
+        return jsonify({"ok": True, "save": result, "cloud": final_cloud})
+
+    except Exception as e:
+        return jsonify({"error": f"Batch deposit failed: {str(e)}"}), 500
+
+
 @app.route("/api/vault/withdraw", methods=["POST"])
 def api_vault_withdraw():
     """
     Move a mon FROM cloud INTO the primary save (game box slot).
     Body: {from_vault_box, from_vault_slot, to_box, to_slot}
     """
-    if session.get("data") is None:
-        return jsonify({"error": "No save loaded"}), 400
-    body     = request.get_json()
-    from_cb  = body["from_vault_box"]
-    from_cs  = body["from_vault_slot"]
-    to_box   = body["to_box"]
-    to_slot  = body["to_slot"]
+    try:
+        body     = request.get_json()
+        from_cb  = body["from_vault_box"]
+        from_cs  = body["from_vault_slot"]
+        to_box   = body["to_box"]
+        to_slot  = body["to_slot"]
 
-    mon, raw, cloud = cb.withdraw(_get_data_dir(), from_cb, from_cs, *_get_trainer_key())
-    if mon is None:
-        return jsonify({"error": "Cloud slot is empty"}), 400
+        mon, raw, cloud = cb.withdraw(_get_data_dir(), from_cb, from_cs, *_get_trainer_key())
+        if mon is None:
+            return jsonify({"error": "Cloud slot is empty"}), 400
 
-    data     = bytearray(session["data"])
-    sections = find_active_sections(data)
+        data     = bytearray(session["data"])
+        sections = find_active_sections(data)
 
-    raw_bytes = bytearray(raw[:MON_SIZE])
-    if len(raw_bytes) < MON_SIZE:
-        raw_bytes += bytes(MON_SIZE - len(raw_bytes))
+        raw_bytes = bytearray(raw[:MON_SIZE])
+        if len(raw_bytes) < MON_SIZE:
+            raw_bytes += bytes(MON_SIZE - len(raw_bytes))
 
-    # Auto-find first empty slot if to_slot == 0
-    if to_slot == 0:
-        found = False
-        for try_box in range(1, 19):
-            if try_box <= STREAM_BOXES:
-                stream = bytearray(build_stream_buffer(data, sections))
-                for try_slot in range(1, 31):
-                    existing = read_stream_slot(stream, try_box, try_slot)
-                    if not existing or is_empty(existing):
-                        to_box, to_slot = try_box, try_slot
-                        found = True
-                        break
-            else:
-                fb_secs = get_fallback_section_offsets(data)
-                for try_slot in range(1, 31):
-                    existing = read_fallback_slot(data, fb_secs, try_box, try_slot)
-                    if not existing or is_empty(existing):
-                        to_box, to_slot = try_box, try_slot
-                        found = True
-                        break
-            if found:
-                break
-        if not found:
-            cb.deposit(_get_data_dir(), from_cb, from_cs, mon, raw, *_get_trainer_key())
-            return jsonify({"error": "No empty slots in PC"}), 400
+        # Auto-find first empty slot if to_slot == 0
+        if to_slot == 0:
+            found = False
+            for try_box in range(1, 19):
+                if try_box <= STREAM_BOXES:
+                    stream = bytearray(build_stream_buffer(data, sections))
+                    for try_slot in range(1, 31):
+                        existing = read_stream_slot(stream, try_box, try_slot)
+                        if not existing or is_empty(existing):
+                            to_box, to_slot = try_box, try_slot
+                            found = True
+                            break
+                else:
+                    fb_secs = get_fallback_section_offsets(data)
+                    for try_slot in range(1, 31):
+                        existing = read_fallback_slot(data, fb_secs, try_box, try_slot)
+                        if not existing or is_empty(existing):
+                            to_box, to_slot = try_box, try_slot
+                            found = True
+                            break
+                if found:
+                    break
+            if not found:
+                cb.deposit(_get_data_dir(), from_cb, from_cs, mon, raw, *_get_trainer_key())
+                return jsonify({"error": "No empty slots in PC"}), 400
 
-    if to_box <= STREAM_BOXES:
-        # Check destination is empty
-        stream = bytearray(build_stream_buffer(data, sections))
-        existing = read_stream_slot(stream, to_box, to_slot)
-        if existing and not is_empty(existing):
-            # Roll back cloud withdrawal
-            cb.deposit(_get_data_dir(), from_cb, from_cs, mon, raw, *_get_trainer_key())
-            return jsonify({"error": "Destination slot is occupied"}), 400
-        write_stream_slot(stream, to_box, to_slot, raw_bytes)
-        write_stream_buffer(data, sections, stream)
-    else:
-        fb_secs  = get_fallback_section_offsets(data)
-        existing = read_fallback_slot(data, fb_secs, to_box, to_slot)
-        if existing and not is_empty(existing):
-            cb.deposit(_get_data_dir(), from_cb, from_cs, mon, raw, *_get_trainer_key())
-            return jsonify({"error": "Destination slot is occupied"}), 400
-        write_fallback_slot(data, fb_secs, to_box, to_slot, raw_bytes)
+        if to_box <= STREAM_BOXES:
+            stream = bytearray(build_stream_buffer(data, sections))
+            existing = read_stream_slot(stream, to_box, to_slot)
+            if existing and not is_empty(existing):
+                cb.deposit(_get_data_dir(), from_cb, from_cs, mon, raw, *_get_trainer_key())
+                return jsonify({"error": "Destination slot is occupied"}), 400
+            write_stream_slot(stream, to_box, to_slot, raw_bytes)
+            write_stream_buffer(data, sections, stream)
+        else:
+            fb_secs  = get_fallback_section_offsets(data)
+            existing = read_fallback_slot(data, fb_secs, to_box, to_slot)
+            if existing and not is_empty(existing):
+                cb.deposit(_get_data_dir(), from_cb, from_cs, mon, raw, *_get_trainer_key())
+                return jsonify({"error": "Destination slot is occupied"}), 400
+            write_fallback_slot(data, fb_secs, to_box, to_slot, raw_bytes)
 
-    session["data"] = data
-    session["sections"] = find_active_sections(data)
+        session["data"] = data
+        session["sections"] = find_active_sections(data)
 
-    db     = session.get("db") or load_databases()
-    result = parse_save(data, db)
-    return jsonify({"ok": True, "save": result, "cloud": cloud})
+        db = session['db']
+        result = parse_save(data, db)
+        return jsonify({"ok": True, "save": result, "cloud": cloud})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 @app.route("/api/vault/rename", methods=["POST"])
@@ -1986,7 +2338,7 @@ def api_trade_load_secondary():
     if len(raw) not in (131072, 131088):
         return jsonify({"error": f"Unexpected size {len(raw)}"}), 400
 
-    db = session.get("db") or load_databases()
+    db = session['db']
     if not db:
         return jsonify({"error": "data/ not found"}), 500
 
@@ -2009,7 +2361,7 @@ def api_trade_secondary_status():
     loaded = _secondary_save["data"] is not None
     if not loaded:
         return jsonify({"loaded": False, "trainer": None, "save": None})
-    db = session.get("db") or load_databases()
+    db = session['db']
     parsed = parse_save(_secondary_save["data"], db)
     return jsonify({"loaded": True,
                     "trainer": _secondary_save.get("trainer"),
@@ -2050,7 +2402,7 @@ def api_trade_transfer():
     to_box    = body["to_box"]
     to_slot   = body["to_slot"]
 
-    db = session.get("db") or load_databases()
+    db = session['db']
 
     # direction variants: 
     #   primary_to_secondary / primary_to_secondary_vault  
@@ -2246,7 +2598,7 @@ def api_trade_swap():
     pri_vault = body.get("pri_vault", False)
     sec_vault = body.get("sec_vault", False)
 
-    db = session.get("db") or load_databases()
+    db = session['db']
     data_dir  = _get_data_dir()
 
     pri_data = bytearray(session["data"])
@@ -2362,6 +2714,48 @@ def api_vault_move():
     return jsonify({"ok": True, "cloud": cloud})
 
 
+@app.route("/api/vault/batch_move", methods=["POST"])
+def api_vault_batch_move():
+    """Batch move multiple Pokémon within the vault in a single operation."""
+    body = request.get_json()
+    moves = body.get("moves", [])  # List of {from_box, from_slot, to_box, to_slot}
+
+    if not moves:
+        return jsonify({"error": "No moves specified"}), 400
+
+    tid, tname = _get_trainer_key()
+    data_dir = _get_data_dir()
+    cloud = cb.load_cloud(data_dir, tid, tname)
+
+    def get_slot(bx, sl):
+        b = next((x for x in cloud if x["box"] == bx), None)
+        return b["slots"][sl-1] if b else None
+
+    def set_slot(bx, sl, val):
+        b = next((x for x in cloud if x["box"] == bx), None)
+        if b: b["slots"][sl-1] = val
+
+    # Apply all moves in order
+    for move in moves:
+        from_box  = move["from_box"]
+        from_slot = move["from_slot"]
+        to_box    = move["to_box"]
+        to_slot   = move["to_slot"]
+
+        src = get_slot(from_box, from_slot)
+        dst = get_slot(to_box, to_slot)
+
+        if src is None or src.get("mon") is None:
+            continue
+
+        # Swap src and dst (dst may be empty)
+        set_slot(to_box, to_slot, src)
+        set_slot(from_box, from_slot, dst if dst else {"mon": None})
+
+    cb.save_cloud(data_dir, cloud, tid, tname)
+    return jsonify({"ok": True, "cloud": cloud})
+
+
 @app.route("/api/vault/sort", methods=["POST"])
 def api_vault_sort():
     """Sort vault boxes by national dex, name, or level."""
@@ -2381,8 +2775,6 @@ def api_vault_sort():
 @app.route("/api/debug/party_raw", methods=["GET"])
 def api_debug_party_raw():
     """Dump raw bytes for party mons to find correct IV offsets."""
-    if session.get("data") is None:
-        return jsonify({"error": "No save loaded"}), 400
     try:
         data = bytearray(session["data"])
         sections = find_active_sections(data)
@@ -2444,7 +2836,18 @@ def api_debug_party_raw():
 # ---------------------------------------------------------------------------
 # Recent saves tracking
 # ---------------------------------------------------------------------------
-RECENT_SAVES_FILE = BASE_DIR / "data" / "recent_saves.json"
+RECENT_SAVES_FILE = DO_NOT_DELETE_DIR / "data" / "recent_saves.json"
+PREFERENCES_FILE = DO_NOT_DELETE_DIR / "preferences.json"
+
+# Default preferences
+DEFAULT_PREFS = {
+    "list_view": False,
+    "spoilers_on": True,
+    "shiny_toggle": False,
+    "show_preset_box": False,
+    "confirm_move": False,
+    "confirm_release": True,
+}
 MAX_RECENT = 5
 
 def load_recent_saves():
@@ -2483,6 +2886,49 @@ def api_recent_saves():
         save_recent_saves(valid)
     return jsonify({"ok": True, "saves": valid})
 
+@app.route("/api/check_update", methods=["GET"])
+def api_check_update():
+    def parse_ver(v):
+        try:
+            return tuple(int(x) for x in v.lstrip("v").split("."))
+        except Exception:
+            return (0, 0, 0)
+    try:
+        req = urllib.request.Request(
+            GITHUB_RELEASES_API,
+            headers={"User-Agent": "UnboundBank", "Accept": "application/vnd.github+json"}
+        )
+        with urllib.request.urlopen(req, timeout=6) as resp:
+            data = json.loads(resp.read())
+        if data.get("prerelease"):
+            return jsonify({"current": VERSION, "up_to_date": True, "latest": VERSION})
+        latest_tag  = data.get("tag_name", "").lstrip("v")
+        release_url = data.get("html_url", "")
+        up_to_date  = parse_ver(VERSION) >= parse_ver(latest_tag)
+        return jsonify({
+            "current":     VERSION,
+            "latest":      latest_tag,
+            "up_to_date":  up_to_date,
+            "release_url": release_url,
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 503
+
+
+@app.route("/api/preferences", methods=["GET"])
+def api_get_preferences():
+    return jsonify(load_preferences())
+
+
+@app.route("/api/preferences", methods=["POST"])
+def api_set_preferences():
+    prefs = load_preferences()
+    updates = request.get_json() or {}
+    prefs.update({k: v for k, v in updates.items() if k in prefs})
+    save_preferences(prefs)
+    return jsonify(prefs)
+
+
 @app.route("/api/load_recent", methods=["POST"])
 def api_load_recent():
     body = request.get_json()
@@ -2493,7 +2939,7 @@ def api_load_recent():
     raw = p.read_bytes()
     if len(raw) not in (131072, 131088):
         return jsonify({"error": f"Unexpected file size {len(raw)}"}), 400
-    db = session.get("db") or load_databases()
+    db = session.get('db') or load_databases()
     session["db"] = db
     session["data"] = list(raw)
     parsed = parse_save(bytearray(raw), db)
@@ -2504,6 +2950,9 @@ def api_load_recent():
 
 
 if __name__ == "__main__":
-    print("Pokemon Unbound Save Manager")
-    print("Open http://localhost:5000 in your browser")
-    app.run(debug=False, port=5000)
+    try:
+        from waitress import serve
+        serve(app, host="127.0.0.1", port=5000, threads=8)
+    except ImportError:
+        print("Starting Flask dev server (install waitress for production)")
+        app.run(debug=False, port=5000, threaded=True)
