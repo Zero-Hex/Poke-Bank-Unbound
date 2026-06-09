@@ -209,7 +209,7 @@ A: Yes. UnboundBank is read-only for your original save. Changes only apply to t
 A: The trainer info in the header (name, ID, money, badges, playtime) is displayed but not editable in the current version. Focus is on Pokémon management.
 
 **Q: Can I transfer Pokémon between saves?**  
-A: Not directly. You can download Pokémon from one save, then load a different save and send them to the Vault, then download that save.
+A: Yes, with the trade tool. 
 
 **Q: Does it work on Mac/Linux?**  
 A: The pre-built executable is Windows-only. If you have Python installed, you can run it from source on Mac/Linux — just clone the repo and run `python launcher.py`.
