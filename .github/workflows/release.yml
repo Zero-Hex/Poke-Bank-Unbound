@@ -14,25 +14,30 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: unboundbank
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+
       - name: Install dependencies
         working-directory: unboundbank
         run: |
           pip install -r requirements.txt
           pip install pyinstaller
+
       - name: Build exe
         working-directory: unboundbank
         run: pyinstaller unboundbank.spec
+
       - name: Package release zip
         shell: pwsh
         run: |
           New-Item -ItemType Directory release
-          Copy-Item unboundbank/dist/UnboundBank.exe release/
+          Copy-Item -Recurse unboundbank/dist/UnboundBank/* release/
           Copy-Item unboundbank/README.md release/
           Compress-Archive -Path release/* -DestinationPath "UnboundBank-${{ github.ref_name }}-windows.zip"
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
@@ -43,11 +48,12 @@ jobs:
             1. Download `UnboundBank-${{ github.ref_name }}-windows.zip` below
             2. Extract it anywhere
             3. Double-click `UnboundBank.exe`
-            4. Open **http://localhost:5000** in your browser and drag in your `.sav` file
+            4. Click **Start Unbound Bank** and drag in your `.sav` file
+            
             Everything is bundled — no Python, no installs, nothing else needed.
+            
             ---
-            *Game data originally sourced from [PUSE](https://github.com/Zannael/PUSE) (MIT) and
-            [Dynamic-Pokemon-Expansion](https://github.com/Skeli789/Dynamic-Pokemon-Expansion) (WTFPL).*
+            *Game data originally sourced from [PUSE](https://github.com/Zannael/PUSE) (MIT) and [Dynamic-Pokemon-Expansion](https://github.com/Skeli789/Dynamic-Pokemon-Expansion) (WTFPL).*
           files: UnboundBank-${{ github.ref_name }}-windows.zip
           draft: false
           prerelease: ${{ startsWith(github.ref_name, 'pr') }}
